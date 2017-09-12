@@ -22,6 +22,9 @@ public:
 	
 	void print(std::ostream& out);
 
+	/**
+	* @brief State of the button
+	*/
 	bool state;
 };
 
