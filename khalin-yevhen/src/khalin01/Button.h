@@ -21,6 +21,11 @@ public:
 	~Button();
 	
 	/**
+	* @param btn a copying object
+	**/
+	Button(const Button &btn);
+
+	/**
 	* @brief State of the button
 	*/
 	bool state;
