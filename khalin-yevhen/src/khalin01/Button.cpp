@@ -15,7 +15,3 @@ Button::~Button()
 {
 }
 
-void Button::print(std::ostream& out) {
-	char* btnState = state == true ? "ON" : "OFF";
-	out << "state: " << btnState << std::endl;
-}

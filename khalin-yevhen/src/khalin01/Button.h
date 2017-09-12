@@ -14,14 +14,12 @@
 * @brief Represents an entity with two states.
 * @author Khalin Yevhen
 */
-class Button: Printable
+class Button
 {
 public:
 	Button();
 	~Button();
 	
-	void print(std::ostream& out);
-
 	/**
 	* @brief State of the button
 	*/
