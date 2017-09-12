@@ -33,6 +33,6 @@ public:
 	void print(std::ostream& out);
 
 private:
-	bool state = false;
+	bool state;
 };
 
