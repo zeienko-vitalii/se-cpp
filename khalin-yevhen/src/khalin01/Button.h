@@ -20,19 +20,8 @@ public:
 	Button();
 	~Button();
 	
-	/**
-	* @return state
-	*/
-	bool getState();
-
-	/**
-	* @param state a state of the button
-	*/
-	void setState(bool state);
-
 	void print(std::ostream& out);
 
-private:
 	bool state;
 };
 

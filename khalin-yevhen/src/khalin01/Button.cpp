@@ -15,16 +15,6 @@ Button::~Button()
 {
 }
 
-bool Button::getState()
-{
-	return state;
-}
-
-void Button::setState(bool state)
-{
-	this->state = state;
-}
-
 void Button::print(std::ostream& out) {
 	char* btnState = state == true ? "ON" : "OFF";
 	out << "state: " << btnState << std::endl;
