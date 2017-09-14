@@ -143,11 +143,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Printable.h" />
+    <ClInclude Include="Screen.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Screen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
