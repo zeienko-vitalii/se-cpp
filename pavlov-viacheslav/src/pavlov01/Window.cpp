@@ -23,6 +23,8 @@ Window::Window() {
 
 Window::~Window() {
 	// TODO Auto-generated destructor stub
+
+	cout << "Window destructor\n";
 }
 
 Window::Window(int _windowId, int _x1, int _y1, int _x2, int _y2) :

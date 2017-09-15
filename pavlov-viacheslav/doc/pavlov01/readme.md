@@ -17,7 +17,9 @@
 
 
 <p align="center">
+
 ![Іерархія класів](https://raw.githubusercontent.com/kit25a/se-cpp/master/pavlov-viacheslav/doc/pavlov01/screen/classGraph.png)
+
  Рисунок 2.1 іерархія класів
 </p>
 
@@ -26,7 +28,11 @@
 На рис 2.2 дивись структуру проекту.
 
 
+
+
+
 <p align="center">
+
 ![структурa проекту](https://github.com/kit25a/se-cpp/blob/master/pavlov-viacheslav/doc/pavlov01/screen/projectStruct.PNG?raw=true)
  Рисунок 2.2 структурa проекту
 </p>
@@ -35,6 +41,7 @@
 
 
 <p align="center">
+
 ![призначення класів](https://raw.githubusercontent.com/kit25a/se-cpp/master/pavlov-viacheslav/doc/pavlov01/screen/classes.PNG)
  Рисунок 2.3 призначення класів
 </p>
@@ -58,6 +65,7 @@
 
 
 <p align="center">
+
 ![призначення класів](https://github.com/kit25a/se-cpp/blob/master/pavlov-viacheslav/doc/pavlov01/screen/res1.PNG?raw=true)
  Рисунок 2.3 призначення класів
 </p>

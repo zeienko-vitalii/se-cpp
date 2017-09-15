@@ -16,14 +16,17 @@ using namespace std;
 Screen::Screen() {
 	// TODO Auto-generated constructor stub
 
+	cout << "Screen default constructor\n";
 }
 
 Screen::~Screen() {
 	// TODO Auto-generated destructor stub
+
+	cout << "Screen destructor\n";
 }
 
-Screen::Screen(Window window) {
-	this->window = window;
+Screen::Screen(Window window): window(window) {
+	cout << "Screen constructor with parameters\n";
 }
 
 void Screen::viewWindow() {
