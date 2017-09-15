@@ -12,9 +12,13 @@
 #include "Screen.h"
 
 using namespace std;
-
-int main(void) {
+/**
+ * Точка доступу до програми
+ * @return 0
+ */
+int main() {
 	Manipulator oManipulator(5, "Джойстик");
 	Screen view(oManipulator);
 	view.dataOutput();
+	return 0;
 }

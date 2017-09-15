@@ -14,12 +14,9 @@
 using namespace std;
 
 Screen::Screen() {
-	// TODO Auto-generated constructor stub
-	manip;
 }
 
-Screen::Screen(Manipulator manip){
-	this->manip = manip;
+Screen::Screen(Manipulator manip): manip(manip){
 	cout << "Вызов конструктора Screen с параметром" << endl;
 }
 

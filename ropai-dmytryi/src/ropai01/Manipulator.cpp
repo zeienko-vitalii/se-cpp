@@ -17,10 +17,7 @@ Manipulator::Manipulator() {
 	cout << "Вызов конструктора Manipulator без параметров" << endl;
 }
 
-Manipulator::Manipulator(int count, string type){
-	// Використовуємо this для доступу к атрибуту
-	this->count = count;
-	this->type = type;
+Manipulator::Manipulator(int count, string type): count(count), type(type){
 	cout << "Вызов конструктора Manipulator с параметрами" << endl;
 }
 

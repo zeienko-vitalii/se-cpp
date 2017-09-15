@@ -12,7 +12,7 @@
  * Класс для відображення даних
  */
 class Screen {
-private:
+public:
 	//Об'єкт типу Manipulator
 	Manipulator manip;
 

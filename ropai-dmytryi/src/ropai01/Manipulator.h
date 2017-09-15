@@ -12,7 +12,7 @@ using namespace std;
  * Класс, який описує об`ект девайс
  */
 class Manipulator {
-private:
+public:
 
 	//Кіількість кнопок
 	int count;
