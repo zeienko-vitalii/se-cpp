@@ -13,7 +13,7 @@
 
 using namespace std;
 
-Screen::Screen() {
+Screen::Screen(): manip() {
 }
 
 Screen::Screen(Manipulator manip): manip(manip){

@@ -10,7 +10,7 @@
 
 using namespace std;
 
-Manipulator::Manipulator() {
+Manipulator::Manipulator(): count(0), type(0){
 	// TODO Auto-generated constructor stub
 	count = 0;
 	type = "NULL_type";
