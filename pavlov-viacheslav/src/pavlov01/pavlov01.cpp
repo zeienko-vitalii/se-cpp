@@ -9,7 +9,7 @@
 #include <iostream>
 
 #include "Window.h"
-#include "WindowViewer.h"
+#include "Screen.h"
 
 using namespace std;
 
@@ -27,7 +27,7 @@ int main(void) {
 
 	Window win1(WINDOW_ID_1, X1_1, Y1_1, X2_1, Y2_1);
 
-	WindowViewer view1(win1);
+	Screen view1(win1);
 
 	view1.viewWindow();
 

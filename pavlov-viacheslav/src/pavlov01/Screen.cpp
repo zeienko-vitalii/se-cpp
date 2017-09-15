@@ -1,6 +1,6 @@
 /**
- * @file WindowViewer.cpp
- * WindowViewer functions realization.
+ * @file Screen.cpp
+ * Screen functions realization.
  * @author pavlov-vs
  * @version 0.0.1
  * @date 2017.09.09
@@ -9,24 +9,24 @@
 #include<iostream>
 
 #include "Window.h"
-#include "WindowViewer.h"
+#include "Screen.h"
 
 using namespace std;
 
-WindowViewer::WindowViewer() {
+Screen::Screen() {
 	// TODO Auto-generated constructor stub
 
 }
 
-WindowViewer::~WindowViewer() {
+Screen::~Screen() {
 	// TODO Auto-generated destructor stub
 }
 
-WindowViewer::WindowViewer(Window window) {
+Screen::Screen(Window window) {
 	this->window = window;
 }
 
-void WindowViewer::viewWindow() {
+void Screen::viewWindow() {
 
 	cout << "windowId = " << window.getWindowId() << "\n";
 	cout << "x1 = " << window.getX1() << " ";

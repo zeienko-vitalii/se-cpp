@@ -63,8 +63,7 @@ public:
 	 * @param x2 - x2 coordinate which must be set
 	 * @param y2 - y2 coordinate which must be set
 	 */
-	Window(int _windowId, int _x1, int _y1, int _x2, int _y2): windowId(_windowId), x1(_x1),
-			y1(_y1),x2(_x2),y2(_y2);
+	Window(int _windowId, int _x1, int _y1, int _x2, int _y2);
 
 	/**
 	 * Getter of windowId.

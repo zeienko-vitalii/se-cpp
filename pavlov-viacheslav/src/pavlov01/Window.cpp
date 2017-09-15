@@ -9,10 +9,10 @@
 #include <iostream>
 #include "Window.h"
 
-
 using namespace std;
 
 Window::Window() {
+	cout << "Window default constructor\n";
 	this->windowId = 0;
 	this->x1 = 0;
 	this->x2 = 0;
@@ -25,12 +25,9 @@ Window::~Window() {
 	// TODO Auto-generated destructor stub
 }
 
-Window::Window(int windowId, int x1, int y1, int x2, int y2) {
-	this->windowId = windowId;
-	this->x1 = x1;
-	this->x2 = x2;
-	this->y1 = y1;
-	this->y2 = y2;
+Window::Window(int _windowId, int _x1, int _y1, int _x2, int _y2) :
+		windowId(_windowId), x1(_x1), y1(_y1), x2(_x2), y2(_y2) {
+	cout << "Window constructor with parameters\n";
 }
 
 void Window::setWindowId(int windowId) {
