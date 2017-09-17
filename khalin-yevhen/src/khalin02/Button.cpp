@@ -1,3 +1,11 @@
+/**
+* @file Button.cpp
+* @brief Contains Button class implementation
+* @author Khalin Yevhen
+* @version 0
+* @date 17.09.17
+*/
+
 #include "Button.h"
 
 Button::Button(ButtonForm form, bool initState) : form(form), condition(initState) {
