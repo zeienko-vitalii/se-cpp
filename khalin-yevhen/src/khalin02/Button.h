@@ -16,10 +16,29 @@
 */
 class Button {
 public:
+
+	/**
+	* @brief
+	* @param form a form of the button
+	* @param initState button initial condition
+	*/
 	Button(ButtonForm form, bool initState);
+
 	~Button();
+
+	/**
+	* @return true if button is round and pressed 
+	*/
 	bool isRoundPressed() const;
+
+	/**
+	* @return button form
+	*/
 	ButtonForm * getForm();
+
+	/**
+	* @param form button form
+	*/
 	void setForm(ButtonForm form);
 private:
 	ButtonForm form;
