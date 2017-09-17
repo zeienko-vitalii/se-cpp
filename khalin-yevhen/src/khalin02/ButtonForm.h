@@ -13,5 +13,5 @@
 * @author Khalin Yevhen
 */
 enum ButtonForm {
-	round, rectangular
+	ROUND, RECTANGULAR
 };
