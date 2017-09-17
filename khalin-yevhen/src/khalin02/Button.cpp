@@ -18,3 +18,13 @@ ButtonForm * Button::getForm() {
 void Button::setForm(ButtonForm form) {
 	this->form = form;
 }
+
+void Button::setCondition(bool condition)
+{
+	this->condition = condition;
+}
+
+bool Button::getCondition()
+{
+	return condition;
+}

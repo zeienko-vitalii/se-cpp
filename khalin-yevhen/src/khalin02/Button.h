@@ -40,6 +40,16 @@ public:
 	* @param form button form
 	*/
 	void setForm(ButtonForm form);
+
+	/**
+	* @param condition button state
+	*/
+	void setCondition(bool condition);
+
+	/**
+	* @return button state
+	*/
+	bool getCondition();
 private:
 	ButtonForm form;
 	bool condition;
