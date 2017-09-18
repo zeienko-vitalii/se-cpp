@@ -11,13 +11,9 @@
 
 using namespace std;
 
-Window::Window() {
+Window::Window() :
+		windowId(0), x1(0), y1(0), x2(0), y2(0) {
 	cout << "Window default constructor\n";
-	this->windowId = 0;
-	this->x1 = 0;
-	this->x2 = 0;
-	this->y1 = 0;
-	this->y2 = 0;
 
 }
 

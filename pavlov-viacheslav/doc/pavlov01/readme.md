@@ -28,9 +28,6 @@
 На рис 2.2 дивись структуру проекту.
 
 
-
-
-
 <p align="center">
 
 ![структурa проекту](https://github.com/kit25a/se-cpp/blob/master/pavlov-viacheslav/doc/pavlov01/screen/projectStruct.PNG?raw=true)
@@ -49,13 +46,50 @@
 Ми маємо 2 класа: Вікно `Window` та Відображувач `Screen`. Вікно описує сутність програмного вікна, тобто його id та координати, а відображувач використовуєсться для виводу даних з об'єкту вікна у консоль. У функції `main()` відображена робота програми.
 
 ### 2.4 Важливі фрагменти програми
-У программі слід зауважити увагу на таких классах
+У программі слід зауважити увагу на таких моментах:
+#### Класс ` Window.cpp` списки ініціалізації 
 
-| Класс         | Опис                       |
-| ------------- |:--------------------------:| 
-| Window        | Сутність вікна             |
-| Screen  | Відображувач даних об'єкту |
+```
+Window::Window(int _windowId, int _x1, int _y1, int _x2, int _y2) :
+		windowId(_windowId), x1(_x1), y1(_y1), x2(_x2), y2(_y2) {
+	cout << "Window constructor with parameters\n";
+}
+```
 
+#### Класс ` Screen.cpp` вивід інформації у консоль:
+
+``` void Screen::viewWindow() {
+
+	cout << "windowId = " << window.getWindowId() << "\n";
+	cout << "x1 = " << window.getX1() << " ";
+	cout << "y1 = " << window.getY1() << "\n";
+	cout << "x2 = " << window.getX2() << " ";
+	cout << "y2 = " << window.getY2() << "\n";
+}
+```
+
+
+#### Класс ` ` демонстрація роботи
+
+```
+int main(void) {
+
+	//Constants for  object initialization
+	const int WINDOW_ID_1 = 1;
+	const int X1_1 = 100;
+	const int Y1_1 = 100;
+	const int X2_1 = 100;
+	const int Y2_1 = 100;
+
+	Window win1(WINDOW_ID_1, X1_1, Y1_1, X2_1, Y2_1);
+
+	Screen view1(win1);
+
+	view1.viewWindow();
+
+	return 0;
+}
+```
 
 
 ## 3.РЕЗУЛЬТАТИ РОБОТИ
