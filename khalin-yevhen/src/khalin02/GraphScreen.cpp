@@ -28,6 +28,11 @@ const Button * GraphScreen::getDataSource()
 	return btn;
 }
 
+void GraphScreen::printDataSource(std::ostream & os)
+{
+	printData(btn, std::cout);
+}
+
 GraphScreen::~GraphScreen()
 {
 }

@@ -40,6 +40,12 @@ public:
 	*/
 	const Button * getDataSource();
 
+
+	/**
+	* @brief prints data source 
+	*/
+	void printDataSource(std::ostream& os);
+
 	~GraphScreen();
 private:
 	const Button* btn;
