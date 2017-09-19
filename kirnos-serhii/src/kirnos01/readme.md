@@ -16,20 +16,20 @@
 ### 2.2 Іерархія та структура класів
 Ієрархія класів наведена на рис. 2.1
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/kirnos-serhii/doc/screen/Hierarchy.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos01/screen/Hierarchy.png)
 
 *Рисунок 2.1 – Ієрархія класів*
 
 ### 2.3 Опис програми
 Структура проекту наведена на рис. 2.2.
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/kirnos-serhii/doc/screen/Struct.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos01/screen/Struct.png)
 
 *Рисунок 2.2 – Структура проекту*
 
 В програмі було створено два класи. Призначення спроектованих класів наведено на рис. 2.3.
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/kirnos-serhii/doc/screen/Clas.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos01/screen/Clas.png)
 
 *Рисунок 2.3 – Призначення класів*
 
@@ -71,7 +71,7 @@
 ## Результати работи
   Результати роботи показано на рис. 3.1.
   
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/kirnos-serhii/doc/screen/Result.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos01/screen/Result.png)
 
 *Рисунок 3.1 – Результати роботи*
 
