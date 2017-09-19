@@ -1,7 +1,7 @@
 /*
  * @file main.cpp
  * Part of lab02
- * @author Дима
+ * @author РЁР°Р¶РєРѕ РђСЂС‚РµРј
  * @version 0.0.1
  * @date 2017.01.01
  */
@@ -16,8 +16,8 @@ using namespace std;
 
 int main() {
 
-	Manipulator manip1(5, "Джойстик");
-	Manipulator manip2(2, "Мишка");
+	Manipulator manip1(5, "Г„Г¦Г®Г©Г±ГІГЁГЄ");
+	Manipulator manip2(2, "ГЊГЁГёГЄГ ");
 
 
 	cout << "From Screen" << endl;
