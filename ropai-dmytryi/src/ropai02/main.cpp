@@ -1,7 +1,7 @@
 /*
  * @file main.cpp
  * Part of lab02
- * @author Шажко Артем
+ * @author Dmytryi Ropai
  * @version 0.0.1
  * @date 2017.01.01
  */
