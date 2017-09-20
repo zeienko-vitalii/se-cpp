@@ -42,17 +42,5 @@ void GraphScreen::printData(const Window& data) {
 
 void GraphScreen::printData() {
 
-	for (int i = 0; i < this->data->width(); i++)
-		cout << "1";
-
-	for (int i = 0; i < this->data->height(); i++) {
-		cout << "\n1";
-		for (int j = 1; j < this->data->width() - 1; j++)
-			cout << " ";
-		cout << "1";
-	}
-	cout << "\n";
-	for (int i = 0; i < this->data->width(); i++)
-		cout << "1";
-	cout << "\n";
+	printData(*this->data);
 }
