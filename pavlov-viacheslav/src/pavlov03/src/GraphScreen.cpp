@@ -7,8 +7,6 @@
  */
 
 #include<iostream>
-#include "Window.h"
-#include "BaseScreen.h"
 #include "GraphScreen.h"
 
 GraphScreen::GraphScreen() {
@@ -20,8 +18,8 @@ GraphScreen::~GraphScreen() {
 	cout << "GraphScreen destructor\n";
 }
 
-void GraphScreen::setDataSource(Window window) {
-	this->window = window;
+void GraphScreen::setDataSource(Window data) {
+	this->data = data;
 }
 void GraphScreen::printData(const Window& data) {
 
@@ -42,19 +40,20 @@ void GraphScreen::printData(const Window& data) {
 
 void GraphScreen::printData() {
 
-	printData(this->window);
+	printData(this->data);
 }
 
 void GraphScreen::showHeader() {
+	cout << "\n|--------------------------\n";
 	cout << "Graph screen output\n";
 }
 
 void GraphScreen::showContent() {
-	cout << "WindowId" << this->window.getWindowId() << endl;
+	cout << "WindowId" << this->data.getWindowId() << endl;
 	printData();
 }
 
 void GraphScreen::showFooter() {
-
+	cout << "|--------------------------\n\n";
 }
 

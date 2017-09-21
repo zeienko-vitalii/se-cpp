@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "Window.h"
+#include "BaseScreen.h"
 /**
  * Class which views Window object with use of pseudo-graphic.
  * data - object which must be viewed.

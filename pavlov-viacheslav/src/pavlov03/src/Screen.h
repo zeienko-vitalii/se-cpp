@@ -6,12 +6,11 @@
  * @date 2017.09.09
  */
 #pragma once
-
+#include "BaseScreen.h"
 using namespace std;
 
 /**
  * Class which views information of Window object.
- * window - object which must be viewed.
  */
 class Screen: public BaseScreen {
 
@@ -32,9 +31,16 @@ public:
 	 */
 	void viewWindow();
 
+	/**
+	 * Outputs footer of information.
+	 */
 	virtual void showHeader() override;
-
+	/**
+	 * Outputs main information about window.
+	 */
 	virtual void showContent() override;
-
+	/**
+	 * Outputs header of information.
+	 */
 	virtual void showFooter() override;
 };

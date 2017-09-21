@@ -1,15 +1,28 @@
 /*
- * Button.cpp
- *
- *  Created on: 20 сент. 2017 г.
- *      Author: JR_Rider
- */
+ * @file Button.cpp
+ * Button functions realization.
+ * @author pavlov-vs
+ * @version 0.0.1
+ * @date 2017.09.09
+ **/
 #include <iostream>
-#include "Window.h"
 #include "Button.h"
 
 Button::Button() {
 	// TODO Auto-generated constructor stub
+
+}
+
+Button::Button(string label, string borderColor) :
+		label(label), borderColor(borderColor) {
+	// TODO Auto-generated constructor stub
+
+}
+
+Button::Button(int _windowId, int _x1, int _y1, int _x2, int _y2, string label,
+		string borderColor) :
+		Window(_windowId, _x1, _y1, _x2, _y2), label(label), borderColor(
+				borderColor) {
 
 }
 

@@ -1,11 +1,12 @@
-/*
- * ButtonScreen.cpp
- *
- *  Created on: 21 сент. 2017 г.
- *      Author: JR_Rider
+/**
+ * @file ButtonScreen.cpp
+ * ButtonScreen functions realization.
+ * @author pavlov-vs
+ * @version 0.0.1
+ * @date 2017.09.09
  */
 #include<iostream>
-#include"Button.h"
+
 #include "ButtonScreen.h"
 
 ButtonScreen::ButtonScreen() {
@@ -17,10 +18,30 @@ ButtonScreen::~ButtonScreen() {
 	// TODO Auto-generated destructor stub
 }
 
+ButtonScreen::ButtonScreen(Button button) :
+		data(button) {
+	// TODO Auto-generated constructor stub
+
+}
+
 void ButtonScreen::setButton(Button button) {
 
 }
 void ButtonScreen::viewButton() {
-	cout << "Label: " << this->button.getLabel() << endl;
-	cout << "Border color: " << this->button.getBorderColor() << endl;
+	cout << "Label: " << this->data.getLabel() << endl;
+	cout << "Border color: " << this->data.getBorderColor() << endl;
+}
+
+void ButtonScreen::showHeader() {
+	cout << "\n|--------------------------\n";
+	cout << "ButtonScreen output\n";
+}
+
+void ButtonScreen::showContent() {
+	viewWindow();
+	viewButton();
+}
+
+void ButtonScreen::showFooter() {
+	cout << "|--------------------------\n\n";
 }

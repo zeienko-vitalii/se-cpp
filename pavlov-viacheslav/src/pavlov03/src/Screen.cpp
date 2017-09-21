@@ -8,8 +8,6 @@
 
 #include<iostream>
 
-#include "Window.h"
-#include "BaseScreen.h"
 #include "Screen.h"
 
 using namespace std;
@@ -32,14 +30,15 @@ Screen::Screen(Window window) {
 
 void Screen::viewWindow() {
 
-	cout << "windowId = " << window.getWindowId() << "\n";
-	cout << "x1 = " << window.getX1() << " ";
-	cout << "y1 = " << window.getY1() << "\n";
-	cout << "x2 = " << window.getX2() << " ";
-	cout << "y2 = " << window.getY2() << "\n";
+	cout << "windowId = " << data.getWindowId() << "\n";
+	cout << "x1 = " << data.getX1() << " ";
+	cout << "y1 = " << data.getY1() << "\n";
+	cout << "x2 = " << data.getX2() << " ";
+	cout << "y2 = " << data.getY2() << "\n";
 }
 
 void Screen::showHeader() {
+	cout << "\n|--------------------------\n";
 	cout << "Screen output\n";
 }
 
@@ -48,6 +47,6 @@ void Screen::showContent() {
 }
 
 void Screen::showFooter() {
-
+	cout << "|--------------------------\n\n";
 }
 

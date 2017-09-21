@@ -1,12 +1,12 @@
-/*
- * BaseScreen.cpp
- *
- *  Created on: 20 сент. 2017 г.
- *      Author: JR_Rider
+/**
+ * @file BaseScreen.cpp
+ * BaseScreen functions realization.
+ * @author pavlov-vs
+ * @version 0.0.1
+ * @date 2017.09.09
  */
 #include<iostream>
 
-#include "Window.h"
 #include "BaseScreen.h"
 
 BaseScreen::BaseScreen() {
@@ -19,21 +19,22 @@ BaseScreen::~BaseScreen() {
 }
 
 BaseScreen::BaseScreen(Window window) :
-		window(window) {
+		data(window) {
 	// TODO Auto-generated constructor stub
 
 }
 
 void BaseScreen::showHeader() {
-	cout << "Base screen output\n";
+	cout << "\n|--------------------------\n";
+	cout << "|Base screen output\n";
 }
 
 void BaseScreen::showContent() {
-	cout << "WindowId" << this->window.getWindowId() << endl;
+	cout << "WindowId" << this->data.getWindowId() << endl;
 }
 
 void BaseScreen::showFooter() {
-
+	cout << "|--------------------------\n\n";
 }
 
 void BaseScreen::Display() {
