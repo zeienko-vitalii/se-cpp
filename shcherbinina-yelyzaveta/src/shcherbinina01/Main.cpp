@@ -1,20 +1,24 @@
 /*
- * Main.cpp
- * Created on: 10 сент. 2017 г.
- * Author: shcherbinina
- * Description: point of entry
+ * @file Main.cpp
+ * Точка входу в програму
+ * @date 2017.09.10
+ * @author shcherbinina
  */
-#include <CScreen.h>
+#include "Screen.h"
 #include <iostream>
-#include <stdio.h>
-#include <Windows.h>
 
-//point of entry
+
+/**
+* Точка входу в програму
+*/
 int main() {
+	setlocale(LC_ALL, "Russian");
 
-	Capacity cCapacity1(F, 200);
-	CScreen view;
-	view.view(cCapacity1);
+	Capacity capacity(ml, 200);
+	Screen view(capacity);
+	view.view();
 
+	system("pause");
+	return 0;
 }
 

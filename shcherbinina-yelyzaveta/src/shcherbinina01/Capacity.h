@@ -1,18 +1,28 @@
 /*
- * Capacity.h
- * Created on: 10 сент. 2017 г.
- * Author: shcherbinina
- * Description: Capacity declaration
+ * @file Capacity.h
+ * Містить опис об'єкту класа Capacity
+ * @date 2017.09.10
+ * @author shcherbinina
  */
 
 #ifndef CAPACITY_H_
 #define CAPACITY_H_
 
-#include <Windows.h>
-enum unit { F, mkF, nF, pF };
+#include <iostream>
+using namespace std;
+enum units { ml, l };
 
-//CLASS DECLARATION
+/**
+* Клас, що містить реалізацію ємності.
+*/
 class Capacity {
+	/**
+	* Перевантаження оператора виводу для коректного відображення об'єкта класу
+	* @param out - поток виводу
+	* @param capacity - об'єкт, що виводиться
+	* @return форматований поток із даними
+	*/
+	friend ostream& operator <<(ostream& out, Capacity capacity);
 public:
 	/**
 		 * Конструктор без параметра
@@ -20,23 +30,23 @@ public:
 	Capacity();
 	/**
 		 * Конструктор з параметрами
-		 * @param _unit Задає одиницю вимірювання
-		 * @param _v Задає об'єм
+		 * @param _unit - Задає одиницю вимірювання
+		 * @param _v - Задає об'єм
 		 */
-	Capacity(unit _unit, float _v);
+	Capacity(units _unit, float _v);
 	/**
 		 * Конструктор копіювання
-		 * @param _Capacity Вихідний об'єкт із даними для копіювання
+		 * @param _Capacity - Вихідний об'єкт із даними для копіювання
 		 */
 	Capacity(const Capacity& _Capacity);
 	/**
 		 * Деструктор
 		 */
-	~Capacity();
+	virtual ~Capacity();
 public:
-	//одиниця вимірювання
-	unit _unit;
-	//об'єм
+	///одиниця вимірювання
+	units unit;
+	///об'єм
 	float v;
 };
 

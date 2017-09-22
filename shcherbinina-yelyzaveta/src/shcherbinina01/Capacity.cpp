@@ -1,30 +1,36 @@
 /*
- * Capacity.cpp
- * Created on: 10 сент. 2017 г.
- * Author: shcherbinina
- * Description: Capacity implementation
- */
+* @file Capacity.cpp
+* Містить реалізацію класа Capacity
+* @date 2017.09.10
+* @author shcherbinina
+*/
 
 #include "Capacity.h"
-#include <Windows.h>
+#include <iostream>
 
-//Конструктор без параметра
-Capacity::Capacity() {
-	_unit = F;
-	v = 0;
+using namespace std;
 
+///Конструктор без параметра
+Capacity::Capacity() : unit(l), v(1){
+	cout << "Capacity constructor\n";
 }
-//Конструктор копіювання
-Capacity::Capacity(const Capacity& _Capacity){
-	_unit = _Capacity._unit;
-	v = _Capacity.v;
-}
-//Деструктор
+///Деструктор
 Capacity::~Capacity() {
-	OutputDebugString("Destructor is called\n");
+	cout << "Capacity destructor\n";
 }
-//Конструктор із параметрами
-Capacity::Capacity(unit unitc, float _v){
-	_unit = unitc;
-	v = _v;
+///Конструктор копіювання
+Capacity::Capacity(const Capacity& capacity) : unit(capacity.unit), v(capacity.v){
+	cout << "Capacity copy constructor\n";
+}
+///Конструктор із параметрами
+Capacity::Capacity(units _unit, float _v) : unit(_unit), v(_v){
+	cout << "Capacity constructor with parametrs\n";
+}
+///Перевантаження оператора виводу для коректного відображення об'єкта класу
+ostream& operator <<(ostream& out, Capacity capacity){
+	switch (capacity.unit){
+	case ml: return (out << "Об'єм = " << capacity.v << " мл" << endl); break;
+	case l: return (out << "Об'єм = " << capacity.v << " л" << endl); break;
+	}
+	return out;
 }
