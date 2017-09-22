@@ -113,9 +113,11 @@
   <ItemGroup>
     <ClCompile Include="CScreen.cpp" />
     <ClCompile Include="CWheel.cpp" />
+    <ClCompile Include="GraphScreen.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CGraphScreen.h" />
     <ClInclude Include="CScreen.h" />
     <ClInclude Include="CWheel.h" />
   </ItemGroup>

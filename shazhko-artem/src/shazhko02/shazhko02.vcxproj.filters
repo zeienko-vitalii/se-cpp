@@ -24,12 +24,18 @@
     <ClCompile Include="CScreen.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="GraphScreen.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CWheel.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
     <ClInclude Include="CScreen.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraphScreen.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

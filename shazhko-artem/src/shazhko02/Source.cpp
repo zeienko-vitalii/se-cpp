@@ -1,5 +1,6 @@
 #include "CWheel.h"
 #include "CScreen.h"
+#include "CGraphScreen.h"
 #include <iostream>
 
 int main() {
@@ -11,6 +12,15 @@ int main() {
 	screen1->PrintData();
 	CScreen *screen2 = new CScreen(*iWheel2);
 	screen2->PrintData();
+	
+	std::cout << "\n\n============= CGraphScreen =============\n";
+
+	CGraphScreen graphScreen;
+	graphScreen.PrintData(iWheel1);
+	std::cout << "\n";
+	graphScreen.SetDataSource(iWheel2);
+	graphScreen.PrintData();
+
 	delete screen1;
 
 	delete screen2;
