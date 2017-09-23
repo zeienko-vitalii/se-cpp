@@ -29,3 +29,9 @@ TEST_F(TestClassInstances, BaseClassInstanceOfChildClass_falseReturn) {
 	ASSERT_EQ(expected, actual);
 }
 
+TEST_F(TestClassInstances, castChildToBase_checkInstantiation_trueRet) {
+	ChildClass c;
+	BaseClass * base = &c;
+	bool t = instanceof<ChildClass>(base);
+	ASSERT_TRUE(t);
+}
