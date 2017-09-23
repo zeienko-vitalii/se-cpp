@@ -41,15 +41,24 @@ public:
 	*/
 	CWheel(const CWheel *wheel);
 
-	/*
+	/**
 	* Деструктор
 	*/
 	virtual ~CWheel();
 	/**
 	* Подсчет объема колеса
+	* @return Объем колеса
 	*/
 	double Volume() const;
+	/**
+	* Единицы измерения
+	* @return Объем колеса
+	*/
 	EUnit GetUnit() const;
+	/**
+	* Конвертирует тип EUnit в String
+	* @return строка описывающая значение объекта EUnit
+	*/
 	static std::string ConvertEUnitToString(const EUnit _unit);
 private:
 	// Единицы измерения
