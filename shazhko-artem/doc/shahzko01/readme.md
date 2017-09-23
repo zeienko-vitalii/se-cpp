@@ -1,4 +1,4 @@
-# Стекові об'єкти. Конструктор, деструктор, відображення, передача
+﻿# Стекові об'єкти. Конструктор, деструктор, відображення, передача
  
 ## Мета 
  
@@ -14,18 +14,18 @@
 ## 2.2 Іерархія та структура класів
 Ієрархія класів на рис. 2.1
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/source/image1.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shahzko01/source/image1.png)
 Рисунок 2.1 – Ієрархія класів
 
 ## Опис програми
 Структура проекту на рис. 2.2
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/source/image2.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shahzko01/source/image2.png)
  Рисунок 2.2 – структура проекту
  
  Призначення класів на рис. 2.3
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/source/image3.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shahzko01/source/image3.png)
  
  Маємо 2 класи та одну структуру. People, PeopleViewer та Date. People описує людину, тобто ріст, вагу та дату народження. PeopleViewer використовується для виводу даних з об’єкту People у консоль. Date структура для зручної роботи с датами. У функції main() відображена робота програми.
  
@@ -37,7 +37,7 @@
   ## 3. Результати роботи
   Результати роботи показано на рис. 3.1
   
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/source/image4.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shahzko01/source/image4.png)
 
   Рисунок 3.1 – Результати роботи
   
