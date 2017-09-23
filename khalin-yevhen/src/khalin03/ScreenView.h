@@ -13,7 +13,7 @@
 /**
 * @brief Prints features of the data source into an output stream
 */
-class ScreenView : BaseView
+class ScreenView : public BaseView
 {
 public:
 	/**

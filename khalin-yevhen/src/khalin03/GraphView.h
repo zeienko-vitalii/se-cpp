@@ -13,7 +13,7 @@
 /**
 * @brief Prints graphical representation of the data source into an output stream
 */
-class GraphView : BaseView
+class GraphView : public BaseView
 {
 public:
 

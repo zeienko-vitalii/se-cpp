@@ -15,7 +15,7 @@
 * is an instance of the KeyboardButton class, otherwise works with incoming object
 * like ScreenView class.
 */
-class SpecView : BaseView
+class SpecView : public BaseView
 {
 public:
 
