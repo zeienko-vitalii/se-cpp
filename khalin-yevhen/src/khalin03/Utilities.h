@@ -2,16 +2,18 @@
 * @file Utilities.h
 * @brief Contains different utilities
 * @author Khalin Yevhen
-* @version 0.0.1
+* @version 0.0.2
 * @date 22.09.17
 */
 
 #pragma once
 
 /**
-* @brief Compares the type of the argument with specified Base type in the template
-* @return true if the 'T' type is a subtype of the 'Base' type
+* @brief Compares 'obj' type with specified 'Base' type in the template.
+*
+* @warning 'obj' must be an instance of a polymorphic type.
+* @return true if a type of the 'obj' is a subtype of the 'Base' type.
 */
-template<typename Base, typename T> inline bool instanceof(const T*) {
-	return std::is_base_of<Base, T>::value;
+template<typename Base, typename T> inline bool instanceof(T* obj) {
+	return dynamic_cast<Base*>(obj);
 }
