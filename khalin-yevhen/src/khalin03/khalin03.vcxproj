@@ -103,7 +103,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\root\common\khpi\ИПЗ\SVN\libs\googleTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\root\common\khpi\ИПЗ\khalin\src\khalin03;E:\root\common\khpi\ИПЗ\SVN\libs\googleTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,7 +146,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseView.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="GraphView.cpp" />
+    <ClCompile Include="KeyboardButton.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ScreenView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseView.h" />
+    <ClInclude Include="SpecView.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="ButtonForm.h" />
+    <ClInclude Include="GraphView.h" />
+    <ClInclude Include="KeyboardButton.h" />
+    <ClInclude Include="ScreenView.h" />
+    <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
