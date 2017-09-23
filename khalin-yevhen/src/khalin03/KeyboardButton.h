@@ -13,7 +13,7 @@
 /**
 * @brief Represents keyboard button
 */
-class KeyboardButton : Button
+class KeyboardButton : public Button
 {
 public:
 	/**
