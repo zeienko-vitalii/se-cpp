@@ -1,6 +1,6 @@
-/**
+п»ї/**
 * @file CGraphScreen.cpp
-* @brief Содержит реализацию класса CGraphScreen
+* @brief вЂ”РѕРґРµСЂР¶РёС‚ СЂРµР°Р»РёР·Р°С†РёСЋ РєР»Р°СЃСЃР° CGraphScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17

@@ -1,6 +1,6 @@
-/**
+п»ї/**
 * @file CScreen.cpp
-* @brief Содержит реализацию класса CScreen
+* @brief вЂ”РѕРґРµСЂР¶РёС‚ СЂРµР°Р»РёР·Р°С†РёСЋ РєР»Р°СЃСЃР° CScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17

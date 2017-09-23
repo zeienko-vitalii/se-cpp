@@ -1,6 +1,6 @@
-/**
+п»ї/**
 * @file CGraphScreen.h
-* @brief Содержит объявление класса  CGraphScreen
+* @brief РЎРѕРґРµСЂР¶РёС‚ РѕР±СЉСЏРІР»РµРЅРёРµ РєР»Р°СЃСЃР°  CGraphScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -12,32 +12,32 @@ class CGraphScreen
 {
 public:
 	/**
-	* Конструктор по-умолчанию
+	* РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
 	*/
 	CGraphScreen();
 	/**
-	* Деструктор
+	* Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	*/
 	virtual ~CGraphScreen();
 	/**
-	* Задать данные колеса
-	* @param _wheel колесо
+	* Р—Р°РґР°С‚СЊ РґР°РЅРЅС‹Рµ РєРѕР»РµСЃР°
+	* @param _wheel РєРѕР»РµСЃРѕ
 	*/
 	void SetDataSource(const CWheel &_wheel);
 	/**
-	* Задать данные колеса
-	* @return Данные колеса
+	* Р—Р°РґР°С‚СЊ РґР°РЅРЅС‹Рµ РєРѕР»РµСЃР°
+	* @return Р”Р°РЅРЅС‹Рµ РєРѕР»РµСЃР°
 	*/
 	CWheel GetDataSource()const;
 	/**
-	* Вывод данных объекта
+	* Р’С‹РІРѕРґ РґР°РЅРЅС‹С… РѕР±СЉРµРєС‚Р°
 	*/
 	void PrintData(const CWheel &_wheel);
 	/**
-	* Вывод данных объекта
+	* Р’С‹РІРѕРґ РґР°РЅРЅС‹С… РѕР±СЉРµРєС‚Р°
 	*/
 	void PrintData();
 private:
-	// колесо
+	// РєРѕР»РµСЃРѕ
 	CWheel *wheel;
 };
