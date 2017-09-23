@@ -16,9 +16,29 @@
 */
 class TestClassInstances : public ::testing::Test {
 protected:
-	class BaseClass { } base;
-	class ChildClass : BaseClass { } child;
-	class OtherClass { } other;
+	
+	class BaseClass {
+	public:
+
+		/**
+		* @brief According to 'instanceof' function description
+		* any incoming object must be an instance of a polymorphic type
+		*/
+		virtual void smth() {} 
+	} base;
+
+	class ChildClass : public BaseClass {
+
+	} child;
+
+	class OtherClass {
+	public:
+		/**
+		* @brief According to 'instanceof' function description
+		* any incoming object must be an instance of a polymorphic type
+		*/
+		virtual void smth() {}
+	} other;
 public:
 	BaseClass * getBaseClassInstance() { return &base; }
 	ChildClass * getChildClassInstance() { return &child; }
