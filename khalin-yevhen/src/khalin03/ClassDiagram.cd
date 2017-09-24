@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaseView">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAkgAgAAAAAAAAAgAAAAAABEBABAAEAEAAAEAAAA=</HashCode>
+      <FileName>BaseView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GraphView">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgAAAAAAAAAAAAgAAAAAAAABAABAAAAAAAAAAAA=</HashCode>
+      <FileName>GraphView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScreenView">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAgAABAAAAABAAAAAAAAAAAAABA=</HashCode>
+      <FileName>ScreenView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpecView&lt;T&gt;">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAEAAAAAAAAgAAAAAAAABEAAAgAAAAAAAAAA=</HashCode>
+      <FileName>SpecView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Button">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAAAoAAAAAAAAAAAAAAAAAAAAAgABAAAAEAAAEAAAA=</HashCode>
+      <FileName>Button.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KeyboardButton">
+    <Position X="4.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAoAAEAAAAAAAEAIAAAAA=</HashCode>
+      <FileName>KeyboardButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ButtonForm">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKA=</HashCode>
+      <FileName>ButtonForm.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
