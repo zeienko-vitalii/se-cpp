@@ -17,6 +17,6 @@ CScreen::~CScreen(){
 void  CScreen::PrintData(){
 	std::cout << "\tDiameter: " << wheel->diameter << "\n" <<
 		"\tWidth: " << wheel->width << "\n" <<
-		"\tWidth: " << wheel->ConvertEUnitToString(wheel->GetUnit()) << "\n" <<
+		"\tUnits: " << wheel->ConvertEUnitToString(wheel->GetUnits()) << "\n" <<
 		"Volume: " << wheel->Volume() << "\n";
 }

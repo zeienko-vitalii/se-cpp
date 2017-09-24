@@ -9,11 +9,11 @@
 #define _USE_MATH_DEFINES // for C++  
 #include <cmath>  
 
-CWheel::CWheel() : diameter(0), width(0), unit(EUNIT_CENTIMETERS) { }
-CWheel::CWheel(double _diameter, double _width, EUnit _unit) : diameter(_diameter), width(_width), unit(_unit) {}
+CWheel::CWheel() : diameter(0), width(0), units(EUNITS_CENTIMETERS) { }
+CWheel::CWheel(double _diameter, double _width, EUnits _units) : diameter(_diameter), width(_width), units(_units) {}
 CWheel::CWheel(const CWheel *wheel) {
 	this->diameter = wheel->diameter;
-	this->unit = wheel->unit;
+	this->units = wheel->units;
 	this->width = wheel->width;
 }
 CWheel::~CWheel() {}
@@ -21,20 +21,20 @@ double CWheel::Volume() const {
 	if (diameter == 0) return 0;
 	return 3.14159265358979323846*pow(diameter / 2, 2)*width; // V=πR^2/h пускай колесо это цилиндр =)
 }
-EUnit CWheel::GetUnit() const {
-	return this->unit;
+EUnits CWheel::GetUnits() const {
+	return this->units;
 }
 
-std::string CWheel::ConvertEUnitToString(const EUnit _unit) {
-	switch (_unit)
+std::string CWheel::ConvertEUnitToString(const EUnits _units) {
+	switch (_units)
 	{
-	case EUNIT_CENTIMETERS: {
+	case EUNITS_CENTIMETERS: {
 		return std::string("CENTIMETERS");
 	}
-	case EUNIT_INCHES: {
+	case EUNITS_INCHES: {
 		return std::string("INCHES");
 	}
-	case EUNIT_MILLIMETRES: {
+	case EUNITS_MILLIMETRES: {
 		return std::string("MILLIMETRES");
 	}
 	default:

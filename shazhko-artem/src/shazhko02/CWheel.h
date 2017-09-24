@@ -10,9 +10,9 @@
 /**
 * Перечисление единиц измерения
 */
-enum EUnit
+enum EUnits
 {
-	EUNIT_CENTIMETERS, EUNIT_MILLIMETRES, EUNIT_INCHES
+	EUNITS_CENTIMETERS, EUNITS_MILLIMETRES, EUNITS_INCHES
 };
 
 /**
@@ -34,7 +34,7 @@ public:
 	* @param _width Шырина
 	* @param _unit Единицы измерения
 	*/
-	CWheel(double _diameter, double _width, EUnit _unit);
+	CWheel(double _diameter, double _width, EUnits _unit);
 	/**
 	* Конструктор копировнаия
 	* @param wheel копируемый объект
@@ -54,13 +54,13 @@ public:
 	* Единицы измерения
 	* @return Объем колеса
 	*/
-	EUnit GetUnit() const;
+	EUnits GetUnits() const;
 	/**
 	* Конвертирует тип EUnit в String
 	* @return строка описывающая значение объекта EUnit
 	*/
-	static std::string ConvertEUnitToString(const EUnit _unit);
+	static std::string ConvertEUnitToString(const EUnits _unit);
 private:
 	// Единицы измерения
-	EUnit unit;
+	EUnits units;
 };
