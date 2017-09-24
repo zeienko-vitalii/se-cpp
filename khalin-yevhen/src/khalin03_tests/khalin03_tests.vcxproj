@@ -153,10 +153,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="TestUtilities.cpp" />
+    <ClCompile Include="emptyTestClasses.cpp" />
+    <ClCompile Include="utilitiesTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TestClassInstances.h" />
+    <ClInclude Include="emptyTestClasses.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

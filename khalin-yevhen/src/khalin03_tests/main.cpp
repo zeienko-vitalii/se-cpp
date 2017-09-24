@@ -7,7 +7,6 @@
 */
 
 #include <gtest\gtest.h>
-#include "TestClassInstances.h"
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
