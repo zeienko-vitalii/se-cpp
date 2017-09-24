@@ -8,28 +8,28 @@
 
 #include "emptyTestClasses.h"
 
-TEST(TestClassInstances, OtherClassInstanceOfBase_falseReturn) {
+TEST(testInstanceofFunction, OtherInstanceofBase_falseReturn) {
 	EmptyOtherClass other;
 	bool expected = false;
 	bool actual = instanceof<EmptyBaseClass>(&other);
 	ASSERT_EQ(expected, actual);
 }
 
-TEST(TestClassInstances, ChildClassInstanceOfBase_trueReturn) {
+TEST(testInstanceofFunction, ChildInstanceofBase_trueReturn) {
 	EmptyChildClass child;
 	bool expected = true;
 	bool actual = instanceof<EmptyBaseClass>(&child);
 	ASSERT_EQ(expected, actual);
 }
 
-TEST(TestClassInstances, BaseClassInstanceOfChildClass_falseReturn) {
+TEST(testInstanceofFunction, BaseInstanceofChild_falseReturn) {
 	EmptyBaseClass base;
 	bool expected = false;
 	bool actual = instanceof<EmptyChildClass>(&base);
 	ASSERT_EQ(expected, actual);
 }
 
-TEST(TestClassInstances, castChildToBase_checkInstantiation_trueRet) {
+TEST(testInstanceofFunction, castChildToBase_trueReturn) {
 	EmptyChildClass c;
 	EmptyBaseClass *base = &c;
 	bool expected = true;
