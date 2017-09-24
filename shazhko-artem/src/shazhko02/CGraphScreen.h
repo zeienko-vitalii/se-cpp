@@ -7,9 +7,25 @@
 */
 #pragma once
 #include "CWheel.h"
-
+#include <Windows.h>
+/**
+* Класс описывающий расширенное отображение объектов класса CWheel
+*/
 class CGraphScreen
 {
+private:
+	/**
+	* Напечатает линию соответствующую толщине колеса, относительно заданных координат
+	* @param width Ширина колеса
+	* @param pos Координаты
+	*/
+	void PrintWidth(double width, COORD pos);
+	/**
+	* Напечатает разделительную линию, относительно заданных координат
+	* @param width Ширина колеса
+	* @param pos Координаты
+	*/
+	void PrintLine(double width, SHORT pos);
 public:
 	/**
 	* Конструктор по-умолчанию

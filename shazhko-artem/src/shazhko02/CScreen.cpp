@@ -1,6 +1,6 @@
 ﻿/**
 * @file CScreen.cpp
-* @brief —одержит реализацию класса CScreen
+* @brief Содержит реализацию класса CScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17

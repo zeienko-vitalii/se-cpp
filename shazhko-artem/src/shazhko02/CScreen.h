@@ -7,7 +7,9 @@
 */
 #pragma once
 #include "CWheel.h"
-
+/**
+* Класс описывающий отображение объектов класса CWheel
+*/
 class CScreen {
 public:
 	/**

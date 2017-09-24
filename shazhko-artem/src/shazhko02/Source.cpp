@@ -4,8 +4,8 @@
 #include <iostream>
 
 int main() {
-	CWheel *iWheel1 = new CWheel(2, 2, EUNIT_CENTIMETERS);
-	CWheel *iWheel2 = new CWheel(4, 2, EUNIT_CENTIMETERS);
+	CWheel *iWheel1 = new CWheel(6, 5, EUNIT_CENTIMETERS);
+	CWheel *iWheel2 = new CWheel(8, 3, EUNIT_CENTIMETERS);
 
 	std::cout << "============= CScreen =============\n";
 	CScreen *screen1 = new CScreen(*iWheel1);
