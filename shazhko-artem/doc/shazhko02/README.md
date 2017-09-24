@@ -126,9 +126,9 @@ int main() {
 
 <p align="center">
 
-![призначення класів](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko02/source/image5.png)
+![призначення класів](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko02/source/image5.png) 
  Рисунок 3.1 результат роботи
 </p>
 
-##ВИСНОВКИ
+## ВИСНОВКИ
 В результаті лабораторної роботи було розроблено програму з використанням прав доступу та const методів. Були придбані навички роботи з цими технологіями.
