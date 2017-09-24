@@ -1,6 +1,6 @@
-/**
-* @file ÑGraphScreen.cpp
-* @brief Ñîäåðæèò ðåàëèçàöèþ êëàññà CGraphScreen
+ï»¿/**
+* @file Ð¡GraphScreen.cpp
+* @brief Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ñ€ÐµÐ°Ð»Ð¸Ð·Ð°Ñ†Ð¸ÑŽ ÐºÐ»Ð°ÑÑÐ° CGraphScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -37,33 +37,33 @@ void CGraphScreen::PrintData(const CWheel& data) {
 	SHORT radius = ((SHORT)diameter) >> 1;
 	CONSOLE_SCREEN_BUFFER_INFO cursorinfo;
 	PrintLine(data.width, (SHORT)data.diameter);
-	if (!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorinfo)){ std::cout << "\nERROR\n"; return; }
+	if (!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorinfo)) { std::cout << "\nERROR\n"; return; }
 	cursorinfo.dwCursorPosition.X = radius;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { cursorinfo.dwCursorPosition.X,cursorinfo.dwCursorPosition.Y });
 
 	for (SHORT i = 0; i <= radius; i++)std::cout << "*";
-	this->PrintWidth(data.width, { diameter <<1, cursorinfo.dwCursorPosition.Y });
+	this->PrintWidth(data.width, { diameter << 1, cursorinfo.dwCursorPosition.Y });
 	for (SHORT i = 1; i < diameter; i++) {
 		cursorinfo.dwCursorPosition.Y++;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (SHORT)abs(radius - i),cursorinfo.dwCursorPosition.Y});
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (SHORT)abs(radius - i),cursorinfo.dwCursorPosition.Y });
 		std::cout << "*";
-		if (i <=radius) SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { ( diameter + i),cursorinfo.dwCursorPosition.Y });
+		if (i <= radius) SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (diameter + i),cursorinfo.dwCursorPosition.Y });
 		else
-			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (diameter + (radius-(i-radius))),cursorinfo.dwCursorPosition.Y});
+			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (diameter + (radius - (i - radius))),cursorinfo.dwCursorPosition.Y });
 		std::cout << "*";
-		this->PrintWidth(data.width, {diameter << 1, cursorinfo.dwCursorPosition.Y });
-		}
-		cursorinfo.dwCursorPosition.Y++;
-		cursorinfo.dwCursorPosition.X = radius;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { cursorinfo.dwCursorPosition.X,cursorinfo.dwCursorPosition.Y });
-		for (SHORT i = 0; i <= radius; i++)std::cout << "*";
 		this->PrintWidth(data.width, { diameter << 1, cursorinfo.dwCursorPosition.Y });
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (SHORT)0,cursorinfo.dwCursorPosition.Y+1 });
-		
-		PrintLine(data.width, (SHORT)data.diameter);
 	}
+	cursorinfo.dwCursorPosition.Y++;
+	cursorinfo.dwCursorPosition.X = radius;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { cursorinfo.dwCursorPosition.X,cursorinfo.dwCursorPosition.Y });
+	for (SHORT i = 0; i <= radius; i++)std::cout << "*";
+	this->PrintWidth(data.width, { diameter << 1, cursorinfo.dwCursorPosition.Y });
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (SHORT)0,cursorinfo.dwCursorPosition.Y + 1 });
+
+	PrintLine(data.width, (SHORT)data.diameter);
+}
 	
-	void CGraphScreen::PrintData()
-	{	
+void CGraphScreen::PrintData()
+{
 	PrintData(this->wheel);
-	}
+}
