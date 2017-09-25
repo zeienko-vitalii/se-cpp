@@ -1,7 +1,7 @@
 /*
  * @file main.cpp
  * Part of lab02
- * @author Dmytryi Ropai
+ * @author Дима
  * @version 0.0.1
  * @date 2017.01.01
  */
@@ -16,8 +16,8 @@ using namespace std;
 
 int main() {
 
-	Manipulator manip1(5, "Г„Г¦Г®Г©Г±ГІГЁГЄ");
-	Manipulator manip2(2, "ГЊГЁГёГЄГ ");
+	Manipulator manip1(5, "Joystick");
+	Manipulator manip2(2, "Mouse");
 
 
 	cout << "From Screen" << endl;
@@ -41,6 +41,12 @@ int main() {
 
 	cout << "manip2: " << endl;
 	gscreen.printData(manip2);
+
+	cout << "Кількість кнопок дві або менше? (manip1):" << manip1.isSimple() << endl;
+	cout << "Кількість кнопок більша або рівна 4? (manip1):" << manip1.isGame() << endl;
+	cout << "" <<endl;
+	cout << "Кількість кнопок дві або менше? (manip2):" << manip2.isSimple() << endl;
+	cout << "Кількість кнопок більша або рівна 4? (manip2):" << manip2.isGame() << endl;
 
 		return 0;
 }
