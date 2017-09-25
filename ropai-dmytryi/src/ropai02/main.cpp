@@ -11,13 +11,19 @@
 #include "Manipulator.h"
 #include "GraphScreen.h"
 #include "Screen.h"
+#include <string>
 
 using namespace std;
 
 int main() {
 
-	Manipulator manip1(5, "Joystick");
-	Manipulator manip2(2, "Mouse");
+	const int COUNT_MANIP1 = 5;
+	const string TYPE_MANIP1 = "Joystick";
+	Manipulator manip1(COUNT_MANIP1, TYPE_MANIP1 );
+
+	const int COUNT_MANIP1 = 2;
+	const string TYPE_MANIP2 = "Mouse";
+	Manipulator manip2(COUNT_MANIP1, TYPE_MANIP2);
 
 
 	cout << "From Screen" << endl;
