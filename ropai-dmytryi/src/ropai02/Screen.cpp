@@ -25,8 +25,8 @@ Screen::Screen(Manipulator manip): manip(manip){
 
 void Screen::dataOutput(){
 	cout << "" << endl;
-	cout << "Тип пристрою: " << manip.getType() << endl;
-	cout << "Кількість кнопок: " << manip.getCount() << endl;
+	cout << "Device type: " << manip.getType() << endl;
+	cout << "Number of buttons: " << manip.getCount() << endl;
 	cout << "" << endl;
 }
 

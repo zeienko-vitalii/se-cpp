@@ -17,7 +17,9 @@ public:
 	Manipulator manip;
 
 public:
-
+	/**
+	 * Конструктор без параметрів
+	 */
 	Screen();
 
 	/**

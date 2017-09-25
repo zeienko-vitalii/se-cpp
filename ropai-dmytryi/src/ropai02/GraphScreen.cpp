@@ -13,7 +13,7 @@
 
 using namespace std;
 
-GraphScreen::GraphScreen(): manip() {
+GraphScreen::GraphScreen(): manip(){
 	cout << "" << endl;
 	cout << "GraphScreen constructor" << endl;
 
@@ -23,17 +23,41 @@ void GraphScreen::setDataSource(const Manipulator* manip){
 	this->manip = manip;
 }
 
+
 void GraphScreen::printData(const Manipulator& manip){
 
+
+	cout  << "           /	        \n";
+	cout  << "          /	        \n";
+	cout  << "         /	        \n";
+	cout  << "        /	            \n";
+	cout  << "       /           	\n";
+	cout  << "       \\	            \n";
+	cout  << "        \\	        \n";
+	cout  << "         \\	        \n";
+	cout  << "          \\	        \n";
+	cout  << "       ---------  	\n";
+	cout  << "      /   **    \\	\n";
+	cout  << "     /    **     \\   \n";
+	cout  << "     |    ||      |	\n";
+	cout  << "     |    ||      | 	\n";
+	cout  << "     |            | 	\n";
+	cout  << "     |            | 	\n";
+	cout  << "     |            | 	\n";
+	cout  << "      \\          / 	\n";
+	cout  << "       \\        / 	\n";
+	cout  << "        --------	    \n";
+
+
 	cout << "" << endl;
-	cout << "Тип пристрою: " << manip.getType() << endl;
-	cout << "Кількість кнопок: " << manip.getCount() << endl;
+	cout << "Device type: " << manip.getType() << endl;
+	cout << "Number of buttons: " << manip.getCount() << endl;
 	cout << "" << endl;
 }
 
 void GraphScreen::printData(){
 
-
+	printData(*manip);
 
 }
 
