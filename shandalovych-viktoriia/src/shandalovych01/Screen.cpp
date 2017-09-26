@@ -1,8 +1,8 @@
 /*
- * Screen.cpp
- *
- *  Created on: 10 сент. 2017 г.
- *      Author: Viktotia
+ * @file Screen.cpp
+ * Содержит реализация класса для вывода объекта колесо .
+ * @date 10 сент. 2017 г.
+ * @Author: Viktotia
  */
 
 #include <iostream>
@@ -18,8 +18,8 @@ Screen::Screen() {
 Screen::~Screen() {
 	// TODO Auto-generated destructor stub
 }
-Screen::Screen(Wheel wheel) {
-	this->wheel = wheel;
+Screen::Screen(Wheel wheel): wheel(wheel) {
+	cout << "Вызов коструктора с параметром\n";
 }
 
 void Screen::ViewWheel() {

@@ -1,8 +1,8 @@
 /*
- * Wheel.cpp
- *
- *  Created on: 10 сент. 2017 г.
- *      Author: Viktotia
+ * @file Wheel.cpp
+ * Содержит реализацию класса "Колесо".
+ * @date 10 сент. 2017 г.
+ * @Author: Viktotia
  */
 
 #include <iostream>
@@ -12,23 +12,17 @@
 
 using namespace std;
 
-Wheel::Wheel() {
-	this->diameter = 0;
-	this->width = 0;
-	this->unit = " ";
-
-
+Wheel::Wheel():diameter(0), unit(" "), width(0)  {
+	cout << "Вызов коструктора без параметра \n";
 }
 
 Wheel::~Wheel() {
+	cout << "Вызов деструктора \n";
 	// TODO Auto-generated destructor stub
 }
 
-Wheel::Wheel(int diameter, int width, string unit) {
-
-	this->diameter = diameter;
-	this->unit = unit;
-	this->width = width;
+Wheel::Wheel(int diameter, int width, string unit): diameter(diameter), unit(unit), width(width) {
+	cout << "Вызов коструктора с параметром\n";
 
 }
 
