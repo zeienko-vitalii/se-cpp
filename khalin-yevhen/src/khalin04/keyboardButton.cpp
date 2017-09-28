@@ -7,6 +7,7 @@
 */
 
 #include "KeyboardButton.h"
+#include "..\khalin03\Button.cpp"
 
 KeyboardButton::KeyboardButton(ButtonForm form, int code, char *name) :
 	Button(form), code(code), name(name)
