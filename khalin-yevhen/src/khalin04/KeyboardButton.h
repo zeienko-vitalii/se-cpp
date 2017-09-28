@@ -9,6 +9,8 @@
 #pragma once
 
 #include "..\khalin03\Button.h"
+#include <string>
+using std::string;
 
 /**
 * @brief Represents keyboard button
@@ -22,7 +24,7 @@ public:
 	* @param code button code
 	* @param name button name
 	*/
-	KeyboardButton(ButtonForm form, int code, char *name);
+	KeyboardButton(ButtonForm form, int code, string name);
 
 	virtual ~KeyboardButton();
 
@@ -34,7 +36,7 @@ public:
 	/**
 	* @return button name
 	*/
-	char * getName();
+	string getName();
 
 	/**
 	* @brief I don't exactly know why this method exists (according to a task)
@@ -46,9 +48,10 @@ public:
 	* @param name a name of the button
 	* @param code a button code
 	*/
-	void setData(char *name, int &code);
+	void setData(string name, int &code);
+
 private:
-	int code;	// why does not it have const modifier?
-	char *name; // . . .
+	int code;
+	string name;
 };
 
