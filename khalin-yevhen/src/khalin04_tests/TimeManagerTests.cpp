@@ -10,7 +10,7 @@
 #include "..\khalin04\TimeManager.h"
 #include "..\khalin04\TimeManager.cpp"
 
-TEST(TimeManager, checkHandlerCalling_shouldBeCalled) {
+TEST(TimeManagerTest, checkHandlerCalling_shouldBeCalled) {
 	static bool handlerWasCalled = false;
 	auto handler = []() { handlerWasCalled = true; };
 	TimeManager tmanager;
