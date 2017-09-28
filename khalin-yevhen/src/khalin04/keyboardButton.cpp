@@ -41,3 +41,22 @@ void KeyboardButton::setData(string name, int & code)
 	this->code = code;
 	this->name = name;
 }
+
+bool KeyboardButton::operator==(int val)
+{
+	return val == code;
+}
+
+void KeyboardButton::operator-=(char c)
+{
+	string newName;
+	char iter = name[0];
+	int addedCounter = 0;
+	for (auto i = 0; i < name.length(); i++) {
+		iter = name[i];
+		if (iter != c) {
+			newName += iter;
+		}
+	}
+	name = newName;
+}

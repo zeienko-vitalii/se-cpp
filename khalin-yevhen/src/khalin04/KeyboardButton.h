@@ -50,6 +50,15 @@ public:
 	*/
 	void setData(string name, int &code);
 
+	/**
+	* @param val a value for comparison with 'code' field
+	*/
+	bool operator==(int val);
+
+	/**
+	* @param c removing character from button name
+	*/
+	void operator-=(char c);
 private:
 	int code;
 	string name;
