@@ -16,24 +16,24 @@ using std::vector;
 * @brief Contains event listeners for notifying at the specified time.
 * @author Khalin Yevhen
 */
-class Event {
+class Event abstract {
 public:
 
 	/**
 	* @brief Adds an event listener to a listeners group.
 	*/
-	void addListener(EventListener * listener);
+	virtual void addListener(EventListener * listener) = 0;
 	
 	/**
 	* @brief Removes an event listener from a listeners group.
 	*/
-	void removeListener(EventListener * listener); // TODO 
+	virtual void removeListener(EventListener * listener) = 0;
 	
 	/**
 	* @brief Notifies all listeners.
 	*/
-	void notifyAll(Sender *sender, EventArgs *args);
+	virtual void notifyAll(Sender *sender, EventArgs *args) = 0;
 	
-private:
+protected:
 	vector<EventListener*> listeners; // TODO replace it by a linked list
 };
