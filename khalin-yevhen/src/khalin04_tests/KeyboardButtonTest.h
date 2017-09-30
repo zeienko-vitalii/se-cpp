@@ -20,7 +20,7 @@ class KeyboardButtonTest : public ::testing::Test {
 protected:
 	virtual void SetUp() {
 		btnForm = ButtonForm::RECTANGULAR;
-		btnName = "ABZCZ";
+		btnName = "ABC";
 		btnCode = 123;
 		static KeyboardButton src(btnForm, btnCode, btnName);
 		btn = &src;

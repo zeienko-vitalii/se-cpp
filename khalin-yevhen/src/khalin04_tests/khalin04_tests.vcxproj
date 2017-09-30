@@ -147,10 +147,13 @@
   <ItemGroup>
     <ClCompile Include="KeyboardButtonTests.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MockEvent.cpp" />
+    <ClCompile Include="SimpleTimerTests.cpp" />
     <ClCompile Include="TimeManagerTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyboardButtonTest.h" />
+    <ClInclude Include="MockEvent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
