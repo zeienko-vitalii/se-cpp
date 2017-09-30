@@ -12,6 +12,7 @@
 
 /**
 * @brief Represents a simple event handler
+* @deprecated use Event and EventArgs classes.
 */
 class TimeManager {
 public:
