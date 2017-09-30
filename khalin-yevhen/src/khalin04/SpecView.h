@@ -24,7 +24,7 @@ using std::string;
 * @author Khalin Yevhen
 */
 template<class T>
-class SpecView : public BaseView, public TimeManager
+class SpecView : public BaseView
 {
 public:
 
