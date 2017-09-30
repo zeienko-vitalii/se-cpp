@@ -11,7 +11,7 @@
 #include <windows.h>
 #include <iostream>
 #include "TimeManager.h"
-#include "Event.h"
+#include "SimpleEvent.h"
 #include "Sender.h"
 
 /**
@@ -51,6 +51,6 @@ private:
 	*/
 	int start(int ms, int numCntActions);
 	const int delay;
-	Event OnTimerAction;
+	SimpleEvent OnTimerAction;
 	EventArgs *args;
 };
