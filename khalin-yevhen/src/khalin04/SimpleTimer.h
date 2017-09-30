@@ -27,17 +27,17 @@ public:
 	* @param args Will be used in notifying listeners to send necessary data
 	* @param delayMs response time
 	*/
-	SimpleTimer(EventArgs *args, int delayMs);
-	
+	SimpleTimer(Event *e, EventArgs *args, int delayMs);
+
 	/**
 	* @brief Starts timer
 	*/
 	void start();
 
 	~SimpleTimer();
-	
+
 	/**
-	* @return a triggering event 
+	* @return a triggering event
 	*/
 	Event * getOnTimerAction();
 private:
@@ -51,6 +51,6 @@ private:
 	*/
 	int start(int ms, int numCntActions);
 	const int delay;
-	SimpleEvent OnTimerAction;
+	Event *OnTimerAction;
 	EventArgs *args;
 };

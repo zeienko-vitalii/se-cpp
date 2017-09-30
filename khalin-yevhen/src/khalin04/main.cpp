@@ -15,10 +15,8 @@ inline void showTaskPerformance() {
 	SpecViewEventArgs *args = new SpecViewEventArgs();
 	args->view = &view; // put view into EventArgs
 
-						// create a timer
-	SimpleTimer timer(args, 1000);
-
-	// create an event listener for the timer
+	// create members for the timer
+	SimpleEvent e;
 	EventListener l;
 	l.setOnEventAction([](Sender *sender, EventArgs *args) {
 		// we wanna be sure that received necessary args
@@ -28,8 +26,11 @@ inline void showTaskPerformance() {
 		}
 	});
 
+	// create a timer
+	SimpleTimer timer(&e, args, 1000);
+
 	timer.getOnTimerAction()->addListener(&l);
-	timer.start(); // it's supposed to print KeyboardButton data after 1000 ms
+	timer.start(); // it's expected to print KeyboardButton data after 1000 ms
 
 	delete args;
 }

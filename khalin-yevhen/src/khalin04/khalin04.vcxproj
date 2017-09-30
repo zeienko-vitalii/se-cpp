@@ -142,14 +142,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="EventListener.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="EventArgs.h" />
+    <ClInclude Include="Sender.h" />
+    <ClInclude Include="SimpleEvent.h" />
+    <ClInclude Include="SimpleTimer.h" />
+    <ClInclude Include="SpecViewEventArgs.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="KeyboardButton.h" />
     <ClInclude Include="SpecView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="EventArgs.cpp" />
+    <ClCompile Include="EventListener.cpp" />
     <ClCompile Include="keyboardButton.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SimpleEvent.cpp" />
+    <ClCompile Include="SimpleTimer.cpp" />
+    <ClCompile Include="SpecViewEventArgs.cpp" />
     <ClCompile Include="TimeManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

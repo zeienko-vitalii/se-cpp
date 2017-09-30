@@ -13,6 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Заголовочные файлы\events">
+      <UniqueIdentifier>{679c2d51-a41b-4feb-acfc-59c07a76f667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\events">
+      <UniqueIdentifier>{ac5c0496-b447-422d-9769-28cb3fb5502a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\events\eventArgs">
+      <UniqueIdentifier>{f8b1ab1b-fa3c-4423-80ad-be77d246d64a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\events\event">
+      <UniqueIdentifier>{6d0a7fc9-e3d7-4851-9332-56f437d3706e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\events\event">
+      <UniqueIdentifier>{cbf50d3d-be6d-4d36-bbbb-422e8d7bb32f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\events\args">
+      <UniqueIdentifier>{1e71925d-548e-4e3e-ba4d-98fb3e50144f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\events\listeners">
+      <UniqueIdentifier>{da2fa494-709c-44d8-9ae8-cd27c194d48c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\timer">
+      <UniqueIdentifier>{71ff4541-0224-495a-ab36-02dec6d642db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\listeners">
+      <UniqueIdentifier>{87d4270f-fd80-439c-8732-7121e3e34cc9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpecView.h">
@@ -23,6 +50,27 @@
     </ClInclude>
     <ClInclude Include="TimeManager.h">
       <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Sender.h">
+      <Filter>Заголовочные файлы\events</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecViewEventArgs.h">
+      <Filter>Заголовочные файлы\events\eventArgs</Filter>
+    </ClInclude>
+    <ClInclude Include="EventArgs.h">
+      <Filter>Заголовочные файлы\events\eventArgs</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Заголовочные файлы\events\event</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleEvent.h">
+      <Filter>Заголовочные файлы\events\event</Filter>
+    </ClInclude>
+    <ClInclude Include="EventListener.h">
+      <Filter>Заголовочные файлы\events\listeners</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleTimer.h">
+      <Filter>Заголовочные файлы\timer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -35,5 +83,26 @@
     <ClCompile Include="TimeManager.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleTimer.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecViewEventArgs.cpp">
+      <Filter>Файлы исходного кода\events\args</Filter>
+    </ClCompile>
+    <ClCompile Include="EventArgs.cpp">
+      <Filter>Файлы исходного кода\events\args</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Файлы исходного кода\events\event</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleEvent.cpp">
+      <Filter>Файлы исходного кода\events\event</Filter>
+    </ClCompile>
+    <ClCompile Include="EventListener.cpp">
+      <Filter>Файлы исходного кода\listeners</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

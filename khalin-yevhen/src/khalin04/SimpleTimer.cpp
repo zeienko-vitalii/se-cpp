@@ -10,7 +10,8 @@
 #include "SimpleTimer.h"
 
 
-SimpleTimer::SimpleTimer(EventArgs *args, int delayMs) : delay(delayMs), args(args)
+SimpleTimer::SimpleTimer(Event *e, EventArgs *args, int delayMs) :
+	delay(delayMs), args(args), OnTimerAction(e)
 {
 }
 
@@ -26,7 +27,7 @@ SimpleTimer::~SimpleTimer()
 
 Event * SimpleTimer::getOnTimerAction()
 {
-	return &OnTimerAction;
+	return OnTimerAction;
 }
 
 int SimpleTimer::start(int ms, int numCntActions) {
@@ -55,7 +56,7 @@ int SimpleTimer::start(int ms, int numCntActions) {
 		if (WaitForSingleObject(hTimer, INFINITE) != WAIT_OBJECT_0) {
 			printf("WaitForSingleObject failed (%lu)\n", GetLastError());
 		} else {
-			OnTimerAction.notifyAll(this, args);
+			OnTimerAction->notifyAll(this, args);
 		}
 	}
 	return 0;
