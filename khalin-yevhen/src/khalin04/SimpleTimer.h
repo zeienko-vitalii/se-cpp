@@ -34,6 +34,15 @@ public:
 	*/
 	void start();
 
+	/**
+	* First way.
+	* @author xone
+	* @param ms timer period
+	* @param numCntActions number of Timer actions
+	* @return error code
+	*/
+	int start(int numCntActions);
+
 	~SimpleTimer();
 
 	/**
@@ -42,14 +51,7 @@ public:
 	Event * getOnTimerAction();
 private:
 
-	/**
-	* First way.
-	* @author xone
-	* @param ms timer period
-	* @param numCntActions number of Timer actions
-	* @return error code
-	*/
-	int start(int ms, int numCntActions);
+	
 	const int delay;
 	Event *OnTimerAction;
 	EventArgs *args;

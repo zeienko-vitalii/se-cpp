@@ -18,7 +18,7 @@ SimpleTimer::SimpleTimer(Event *e, EventArgs *args, int delayMs) :
 void SimpleTimer::start()
 {
 	static const short actions = 1;
-	start(delay, actions);
+	start(actions);
 }
 
 SimpleTimer::~SimpleTimer()
@@ -30,11 +30,11 @@ Event * SimpleTimer::getOnTimerAction()
 	return OnTimerAction;
 }
 
-int SimpleTimer::start(int ms, int numCntActions) {
+int SimpleTimer::start(int numCntActions) {
 	HANDLE hTimer = NULL;
 	LARGE_INTEGER liDueTime;
 
-	liDueTime.QuadPart = -10000 * (ULONGLONG) ms;
+	liDueTime.QuadPart = -10000 * (ULONGLONG) delay;
 
 	// Create a waitable timer.
 	hTimer = CreateWaitableTimer(NULL, TRUE, L"WaitableTimer");
