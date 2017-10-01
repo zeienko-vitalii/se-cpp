@@ -63,4 +63,10 @@ protected:
 	{
 		(*getOutputStream()) << getSecPrint(getDataSource(), "SpecView::printFooter():\n\t");
 	}
+
+	// ???
+	static void OnTimerAction(Button * btn) {
+		SpecView sp(btn, &std::cout);
+		sp.display();
+	}
 };
