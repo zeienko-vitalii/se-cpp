@@ -22,6 +22,8 @@ public:
 
 	Mouse(string connection, string sensorType);
 
+	Mouse(int count, string type, string connection, string sensorType);
+
 	string getConnection();
 
 	string getSensorType();

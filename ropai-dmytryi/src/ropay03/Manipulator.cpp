@@ -12,8 +12,9 @@
 
 using namespace std;
 
-Manipulator::Manipulator(): count(0), type(0){
+Manipulator::Manipulator(): count(0){
 	// TODO Auto-generated constructor stub
+
 }
 
 Manipulator::Manipulator(int count, string type): count(count), type(type){

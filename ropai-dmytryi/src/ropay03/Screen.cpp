@@ -13,11 +13,12 @@
 
 using namespace std;
 
-Screen::Screen(): manip(){
+
+Screen::Screen(){
 
 }
 
-Screen::Screen(Manipulator manip): manip(manip){
+Screen::Screen(Manipulator data){
 	cout << "" << endl;
 	cout << "Screen constructor" << endl;
 
@@ -25,9 +26,21 @@ Screen::Screen(Manipulator manip): manip(manip){
 
 void Screen::dataOutput(){
 	cout << "" << endl;
-	cout << "Device type: " << manip.getType() << endl;
-	cout << "Number of buttons: " << manip.getCount() << endl;
+	cout << "Device type: " << data.getType() << endl;
+	cout << "Number of buttons: " << data.getCount() << endl;
 	cout << "" << endl;
+}
+
+void Screen::showHeader(){
+	cout << "Screen::showHeader() \n";
+}
+
+void Screen::showContent(){
+	dataOutput();
+}
+
+void Screen::showFooter(){
+	cout << "\n Screen::showFooter() \n";
 }
 
 Screen::~Screen() {

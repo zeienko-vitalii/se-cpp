@@ -9,11 +9,16 @@
 #include "Mouse.h"
 #include "Manipulator.h"
 
-Mouse::Mouse(): connection(0), sensorType(0){
+Mouse::Mouse(){
 	// TODO Auto-generated constructor stub
 }
 
 Mouse::Mouse(string connection, string sensorType): connection(connection), sensorType(sensorType){
+
+}
+
+Mouse::Mouse(int count, string type, string connection, string sensorType):
+		Manipulator(count,type), connection(connection), sensorType(sensorType){
 
 }
 

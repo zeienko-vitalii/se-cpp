@@ -17,6 +17,7 @@ private:
 	const Manipulator* manip;
 
 
+
 public:
 	/**
 	 * Конструктор без параметрів
@@ -43,11 +44,11 @@ public:
 	void printData();
 
 
-	virtual void ShowHeader();
+	virtual void showHeader();
 
-	virtual void ShowContent();
+	virtual void showContent();
 
-	virtual void ShowFooter();
+	virtual void showFooter();
 
 	/**
 	 * Деструктор

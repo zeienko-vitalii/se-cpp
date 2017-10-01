@@ -16,30 +16,26 @@
 class Screen: public BaseView {
 public:
 	//Об'єкт типу Manipulator
-	Manipulator manip;
+	Manipulator data;
 
 public:
-	/**
-	 * Конструктор без параметрів
-	 */
 	Screen();
-
 	/**
 	 * Конструктор із параметром
 	 * @param manip об'єкт типу Manipulator
 	 */
-	Screen(Manipulator manip);
+	Screen(Manipulator data);
 
 	/**
 	 * Функція виводу данних
 	 */
 	void dataOutput();
 
-	virtual void ShowHeader();
+	virtual void showHeader();
 
-	virtual void ShowContent();
+	virtual void showContent();
 
-	virtual void ShowFooter();
+	virtual void showFooter();
 
 	/**
 	 * Деструктор.

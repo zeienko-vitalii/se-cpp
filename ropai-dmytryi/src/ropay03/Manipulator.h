@@ -14,12 +14,11 @@ using namespace std;
  * Клас опису маніпулятору
  */
 class Manipulator {
-
 public:
-	//Кіількість кнопок
 	int count;
 
 private:
+
 	//Тип девайсу
 	string type;
 

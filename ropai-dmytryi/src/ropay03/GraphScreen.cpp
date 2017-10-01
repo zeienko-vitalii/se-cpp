@@ -11,7 +11,6 @@
 #include "Manipulator.h"
 #include "GraphScreen.h"
 
-using namespace std;
 
 GraphScreen::GraphScreen(): manip(){
 	cout << "" << endl;
@@ -49,8 +48,7 @@ void GraphScreen::printData(const Manipulator& manip){
 	cout  << "        --------	    \n";
 
 
-	cout << "" << endl;
-	cout << "Device type: " << manip.getType() << endl;
+	cout << "\n Device type: " << manip.getType() << endl;
 	cout << "Number of buttons: " << manip.getCount() << endl;
 	cout << "" << endl;
 }
@@ -60,6 +58,19 @@ void GraphScreen::printData(){
 	printData(*manip);
 
 }
+
+void GraphScreen::showHeader(){
+	cout << "GraphScreen::showHeader() \n" << endl;
+}
+
+void GraphScreen::showContent(){
+	printData();
+}
+
+void GraphScreen::showFooter(){
+	cout << "\n GraphScreen::showFooter()" << endl;
+}
+
 
 GraphScreen::~GraphScreen() {
 
