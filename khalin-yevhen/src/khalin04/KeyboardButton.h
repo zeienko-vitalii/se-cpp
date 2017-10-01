@@ -38,9 +38,6 @@ public:
 	*/
 	string getName();
 
-	/**
-	* @brief I don't exactly know why this method exists (according to a task)
-	*/
 	void setData(int &code); // the task wants this kind of the signature for overloading
 
 	/**
