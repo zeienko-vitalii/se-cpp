@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko01", "shazhko01\shaz
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko02", "shazhko02\shazhko02.vcxproj", "{B76A34D1-52DD-438F-807F-C321EBB55D46}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko03", "shazhko03\shazhko03.vcxproj", "{C03843EE-0D03-432D-91F8-8CE72BE5A271}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,12 +33,20 @@ Global
 		{B76A34D1-52DD-438F-807F-C321EBB55D46}.Release|x64.Build.0 = Release|x64
 		{B76A34D1-52DD-438F-807F-C321EBB55D46}.Release|x86.ActiveCfg = Release|Win32
 		{B76A34D1-52DD-438F-807F-C321EBB55D46}.Release|x86.Build.0 = Release|Win32
+		{C03843EE-0D03-432D-91F8-8CE72BE5A271}.Debug|x64.ActiveCfg = Debug|x64
+		{C03843EE-0D03-432D-91F8-8CE72BE5A271}.Debug|x64.Build.0 = Debug|x64
+		{C03843EE-0D03-432D-91F8-8CE72BE5A271}.Debug|x86.ActiveCfg = Debug|Win32
+		{C03843EE-0D03-432D-91F8-8CE72BE5A271}.Debug|x86.Build.0 = Debug|Win32
+		{C03843EE-0D03-432D-91F8-8CE72BE5A271}.Release|x64.ActiveCfg = Release|x64
+		{C03843EE-0D03-432D-91F8-8CE72BE5A271}.Release|x64.Build.0 = Release|x64
+		{C03843EE-0D03-432D-91F8-8CE72BE5A271}.Release|x86.ActiveCfg = Release|Win32
+		{C03843EE-0D03-432D-91F8-8CE72BE5A271}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7850629B-CD9C-420D-A884-AEC5F4B20470}
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {7850629B-CD9C-420D-A884-AEC5F4B20470}
 	EndGlobalSection
 EndGlobal
