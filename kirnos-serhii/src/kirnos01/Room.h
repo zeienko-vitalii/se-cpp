@@ -18,9 +18,9 @@ using namespace std;
 class Room
 {
 public:
-	double *field1_data1;
-	double *field2_data1;
-	double *field3_data1;
+	double height;
+	double width;
+	double length;
 
 	/**
 	 * Конструктор буз параметрів.
@@ -29,11 +29,11 @@ public:
 
 	/**
 	 * Конструктор з параметрами.
-	 * @param a ширина
-	 * @param b довжина
-	 * @param c висота
+	 * @param H висота
+	 * @param W ширина
+	 * @param L довжина
 	 */
-	Room(int a, int b, int c);
+	Room(int H, int W, int L);
 
 	/**
 	 * Конструктор копіювання
@@ -47,20 +47,20 @@ public:
 	~Room();
 
 	/**
-	 * Установка поля Room::field1_data1
-	 * @param d копіюється в field1_data1
+	 * Установка поля Room::height
+	 * @param H копіюється в height
 	 */
-	void SetField1_data1(double d);
+	void SetHeight(double H);
 
 	/**
-	 * Установка поля Room::field2_data1
-	 * @param d копіюється в field2_data1
+	 * Установка поля Room::width
+	 * @param W копіюється в width
 	 */
-	void SetField2_data1(double d);
+	void SetWidth(double W);
 
 	/**
-	 * Установка поля Room::field3_data1
-	 * @param d копіюється в field3_data1
+	 * Установка поля Room::length
+	 * @param L копіюється в length
 	 */
-	void SetField3_data1(double d);
+	void SetLength(double L);
 };

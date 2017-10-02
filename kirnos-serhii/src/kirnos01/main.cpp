@@ -5,7 +5,7 @@
 * @date 18.09.17
 */
 
-#include "View1.h"
+#include "Screen.h"
 
 using namespace std;
 
@@ -13,9 +13,9 @@ int main() {
 	{
 		Room r;
 
-		r.SetField1_data1(10.1);
-		r.SetField2_data1(20.2);
-		r.SetField3_data1(30.3);
+		r.SetHeight(10.1);
+		r.SetWidth(20.2);
+		r.SetLength(30.3);
 		cout << endl;
 
 		Screen view1(r);

@@ -8,42 +8,36 @@
 
 #include "Room.h"
 
-Room::Room() {
-	field1_data1 = new double;
-	field2_data1 = new double;
-	field3_data1 = new double;
+Room::Room():height(0), width(0), length(0) {
 	cout << "Room()" << endl;
 }
 
-Room::Room(int F1d, int F2d, int F3d) {
-	field1_data1 = new double(F1d);
-	field2_data1 = new double(F2d);
-	field3_data1 = new double(F3d);
+Room::Room(int H, int W, int L) {
+	height = H;
+	width = W;
+	length = L;
 	cout << "Room(int, int, int)" << endl;
 }
 
 Room::Room(const Room& r) {
-	this->field1_data1 = new double(*(r.field1_data1));
-	this->field2_data1 = new double(*(r.field2_data1));
-	this->field3_data1 = new double(*(r.field3_data1));
+	this->height = r.height;
+	this->width = r.width;
+	this->length = r.length;
 	cout << "Room(const Room&)" << endl;
 }
 
 Room::~Room() {
-	delete field1_data1;
-	delete field2_data1;
-	delete field3_data1;
 	cout << "~Room()" << endl;
 }
 
-void Room::SetField1_data1(double d){
-	*field1_data1 = d;
+void Room::SetHeight(double H){
+	height = H;
 }
 
-void Room::SetField2_data1(double d){
-	*field2_data1 = d;
+void Room::SetWidth(double W){
+	width = W;
 }
 
-void Room::SetField3_data1(double d){
-	*field3_data1 = d;
+void Room::SetLength(double L){
+	length = L;
 }

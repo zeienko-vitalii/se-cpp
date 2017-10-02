@@ -16,7 +16,7 @@ class Screen
 {
 public:
 
-	Room *room;
+	Room room;
 
 	/**
 	 * Конструктор буз параметрів.
