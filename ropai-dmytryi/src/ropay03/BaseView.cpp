@@ -18,17 +18,15 @@ BaseView::BaseView(Manipulator manip): manip(manip){
 }
 
 void BaseView::showHeader(){
-	cout << "BaseView::showHeader()" << endl;
+
 }
 
 void BaseView::showContent(){
-	cout << "\n From BaseView: " << endl;
-	cout << "Device type: " << this->manip.getType() << endl;
-	cout << "Number of buttons: " << this->manip.getCount() << endl;
+
 }
 
 void BaseView::showFooter(){
-	cout << "\n BaseView::showFooter()" << endl;
+
 }
 
 void BaseView::Display(){

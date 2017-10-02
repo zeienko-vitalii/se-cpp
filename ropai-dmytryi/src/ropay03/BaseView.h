@@ -15,11 +15,11 @@ protected:
 
 	Manipulator manip;
 
-	virtual void showHeader();
+	virtual void showHeader() = 0;
 
-	virtual void showContent();
+	virtual void showContent() = 0;
 
-	virtual void showFooter();
+	virtual void showFooter() = 0;
 
 public:
 	BaseView();
