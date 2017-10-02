@@ -19,16 +19,16 @@ protected:
 	/**
 	 * Outputs header of information.
 	 */
-	virtual void showHeader();
+	virtual void showHeader()=0;
 	/**
 	 * Outputs main information about window.
 	 */
-	virtual void showContent();
+	virtual void showContent()=0;
 
 	/**
 	 * Outputs footer of information.
 	 */
-	virtual void showFooter();
+	virtual void showFooter()=0;
 public:
 	/**
 	 * Default constructor, window set to default.

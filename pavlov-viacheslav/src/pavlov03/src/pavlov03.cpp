@@ -5,7 +5,7 @@
  * @version 0.0.1
  * @date 2017.09.09
  */
-
+#include "gtest/gtest.h"
 #include <iostream>
 
 #include "Window.h"
@@ -20,8 +20,15 @@ using namespace std;
 /**
  * Entry point of program
  */
-int main(void) {
+int main(int argc, char **argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}
 
+/**
+ * Demonstration of program work.
+ */
+void demo() {
 	//Constants for  object1 initialization
 	const int WINDOW_ID_1 = 1;
 	const int X1_1 = 0;
@@ -70,5 +77,4 @@ int main(void) {
 	cout << "Data from btn1:\n";
 	test.Display();
 
-	return 0;
 }

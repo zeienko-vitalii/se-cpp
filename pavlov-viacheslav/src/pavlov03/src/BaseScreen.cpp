@@ -24,18 +24,6 @@ BaseScreen::BaseScreen(Window window) :
 
 }
 
-void BaseScreen::showHeader() {
-	cout << "\n|--------------------------\n";
-	cout << "|Base screen output\n";
-}
-
-void BaseScreen::showContent() {
-	cout << "WindowId" << this->data.getWindowId() << endl;
-}
-
-void BaseScreen::showFooter() {
-	cout << "|--------------------------\n\n";
-}
 
 void BaseScreen::Display() {
 	showHeader();

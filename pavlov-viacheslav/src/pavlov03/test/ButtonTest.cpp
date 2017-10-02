@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
-#include "Window.h"
-#include "Button.h"
+#include "../src/Window.h"
+#include "../src/Button.h"
 
 TEST(buttonConstructorWorkTest, fieldsAreCorrect) {
 

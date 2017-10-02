@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "Window.h"
+#include "../src/Window.h"
 
 TEST(windowConstructorWorkTest, fieldsAreCorrect) {
 
