@@ -12,17 +12,11 @@ Room::Room():height(0), width(0), length(0) {
 	cout << "Room()" << endl;
 }
 
-Room::Room(int H, int W, int L) {
-	height = H;
-	width = W;
-	length = L;
+Room::Room(int H, int W, int L): height(H), width(W),  length(L){
 	cout << "Room(int, int, int)" << endl;
 }
 
-Room::Room(const Room& r) {
-	this->height = r.height;
-	this->width = r.width;
-	this->length = r.length;
+Room::Room(const Room& r): height(r.height), width(r.width),  length(r.length) {
 	cout << "Room(const Room&)" << endl;
 }
 
