@@ -1,8 +1,8 @@
 /**
-* @file CScreen.h
-* Declaration of the CScreen class.
+* @file Screen.h
+* Declaration of the Screen class.
 * @author Vitalii Zeienko
-* @version 0.0.1
+* @version 0.0.3
 * @date 2017.09.09
 */
 
@@ -12,25 +12,22 @@
 
 /** This class provides an output information about manipulator */
 class Screen {
-private:
-
-	Manipulator* manipulator;
 public:
-	/// Counter of the printed objects
-	int static counter;
+	const Manipulator* manipulator;
 
 	/**
-	 * Default constructor
+	 * Constructor takes constant Manipulator`s object and assigns if to Screen::manipulator.
+	 * @param manipulator this object`s information will be printed on the screen.
 	 * */
 	Screen(const Manipulator& manipulator);
 
 	/**
-	 * Outputs CManipulator's object
+	 * Outputs Screen::manipulator object.
 	 * */
 	void Show();
 
 	/**
-	 * Destructor
+	 * Destructor. Destroys object and  frees the memory which was allocated.
 	 * */
 	~Screen();
 };

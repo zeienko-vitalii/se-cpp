@@ -1,8 +1,8 @@
 /**
  * @file GraphScreen.h
- * Declaration of the CGraphScreen class.
+ * Declaration of the GraphScreen class.
  * @author Vitalii Zeienko
- * @version 0.0.2
+ * @version 0.0.3
  * @date 2017.09.12
  */
 
@@ -18,7 +18,6 @@ class GraphScreen {
 
 private:
 	const Manipulator* iManipulator;
-	static int counter;
 public:
 
 	/**
@@ -35,10 +34,14 @@ public:
 
 	/**
 	 * Displays the information about GraphScreen::iManipulator.
+	 * @param manipulator will be printed on the screen.
 	 * */
 	void PrintData(const Manipulator& manipulator);
 
-	void ShowData();
+	/**
+	* Calls the PrintData which takes a parameter manipulator and outputs it.
+	* */
+	void PrintData();
 
 	~GraphScreen();
 };
