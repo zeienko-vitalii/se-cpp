@@ -8,14 +8,30 @@
 #include "CWheel.h"
 #define _USE_MATH_DEFINES // for C++  
 #include <cmath>  
+#include "CWheel.h"
 
 CWheel::CWheel() : diameter(0), width(0), units(EUNITS_CENTIMETERS) { }
 CWheel::CWheel(double _diameter, double _width, EUnits _units) : diameter(_diameter), width(_width), units(_units) {}
-CWheel::CWheel(const CWheel *wheel) {
-	this->diameter = wheel->diameter;
-	this->units = wheel->units;
-	this->width = wheel->width;
+CWheel::CWheel(const CWheel *_wheel) {
+	if (_wheel == NULL) {
+		this->diameter = 0;
+		this->units = EUNITS_CENTIMETERS;
+		this->width = 0;
+		return;
+	}
+	this->diameter = _wheel->diameter;
+	this->units = _wheel->units;
+	this->width = _wheel->width;
 }
+bool CWheel::operator==(const CWheel &_wheel)
+{
+	if (_wheel.diameter == this->diameter) 
+		if (_wheel.units == this->units)
+			if (_wheel.width == this->width) 
+				return true;
+	return false;
+}
+
 CWheel::~CWheel() {}
 
 double CWheel::Volume() const {
@@ -40,7 +56,7 @@ EUnits CWheel::GetUnits() const {
 }
 double CWheel::GetDiameter() const
 {
-	return this->diameter;
+	return diameter;
 }
 double CWheel::GetWidth() const
 {

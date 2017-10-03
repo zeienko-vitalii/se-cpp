@@ -1,6 +1,6 @@
-п»ї/**
+/**
 * @file CScreen.cpp
-* @brief РЎРѕРґРµСЂР¶РёС‚ СЂРµР°Р»РёР·Р°С†РёСЋ РєР»Р°СЃСЃР° CScreen
+* @brief Содержит реализацию класса CScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -9,14 +9,22 @@
 #include <stdlib.h>
 #include <iostream>
 
-CScreen::CScreen():wheel(NULL){}
-CScreen::CScreen(CWheel _wheel) { wheel = new CWheel(_wheel); }
-CScreen::~CScreen(){
+CScreen::CScreen(CWheel *_wheel):wheel(new CWheel(*_wheel)) { }
+CScreen::~CScreen() {
 	if (wheel)delete wheel;
 }
-void  CScreen::PrintData(){
-	std::cout << "\tDiameter: " << wheel->diameter << "\n" <<
-		"\tWidth: " << wheel->width << "\n" <<
+void CScreen::ShowHeader()
+{
+	std::cout << "---------------------------------\n";
+}
+void CScreen::ShowContent()
+{
+	std::cout << "\tDiameter: " << wheel->GetDiameter() << "\n" <<
+		"\tWidth: " << wheel->GetWidth() << "\n" <<
 		"\tUnits: " << wheel->ConvertEUnitToString(wheel->GetUnits()) << "\n" <<
 		"Volume: " << wheel->Volume() << "\n";
+}
+void CScreen::ShowFooter()
+{
+	std::cout << "---------------------------------\n";
 }

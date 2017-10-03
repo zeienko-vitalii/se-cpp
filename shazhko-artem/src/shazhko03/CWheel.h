@@ -37,6 +37,8 @@ public:
 	*/
 	CWheel(const CWheel *wheel);
 
+	bool operator==(const CWheel &wheel);
+
 	/**
 	* Деструктор
 	*/

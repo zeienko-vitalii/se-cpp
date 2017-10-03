@@ -3,9 +3,17 @@
 #include "CGraphScreen.h"
 #include <iostream>
 
+class A {
+public:
+	 void Sssss();
+};
+template <class T> void Test() {
+	dsa
+}
 int main() {
-	CWheel *iWheel1 = new CWheel(6, 5, EUNITS_CENTIMETERS);
-	CWheel *iWheel2 = new CWheel(8, 3, EUNITS_CENTIMETERS);
+
+	CWheel *iWheel1 = new CWheel(6, 10, EUNITS_CENTIMETERS);
+	CWheel *iWheel2 = new CWheel(25, 3, EUNITS_CENTIMETERS);
 
 	std::cout << "============= CScreen =============\n";
 	CScreen *screen1 = new CScreen(*iWheel1);

@@ -7,12 +7,12 @@
 */
 #pragma once
 #include "CWheel.h"
+#include "CBaseScreen.h"
 #include <Windows.h>
 /**
 * Класс описывающий расширенное отображение объектов класса CWheel
 */
-class CGraphScreen
-{
+class CGraphScreen :public CBaseScreen{
 private:
 	/**
 	* Напечатает линию соответствующую толщине колеса, относительно заданных координат
@@ -30,7 +30,7 @@ public:
 	/**
 	* Конструктор по-умолчанию
 	*/
-	CGraphScreen();
+	CGraphScreen(CWheel *_wheel);
 	/**
 	* Деструктор
 	*/
@@ -44,15 +44,20 @@ public:
 	* Задать данные колеса
 	* @return Данные колеса
 	*/
-	CWheel GetDataSource()const;
+	CWheel GetDataSource() const;
 	/**
-	* Вывод данных объекта
+	* Outputs header of information.
 	*/
-	void PrintData(const CWheel &_wheel);
+	virtual void ShowHeader();
 	/**
-	* Вывод данных объекта
+	* Outputs main information about window.
 	*/
-	void PrintData();
+	virtual void ShowContent();
+
+	/**
+	* Outputs footer of information.
+	*/
+	virtual void ShowFooter();
 private:
 	// колесо
 	CWheel *wheel;
