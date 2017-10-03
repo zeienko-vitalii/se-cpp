@@ -1,8 +1,8 @@
-#include "gtest/gtest.h"
+п»ї#include "gtest/gtest.h"
 #include "CCarWheel.h"
 
 /**
-* Тестирование конструктора без параметров класса CCarWheel
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ РєР»Р°СЃСЃР° CCarWheel
 */
 TEST(CCarWheel_con, createCarWheel) {
 	std::string expectationTireName = "x10";
@@ -18,7 +18,7 @@ TEST(CCarWheel_con, createCarWheel) {
 }
 
 /**
-* Тестирование функции, которая возвращает название шины
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ РІРѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С€РёРЅС‹
 */
 TEST(CCarWhee_GetTireName, GetTireName) {
 	std::string expectation = "x10";
@@ -27,7 +27,7 @@ TEST(CCarWhee_GetTireName, GetTireName) {
 	EXPECT_STREQ(actuality.c_str(), expectation.c_str());
 }
 /**
-* Тестирование функции, которая возвращает производителя
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ РІРѕР·РІСЂР°С‰Р°РµС‚ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ
 */
 TEST(CCarWhee_GetTireManufacturer, GetTireManufacturer) {
 	std::string expectation = "Canon";
@@ -36,7 +36,7 @@ TEST(CCarWhee_GetTireManufacturer, GetTireManufacturer) {
 	EXPECT_STREQ(actuality.c_str(), expectation.c_str());
 }
 /**
-* Тестирование функции, которая задает название шины
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ Р·Р°РґР°РµС‚ РЅР°Р·РІР°РЅРёРµ С€РёРЅС‹
 */
 TEST(CCarWhee_SetTireName, SetTireName) {
 	std::string expectation = "x10";
@@ -46,7 +46,7 @@ TEST(CCarWhee_SetTireName, SetTireName) {
 	EXPECT_STREQ(actuality.c_str(), expectation.c_str());
 }
 /**
-* Тестирование функции, которая задает производителя
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ Р·Р°РґР°РµС‚ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ
 */
 TEST(CCarWhee_SetTireManufacturer, SetTireManufacturer) {
 	std::string expectation = "Canon";

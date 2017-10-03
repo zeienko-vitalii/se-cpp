@@ -1,8 +1,8 @@
-#include "gtest/gtest.h"
+п»ї#include "gtest/gtest.h"
 #include "CWheel.h"
 
 /**
-* Тестирование конструктора класса CWheel
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РєР»Р°СЃСЃР° CWheel
 */
 TEST(CWheel_con, createWheelWithParam) {
 	double expectationDiameter = 10;
@@ -18,7 +18,7 @@ TEST(CWheel_con, createWheelWithParam) {
 }
 
 /**
-* Тестирование функции, возвращает объем колеса
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РІРѕР·РІСЂР°С‰Р°РµС‚ РѕР±СЉРµРј РєРѕР»РµСЃР°
 */
 TEST(CWheel_Value, CalcValue) {
 	CWheel *wheel = new CWheel(10, 4, EUnits::EUNITS_CENTIMETERS);
@@ -27,7 +27,7 @@ TEST(CWheel_Value, CalcValue) {
 	EXPECT_DOUBLE_EQ(actuality, expectation);
 }
 /**
-* Тестирование функции, которая конвертирует тип 'EUnits' в string
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ РєРѕРЅРІРµСЂС‚РёСЂСѓРµС‚ С‚РёРї 'EUnits' РІ string
 */
 TEST(CWheel_ConvertEUnitToString, ConvertEUnitToString) {
 	std::string actuality = CWheel::ConvertEUnitToString(EUnits::EUNITS_CENTIMETERS);
@@ -36,7 +36,7 @@ TEST(CWheel_ConvertEUnitToString, ConvertEUnitToString) {
 }
 
 /**
-* Тестирование функции, которая задает диаметр
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ Р·Р°РґР°РµС‚ РґРёР°РјРµС‚СЂ
 */
 TEST(CWheel_SetDiameter, SetDiameter) {
 	CWheel *wheel = new CWheel();
@@ -46,7 +46,7 @@ TEST(CWheel_SetDiameter, SetDiameter) {
 	EXPECT_DOUBLE_EQ(actuality, expectation);
 }
 /**
-* Тестирование функции, которая возвращает диаметр
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ РІРѕР·РІСЂР°С‰Р°РµС‚ РґРёР°РјРµС‚СЂ
 */
 TEST(CWheel_GetDiameter, GetDiameter) {
 	double expectation = 5.1;
@@ -56,7 +56,7 @@ TEST(CWheel_GetDiameter, GetDiameter) {
 }
 
 /**
-* Тестирование функции, которая задает ширину
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ Р·Р°РґР°РµС‚ С€РёСЂРёРЅСѓ
 */
 TEST(CWheel_SetWidth, SetWidth) {
 	CWheel *wheel = new CWheel();
@@ -66,7 +66,7 @@ TEST(CWheel_SetWidth, SetWidth) {
 	EXPECT_DOUBLE_EQ(actuality, expectation);
 }
 /**
-* Тестирование функции, которая возвращает ширину
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ РІРѕР·РІСЂР°С‰Р°РµС‚ С€РёСЂРёРЅСѓ
 */
 TEST(CWheel_GetWidth, GetWidth) {
 	double expectation = 5.1;
@@ -75,7 +75,7 @@ TEST(CWheel_GetWidth, GetWidth) {
 	EXPECT_DOUBLE_EQ(actuality, expectation);
 }
 /**
-* Тестирование функции, которая задает единицы измерения
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ Р·Р°РґР°РµС‚ РµРґРёРЅРёС†С‹ РёР·РјРµСЂРµРЅРёСЏ
 */
 TEST(CWheel_SetUnits, SetUnits) {
 	CWheel *wheel = new CWheel();
@@ -85,7 +85,7 @@ TEST(CWheel_SetUnits, SetUnits) {
 	EXPECT_DOUBLE_EQ(actuality, expectation);
 }
 /**
-* Тестирование функции, которая возвращает единицы измерения
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ РІРѕР·РІСЂР°С‰Р°РµС‚ РµРґРёРЅРёС†С‹ РёР·РјРµСЂРµРЅРёСЏ
 */
 TEST(CWheel_GetUnits, GetUnits) {
 	EUnits expectation = EUnits::EUNITS_CENTIMETERS;

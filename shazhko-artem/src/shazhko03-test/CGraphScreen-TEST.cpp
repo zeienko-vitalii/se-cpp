@@ -1,9 +1,9 @@
-#include "CGraphScreen.h"
+п»ї#include "CGraphScreen.h"
 #include "CWheel.h"
 #include "gtest\gtest.h"
 
 /**
-* Тестирование конструктора класса CGraphScreen
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РєР»Р°СЃСЃР° CGraphScreen
 */
 TEST(CGraphScreen_con, createCGraphScreen) {
 	CWheel *expectation = new CWheel(10, 4, EUnits::EUNITS_CENTIMETERS);
@@ -12,7 +12,7 @@ TEST(CGraphScreen_con, createCGraphScreen) {
 	EXPECT_TRUE(*expectation == *actuality);
 }
 /**
-* Тестирование функции, которая задает данные для отображения
+* РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё, РєРѕС‚РѕСЂР°СЏ Р·Р°РґР°РµС‚ РґР°РЅРЅС‹Рµ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ
 */
 TEST(CGraphScreen_SetDataSource, SetDataSource) {
 	CWheel *expectation = new CWheel(10, 4, EUnits::EUNITS_CENTIMETERS);
