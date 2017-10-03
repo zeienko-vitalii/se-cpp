@@ -1,7 +1,9 @@
 #include "gtest/gtest.h"
 #include "CCarWheel.h"
 
-
+/**
+* Тестирование конструктора без параметров класса CCarWheel
+*/
 TEST(CCarWheel_con, createCarWheel) {
 	std::string expectationTireName = "x10";
 	std::string expectationTireManufacturer = "Canon";
@@ -15,20 +17,27 @@ TEST(CCarWheel_con, createCarWheel) {
 	EXPECT_STREQ(actualityTireManufacturer.c_str(), expectationTireManufacturer.c_str());
 }
 
+/**
+* Тестирование функции, которая возвращает название шины
+*/
 TEST(CCarWhee_GetTireName, GetTireName) {
 	std::string expectation = "x10";
 	CCarWheel *wheel = new CCarWheel(10, 4, EUnits::EUNITS_CENTIMETERS, expectation, "Canon");
 	std::string actuality = wheel->GetTireName();
 	EXPECT_STREQ(actuality.c_str(), expectation.c_str());
 }
-
+/**
+* Тестирование функции, которая возвращает производителя
+*/
 TEST(CCarWhee_GetTireManufacturer, GetTireManufacturer) {
 	std::string expectation = "Canon";
 	CCarWheel *wheel = new CCarWheel(10, 4, EUnits::EUNITS_CENTIMETERS, "x10", expectation);
 	std::string  actuality = wheel->GetTireManufacturer();
 	EXPECT_STREQ(actuality.c_str(), expectation.c_str());
 }
-
+/**
+* Тестирование функции, которая задает название шины
+*/
 TEST(CCarWhee_SetTireName, SetTireName) {
 	std::string expectation = "x10";
 	CCarWheel *wheel = new CCarWheel(2, 4, EUnits::EUNITS_CENTIMETERS, expectation, "Canon");
@@ -36,8 +45,10 @@ TEST(CCarWhee_SetTireName, SetTireName) {
 	std::string actuality = wheel->GetTireName();
 	EXPECT_STREQ(actuality.c_str(), expectation.c_str());
 }
-
-TEST(CCarWhee_GetTireManufacturer, SetUnits) {
+/**
+* Тестирование функции, которая задает производителя
+*/
+TEST(CCarWhee_SetTireManufacturer, SetTireManufacturer) {
 	std::string expectation = "Canon";
 	CCarWheel *wheel = new CCarWheel(2, 4, EUnits::EUNITS_CENTIMETERS, "X10", expectation);
 	wheel->SetTireManufacturer(expectation);
