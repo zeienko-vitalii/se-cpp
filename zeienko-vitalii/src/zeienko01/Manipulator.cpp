@@ -1,37 +1,30 @@
 /**
  * @file  Manipulator.cpp
- * Realization of the CManipulator class.
+ * Realization of the Manipulator class.
  * @author Vitalii Zeienko
- * @version 0.0.1
+ * @version 0.0.3
  * @date 2017.09.09
  */
 
 #include "Manipulator.h"
 
 #include <stdio.h>
-#include <cstring>
-#include <ctype.h>
-
 
 const int Manipulator::MIN_NUM_BTNS = 2;
 const int Manipulator::MAX_NUM_BTNS = 20;
-const char *Manipulator::TYPE[] = { "mouse", "joystick" };
 
-
-Manipulator::Manipulator(void) : amountOfButtons(MIN_NUM_BTNS) {
-	printf("Constructor without params is called!\n");
+Manipulator::Manipulator(void) : amountOfButtons(MIN_NUM_BTNS), typeOfManipulator(Mouse) {
 	// Setting the deafult parameters for the CManipulator class' attributes
-	type = new char[strlen(TYPE[0])];
-	type = const_cast<char*>(TYPE[0]);
+	printf("Constructor without params is called!\n");
 }
 
-Manipulator::Manipulator(int amountOfBtns, char* type) :
-		amountOfButtons(amountOfBtns), type(type) {
+Manipulator::Manipulator(int amountOfBtns, Type typeOfManip) :
+	amountOfButtons(amountOfBtns), typeOfManipulator(typeOfManip) {
 	printf("Constructor with params is called!\n");
 }
 
 Manipulator::Manipulator(const Manipulator& Manipulator) :
-		amountOfButtons(Manipulator.amountOfButtons), type(Manipulator.type) {
+	amountOfButtons(Manipulator.amountOfButtons), typeOfManipulator(Manipulator.typeOfManipulator) {
 	printf(" Copiyng constructor is called!\n");
 }
 

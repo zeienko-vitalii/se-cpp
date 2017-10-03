@@ -1,36 +1,29 @@
 /**
- * @file  CScreen.cpp
- * Realization of the CScreen class.
+ * @file  Screen.cpp
+ * Realization of the Screen class.
  * @author Vitalii Zeienko
- * @version 0.0.1
+ * @version 0.0.3
  * @date 2017.09.09
  */
 
 #include "Screen.h"
 #include <iostream>
-#include <cstring>
 
-int Screen::counter = 0;
-
-Screen::Screen(const Manipulator& manipulator) {
-	// TODO Auto-generated constructor stub
-	this->manipulator = new Manipulator(manipulator);
+Screen::Screen(const Manipulator& manipulator) : manipulator(new Manipulator(manipulator)) {
+	std::cout << "Screen() constructor is called!" << std::endl;
 }
 
 void Screen::Show() {
 
-	counter++;
-
-	std::cout << "#" << counter << " Manipulator`s type: " << manipulator->type
+	std::cout << " Manipulator`s type: " << manipulator->getType()
 			<< std::endl;
-	std::cout << "#" << counter << " Manipulator`s amount of buttons: "
+	std::cout << " Manipulator`s amount of buttons: "
 			<< manipulator->amountOfButtons << std::endl;
 
 }
 
 Screen::~Screen() {
-	// TODO Auto-generated destructor stub
 	std::cout << "~Screen()\n";
-	if(manipulator)
+	if(manipulator != nullptr)
 		delete manipulator;
 }
