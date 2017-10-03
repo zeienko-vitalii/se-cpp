@@ -2,18 +2,26 @@
  * @file main.cpp
  * Realization of the main() function.
  * @author Vitalii Zeienko
- * @version 0.0.1
+ * @version 0.0.3
  * @date 2017.09.09
  */
 
 #include "Screen.h"
+#include <iostream>
+
+#ifdef  _DEBUG
+#define _CRDBG_MAP_ALLOC
+#include <crtdbg.h>
+#define new new (_NORMAL_BLOCK, __FILE__, __LINE__)
+
+using std::cout;
+using std::endl;
 
 /**
- * Entry point of program
- * @return 0 in case if there is no error during runtime.
- * */
-int main() {
-
+* This function contains a basic check for creating 
+* instances of classes and displaying Manipulator`s objects on the screen.
+* */
+void launch() {
 	// ...
 	// Size of the CManipulator's array of objects.
 	const int SIZE = 3;
@@ -21,11 +29,11 @@ int main() {
 	// to call CScreen::Show()
 	Screen* cs[SIZE];
 
-	// Create 5 objects of type CManipulator
+	// Create 3 objects of type CManipulator
 	// to demonstrate the work of each constructor
 	Manipulator* manip[SIZE];
 	manip[0] = new Manipulator();
-	manip[1] = new Manipulator(4, "Mouse");
+	manip[1] = new Manipulator(4, Manipulator::Joystick);
 	manip[2] = new Manipulator(*manip[0]);
 
 
@@ -41,9 +49,19 @@ int main() {
 	for (index = 0; index < SIZE; index++) {
 		delete cs[index];
 		delete manip[index];
-
 	}
 	// ...
-	return 0;
 }
 
+
+/**
+ * Entry point of program.
+ * @return 0 in case if there is no error and no memory leaks.
+ * */
+int main() {
+	launch();
+	system("pause");
+	return _CrtDumpMemoryLeaks();
+}
+
+#endif //_DEBUG
