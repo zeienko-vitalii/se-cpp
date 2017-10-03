@@ -1,6 +1,6 @@
-/**
+п»ї/**
 * @file CScreen.h
-* @brief Содержит объявление класса  CScreen
+* @brief РЎРѕРґРµСЂР¶РёС‚ РѕР±СЉВ¤РІР»РµРЅРёРµ РєР»Р°СЃСЃР°  CScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -9,17 +9,17 @@
 #include "CCarWheel.h"
 #include "CBaseScreen.h"
 /**
-* Класс описывающий отображение объектов класса CWheel
+* В РљР»Р°СЃСЃ РѕРїРёСЃС‹РІР°СЋС‰РёР№ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РѕР±СЉРµРєС‚РѕРІ РєР»Р°СЃСЃР° CWheel
 */
 class CScreenCarWheel :public CBaseScreen{
 public:
 	/**
-	* Конструктор с одним параметром
-	* @param _wheel колесо
+	* РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РѕРґРЅРёРј РїР°СЂР°РјРµС‚СЂРѕРј
+	* @param _wheel РєРѕР»РµСЃРѕ
 	*/
 	CScreenCarWheel(CCarWheel *_wheel);
 	/**
-	* Деструктор
+	* РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	*/
 	virtual ~CScreenCarWheel();
 	/**
@@ -36,6 +36,6 @@ public:
 	*/
 	virtual void ShowFooter();
 private:
-	// колесо
+	// РєРѕР»РµСЃРѕ
 	CCarWheel *wheel;
 };

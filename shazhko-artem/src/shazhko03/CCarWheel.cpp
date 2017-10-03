@@ -1,3 +1,10 @@
+﻿/**
+* @file CBaseScreen.cpp
+* @brief Содержит реализацию класса CCarWheel
+* @author Shazhko Artem
+* @version 0
+* @date 03.10.17
+*/
 #include "CCarWheel.h"
 
 CCarWheel::CCarWheel(double _diameter, double _width, EUnits _unit, std::string _tireName, std::string _tireManufacturer): CWheel(_diameter, _width, _unit), tireName(_tireName), tireManufacturer(_tireManufacturer){}

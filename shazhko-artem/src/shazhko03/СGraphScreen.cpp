@@ -1,9 +1,9 @@
 ﻿/**
-* @file СGraphScreen.cpp
+* @file CBaseScreen.cpp
 * @brief Содержит реализацию класса CGraphScreen
 * @author Shazhko Artem
 * @version 0
-* @date 18.09.17
+* @date 03.10.17
 */
 
 #include "CGraphScreen.h"

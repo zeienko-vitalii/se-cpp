@@ -1,3 +1,10 @@
+﻿/**
+* @file CBaseScreen.cpp
+* @brief Содержит реализацию класса CScreenCarWheel
+* @author Shazhko Artem
+* @version 0
+* @date 03.10.17
+*/
 #include "CScreenCarWheel.h"
 #include <iostream>
 

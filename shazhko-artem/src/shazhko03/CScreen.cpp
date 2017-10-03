@@ -1,9 +1,9 @@
-/**
-* @file CScreen.cpp
-* @brief Содержит реализацию класса CScreen
+п»ї/**
+* @file CBaseScreen.cpp
+* @brief РЎРѕРґРµСЂР¶РёС‚ СЂРµР°Р»РёР·Р°С†РёСЋ РєР»Р°СЃСЃР° CWheel
 * @author Shazhko Artem
 * @version 0
-* @date 18.09.17
+* @date 03.10.17
 */
 #include "CScreen.h"
 #include <stdlib.h>

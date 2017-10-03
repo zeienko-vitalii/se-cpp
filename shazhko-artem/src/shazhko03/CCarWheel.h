@@ -1,6 +1,6 @@
-/**
+п»ї/**
 * @file CScreen.h
-* @brief Содержит объявление базового класса  CCarWheel
+* @brief РЎРѕРґРµСЂР¶РёС‚ РѕР±СЉСЏРІР»РµРЅРёРµ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°  CCarWheel
 * @author Shazhko Artem
 * @version 0
 * @date 03.10.17
@@ -13,40 +13,40 @@ class  CCarWheel:public CWheel
 {
 public:
 	/**
-	* Конструктор с тремя параметром
-	* @param _diameter Диаметр
-	* @param _width Шырина
-	* @param _unit Единицы измерения
+	* РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ С‚СЂРµРјСЏ РїР°СЂР°РјРµС‚СЂРѕРј
+	* @param _diameter Р”РёР°РјРµС‚СЂ
+	* @param _width РЁС‹СЂРёРЅР°
+	* @param _unit Р•РґРёРЅРёС†С‹ РёР·РјРµСЂРµРЅРёСЏ
 	*/
 	CCarWheel(double _diameter, double _width, EUnits _unit,std::string tireName,std::string tireManufacturer);
 	/**
-	* Конструктор копировнаия
-	* @param carWheel копируемый объект
+	* РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІРЅР°РёСЏ
+	* @param carWheel РєРѕРїРёСЂСѓРµРјС‹Р№ РѕР±СЉРµРєС‚
 	*/
 	CCarWheel(const CCarWheel *carWheel);
 	/**
-	* Задает название шины
-	* @param _tireName название шины
+	* Р—Р°РґР°РµС‚ РЅР°Р·РІР°РЅРёРµ С€РёРЅС‹
+	* @param _tireName РЅР°Р·РІР°РЅРёРµ С€РёРЅС‹
 	*/
 	void SetTireName(const std::string _tireName);
 	/**
-	* Задает производителя
-	* @param _tireName производитель
+	* Р—Р°РґР°РµС‚ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ
+	* @param _tireName РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ
 	*/
 	void SetTireManufacturer(const std::string _tireManufacturer);
 	/**
-	* Получает название шины
-	* @return название шины
+	* РџРѕР»СѓС‡Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С€РёРЅС‹
+	* @return РЅР°Р·РІР°РЅРёРµ С€РёРЅС‹
 	*/
 	std::string GetTireName() const;
 	/**
-	* Получает производителя
-	* @return производитель
+	* РџРѕР»СѓС‡Р°РµС‚ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ
+	* @return РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ
 	*/
 	std::string GetTireManufacturer() const;
 private:
-	// название шины
+	// РЅР°Р·РІР°РЅРёРµ С€РёРЅС‹
 	std::string tireName;
-	// производитель
+	// РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ
 	std::string tireManufacturer;
 };

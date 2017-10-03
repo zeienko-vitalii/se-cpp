@@ -1,10 +1,11 @@
 ﻿/**
-* @file CWheel.cpp
+* @file CBaseScreen.cpp
 * @brief Содержит реализацию класса CWheel
 * @author Shazhko Artem
 * @version 0
-* @date 18.09.17
+* @date 03.10.17
 */
+
 #include "CWheel.h"
 #define _USE_MATH_DEFINES // for C++  
 #include <cmath>  
