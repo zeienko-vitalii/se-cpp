@@ -33,7 +33,7 @@
 
 <p align="center">
 
-![структурa проекту](https://github.com/kit25a/se-cpp/blob/master/shandalovych-viktoriia/doc/shandalovych02/screen/projectStruct.PNG?raw=true)
+![структурa проекту](https://github.com/kit25a/se-cpp/blob/master/shandalovych-viktoriia/doc/shandalovych02/screen/projectStruct.png)
  Рисунок 2.2 структурa проекту
 </p>
 
@@ -42,7 +42,7 @@
 
 <p align="center">
 
-![призначення класів](https://raw.githubusercontent.com/kit25a/se-cpp/master/shandalovych-viktoriia/doc/shandalovych02/screen/classes.PNG)
+![призначення класів](https://github.com/kit25a/se-cpp/blob/master/shandalovych-viktoriia/doc/shandalovych02/screen/classes.png)
  Рисунок 2.3 призначення класів
 </p>
 
@@ -110,7 +110,7 @@ int main(void) {
 
 <p align="center">
 
-![призначення класів](https://github.com/kit25a/se-cpp/blob/master/shandalovych-viktoriia/doc/shandalovych02/screen/res1.PNG?raw=true)
+![призначення класів](https://github.com/kit25a/se-cpp/blob/master/shandalovych-viktoriia/doc/shandalovych02/screen/res1.png)
  Рисунок 3.1 результат роботи
 </p>
 
