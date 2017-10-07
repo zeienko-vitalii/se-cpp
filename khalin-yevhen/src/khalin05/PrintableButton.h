@@ -27,7 +27,7 @@ public:
 	virtual ~PrintableButton();
 
 	// inherited method
-	virtual string toString();
+	virtual std::string toString();
 
 	// inherited method
 	virtual void OnStore(std::ostream& aStream);
