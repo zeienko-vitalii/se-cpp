@@ -2,7 +2,7 @@
 * @file Printable.h
 * @brief Contains Printable class declaration.
 * @author Khalin Yevhen
-* @version 0
+* @version 0.0.2
 * @date 10.09.17
 */
 
@@ -11,18 +11,16 @@
 #include <iostream>
 
 /**
-* @brief The objects whose class is extended by this will 
-* be able to be printed to the output stream using 'print' method.
+* @brief Gives a chance to each child to be represented in the string.
 * @author Khalin Yevhen
 */
-class Printable
+class Printable abstract
 {
 public:
 
 	/**
-	* @brief Prints a state of the current object to the output stream.
-	* @param out an output stream
+	* @return string representation of the internal state
 	*/
-	virtual void print(std::ostream& out) = 0;
+	virtual std::string toString() = 0;
 };
 
