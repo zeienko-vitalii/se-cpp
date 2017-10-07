@@ -56,6 +56,16 @@ public:
 	* @param c removing character from button name
 	*/
 	void operator-=(char c);
+
+	/**
+	* @param newName new key name
+	*/
+	void setName(string newName);
+
+	/**
+	* @param newCode new key code
+	*/
+	void setCode(int newCode);
 private:
 	int code;
 	string name;
