@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BA9CAD0A-874F-4E21-AEE9-C58D8B87DA75}</ProjectGuid>
+    <ProjectGuid>{FD8A75CE-FDBF-4167-B3EB-733D7453892F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>khalin05</RootNamespace>
+    <RootNamespace>khalin05_test</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -74,8 +74,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\root\common\khpi\ИПЗ\khalin\libs\fileStore\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\root\common\khpi\ИПЗ\khalin\libs\fileStore\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -107,8 +105,6 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\root\common\khpi\ИПЗ\khalin\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FileStore.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -146,16 +142,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PrintableButton.cpp" />
-    <ClCompile Include="PrintableKeyboardButton.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PrintableButton.h" />
-    <ClInclude Include="PrintableKeyboardButton.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

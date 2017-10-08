@@ -1,5 +1,6 @@
 #include <FileStorage.h>
 #include <iostream>
+#include <vld.h>
 #include "PrintableKeyboardButton.h"
 using namespace std;
 
