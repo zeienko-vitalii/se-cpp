@@ -38,7 +38,7 @@
 CManipulator, CScreen, а також на порядок створення та використовування об’єктів цих класів у функції launch() (див. рис. 2.3).
 | Function launch() |
 | :-: |
-|![img_launch_func](screensot\launch.png)|
+|![img_launch_func](screenshot\launch.png)|
 |Рисунок 2.3. – Фрагмент функції launch() |
 <br>
 Призначення спроектованих класів наведено на рис. 2.4.  
