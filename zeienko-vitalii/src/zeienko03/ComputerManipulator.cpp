@@ -1,27 +1,26 @@
-/*
- * ComputerManipulator.cpp
- *
- *  Created on: 24 сент. 2017 г.
- *      Author: Bjorn
- */
+/**
+* @file  ComputerManipulator.cpp
+* Realization of the ComputerManipulator class.
+* @author Vitalii Zeienko
+* @version 0.0.3
+* @date 2017.10.09
+*/
 
 #include "ComputerManipulator.h"
 
 ComputerManipulator::ComputerManipulator() :
-		Manipulator() {
-	connectionInterface = "USB";
-	sensorType = "Laser";
+	Manipulator(), connectionInterface("USB"),sensorType("Laser") {
 }
 
-ComputerManipulator::ComputerManipulator(int amountOfBtns, char* type,
-		char* CInterface, char* SType) :
-		Manipulator(amountOfBtns, type), connectionInterface(CInterface), sensorType(
-				SType) {
+ComputerManipulator::ComputerManipulator(int amountOfBtns, Type type,
+	char* CInterface, char* SType) :
+	Manipulator(amountOfBtns, type), connectionInterface(CInterface), sensorType(
+		SType) {
 }
 
-ComputerManipulator::ComputerManipulator(const ComputerManipulator& CManip) : 
-	Manipulator(CManip.getAmountOfButtons(), CManip.type), 
-	connectionInterface(CManip.connectionInterface), sensorType(CManip.sensorType){}
+ComputerManipulator::ComputerManipulator(const ComputerManipulator& CManip) :	
+	Manipulator(CManip.getAmountOfButtons(), CManip.typeOfManipulator),
+	connectionInterface(CManip.connectionInterface), sensorType(CManip.sensorType) {}
 
 char* ComputerManipulator::getConnectionInterface() const {
 	return connectionInterface;

@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Screen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CMScreen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ComputerManipulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -30,14 +24,17 @@
     <ClInclude Include="Manipulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Output.h">
+    <ClInclude Include="BaseView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ManipulatorView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerManipulatorView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CMScreen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ComputerManipulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -50,10 +47,13 @@
     <ClCompile Include="Manipulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Output.cpp">
+    <ClCompile Include="BaseView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Screen.cpp">
+    <ClCompile Include="ComputerManipulatorView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ManipulatorView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
