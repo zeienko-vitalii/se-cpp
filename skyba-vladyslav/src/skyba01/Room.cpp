@@ -14,9 +14,6 @@ using namespace std;
 
 Room::Room(): length(0.0), width(0.0), height(0.0){
 	// TODO Auto-generated constructor stub
-	length = 0.0;
-	width = 0.0;
-	height = 0.0;
 	cout << "Default constructor Room" << endl;
 }
 

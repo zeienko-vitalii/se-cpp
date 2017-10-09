@@ -42,7 +42,7 @@ public:
 	float getLength();
 
 	/**
-	 * Сеттер width
+	 * Геттер width
 	 * @return width
 	 */
 	float getWidth();
@@ -67,7 +67,7 @@ public:
 
 	/**
 	* Сеттер height
-	* @param height - высота комнаты
+	* @param height
 	*/
 	void setHeight(float height);
 
