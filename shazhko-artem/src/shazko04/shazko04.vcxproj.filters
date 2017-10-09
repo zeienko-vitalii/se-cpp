@@ -16,6 +16,12 @@
     <Filter Include="UniteTest">
       <UniqueIdentifier>{b939eaa6-2f68-46c3-a3ab-3fd94bd809b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Delegates">
+      <UniqueIdentifier>{edd59965-dfc3-4942-a70f-e89edf4c0e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Delegates">
+      <UniqueIdentifier>{47ea175d-4afd-4707-bb66-aff60506693a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBaseScreen.h">
@@ -38,6 +44,18 @@
     </ClInclude>
     <ClInclude Include="SimpleTimer.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CDelegateVoid.h">
+      <Filter>Файлы заголовков\Delegates</Filter>
+    </ClInclude>
+    <ClInclude Include="CMethodDelegateVoid.hpp">
+      <Filter>Файлы заголовков\Delegates</Filter>
+    </ClInclude>
+    <ClInclude Include="CStaticDelegateVoid.hpp">
+      <Filter>Файлы заголовков\Delegates</Filter>
+    </ClInclude>
+    <ClInclude Include="Delegate.hpp">
+      <Filter>Файлы заголовков\Delegates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +85,12 @@
     </ClCompile>
     <ClCompile Include="TEST-SimpleTimer.cpp">
       <Filter>UniteTest</Filter>
+    </ClCompile>
+    <ClCompile Include="IDelegateVoid.h">
+      <Filter>Файлы заголовков\Delegates</Filter>
+    </ClCompile>
+    <ClCompile Include="CDelegateVoid.cpp">
+      <Filter>Исходные файлы\Delegates</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -8,19 +8,11 @@
 #pragma once
 #include <Windows.h>
 #include <stdio.h>
-
+#include "CDelegateVoid.h"
 /**
 * Интерфейс для работы с SimpleTimer
 */
 namespace Timer {
-
-	__interface  TimerEvent {
-public:
-	/**
-	* Функция, которая вызывается во время каждого такта таймера
-	*/
-	virtual void OnTimerAction();
-	};
 
 	/**
 	* Класс SimpleTimer
@@ -38,7 +30,7 @@ public:
 		/**
 		* Конструктор с параметрами
 		*/
-		SimpleTimer(TimerEvent *_attribute, int _numberClick, int _step);
+		SimpleTimer(int _numberClick, int _step);
 		/**
 		* Для запуска таймера
 		*/
@@ -51,14 +43,6 @@ public:
 		* Возвращает состояние таймера
 		*/
 		bool GetStatus()const;
-		/**
-		* Задать на выполнение таймеру атрибут
-		*/
-		void SetAttribute(TimerEvent *_attribute);
-		/**
-		* Возвращает атрибут
-		*/
-		TimerEvent * GetAttribute() const;
 		/**
 		* Задать количество тактов для таймера
 		*/
@@ -76,10 +60,6 @@ public:
 		*/
 		int GetStep() const;
 		/**
-		* Возвращает дескриптор потока
-		*/
-		HANDLE GetHandleThread() const;
-		/**
 		* Ожидания завершения таймера
 		*/
 		BOOL Wait(DWORD dwMilliseconds);
@@ -87,6 +67,8 @@ public:
 		* Деструктор
 		*/
 		virtual ~SimpleTimer();
+		Delegate::CDelegateVoid OnTimerTact;
+
 	private:
 		// Сам таймер
 		int StartTimer();
@@ -94,8 +76,7 @@ public:
 		* Требуется для связывания потока с таймером
 		*/
 		static DWORD Build(void *arg);
-		// указатель на объект в котором нужно вызывать функцию "OnTimerAction" в каждом такте таймера
-		TimerEvent *attribute;
+
 		// дескриптор потока
 		HANDLE hThread;
 		// статус таймера

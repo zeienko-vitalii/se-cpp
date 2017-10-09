@@ -11,7 +11,7 @@
 /**
 * Класс описывающий базовое отображение объектов
 */
-class CBaseScreen: public Timer::TimerEvent {
+class CBaseScreen {
 public:
 	/**
 	* Конструктор по-умолчанию
@@ -22,9 +22,6 @@ public:
 	*/
 	virtual ~CBaseScreen();
 protected:
-	virtual	void OnTimerAction() {
-		ShowContent();
-	}
 
 	/**
 	* Outputs header of information.

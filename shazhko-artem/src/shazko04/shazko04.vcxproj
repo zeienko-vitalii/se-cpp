@@ -151,18 +151,24 @@
   <ItemGroup>
     <ClInclude Include="CBaseScreen.h" />
     <ClInclude Include="CCarWheel.h" />
+    <ClInclude Include="CDelegateVoid.h" />
     <ClInclude Include="CGraphScreen.h" />
+    <ClInclude Include="CMethodDelegateVoid.hpp" />
+    <ClInclude Include="Delegate.hpp" />
     <ClInclude Include="CScreen.h" />
     <ClInclude Include="CScreenCarWheel.h" />
+    <ClInclude Include="CStaticDelegateVoid.hpp" />
     <ClInclude Include="CWheel.h" />
     <ClInclude Include="SimpleTimer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CBaseScreen.cpp" />
     <ClCompile Include="CCarWheel.cpp" />
+    <ClCompile Include="CDelegateVoid.cpp" />
     <ClCompile Include="CScreen.cpp" />
     <ClCompile Include="CScreenCarWheel.cpp" />
     <ClCompile Include="CWheel.cpp" />
+    <ClCompile Include="IDelegateVoid.h" />
     <ClCompile Include="TEST-SimpleTimer.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SimpleTimer.cpp" />
