@@ -11,71 +11,71 @@
 #include <thread>
 #include <iostream>
 
-SimpleTimer::SimpleTimer(TimerHelper * _attribute, int _numberTact, int _step): attribute(_attribute),numberTact(_numberTact),step(_step), status(Created), hThread(NULL){}
+Timer::SimpleTimer::SimpleTimer(TimerEvent * _attribute, int _numberTact, int _step): attribute(_attribute),numberTact(_numberTact),step(_step), status(Created), hThread(NULL){}
 
-int SimpleTimer::Start()
+int Timer::SimpleTimer::Start()
 {
 	hThread=CreateThread(NULL, NULL, &SimpleTimer::Build, (LPVOID)this, NULL, NULL);	
 	return 0;
 }
 
-int SimpleTimer::Stop()
+int Timer::SimpleTimer::Stop()
 {
 	
 	status = ESatus::Canceled;
 	return 0;
 }
 
-bool SimpleTimer::GetStatus() const
+bool Timer::SimpleTimer::GetStatus() const
 {
 	return false;
 }
 
-void SimpleTimer::SetAttribute(TimerHelper * _attribute)
+void Timer::SimpleTimer::SetAttribute(TimerEvent * _attribute)
 {
 	this->attribute = _attribute;
 }
 
-SimpleTimer::TimerHelper * SimpleTimer::GetAttribute() const
+Timer::TimerEvent * Timer::SimpleTimer::GetAttribute() const
 {
 	return this->attribute;
 }
 
-void SimpleTimer::SetNumberTact(const int _numberTact)
+void Timer::SimpleTimer::SetNumberTact(const int _numberTact)
 {
 	this->numberTact = _numberTact;
 }
 
-int SimpleTimer::GetNumberTact() const
+int Timer::SimpleTimer::GetNumberTact() const
 {
 	return this->numberTact;
 }
 
-void SimpleTimer::SetStep(const int  _step)
+void Timer::SimpleTimer::SetStep(const int  _step)
 {
 	this->step = _step;
 }
 
-int SimpleTimer::GetStep() const
+int Timer::SimpleTimer::GetStep() const
 {
 	return this->step;
 }
 
-HANDLE SimpleTimer::GetHandleThread() const
+HANDLE Timer::SimpleTimer::GetHandleThread() const
 {
 	return this->hThread;
 }
 
-BOOL SimpleTimer::Wait(DWORD dwMilliseconds)
+BOOL Timer::SimpleTimer::Wait(DWORD dwMilliseconds)
 {
 	return WaitForSingleObject(this->hThread, INFINITE);
 }
 
-SimpleTimer::~SimpleTimer()
+Timer::SimpleTimer::~SimpleTimer()
 {
 }
 
-int SimpleTimer::StartTimer()
+int Timer::SimpleTimer::StartTimer()
 {
 	status = ESatus::Running;
 	HANDLE hTimer = NULL;
@@ -111,15 +111,8 @@ int SimpleTimer::StartTimer()
 	status = ESatus::RanToCompletion;
 }
 
-DWORD SimpleTimer::Build(void * pParams)
+DWORD Timer::SimpleTimer::Build(void * pParams)
 {
 	SimpleTimer *st = (SimpleTimer*)pParams;
 	return st->StartTimer();
 }
-
-void SimpleTimer::TimerHelper::OnTimerAction()
-{
-	std::cout << "STEP" << std::endl;
-}
-
-SimpleTimer::TimerHelper::~TimerHelper(){}

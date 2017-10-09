@@ -9,7 +9,7 @@ int main() {
 
 	CScreen csreen(iWheel1);
 
-	SimpleTimer timer(&csreen,4, 1000);
+	Timer::SimpleTimer timer(&csreen,4, 1000);
 	timer.Start();
 	timer.Wait(INFINITE);
 

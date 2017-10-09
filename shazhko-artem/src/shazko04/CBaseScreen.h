@@ -11,7 +11,7 @@
 /**
 * Класс описывающий базовое отображение объектов
 */
-class CBaseScreen: public SimpleTimer::TimerHelper{
+class CBaseScreen: public Timer::TimerEvent {
 public:
 	/**
 	* Конструктор по-умолчанию

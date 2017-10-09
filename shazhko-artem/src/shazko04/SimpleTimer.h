@@ -9,94 +9,100 @@
 #include <Windows.h>
 #include <stdio.h>
 
-class SimpleTimer
-{
+/**
+* Интерфейс для работы с SimpleTimer
+*/
+namespace Timer {
+
+	__interface  TimerEvent {
 public:
 	/**
-	* Перечисления состояний таймера
+	* Функция, которая вызывается во время каждого такта таймера
 	*/
-	enum ESatus
-	{
-		Canceled,Created, RanToCompletion,Running, Faulted
+	virtual void OnTimerAction();
 	};
+
 	/**
-	* Абстрактный класс, который нужно наследовать классу для использования данного таймера
+	* Класс SimpleTimer
 	*/
-	class TimerHelper abstract{
+	class SimpleTimer
+	{
 	public:
 		/**
-		* Функция, которая вызывается во время каждого такта таймера
+		* Перечисления состояний таймера
 		*/
-		virtual void OnTimerAction();
-		virtual ~TimerHelper();
+		enum ESatus
+		{
+			Canceled, Created, RanToCompletion, Running, Faulted
+		};
+		/**
+		* Конструктор с параметрами
+		*/
+		SimpleTimer(TimerEvent *_attribute, int _numberClick, int _step);
+		/**
+		* Для запуска таймера
+		*/
+		int Start();
+		/**
+		* Для остановки таймера
+		*/
+		int Stop();
+		/**
+		* Возвращает состояние таймера
+		*/
+		bool GetStatus()const;
+		/**
+		* Задать на выполнение таймеру атрибут
+		*/
+		void SetAttribute(TimerEvent *_attribute);
+		/**
+		* Возвращает атрибут
+		*/
+		TimerEvent * GetAttribute() const;
+		/**
+		* Задать количество тактов для таймера
+		*/
+		void SetNumberTact(const int _numberClick);
+		/**
+		* Получение заданного количество тактов для таймера
+		*/
+		int GetNumberTact() const;
+		/**
+		* Задать шаг
+		*/
+		void SetStep(const int _step);
+		/**
+		* Получить заданный шаг
+		*/
+		int GetStep() const;
+		/**
+		* Возвращает дескриптор потока
+		*/
+		HANDLE GetHandleThread() const;
+		/**
+		* Ожидания завершения таймера
+		*/
+		BOOL Wait(DWORD dwMilliseconds);
+		/**
+		* Деструктор
+		*/
+		virtual ~SimpleTimer();
+	private:
+		// Сам таймер
+		int StartTimer();
+		/**
+		* Требуется для связывания потока с таймером
+		*/
+		static DWORD Build(void *arg);
+		// указатель на объект в котором нужно вызывать функцию "OnTimerAction" в каждом такте таймера
+		TimerEvent *attribute;
+		// дескриптор потока
+		HANDLE hThread;
+		// статус таймера
+		ESatus status;
+		// количество тактов
+		int numberTact;
+		// шаг таймера
+		int step;
 	};
-	/**
-	* Конструктор с параметрами
-	*/
-	SimpleTimer(TimerHelper *_attribute, int _numberClick, int _step);
-	/**
-	* Для запуска таймера
-	*/
-	int Start();
-	/**
-	* Для остановки таймера
-	*/
-	int Stop();
-	/**
-	* Возвращает состояние таймера
-	*/
-	bool GetStatus()const;
-	/**
-	* Задать на выполнение таймеру атрибут
-	*/
-	void SetAttribute(TimerHelper *_attribute);
-	/**
-	* Возвращает атрибут
-	*/
-	TimerHelper * GetAttribute() const;
-	/**
-	* Задать количество тактов для таймера
-	*/
-	void SetNumberTact(const int _numberClick);
-	/**
-	* Получение заданного количество тактов для таймера
-	*/
-	int GetNumberTact() const;
-	/**
-	* Задать шаг
-	*/
-	void SetStep(const int _step);
-	/**
-	* Получить заданный шаг
-	*/
-	int GetStep() const;
-	/**
-	* Возвращает дескриптор потока
-	*/
-	HANDLE GetHandleThread() const;
-	/**
-	* Ожидания завершения таймера
-	*/
-	BOOL Wait(DWORD dwMilliseconds);
-	/**
-	* Деструктор
-	*/
-	virtual ~SimpleTimer();
-private:
-	// Сам таймер
-	int StartTimer();
-	/**
-	* Требуется для связывания потока с таймером
-	*/
-	static DWORD Build(void *arg);
-	// указатель на объект в котором нужно вызывать функцию "OnTimerAction" в каждом такте таймера
-	TimerHelper *attribute;
-	// дескриптор потока
-	HANDLE hThread;
-	// статус таймера
-	ESatus status;
-	// количество тактов
-	int numberTact;
-	// шаг таймера
-	int step;
-};
+}

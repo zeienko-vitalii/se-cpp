@@ -72,6 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>D:\GitHub\kit25a\ashazhko-artem\src\x64\Debug;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -90,6 +91,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\GoogleTest\googletest-master\googletest\include;D:\GitHub\kit25a\ashazhko-artem\src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -161,6 +163,7 @@
     <ClCompile Include="CScreen.cpp" />
     <ClCompile Include="CScreenCarWheel.cpp" />
     <ClCompile Include="CWheel.cpp" />
+    <ClCompile Include="TEST-SimpleTimer.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SimpleTimer.cpp" />
     <ClCompile Include="СGraphScreen.cpp" />
