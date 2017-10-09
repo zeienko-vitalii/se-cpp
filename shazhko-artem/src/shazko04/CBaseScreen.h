@@ -7,12 +7,11 @@
 */
 #pragma once
 #include "SimpleTimer.h"
-#include "TimerHelper.h"
 
 /**
 * Класс описывающий базовое отображение объектов
 */
-class CBaseScreen: public TimerHelper{
+class CBaseScreen: public SimpleTimer::TimerHelper{
 public:
 	/**
 	* Конструктор по-умолчанию
@@ -24,9 +23,7 @@ public:
 	virtual ~CBaseScreen();
 protected:
 	virtual	void OnTimerAction() {
-		ShowHeader();
 		ShowContent();
-		ShowFooter();
 	}
 
 	/**
