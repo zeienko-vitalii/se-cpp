@@ -18,8 +18,8 @@ ButtonScreen::~ButtonScreen() {
 	// TODO Auto-generated destructor stub
 }
 
-ButtonScreen::ButtonScreen(Button button) :
-		data(button) {
+ButtonScreen::ButtonScreen(Button* button) :
+		Screen(button) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -28,8 +28,7 @@ void ButtonScreen::setButton(Button button) {
 
 }
 void ButtonScreen::viewButton() {
-	cout << "Label: " << this->data.getLabel() << endl;
-	cout << "Border color: " << this->data.getBorderColor() << endl;
+	cout << (*data).toString();
 }
 
 void ButtonScreen::showHeader() {
@@ -38,7 +37,6 @@ void ButtonScreen::showHeader() {
 }
 
 void ButtonScreen::showContent() {
-	viewWindow();
 	viewButton();
 }
 

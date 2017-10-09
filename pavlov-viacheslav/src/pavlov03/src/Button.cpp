@@ -43,3 +43,17 @@ void Button::setBorderColor(string borderColor) {
 string Button::getBorderColor() {
 	return this->borderColor;
 }
+
+string Button::toString() {
+
+	string oSt;
+	oSt += "windowId: " + to_string(this->getWindowId()) + "\n";
+	oSt += "x1: " + to_string(this->getX1()) + " ";
+	oSt += "y1: " + to_string(this->getY1()) + "\n";
+	oSt += "x2: " + to_string(this->getX2()) + " ";
+	oSt += "y2: " + to_string(this->getY2()) + "\n";
+	oSt += "label: " + this->getLabel() + "\n";
+	oSt += "borderColor: " + this->getBorderColor() + "\n";
+	return oSt;
+
+}

@@ -16,9 +16,6 @@
  * button - object which must be viewed.
  */
 class ButtonScreen: public Screen {
-private:
-	///object which must be viewed.
-	Button data;
 public:
 	/**
 	 * Default constructor, button set to default.
@@ -30,7 +27,7 @@ public:
 	 * Constructor for all fields.
 	 * @param button - button which must be set
 	 */
-	ButtonScreen(Button button);
+	ButtonScreen(Button* button);
 
 	/**
 	 * Sets information into internal button object of this class.

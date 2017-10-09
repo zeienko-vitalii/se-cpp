@@ -26,7 +26,7 @@ public:
 	 * Sets data to interior object of this class.
 	 * @param data - object to be viewed
 	 */
-	void setDataSource(Window data);
+	void setDataSource(Window* data);
 
 	/**
 	 * Prints data from data object.

@@ -18,7 +18,7 @@ GraphScreen::~GraphScreen() {
 	cout << "GraphScreen destructor\n";
 }
 
-void GraphScreen::setDataSource(Window data) {
+void GraphScreen::setDataSource(Window* data) {
 	this->data = data;
 }
 void GraphScreen::printData(const Window& data) {
@@ -40,7 +40,7 @@ void GraphScreen::printData(const Window& data) {
 
 void GraphScreen::printData() {
 
-	printData(this->data);
+	printData(*this->data);
 }
 
 void GraphScreen::showHeader() {
@@ -49,7 +49,7 @@ void GraphScreen::showHeader() {
 }
 
 void GraphScreen::showContent() {
-	cout << "WindowId" << this->data.getWindowId() << endl;
+	cout << "WindowId" << (*this->data).getWindowId() << endl;
 	printData();
 }
 

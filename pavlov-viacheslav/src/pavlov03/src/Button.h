@@ -58,4 +58,5 @@ public:
 	 */
 	string getBorderColor();
 
+	virtual string toString();
 };

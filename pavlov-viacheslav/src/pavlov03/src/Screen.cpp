@@ -9,7 +9,7 @@
 #include<iostream>
 
 #include "Screen.h"
-
+#include "BaseScreen.h"
 using namespace std;
 
 Screen::Screen() {
@@ -24,17 +24,13 @@ Screen::~Screen() {
 	cout << "Screen destructor\n";
 }
 
-Screen::Screen(Window window) {
+Screen::Screen(Window* window): BaseScreen(window) {
 	cout << "Screen constructor with parameters\n";
 }
 
 void Screen::viewWindow() {
 
-	cout << "windowId = " << data.getWindowId() << "\n";
-	cout << "x1 = " << data.getX1() << " ";
-	cout << "y1 = " << data.getY1() << "\n";
-	cout << "x2 = " << data.getX2() << " ";
-	cout << "y2 = " << data.getY2() << "\n";
+	cout << (*data).toString();
 }
 
 void Screen::showHeader() {

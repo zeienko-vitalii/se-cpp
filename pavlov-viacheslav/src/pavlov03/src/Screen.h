@@ -23,7 +23,7 @@ public:
 	 * Constructor for all fields.
 	 * @param window - window which must be set
 	 */
-	Screen(Window window);
+	Screen(Window* window);
 	virtual ~Screen();
 
 	/**

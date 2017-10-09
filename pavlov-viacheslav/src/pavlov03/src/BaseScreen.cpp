@@ -18,7 +18,7 @@ BaseScreen::~BaseScreen() {
 	cout << "BaseScreen destructor\n";
 }
 
-BaseScreen::BaseScreen(Window window) :
+BaseScreen::BaseScreen(Window* window) :
 		data(window) {
 	// TODO Auto-generated constructor stub
 

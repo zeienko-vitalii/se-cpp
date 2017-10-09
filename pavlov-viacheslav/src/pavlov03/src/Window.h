@@ -133,5 +133,7 @@ public:
 	 */
 	int height() const;
 
+	virtual string toString();
+
 };
 

@@ -15,7 +15,7 @@
 class BaseScreen {
 protected:
 	///Object to be viewed.
-	Window data;
+	Window* data;
 	/**
 	 * Outputs header of information.
 	 */
@@ -38,7 +38,7 @@ public:
 	 * Constructor for all fields.
 	 * @param window - window which must be set
 	 */
-	BaseScreen(Window window);
+	BaseScreen(Window* window);
 	virtual ~BaseScreen();
 	/**
 	 *Outputs information about `window` into console.
