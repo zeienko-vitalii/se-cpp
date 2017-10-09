@@ -17,7 +17,7 @@ class Manipulator {
 public:
 	int count;
 
-private:
+protected:
 
 	//Тип девайсу
 	string type;
@@ -35,6 +35,8 @@ public:
 	* @param type тип девайсу
 	*/
 	Manipulator(int count, string type);
+
+	virtual string toString();
 
 	/**
 	* Отримання кількості кнопок

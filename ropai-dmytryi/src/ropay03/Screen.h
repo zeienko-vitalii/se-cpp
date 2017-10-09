@@ -6,17 +6,16 @@
  * @version 0.0.1
  * @date 2017.01.01
  */
-#include "BaseView.h"
+
 
 #ifndef SCREEN_H_
 #define SCREEN_H_
+#include "BaseView.h"
 /**
  * Класс для відображення даних
  */
 class Screen: public BaseView {
-public:
-	//Об'єкт типу Manipulator
-	Manipulator data;
+
 
 public:
 	Screen();
@@ -24,7 +23,7 @@ public:
 	 * Конструктор із параметром
 	 * @param manip об'єкт типу Manipulator
 	 */
-	Screen(Manipulator data);
+	Screen(Manipulator* manip);
 
 	/**
 	 * Функція виводу данних
@@ -36,6 +35,7 @@ public:
 	virtual void showContent();
 
 	virtual void showFooter();
+
 
 	/**
 	 * Деструктор.

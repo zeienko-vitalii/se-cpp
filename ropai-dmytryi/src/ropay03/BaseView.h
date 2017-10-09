@@ -13,7 +13,7 @@ class BaseView {
 
 protected:
 
-	Manipulator manip;
+	Manipulator *manip;
 
 	virtual void showHeader() = 0;
 
@@ -24,7 +24,7 @@ protected:
 public:
 	BaseView();
 
-	BaseView(Manipulator manip);
+	BaseView(Manipulator *manip);
 
 	void Display();
 

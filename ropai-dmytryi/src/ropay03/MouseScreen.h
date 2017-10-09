@@ -11,13 +11,11 @@
 #define MOUSESCREEN_H_
 
 class MouseScreen: public Screen {
-private:
-	Mouse data;
 
 public:
 	MouseScreen();
 
-	MouseScreen(Mouse data);
+	MouseScreen(Mouse* mouse);
 
 	void showMouse();
 

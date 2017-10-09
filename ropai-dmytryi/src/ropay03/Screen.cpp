@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 
+#include "BaseView.h"
 #include "Manipulator.h"
 #include "Screen.h"
 
@@ -18,17 +19,16 @@ Screen::Screen(){
 
 }
 
-Screen::Screen(Manipulator data){
+Screen::Screen(Manipulator* manip): BaseView(manip){
 	cout << "" << endl;
 	cout << "Screen constructor" << endl;
 
 }
 
+
+
 void Screen::dataOutput(){
-	cout << "" << endl;
-	cout << "Device type: " << data.getType() << endl;
-	cout << "Number of buttons: " << data.getCount() << endl;
-	cout << "" << endl;
+	cout << (*manip).toString();
 }
 
 void Screen::showHeader(){
@@ -49,4 +49,3 @@ Screen::~Screen() {
 	cout << "Screen destructor" << endl;
 
 }
-

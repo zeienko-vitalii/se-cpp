@@ -36,11 +36,11 @@ int main() {
 			cout << "From Screen " << endl;
 
 			cout << "manip1: \n";
-			Screen view(manip1);
+			Screen view(&manip1);
 			view.Display();
 
 			cout << "manip2: \n";
-			Screen view2(manip2);
+			Screen view2(&manip2);
 			view2.Display();
 
 
@@ -49,7 +49,7 @@ int main() {
 			gscreen.setDataSource(&manip1);
 			gscreen.Display();
 
-			MouseScreen mscreen(mouse);
+			MouseScreen mscreen(&mouse);
 			cout << "From mouse: \n";
 			mscreen.Display();
 

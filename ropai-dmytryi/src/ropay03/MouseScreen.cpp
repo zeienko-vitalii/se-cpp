@@ -6,6 +6,7 @@
  * @date 2017.01.01
  */
 #include <iostream>
+#include"Screen.h"
 #include "MouseScreen.h"
 #include "Mouse.h"
 
@@ -14,26 +15,24 @@ MouseScreen::MouseScreen() {
 
 }
 
-MouseScreen::MouseScreen(Mouse data): data(data){
-
+MouseScreen::MouseScreen(Mouse* mouse) :
+		Screen(mouse) {
 
 }
 
-void MouseScreen::showMouse(){
-	cout << "Connection: " << this->data.getConnection() << endl;
-	cout << "Sensor type: " << this->data.getSensorType() << endl;
-}
+void MouseScreen::showMouse() {
+	cout << (*this->manip).toString() << endl;}
 
-void MouseScreen::showHeader(){
+void MouseScreen::showHeader() {
 	cout << "MouseScreen::showHeader() \n";
 }
 
-void MouseScreen::showContent(){
+void MouseScreen::showContent() {
 	showMouse();
 	dataOutput();
 }
 
-void MouseScreen::showFooter(){
+void MouseScreen::showFooter() {
 	cout << "\n MouseScreen::showFooter()) \n";
 }
 

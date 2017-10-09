@@ -7,6 +7,7 @@
  */
 #include <iostream>
 #include <string>
+#include <sstream>
 
 #include "Manipulator.h"
 
@@ -43,6 +44,16 @@ bool Manipulator::isSimple() const{
 
 bool Manipulator::isGame() const{
 	return count >= 4;
+}
+
+string Manipulator::toString(){
+
+	string str ;
+
+	str += "Количество кнопок: " + to_string(count) + "\n";
+	str += "Тип устройства : " + type + "\n";
+
+	return  str;
 }
 
 Manipulator::~Manipulator() {

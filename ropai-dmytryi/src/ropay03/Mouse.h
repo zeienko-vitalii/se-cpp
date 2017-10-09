@@ -32,6 +32,8 @@ public:
 
 	void setSensorType(string sensorType);
 
+	virtual string toString();
+
 	virtual ~Mouse();
 };
 

@@ -13,7 +13,7 @@ BaseView::BaseView() {
 
 }
 
-BaseView::BaseView(Manipulator manip): manip(manip){
+BaseView::BaseView(Manipulator *manip): manip(manip){
 
 }
 
