@@ -2,7 +2,7 @@
 #include "..\khalin05\PrintableKeyboardButton.h"
 #include "..\khalin05\PrintableKeyboardButton.cpp"
 
-TEST(PKeyboardButton, OnLoad_sendStubToStream_shouldSetDataFromStub) {
+TEST(PKeyboardButton, OnLoad_sendStubInsteadStream_shouldSetDataFromStub) {
 	PKeyboardButton btn(ButtonForm::RECTANGULAR, 101, "Z"); // condition is false by default
 	std::stringstream stub;
 
@@ -23,7 +23,7 @@ TEST(PKeyboardButton, OnLoad_sendStubToStream_shouldSetDataFromStub) {
 	ASSERT_EQ(expectedCondition, actualCondition);
 }
 
-TEST(PKeyboardButton, OnStore_sendStubToStream_shouldSendDataToStub) {
+TEST(PKeyboardButton, OnStore_sendStubInsteadStream_shouldPushDataToStub) {
 	const char expectedName = 'Q';
 	const char expectedCode = '5';
 	const char expectedCondition = '1';
