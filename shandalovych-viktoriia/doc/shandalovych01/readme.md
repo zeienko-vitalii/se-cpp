@@ -18,7 +18,7 @@
 
 <p align="center">
 
-![Іерархія класів](https://raw.githubusercontent.com/kit25a/se-cpp/master/shandalovych-viktoriia/doc/shandalovych01/screen/classGraph.png)
+![Іерархія класів](screen/classGraph.png)
 
  Рисунок 2.1 іерархія класів
 </p>
@@ -33,7 +33,7 @@
 
 <p align="center">
 
-![структурa проекту](https://github.com/kit25a/se-cpp/blob/master/shandalovych-viktoriia/doc/shandalovych01/screen/projectStruct.PNG?raw=true)
+![структурa проекту](screen/projectStruct.PNG)
  Рисунок 2.2 структурa проекту
 </p>
 
@@ -42,7 +42,7 @@
 
 <p align="center">
 
-![призначення класів](https://raw.githubusercontent.com/kit25a/se-cpp/master/shandalovych-viktoriia/doc/shandalovych01/screen/screen.PNG)
+![призначення класів](screen/screen.PNG)
  Рисунок 2.3 призначення класів
 </p>
 
@@ -105,7 +105,7 @@ int main(void) {
 
 <p align="center">
 
-![призначення класів](https://github.com/kit25a/se-cpp/blob/master/shandalovych-viktoriia/doc/shandalovych01/screen/res1.PNG?raw=true)
+![призначення класів](screen/res1.PNG)
  Рисунок 3.1 призначення класів
 </p>
 
