@@ -16,6 +16,7 @@
 template <typename E>
 class LinkedList : Printable {
 private:
+
 	template <typename T>
 	class Entry {
 	public:
@@ -27,12 +28,18 @@ private:
 	};
 
 	int elementsAmount;
-	Entry<E> *header; // next = prev
+	Entry<E> *head; // prev = null
 public:
-	LinkedList() : header(nullptr), elementsAmount(0) {
+
+	LinkedList() : head(nullptr), elementsAmount(0) {
 	}
 
 	virtual std::string toString() = 0;
+
+	/**
+	* @return true if there is <b>data</b> element in the list
+	*/
+	virtual bool containts(E * data) = 0;
 
 	/**
 	* @breif Adds <b>e</b> to the end of the list.
