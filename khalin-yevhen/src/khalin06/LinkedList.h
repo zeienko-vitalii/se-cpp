@@ -92,7 +92,36 @@ public:
 	virtual int size() {
 		return elementsAmount;
 	}
+	
+	/**
+	* @brief Removes all elements from the list.
+	*/
+	virtual void clean() {
+		// TODO implement
+	}
 
+	/**
+	* @brief Inserts <b>e</b> element to <b>index</b> position in the list.
+	* @param index position of inserting
+	* @param e inserting element
+	*/
+	virtual void insert(unsigned int index, E * e) {
+		// TODO implement
+	}
+
+	/**
+	* @return A pointer to an element according to <b>index</b>
+	*/
+	virtual E * get(unsigned int index) {
+		return nullptr; // TODO implement
+	}
+
+	/**
+	* @return true if there is <b>e</b> element in the list
+	*/
+	virtual bool containts(E * e) {
+		return false; // TODO implement
+	}
 
 	virtual ~LinkedList() { }
 };
