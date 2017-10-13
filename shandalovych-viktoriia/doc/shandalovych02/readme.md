@@ -54,7 +54,10 @@
 #### Клас `GraphScreen` функція виведення даних за допомогою псевдографіки:
 
 ```
+
+
 void GraphScreen::PrintData(const Wheel& wheel) {
+cout << "Объем колеса: " << wheel.volume() <<"\n";
 	cout << "            * * *             \n";
 	cout << "        * *   *   * *         \n";
 	cout << "      * *     *     * *       \n";

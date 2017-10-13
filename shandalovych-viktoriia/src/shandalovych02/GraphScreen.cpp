@@ -28,6 +28,9 @@ void GraphScreen::setDataSource(const Wheel* wheel) {
 
 }
 void GraphScreen::PrintData(const Wheel& wheel) {
+
+	cout << "Объем колеса: " << wheel.volume() <<"\n";
+
 	cout << "            * * *             \n";
 	cout << "        * *   *   * *         \n";
 	cout << "      * *     *     * *       \n";
