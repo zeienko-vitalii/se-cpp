@@ -1,5 +1,5 @@
-/*
- * @file Screen.h
+/**
+ * @file Screen.h файл содержащий класс Screen
  * Part of polshykov01
  * @author Mike
  * @version 0.0.1
@@ -10,29 +10,29 @@
 #define SCREEN_H_
 
 /**
- * Класс для відображення даних
+ * Класс для отображения даных
  */
 class Screen {
 public:
-	//Об'єкт типу Monitor
+	//Обьект типа Monitor
 	Monitor monitor;
 
 public:
 
 	/**
-	 * Ініціалізація полей.
-	 * Конструктор без параметрів
+	 * Инициализация полей.
+	 * Конструктор без параметров
 	 */
 	Screen();
 
 	/**
-	 * Конструктор із параметром
-	 * @param manip об'єкт типу Monitor
+	 * Конструктор с параметром
+	 * @param monitor обьекта типа Monitor
 	 */
 	Screen(Monitor monitor);
 
 	/**
-	 * Функція виводу данних
+	 * Функция вывода данных
 	 */
 	void dataOutput();
 
