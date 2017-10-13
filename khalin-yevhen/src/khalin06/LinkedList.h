@@ -29,9 +29,10 @@ private:
 
 	int elementsAmount;
 	Entry<E> *head; // prev = null
+	Entry<E> *tail; // next = null
 public:
 
-	LinkedList() : head(nullptr), elementsAmount(0) {
+	LinkedList() : head(nullptr), tail(nullptr), elementsAmount(0) {
 	}
 
 	virtual std::string toString() = 0;
