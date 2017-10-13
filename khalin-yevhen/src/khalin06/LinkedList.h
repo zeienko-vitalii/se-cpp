@@ -10,13 +10,18 @@
 #pragma once
 
 /**
-* @brief Abstract doubly linked list interface
+* @brief Doubly linked list
 * @author Khalin Yevhen
+* @typename E a keeping data type
 */
 template <typename E>
 class LinkedList : Printable {
 private:
 
+	/**
+	* @brief An internal data type which represents a list element
+	* @typename T a keeping data type
+	*/
 	template <typename T>
 	class Entry {
 	public:
@@ -32,45 +37,54 @@ private:
 	Entry<E> *tail; // next = null
 public:
 
-	LinkedList() : head(nullptr), tail(nullptr), elementsAmount(0) {
+	LinkedList() :
+		head(nullptr), tail(nullptr), elementsAmount(0) { }
+
+	virtual std::string toString() {
+		return ""; // TODO implement
 	}
-
-	virtual std::string toString() = 0;
-
-	/**
-	* @return true if there is <b>data</b> element in the list
-	*/
-	virtual bool containts(E * data) = 0;
 
 	/**
 	* @breif Adds <b>e</b> to the end of the list.
 	*/
-	virtual void addLast(E * e) = 0;
+	virtual void addLast(E * e) {
+		// TODO implement
+	}
 
 	/**
 	* @breif Adds <b>e</b> to the first position of the list.
 	*/
-	virtual void addFirst(E * e) = 0;
+	virtual void addFirst(E * e) {
+		// TODO implement
+	}
 
 	/**
 	* @breif Removes first element of the list.
 	*/
-	virtual void removeFirst() = 0;
+	virtual void removeFirst() {
+		// TODO implement
+	}
 
 	/**
 	* @breif Removes last element of the list.
 	*/
-	virtual void removeLast() = 0;
+	virtual void removeLast() {
+		// TODO implement
+	}
 
 	/**
 	* @breif Removes an element by index.
 	*/
-	virtual void remove(unsigned int index) = 0;
+	virtual void remove(unsigned int index) {
+		// TODO implement
+	}
 
 	/**
 	* @breif If <b>e</b> is contained in the list, it'll be removed.
 	*/
-	virtual void remove(E * e) = 0;
+	virtual void remove(E * e) {
+		// TODO implement
+	}
 
 	/**
 	* @return size of the list
@@ -78,4 +92,7 @@ public:
 	virtual int size() {
 		return elementsAmount;
 	}
+
+
+	virtual ~LinkedList() { }
 };
