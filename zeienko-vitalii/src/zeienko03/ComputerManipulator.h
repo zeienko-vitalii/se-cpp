@@ -28,18 +28,19 @@ public:
 	ComputerManipulator();
 
 	/**
-	* Cop
+	 * Copying constructor
+	 * @param computerManipulator outer object with data which will be copied
 	* */
-	ComputerManipulator(const ComputerManipulator& CManip);
+	ComputerManipulator(const ComputerManipulator& computerManipulator);
 
 	/**
 	* It assigns parameters to class` fields
 	* @param amountOfBtns is an amount of buttons
-	* @param t is a type of manipulator
+	* @param type is a type of manipulator
 	* @param cInterface is a connection interface
 	* @param sType is a sensor type of manipulator
 	* */
-	ComputerManipulator(int amountOfBtns, Type t,
+	ComputerManipulator(int amountOfBtns, Type type,
 		char* cInterface, char* sType);
 
 	/**

@@ -20,10 +20,11 @@ class BaseView {
 public:
 
 	/**
-	 * Default constructor.
-	 * It contains nothing and was made for explicit showing the default constructor.
+	 * This constructor sets BaseView::iManipulator and BaseView::out with an appropriate arguments
+	 * @param manipulator will be assigned to  BaseView::iManipulator
+	 * @param os will be assigned to BaseView::out 
 	 * */
-	BaseView(const Manipulator& manip, std::ostream* os);
+	BaseView(const Manipulator& manipulator, std::ostream* os);
 
 	/**
 	 * Outputs header, content and the footer.
@@ -57,15 +58,15 @@ protected:
 	/**
 	 * Outputs the Header.
 	 * */
-	virtual void showHeader() {};
+	virtual void showHeader()  = 0;
 	/**
 	 * Outputs the Content.
 	 * */
-	virtual void showContent() {};
+	virtual void showContent() = 0;
 	/**
 	 * Outputs the Footer.
 	 * */
-	virtual void showFooter() {};
+	virtual void showFooter() = 0;
 private: 
 	Manipulator iManipulator; /// Manipulator`s instance which will be printed on the screen
 	std::ostream *out;			/// An ostream`s object 

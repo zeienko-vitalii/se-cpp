@@ -9,7 +9,7 @@
 #include "BaseView.h"
 #include "ManipulatorView.h"
 #include "ComputerManipulatorView.h"
-#include "GraphScreen.h"
+#include "GraphicalView.h"
 
 #include "Manipulator.h"
 #include "ComputerManipulator.h"
@@ -21,23 +21,6 @@
 #include <crtdbg.h>
 #define new new (_NORMAL_BLOCK, __FILE__, __LINE__)
 
- /**
- * This function contains a basic check for creating
- * instances of classes and displaying Manipulator`s objects on the screen.
- * */
-void launch() {
-	Manipulator* m = new Manipulator();
-	ComputerManipulator* a = new ComputerManipulator();
-
-	ComputerManipulatorView v(*a, &(std::cout));
-	BaseView* bv = &v;
-	bv->display();
-
-	delete a;
-	delete m;
-
-}
-
 /**
 * Entry point of program.
 * @param argc is an amount of parameters which were sent to the main.
@@ -46,7 +29,16 @@ void launch() {
 * */
 int main() {
 	
-	launch();
+	{
+		Manipulator* manipulator = new Manipulator();
+		ComputerManipulator* computerManipulator = new ComputerManipulator();
+		ComputerManipulatorView compManipView(*computerManipulator, &(std::cout));
+		BaseView* bv = &compManipView;
+		bv->display();
+		delete computerManipulator;
+		delete manipulator;
+	}
+
 	_getch();
 	return _CrtDumpMemoryLeaks();
 }

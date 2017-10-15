@@ -14,7 +14,7 @@
 /**
 * This class provides output of the CpmputerMnipulator`s information
 */
-class ComputerManipulatorView: public ManipulatorView {
+class ComputerManipulatorView : public ManipulatorView {
 private:
 	/// ComputerManipulator`s instance which information will be printed on the screen.
 	ComputerManipulator CManipulator;
@@ -22,15 +22,12 @@ public:
 
 	/**
 	* Constructor which is getting a constant ComputerManipulator object
-	* @param CManip will set the object ManipulatorView::manipulator
-	* */
-	ComputerManipulatorView(const ComputerManipulator& CManip, std::ostream* os);
+	* @param computerManip will set the object ComputerManipulatorView::computerManip
+	* @param os is the type of an output stream 
+	*/
+	ComputerManipulatorView(const ComputerManipulator& computerManip, std::ostream* os);
 
-	/**
-	 * Outputs ComputerManipulator's object
-	 * */
-	//void display();
-	
+
 	/**
 	* If memory was allocated for an BaseView`s object destructor
 	* clears this memory.
@@ -40,7 +37,7 @@ protected:
 	/**
 	 * Outputs the Header of the ComputerManipulatorView::CMnipulator
 	 * */
-	virtual void showHeader(); 
+	virtual void showHeader();
 	/**
 	 * Outputs the Content of  the ComputerManipulatorView::CMnipulator
 	 * */

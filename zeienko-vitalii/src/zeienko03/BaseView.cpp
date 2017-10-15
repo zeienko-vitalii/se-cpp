@@ -11,7 +11,7 @@
 
 BaseView::~BaseView() {}
 
-BaseView::BaseView(const Manipulator& manip, std::ostream * os) : iManipulator(manip), out(os){}
+BaseView::BaseView(const Manipulator& manipulator, std::ostream * os) : iManipulator(manipulator), out(os){}
 
 void BaseView::display(){
 	

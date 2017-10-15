@@ -17,6 +17,7 @@ public:
 	/**
 	 * Constructor takes constant Manipulator`s object and assigns if to ManipulatorView::manipulator.
 	 * @param manipulator this object`s information will be printed on the screen.
+	 * @param os is the type of an output stream 
 	 * */
 	ManipulatorView(const Manipulator& manipulator, std::ostream* os);
 
@@ -24,6 +25,19 @@ public:
 	 * Outputs ManipulatorView::manipulator object.
 	 * */
 	void show();
+
+	/**
+	* Outputs the Header.
+	* */
+	void showHeader();
+	/**
+	* Outputs the Content.
+	* */
+	 void showContent();
+	/**
+	* Outputs the Footer.
+	* */
+	 void showFooter();
 
 	/**
 	 * Destructor. Destroys object and  frees the memory which was allocated.

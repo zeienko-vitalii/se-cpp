@@ -26,6 +26,12 @@ public:
 	Manipulator(void);
 
 	/**
+	* Copying constructor
+	* @param manipulator outer object with data which will be copied
+	*/
+	Manipulator(const Manipulator& manipulator);
+
+	/**
 	 * Constructor with parameters
 	 * @param amountOfBtns set an amount of manipulator's buttons
 	 * @param typeOfManip set the manipulator`s type
@@ -37,6 +43,7 @@ public:
 	* @return string which defines type of the current object.
 	*/
 	char* getType() const;
+
 
 	/**
 	* Reading member Manipulator::amountOfButtons
@@ -50,11 +57,6 @@ public:
 	* */
 	void setAmountOfButtons(int amountOfBtns);
 
-	/**
-	 * Copying constructor
-	 * @param Manipulator outer object with data which will be copied
-	 */
-	Manipulator(const Manipulator& Manipulator);
 
 	/**
 	 *  Destructor. Destroys object for which memory was allocated.

@@ -19,8 +19,8 @@ Manipulator::Manipulator(int amountOfBtns, Type typeOfManip) :
 	amountOfButtons(amountOfBtns), typeOfManipulator(typeOfManip) {
 }
 
-Manipulator::Manipulator(const Manipulator& Manipulator) :
-	amountOfButtons(Manipulator.amountOfButtons), typeOfManipulator(Manipulator.typeOfManipulator) {
+Manipulator::Manipulator(const Manipulator& manipulator) :
+	amountOfButtons(manipulator.amountOfButtons), typeOfManipulator(manipulator.typeOfManipulator) {
 }
 
 Manipulator::~Manipulator() {}

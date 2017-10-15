@@ -7,58 +7,48 @@
 */
 
 #include "ComputerManipulatorView.h"
-#include <iostream>
 #include <ctime>
-using std::cout;
-using std::cin;
-using std::endl;
-
 
 #ifdef _DEBUG
 #define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
 #define new new (_NORMAL_BLOCK, __FILE__, __LINE__)
 
-
 ComputerManipulatorView::ComputerManipulatorView(const ComputerManipulator& CManip, std::ostream* os) : 
 	ManipulatorView(CManip, os ), 
-	CManipulator(CManip) {
-}
+	CManipulator(CManip) { }
 
 void ComputerManipulatorView::showHeader() {
-	cout << "\tComputer Manipulator\n" << endl;
+	(*getOutputStream()) << "\tComputer Manipulator" << "\n"; 
 }
 
 void ComputerManipulatorView::showContent() {
 	if (CManipulator.isGame()) {
-		cout << "|==============================|" << endl;
-		cout << "|" << "Type: game " << CManipulator.getType() << endl;
-		cout << "|" << "Amount of buttons: " << CManipulator.getAmountOfButtons() << endl;
-		cout << "|" << "Connection interface: " << CManipulator.getConnectionInterface() << endl;
-		cout << "|" << "Sensor type: " << CManipulator.getSensorType() << endl;
+		(*getOutputStream()) << "|==============================|\n";
+		(*getOutputStream()) << "|" << "Type: game " << CManipulator.getType() << "\n";
+		(*getOutputStream()) << "|" << "Amount of buttons: " << CManipulator.getAmountOfButtons() << "\n"; 
+		(*getOutputStream()) << "|" << "Connection interface: " << CManipulator.getConnectionInterface() << "\n";
+		(*getOutputStream()) << "|" << "Sensor type: " << CManipulator.getSensorType() << "\n";
 	}
 	else if (CManipulator.isSimple()) {
-		cout << "|==============================|" << endl;
-		cout << "|" << "Type: simple " << CManipulator.getType() << endl;
-		cout << "|" << "Amount of buttons: " << CManipulator.getAmountOfButtons() << endl;
-		cout << "|" << "Connection interface: " << CManipulator.getConnectionInterface() << endl;
-		cout << "|" << "Sensor type: " << CManipulator.getSensorType() << endl;
+		(*getOutputStream()) << "|==============================|" << "\n";
+		(*getOutputStream()) << "|" << "Type: simple " << CManipulator.getType() << "\n";
+		(*getOutputStream()) << "|" << "Amount of buttons: " << CManipulator.getAmountOfButtons() << "\n";
+		(*getOutputStream()) << "|" << "Connection interface: " << CManipulator.getConnectionInterface() << "\n";
+		(*getOutputStream()) << "|" << "Sensor type: " << CManipulator.getSensorType() << "\n";
 	}
 }
 
 void ComputerManipulatorView::showFooter() {
-	cout << "|==============================|" << endl;
+	(*getOutputStream()) << "|==============================|" << "\n";
 	char* buffer = new char[64];
 	time_t rawtime;
 	time(&rawtime);
 	ctime_s(buffer, 64, &rawtime);
-	cout << "|Date:" << buffer;// << endl;
-	cout << "|==============================|" << endl;
+	(*getOutputStream()) << "|Date:" << buffer;
+	(*getOutputStream()) << "|==============================|" << "\n";
 	delete buffer;
 }
 
-ComputerManipulatorView::~ComputerManipulatorView() {
-	//if (this->CManipulator != nullptr) 
-	//	delete this->CManipulator;
-}
+ComputerManipulatorView::~ComputerManipulatorView() { }
 #endif
