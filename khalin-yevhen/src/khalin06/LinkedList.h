@@ -6,36 +6,33 @@
 * @date 13.10.17
 */
 
-#include "..\khalin01\Printable.h"
 #pragma once
 
+#include "..\khalin01\Printable.h"
+
+#ifdef _DEBUG
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#define new new (_NORMAL_BLOCK, __FILE__, __LINE__)
+#endif
+
+#ifndef TEST_MODE
+#define TEST_MODE 
+#endif // !TEST_MODE
+
 /**
-* @brief Doubly linked list
-* @author Khalin Yevhen
+* @brief Doubly linked list implementation
 * @typename E a keeping data type
+*
+* @author Khalin Yevhen
 */
 template <typename E>
 class LinkedList : Printable {
-private:
-
-	/**
-	* @brief An internal data type which represents a list element
-	* @typename T a keeping data type
-	*/
-	template <typename T>
-	class Entry {
-	public:
-		T *element;
-		Entry<T> *next;
-		Entry<T> *prev;
-		Entry(T *element, Entry<T> *next, Entry<T> *prev) :
-			element(element), next(next), prev(prev) { }
-	};
-
-	int elementsAmount;
-	Entry<E> *head; // prev = null
-	Entry<E> *tail; // next = null
 public:
+
+#ifdef TEST_MODE
+	template <class T> friend class LinkedListFieldsAccessor;
+#endif 
 
 	LinkedList() :
 		head(nullptr), tail(nullptr), elementsAmount(0) { }
@@ -48,14 +45,31 @@ public:
 	* @breif Adds <b>e</b> to the end of the list.
 	*/
 	virtual void addLast(E * e) {
-		// TODO implement
+		Entry<E> *newElement = new Entry<E>(e, nullptr, nullptr);
+		if (head == nullptr) {
+			head = newElement;
+		} else {
+			tail->next = newElement;
+			newElement->prev = tail;
+		}
+		tail = newElement;
+		elementsAmount++;
 	}
 
 	/**
 	* @breif Adds <b>e</b> to the first position of the list.
 	*/
 	virtual void addFirst(E * e) {
-		// TODO implement
+		Entry<E> *newElement = new Entry<E>(e, nullptr, nullptr);
+		if (head == nullptr) {
+			head = newElement;
+			tail = head;
+		} else {
+			head->prev = newElement;
+			newElement->next = head;
+			head = newElement;
+		}
+		elementsAmount++;
 	}
 
 	/**
@@ -92,12 +106,21 @@ public:
 	virtual int size() {
 		return elementsAmount;
 	}
-	
+
 	/**
 	* @brief Removes all elements from the list.
 	*/
 	virtual void clean() {
-		// TODO implement
+		if (elementsAmount != 0) {
+			Entry<E> * tmp = head;
+			while (head != nullptr) {
+				tmp = head;
+				head = head->next;
+				delete tmp;
+			}
+			tail = nullptr;
+			elementsAmount = 0;
+		}
 	}
 
 	/**
@@ -123,5 +146,28 @@ public:
 		return false; // TODO implement
 	}
 
-	virtual ~LinkedList() { }
+	virtual ~LinkedList() {
+		clean();
+	}
+
+private:
+
+	/**
+	* @brief An internal data type which represents a list element
+	* @typename T a keeping data type
+	*/
+	template <typename T>
+	class Entry {
+	public:
+		T *element;
+		Entry<T> *next;
+		Entry<T> *prev;
+
+		Entry(T *element, Entry<T> *next, Entry<T> *prev) :
+			element(element), next(next), prev(prev) { }
+	};
+
+	int elementsAmount;
+	Entry<E> *head; // prev = null
+	Entry<E> *tail; // next = null
 };
