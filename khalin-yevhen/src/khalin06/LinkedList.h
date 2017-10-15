@@ -45,7 +45,7 @@ public:
 	* @breif Adds <b>e</b> to the end of the list.
 	*/
 	virtual void addLast(E * e) {
-		Entry<E> *newElement = new Entry<E>(e, nullptr, nullptr);
+		auto newElement = new Entry<E>(e, nullptr, nullptr);
 		if (head == nullptr) {
 			head = newElement;
 		} else {
@@ -60,7 +60,7 @@ public:
 	* @breif Adds <b>e</b> to the first position of the list.
 	*/
 	virtual void addFirst(E * e) {
-		Entry<E> *newElement = new Entry<E>(e, nullptr, nullptr);
+		auto newElement = new Entry<E>(e, nullptr, nullptr);
 		if (head == nullptr) {
 			head = newElement;
 			tail = head;
@@ -76,28 +76,87 @@ public:
 	* @breif Removes first element of the list.
 	*/
 	virtual void removeFirst() {
-		// TODO implement
+		if (elementsAmount > 0) {
+			if (elementsAmount == 1) {
+				delete head;
+				head = nullptr;
+				tail = nullptr;
+			} else { // > 1
+				auto afterHead = head->next;
+				afterHead->prev = nullptr;
+				delete head;
+				head = afterHead;
+			}
+			elementsAmount--;
+		}
 	}
 
 	/**
 	* @breif Removes last element of the list.
 	*/
 	virtual void removeLast() {
-		// TODO implement
+		if (elementsAmount > 0) {
+			if (elementsAmount == 1) {
+				delete head;
+				head = nullptr;
+				tail = nullptr;
+			} else { // > 1
+				auto beforeLast = tail->prev;
+				beforeLast->next = nullptr;
+				delete tail;
+				tail = beforeLast;
+			}
+			elementsAmount--;
+		}
 	}
 
 	/**
 	* @breif Removes an element by index.
 	*/
 	virtual void remove(unsigned int index) {
-		// TODO implement
+		if (index < elementsAmount) {
+			if (index == elementsAmount - 1) {
+				removeLast();
+			} else if (index == 0) {
+				removeFirst();
+			} else {
+				auto iter = head;
+				while (index-- > 0) { // move to necessary position
+					iter = iter->next;
+				}
+				if (iter->next != nullptr) {
+					auto afterRemoving = iter->next;
+					auto beforeRemoving = iter->prev;
+
+					// link elements after and before corrent position:
+					afterRemoving->prev = iter->prev;
+					beforeRemoving->next = afterRemoving;
+
+					delete iter;
+					elementsAmount--;
+				} else {
+					removeLast();
+				}
+			}
+		}
 	}
 
 	/**
 	* @breif If <b>e</b> is contained in the list, it'll be removed.
+	*
+	* There will be performed pointers comparison to detect element for removing.
 	*/
 	virtual void remove(E * e) {
-		// TODO implement
+		auto iter = head;
+		auto index = 0;
+		while (index < elementsAmount) {
+			iter = iter->next;
+			index++;
+			if (iter->element == e) {
+				remove(index);
+				break;
+			}
+		}
 	}
 
 	/**
@@ -112,11 +171,11 @@ public:
 	*/
 	virtual void clean() {
 		if (elementsAmount != 0) {
-			Entry<E> * tmp = head;
+			auto iter = head;
 			while (head != nullptr) {
-				tmp = head;
+				iter = head;
 				head = head->next;
-				delete tmp;
+				delete iter;
 			}
 			tail = nullptr;
 			elementsAmount = 0;
