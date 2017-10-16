@@ -9,6 +9,8 @@
 #pragma once
 
 #include "..\khalin01\Printable.h"
+#include "StorageInterface.h"
+#include "..\khalin03\Utilities.h"
 
 #ifdef _DEBUG
 #define _CRTDBG_MAP_ALLOC
@@ -22,12 +24,13 @@
 
 /**
 * @brief Doubly linked list implementation
-* @typename E a keeping data type
+* @typename E a keeping data type. This type must extend MStorageInterface class and have
+* the default constructor.
 *
 * @author Khalin Yevhen
 */
 template <typename E>
-class LinkedList : Printable {
+class LinkedList : public Printable, public MStorageInterface {
 public:
 
 #ifdef TEST_MODE
@@ -35,10 +38,35 @@ public:
 #endif 
 
 	LinkedList() :
-		head(nullptr), tail(nullptr), elementsAmount(0) { }
+		head(nullptr), tail(nullptr), elementsAmount(0), elementsWereLoaded(false) { }
 
 	virtual std::string toString() {
 		return ""; // TODO implement
+	}
+
+	virtual void OnStore(std::ostream& aStream) {
+		if (elementsAmount > 0) {
+			if (instanceof<MStorageInterface>(get(0))) {
+				auto iter = head;
+				while (iter != nullptr) {
+					MStorageInterface *savableObj = (MStorageInterface*) iter->element;
+					savableObj->OnStore(aStream);
+					iter = iter->next;
+				}
+			}
+		}
+	}
+
+	virtual void OnLoad(std::istream& aStream) {
+		// FIXME: rdbuf()->in_avail() doesn't point to the end of the stream
+		while (aStream.rdbuf()->in_avail() == 0) {
+			cout << "Loaded" << endl;
+			auto loadedElem = new E(); // FIXME: clean method won't delete this.
+			auto casted = (MStorageInterface*) loadedElem;
+			casted->OnLoad(aStream);
+			addLast(loadedElem);
+			elementsWereLoaded = true;
+		}
 	}
 
 	/**
@@ -175,6 +203,10 @@ public:
 			while (head != nullptr) {
 				iter = head;
 				head = head->next;
+				if (elementsWereLoaded) {
+					// delete iter->element
+					// TODO here are memory leaks
+				}
 				delete iter;
 			}
 			tail = nullptr;
@@ -237,6 +269,8 @@ public:
 	}
 
 private:
+
+	bool elementsWereLoaded;
 
 	/**
 	* @brief An internal data type which represents a list element
