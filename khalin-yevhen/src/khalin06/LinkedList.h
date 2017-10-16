@@ -188,7 +188,21 @@ public:
 	* @param e inserting element
 	*/
 	virtual void insert(unsigned int index, E * e) {
-		// TODO implement
+		if (index == elementsAmount) {
+			addLast(e);
+		} else if (index < elementsAmount) {
+			if (index == 0) {
+				addFirst(e);
+			} else {
+				auto iter = head;
+				for (auto i = 0; i < index; i++, iter = iter->next) { }
+				auto beforeIter = iter->prev;
+				auto newElement = new Entry<E>(e, iter, beforeIter);
+				beforeIter->next = newElement;
+				iter->prev = newElement;
+				elementsAmount++;
+			}
+		}
 	}
 
 	/**
