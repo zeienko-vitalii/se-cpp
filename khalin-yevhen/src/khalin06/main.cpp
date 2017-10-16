@@ -11,19 +11,32 @@ using namespace std;
 
 class Dummy;
 
-inline void testListLoading(const char *fileName) {
+inline void loadListFromFile(const char *fileName) {
 	LinkedList<PKeyboardButton> list;
 	CFileStorage *stor = CFileStorage::Create(list, fileName);
 	stor->Load();
-	cout << list.get(0)->toString() << endl;
+
+	// print loaded buttons
+	for (auto i = 0; i < list.size(); i++) {
+		if (list[i]) {
+			cout << list[i]->toString() << endl;
+		} else {
+			cout << "nullptr" << endl;
+		}
+	}
 }
 
-inline void testListSaving(const char* fileName) {
-	auto btn1 = PKeyboardButton(ButtonForm::RECTANGULAR, 0, "btn1");
-	auto btn2 = PKeyboardButton(ButtonForm::RECTANGULAR, 0, "btn2");
+inline void saveFilledListToFile(const char* fileName) {
 	LinkedList<PKeyboardButton> list;
+	auto btn1 = PKeyboardButton(ButtonForm::RECTANGULAR, 1, "btn1");
+	auto btn2 = PKeyboardButton(ButtonForm::RECTANGULAR, 2, "btn2");
+	auto btn3 = PKeyboardButton(ButtonForm::RECTANGULAR, 3, "btn3");
+	auto btn4 = PKeyboardButton(ButtonForm::RECTANGULAR, 4, "btn4");
 	list.addLast(&btn1);
 	list.addLast(&btn2);
+	list.addLast(&btn3);
+	list.addLast(&btn4);
+
 	CFileStorage *stor = CFileStorage::Create(list, fileName);
 	stor->Store();
 }
@@ -31,8 +44,8 @@ inline void testListSaving(const char* fileName) {
 int main() {
 	const char* fileName = "test.txt";
 
-	testListSaving(fileName);
-	//testListLoading(fileName);
+	saveFilledListToFile(fileName);
+	loadListFromFile(fileName);
 
 	system("pause");
 	return _CrtDumpMemoryLeaks();

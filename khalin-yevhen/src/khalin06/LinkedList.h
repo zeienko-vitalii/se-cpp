@@ -58,15 +58,14 @@ public:
 	}
 
 	virtual void OnLoad(std::istream& aStream) {
-		// FIXME: rdbuf()->in_avail() doesn't point to the end of the stream
-		while (aStream.rdbuf()->in_avail() == 0) {
-			cout << "Loaded" << endl;
+		while (!aStream.eof()) {
 			auto loadedElem = new E(); // FIXME: clean method won't delete this.
 			auto casted = (MStorageInterface*) loadedElem;
 			casted->OnLoad(aStream);
 			addLast(loadedElem);
-			elementsWereLoaded = true;
 		}
+		removeLast(); // TODO: It's always adding nullptr as the last elem
+		elementsWereLoaded = true;
 	}
 
 	/**
