@@ -195,7 +195,20 @@ public:
 	* @return A pointer to an element according to <b>index</b>
 	*/
 	virtual E * get(unsigned int index) {
-		return nullptr; // TODO implement
+		if (index >= elementsAmount) {
+			return nullptr;
+		} else {
+			auto iter = head;
+			for (auto i = 0; i < index; i++, iter = iter->next) { }
+			return iter->element;
+		}
+	}
+
+	/**
+	* @return A pointer to an element according to <b>index</b>
+	*/
+	virtual E * operator[](int index) {
+		return get(index);
 	}
 
 	/**
