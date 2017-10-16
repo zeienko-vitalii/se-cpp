@@ -23,11 +23,10 @@ TEST(LinkedList, addLast_add3Elements_sizeShouldBeEqTo3) {
 	LinkedList<Dummy> list;
 	const int expectedSize = 3;
 
-	// act: add dummy objects three times
+	// act
 	list.addLast(&Dummy());
 	list.addLast(&Dummy());
 	list.addLast(&Dummy());
-
 	const int actualSize = list.size();
 
 	ASSERT_EQ(expectedSize, actualSize);
@@ -109,11 +108,10 @@ TEST(LinkedList, addFirst_add3Elems_sizeShouldBeEqTo3) {
 	LinkedList<Dummy> list;
 	const int expectedSize = 3;
 
-	// act: add dummy objects three times
+	// act
 	list.addFirst(&Dummy());
 	list.addFirst(&Dummy());
 	list.addFirst(&Dummy());
-
 	const int actualSize = list.size();
 
 	ASSERT_EQ(expectedSize, actualSize);
@@ -137,14 +135,11 @@ TEST(LinkedList, clean_addElemsAndClean_sizeShouldBeEqTo0) {
 	LinkedList<Dummy> list;
 	const int expectedSize = 0;
 
-	// act: add dummy objects
+	// act
 	list.addLast(&Dummy());
 	list.addLast(&Dummy());
 	list.addLast(&Dummy());
-
-	// act: clean
 	list.clean();
-
 	const int actualSize = list.size();
 
 	ASSERT_EQ(expectedSize, actualSize);
@@ -154,7 +149,7 @@ TEST(LinkedList, removeFirst_removeFromListWith3Elem_sizeShouldBeEqTo2) {
 	LinkedList<Dummy> list;
 	const int expectedSize = 2;
 
-	// act: add dummy objects
+	// act
 	list.addLast(&Dummy());
 	list.addLast(&Dummy());
 	list.addLast(&Dummy());
@@ -246,7 +241,6 @@ TEST(LinkedList, removeByIndex_removeFirstFromListWith3Elems_sizeShouldBeEqTo2) 
 	list.addLast(&Dummy());
 	list.addLast(&Dummy());
 	list.remove(removingIndex);
-
 	const int actualSize = list.size();
 
 	ASSERT_EQ(expectedSize, actualSize);
@@ -285,7 +279,6 @@ TEST(LinkedList, removeByIndex_removeLast_tailShouldBeEqToFirst) {
 	// act:
 	list.addLast(firstDummy);
 	list.addLast(secDummy);
-
 	list.remove(removingIndex);
 	auto actualElement = accessor.getTail()->element;
 
@@ -322,13 +315,13 @@ TEST(LinkedList, get_getFirstElem_resultShouldBeEqToExpected) {
 	int expectedElemIndex = 0;
 	const auto expectedElement = firstDummy;
 
-	// act: add dummy objects
+	// act
 	list.addLast(firstDummy);
 	list.addLast(secDummy);
-	
 	const auto actualElem = list.get(expectedElemIndex);
 
 	ASSERT_EQ(expectedElement, actualElem);
+	delete firstDummy, secDummy;
 }
 
 TEST(LinkedList, get_getLastElem_resultShouldBeEqToExpected) {
@@ -338,11 +331,49 @@ TEST(LinkedList, get_getLastElem_resultShouldBeEqToExpected) {
 	int expectedElemIndex = 1;
 	const auto expectedElement = secDummy;
 
-	// act: add dummy objects
+	// act
 	list.addLast(firstDummy);
 	list.addLast(secDummy);
-
 	const auto actualElem = list.get(expectedElemIndex);
 
 	ASSERT_EQ(expectedElement, actualElem);
+	delete firstDummy, secDummy;
+}
+
+TEST(LinkedList, insert_getByIndex_shouldReturnInserted) {
+	LinkedList<Dummy> list;
+	Dummy *firstDummy = new Dummy();
+	Dummy *secDummy = new Dummy();
+	Dummy *insDummy = new Dummy();
+	int insertingIndex = 1;
+	auto expectedElem = insDummy;
+
+	// act
+	list.addLast(firstDummy);
+	list.addLast(secDummy);
+	list.insert(insertingIndex, insDummy);
+
+	const auto actualElem = list[insertingIndex];
+
+	ASSERT_EQ(expectedElem, actualElem);
+	delete firstDummy, secDummy, insDummy;
+}
+
+TEST(LinkedList, insert_insertInMiddleCompRet_lastShouldBeEqToSecElem) {
+	LinkedList<Dummy> list;
+	Dummy *firstDummy = new Dummy();
+	Dummy *secDummy = new Dummy();
+	Dummy *insDummy = new Dummy();
+	int insertingIndex = 1;
+	auto expectedLastElem = secDummy;
+
+	// act
+	list.addLast(firstDummy);
+	list.addLast(secDummy);
+	list.insert(insertingIndex, insDummy);
+
+	const auto actualLastElem = list[list.size() - 1];
+
+	ASSERT_EQ(expectedLastElem, actualLastElem);
+	delete firstDummy, secDummy, insDummy;
 }
