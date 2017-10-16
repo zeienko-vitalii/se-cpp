@@ -22,7 +22,9 @@ class PrintableKeyboardButton :
 	public KeyboardButton, public MStorageInterface, public Printable {
 public:
 	PrintableKeyboardButton(ButtonForm form, int code, string name);
-	
+
+	PrintableKeyboardButton();
+
 	virtual ~PrintableKeyboardButton();
 
 	// inherited method

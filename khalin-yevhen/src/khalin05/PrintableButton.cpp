@@ -15,6 +15,10 @@ PrintableButton::PrintableButton(ButtonForm form) :
 {
 }
 
+PrintableButton::PrintableButton() : Button(ButtonForm::RECTANGULAR)
+{
+}
+
 PrintableButton::~PrintableButton()
 {
 }

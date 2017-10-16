@@ -23,6 +23,8 @@ class PrintableButton :
 	public Button, public MStorageInterface, public Printable {
 public:
 	PrintableButton(ButtonForm form);
+	
+	PrintableButton();
 
 	virtual ~PrintableButton();
 

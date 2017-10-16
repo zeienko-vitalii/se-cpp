@@ -49,6 +49,11 @@ PrintableKeyboardButton::PrintableKeyboardButton(ButtonForm form, int code, stri
 {
 }
 
+PrintableKeyboardButton::PrintableKeyboardButton() :
+	KeyboardButton(ButtonForm::RECTANGULAR, 0, "undefined")
+{
+}
+
 PrintableKeyboardButton::~PrintableKeyboardButton()
 {
 }
