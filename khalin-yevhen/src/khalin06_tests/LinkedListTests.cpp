@@ -314,3 +314,35 @@ TEST(LinkedList, removeByValue_removeSecond_tailShouldBeEqToFirst) {
 	delete firstDummy, secDummy;
 }
 #endif
+
+TEST(LinkedList, get_getFirstElem_resultShouldBeEqToExpected) {
+	LinkedList<Dummy> list;
+	Dummy *firstDummy = new Dummy();
+	Dummy *secDummy = new Dummy();
+	int expectedElemIndex = 0;
+	const auto expectedElement = firstDummy;
+
+	// act: add dummy objects
+	list.addLast(firstDummy);
+	list.addLast(secDummy);
+	
+	const auto actualElem = list.get(expectedElemIndex);
+
+	ASSERT_EQ(expectedElement, actualElem);
+}
+
+TEST(LinkedList, get_getLastElem_resultShouldBeEqToExpected) {
+	LinkedList<Dummy> list;
+	Dummy *firstDummy = new Dummy();
+	Dummy *secDummy = new Dummy();
+	int expectedElemIndex = 1;
+	const auto expectedElement = secDummy;
+
+	// act: add dummy objects
+	list.addLast(firstDummy);
+	list.addLast(secDummy);
+
+	const auto actualElem = list.get(expectedElemIndex);
+
+	ASSERT_EQ(expectedElement, actualElem);
+}
