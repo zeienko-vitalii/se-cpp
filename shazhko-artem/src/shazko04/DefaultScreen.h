@@ -6,41 +6,29 @@
 * @date 18.09.17
 */
 #pragma once
-#include "CWheel.h"
-#include "CBaseScreen.h"
+#include "Wheel.h"
+#include "BaseScreen.h"
 
 /**
 * Класс описывающий отображение объектов класса CWheel
 */
-class CScreen: public CBaseScreen {
+class DefaultScreen : public BaseScreen {
 public:
-	/**
-	* Конструктор по-умолчанию
-	*/
-	CScreen();
+
 	/**
 	* Конструктор с одним параметром
 	* @param _wheel колесо
 	*/
-	CScreen(CWheel *_wheel);
+	DefaultScreen(Wheel *_wheel);
 	/**
 	* Деструктор
 	*/
-	virtual ~CScreen();
-	/**
-	* Outputs header of information.
-	*/
-	virtual void ShowHeader();
+	virtual ~DefaultScreen();
 	/**
 	* Outputs main information about window.
 	*/
-	virtual void ShowContent();
-
-	/**
-	* Outputs footer of information.
-	*/
-	virtual void ShowFooter();
+	virtual void ShowContent() override;
 private:
 	// колесо
-	CWheel *wheel;
+	Wheel *wheel;
 };

@@ -1,27 +1,21 @@
 ﻿/**
 * @file CScreen.h
-* @brief Содержит объявление базового класса  CBaseScreen
+* @brief Содержит объявление базового класса  BaseScreen
 * @author Shazhko Artem
 * @version 0
 * @date 03.10.17
 */
 #pragma once
-#include "SimpleTimer.h"
 
 /**
 * Класс описывающий базовое отображение объектов
 */
-class CBaseScreen {
+class BaseScreen abstract{
 public:
-	/**
-	* Конструктор по-умолчанию
-	*/
-	CBaseScreen();
 	/**
 	* Деструктор
 	*/
-	virtual ~CBaseScreen();
-protected:
+	virtual ~BaseScreen() {}
 
 	/**
 	* Outputs header of information.

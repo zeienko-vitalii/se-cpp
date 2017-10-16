@@ -6,36 +6,27 @@
 * @date 18.09.17
 */
 #pragma once
-#include "CCarWheel.h"
-#include "CBaseScreen.h"
+#include "CarWheel.h"
+#include "BaseScreen.h"
 /**
 *  Класс описывающий отображение объектов класса CWheel
 */
-class CScreenCarWheel :public CBaseScreen{
+class CarWheelScreen :public BaseScreen{
 public:
 	/**
 	* конструктор с одним параметром
 	* @param _wheel колесо
 	*/
-	CScreenCarWheel(CCarWheel *_wheel);
+	CarWheelScreen(CarWheel *_wheel);
 	/**
 	* конструктор
 	*/
-	virtual ~CScreenCarWheel();
+	virtual ~CarWheelScreen();
 	/**
 	* Outputs header of information.
-	*/
-	virtual void ShowHeader();
-	/**
-	* Outputs main information about window.
-	*/
-	virtual void ShowContent();
-
-	/**
-	* Outputs footer of information.
-	*/
-	virtual void ShowFooter();
+	*/	
+	virtual void ShowContent() override;
 private:
 	// колесо
-	CCarWheel *wheel;
+	CarWheel *wheel;
 };

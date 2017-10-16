@@ -1,15 +1,15 @@
 ﻿/**
 * @file CScreen.h
-* @brief Содержит объявление базового класса  CCarWheel
+* @brief Содержит объявление базового класса  CarWheel
 * @author Shazhko Artem
 * @version 0
 * @date 03.10.17
 */
 #pragma once
-#include "CWheel.h"
+#include "Wheel.h"
 #include <string.h>
 
-class  CCarWheel:public CWheel
+class  CarWheel:public Wheel
 {
 public:
 	/**
@@ -18,12 +18,12 @@ public:
 	* @param _width Шырина
 	* @param _unit Единицы измерения
 	*/
-	CCarWheel(double _diameter, double _width, EUnits _unit,std::string tireName,std::string tireManufacturer);
+	CarWheel(double _diameter, double _width, EUnits _unit,std::string tireName,std::string tireManufacturer);
 	/**
 	* Конструктор копировнаия
 	* @param carWheel копируемый объект
 	*/
-	CCarWheel(const CCarWheel *carWheel);
+	CarWheel(const CarWheel *carWheel);
 	/**
 	* Задает название шины
 	* @param _tireName название шины

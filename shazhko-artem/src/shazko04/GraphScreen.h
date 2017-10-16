@@ -1,18 +1,18 @@
 ﻿/**
-* @file CGraphScreen.h
-* @brief Содержит объявление класса  CGraphScreen
+* @file GraphScreen.h
+* @brief Содержит объявление класса  GraphScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
 */
 #pragma once
-#include "CWheel.h"
-#include "CBaseScreen.h"
+#include "Wheel.h"
+#include "BaseScreen.h"
 #include <Windows.h>
 /**
-* Класс описывающий расширенное отображение объектов класса CWheel
+* Класс описывающий расширенное отображение объектов класса Wheel
 */
-class CGraphScreen :public CBaseScreen{
+class GraphScreen :public BaseScreen{
 private:
 	/**
 	* Напечатает линию соответствующую толщине колеса, относительно заданных координат
@@ -20,45 +20,39 @@ private:
 	* @param pos Координаты
 	*/
 	void PrintWidth(double width, COORD pos);
-	/**
-	* Напечатает разделительную линию, относительно заданных координат
-	* @param width Ширина колеса
-	* @param pos Координаты
-	*/
-	void PrintLine(double width, SHORT pos);
 public:
 	/**
 	* Конструктор по-умолчанию
 	*/
-	CGraphScreen(CWheel *_wheel);
+	GraphScreen(Wheel *_wheel);
 	/**
 	* Деструктор
 	*/
-	virtual ~CGraphScreen();
+	virtual ~GraphScreen();
 	/**
 	* Задать данные колеса
 	* @param _wheel колесо
 	*/
-	void SetDataSource(const CWheel &_wheel);
+	void SetDataSource(const Wheel &_wheel);
 	/**
 	* Задать данные колеса
 	* @return Данные колеса
 	*/
-	CWheel GetDataSource() const;
+	Wheel GetDataSource() const;
 	/**
 	* Outputs header of information.
 	*/
-	virtual void ShowHeader();
+	virtual void ShowHeader() override;
 	/**
 	* Outputs main information about window.
 	*/
-	virtual void ShowContent();
+	virtual void ShowContent() override;
 
 	/**
 	* Outputs footer of information.
 	*/
-	virtual void ShowFooter();
+	void ShowFooter() override;
 private:
 	// колесо
-	CWheel *wheel;
+	Wheel *wheel;
 };

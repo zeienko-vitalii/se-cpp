@@ -2,19 +2,19 @@
 #include <list>
 #include "IDelegateVoid.h"
 namespace Delegate {
-	class CDelegateVoid
+	class DelegateVoid
 	{
 	public:
-		CDelegateVoid(IDelegateVoid* pDelegate = NULL) { Add(pDelegate); }
-		~CDelegateVoid() {
+		DelegateVoid(IDelegateVoid* pDelegate = NULL) { Add(pDelegate); }
+		~DelegateVoid() {
 			RemoveAll(); }
 		bool IsNull() { return (delegateList.size() == 0); }
 
-		CDelegateVoid& operator=(IDelegateVoid* pDelegate);
+		DelegateVoid& operator=(IDelegateVoid* pDelegate);
 
-		CDelegateVoid& operator+=(IDelegateVoid* pDelegate);
+		DelegateVoid& operator+=(IDelegateVoid* pDelegate);
 
-		CDelegateVoid& operator-=(IDelegateVoid* pDelegate);
+		DelegateVoid& operator-=(IDelegateVoid* pDelegate);
 
 		void operator()();
 

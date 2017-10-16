@@ -1,27 +1,27 @@
 ﻿/**
 * @file CBaseScreen.cpp
-* @brief Содержит реализацию класса CGraphScreen
+* @brief Содержит реализацию класса GraphScreen
 * @author Shazhko Artem
 * @version 0
 * @date 03.10.17
 */
 
-#include "CGraphScreen.h"
+#include "GraphScreen.h"
 #include <stdlib.h>
 #include <iostream>
 
-CGraphScreen::CGraphScreen(CWheel * _wheel):wheel(new CWheel(_wheel)){}
-CGraphScreen::~CGraphScreen(){
+GraphScreen::GraphScreen(Wheel * _wheel):wheel(new Wheel(_wheel)){}
+GraphScreen::~GraphScreen(){
 	if (wheel)delete wheel;
 }
-void CGraphScreen::SetDataSource(const CWheel &_wheel){
+void GraphScreen::SetDataSource(const Wheel &_wheel){
 	if (wheel)delete wheel;
-	wheel = new CWheel(_wheel);
+	wheel = new Wheel(_wheel);
 }
 
-CWheel CGraphScreen::GetDataSource()const{return new CWheel(wheel);}
+Wheel GraphScreen::GetDataSource()const{return new Wheel(wheel);}
 
-void CGraphScreen::ShowHeader()
+void GraphScreen::ShowHeader()
 {
 	SHORT originDiameter = (SHORT)this->wheel->GetDiameter();
 	SHORT originWidth = (SHORT)this->wheel->GetWidth();
@@ -37,7 +37,7 @@ void CGraphScreen::ShowHeader()
 	std::cout << "\n";
 }
 
-void CGraphScreen::ShowContent()
+void GraphScreen::ShowContent()
 {
 	double originDiameter = this->wheel->GetDiameter();
 	double originWidth = this->wheel->GetWidth();
@@ -71,7 +71,7 @@ void CGraphScreen::ShowContent()
 	ShowFooter();
 }
 
-void CGraphScreen::ShowFooter()
+void GraphScreen::ShowFooter()
 {
 	SHORT originDiameter = (SHORT)this->wheel->GetDiameter();
 	SHORT originWidth = (SHORT)this->wheel->GetWidth();
@@ -79,7 +79,7 @@ void CGraphScreen::ShowFooter()
 	std::cout << "\n";
 }
 
-inline void CGraphScreen::PrintWidth(double width, COORD pos) {
+inline void GraphScreen::PrintWidth(double width, COORD pos) {
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { pos.X,pos.Y });
 	std::cout << "|    ";
 	for (SHORT i = 0; i < width; i++)std::cout << "*";

@@ -1,33 +1,33 @@
-#include "CDelegateVoid.h"
+#include "DelegateVoid.h"
 
 namespace Delegate {
-	CDelegateVoid & CDelegateVoid::operator=(IDelegateVoid * pDelegate)
+	DelegateVoid & DelegateVoid::operator=(IDelegateVoid * pDelegate)
 	{
 		RemoveAll();
 		Add(pDelegate);
 		return *this;
 	}
-	CDelegateVoid & CDelegateVoid::operator+=(IDelegateVoid * pDelegate)
+	DelegateVoid & DelegateVoid::operator+=(IDelegateVoid * pDelegate)
 	{
 		Add(pDelegate);
 		return *this;
 	}
-	CDelegateVoid & CDelegateVoid::operator-=(IDelegateVoid * pDelegate)
+	DelegateVoid & DelegateVoid::operator-=(IDelegateVoid * pDelegate)
 	{
 		Remove(pDelegate);
 		return *this;
 	}
-	void CDelegateVoid::operator()()
+	void DelegateVoid::operator()()
 	{
 		Invoke();
 	}
-	void CDelegateVoid::Add(IDelegateVoid* pDelegate)
+	void DelegateVoid::Add(IDelegateVoid* pDelegate)
 	{
 		if (pDelegate != NULL)
 			delegateList.push_back(pDelegate);
 	}
 
-	void CDelegateVoid::Remove(IDelegateVoid* pDelegate)
+	void DelegateVoid::Remove(IDelegateVoid* pDelegate)
 	{
 		std::list<IDelegateVoid*>::iterator it;
 		for (it = delegateList.begin(); it != delegateList.end(); ++it)
@@ -42,7 +42,7 @@ namespace Delegate {
 
 		delete pDelegate;
 	}
-	void CDelegateVoid::RemoveAll()
+	void DelegateVoid::RemoveAll()
 	{
 		std::list<IDelegateVoid*>::iterator it;
 		for (it = delegateList.begin(); it != delegateList.end(); ++it)
@@ -51,7 +51,7 @@ namespace Delegate {
 		delegateList.clear();
 	}
 
-	void CDelegateVoid::Invoke()
+	void DelegateVoid::Invoke()
 	{
 		std::list<IDelegateVoid*>::const_iterator it;
 		for (it = delegateList.begin(); it != delegateList.end(); ++it)

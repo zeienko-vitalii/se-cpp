@@ -1,17 +1,17 @@
 #pragma once
-#include "CDelegateVoid.h"
-#include "CMethodDelegateVoid.hpp"
-#include "CStaticDelegateVoid.hpp"
+#include "DelegateVoid.h"
+#include "MethodDelegateVoid.hpp"
+#include "StaticDelegateVoid.hpp"
 
 namespace Delegate {
 	IDelegateVoid* CreateDelegate(void(*_pFunction)())
 	{
-		return new CStaticDelegateVoid(_pFunction);
+		return new StaticDelegateVoid(_pFunction);
 	}
 
 	template <class TObject>
 	IDelegateVoid* CreateDelegate(TObject* _pObject, void (TObject::*_pMethod)())
 	{
-		return new CMethodDelegateVoid<TObject>(_pObject, _pMethod);
+		return new MethodDelegateVoid<TObject>(_pObject, _pMethod);
 	}
 }

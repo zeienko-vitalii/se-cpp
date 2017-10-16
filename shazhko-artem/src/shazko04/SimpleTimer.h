@@ -8,7 +8,7 @@
 #pragma once
 #include <Windows.h>
 #include <stdio.h>
-#include "CDelegateVoid.h"
+#include "DelegateVoid.h"
 /**
 * Интерфейс для работы с SimpleTimer
 */
@@ -67,7 +67,7 @@ namespace Timer {
 		* Деструктор
 		*/
 		virtual ~SimpleTimer();
-		Delegate::CDelegateVoid OnTimerTact;
+		Delegate::DelegateVoid OnTimerTact;
 
 	private:
 		// Сам таймер
@@ -76,7 +76,6 @@ namespace Timer {
 		* Требуется для связывания потока с таймером
 		*/
 		static DWORD Build(void *arg);
-
 		// дескриптор потока
 		HANDLE hThread;
 		// статус таймера

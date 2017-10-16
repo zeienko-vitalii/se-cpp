@@ -3,11 +3,11 @@
 namespace Delegate {
 
 	template<class TObject>
-	class CMethodDelegateVoid : public IDelegateVoid
+	class MethodDelegateVoid : public IDelegateVoid
 	{
 	public:
 		typedef void (TObject::*PMethod)();
-		CMethodDelegateVoid(TObject* _pObject, PMethod _pMethod)
+		MethodDelegateVoid(TObject* _pObject, PMethod _pMethod)
 		{
 			pObject = _pObject;
 			pMethod = _pMethod;
@@ -20,9 +20,9 @@ namespace Delegate {
 	};
 
 	template<class TObject>
-	bool CMethodDelegateVoid<TObject>::Compare(IDelegateVoid* pDelegate)
+	bool MethodDelegateVoid<TObject>::Compare(IDelegateVoid* pDelegate)
 	{
-		CMethodDelegateVoid<TObject>* pMethodDel = dynamic_cast<CMethodDelegateVoid<TObject>*>(pDelegate);
+		MethodDelegateVoid<TObject>* pMethodDel = dynamic_cast<MethodDelegateVoid<TObject>*>(pDelegate);
 		if (pMethodDel == NULL || pMethodDel->pObject != pObject || pMethodDel->pMethod != pMethod)
 			return false;
 		return true;

@@ -22,62 +22,77 @@
     <Filter Include="Исходные файлы\Delegates">
       <UniqueIdentifier>{47ea175d-4afd-4707-bb66-aff60506693a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Wheel">
+      <UniqueIdentifier>{93cb375e-c9d2-4b49-811b-9a09d032e86a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Wheel">
+      <UniqueIdentifier>{8cf04dcf-9b08-4532-9837-be32b79bbd98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Screen">
+      <UniqueIdentifier>{032f3a4e-e15c-4847-b8ae-f142bcb1b6bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Screen">
+      <UniqueIdentifier>{fcb86375-c6e6-467e-9379-735c02368163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\ScreenCreator">
+      <UniqueIdentifier>{8fe037be-809a-4b6b-aef1-335ae5c26fda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CBaseScreen.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CCarWheel.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CGraphScreen.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CScreen.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CScreenCarWheel.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CWheel.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="SimpleTimer.h">
       <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CDelegateVoid.h">
-      <Filter>Файлы заголовков\Delegates</Filter>
-    </ClInclude>
-    <ClInclude Include="CMethodDelegateVoid.hpp">
-      <Filter>Файлы заголовков\Delegates</Filter>
-    </ClInclude>
-    <ClInclude Include="CStaticDelegateVoid.hpp">
-      <Filter>Файлы заголовков\Delegates</Filter>
     </ClInclude>
     <ClInclude Include="Delegate.hpp">
       <Filter>Файлы заголовков\Delegates</Filter>
     </ClInclude>
+    <ClInclude Include="NonScreen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultScreen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScreen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphScreen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="CarWheel.h">
+      <Filter>Файлы заголовков\Wheel</Filter>
+    </ClInclude>
+    <ClInclude Include="Wheel.h">
+      <Filter>Файлы заголовков\Wheel</Filter>
+    </ClInclude>
+    <ClInclude Include="DelegateVoid.h">
+      <Filter>Файлы заголовков\Delegates</Filter>
+    </ClInclude>
+    <ClInclude Include="MethodDelegateVoid.hpp">
+      <Filter>Файлы заголовков\Delegates</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticDelegateVoid.hpp">
+      <Filter>Файлы заголовков\Delegates</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenCreator.hpp">
+      <Filter>Файлы заголовков\ScreenCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="CarWheelScreen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="CarWheelScreenCreator.hpp">
+      <Filter>Файлы заголовков\ScreenCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultScreenCreator.hpp">
+      <Filter>Файлы заголовков\ScreenCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphScreenCreator.hpp">
+      <Filter>Файлы заголовков\ScreenCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="Units.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CBaseScreen.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CCarWheel.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CScreen.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CScreenCarWheel.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CWheel.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Source.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="СGraphScreen.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="SimpleTimer.cpp">
@@ -89,8 +104,26 @@
     <ClCompile Include="IDelegateVoid.h">
       <Filter>Файлы заголовков\Delegates</Filter>
     </ClCompile>
-    <ClCompile Include="CDelegateVoid.cpp">
+    <ClCompile Include="DefaultScreen.cpp">
+      <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphScreen.cpp">
+      <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="CarWheel.cpp">
+      <Filter>Исходные файлы\Wheel</Filter>
+    </ClCompile>
+    <ClCompile Include="Wheel.cpp">
+      <Filter>Исходные файлы\Wheel</Filter>
+    </ClCompile>
+    <ClCompile Include="DelegateVoid.cpp">
       <Filter>Исходные файлы\Delegates</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScreen.cpp">
+      <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="CarWheelScreen.cpp">
+      <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

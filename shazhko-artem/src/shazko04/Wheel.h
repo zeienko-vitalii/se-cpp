@@ -1,48 +1,41 @@
 ﻿/**
-* @file CWheel.h
-* @brief Содержит объявление класса  CWheel
+* @file Wheel.h
+* @brief Содержит объявление класса  Wheel
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
 */
 #pragma once
 #include <string>
-/**
-* Перечисление единиц измерения
-*/
-enum EUnits
-{
-	EUNITS_CENTIMETERS, EUNITS_MILLIMETRES, EUNITS_INCHES
-};
-
+#include "Units.hpp"
 /**
 * Класс описывающий колесо
 */
-class CWheel {
+class Wheel {
 public:
 	/**
 	* Конструктор по-умолчанию
 	*/
-	CWheel();
+	Wheel();
 	/**
 	* Конструктор с тремя параметром
 	* @param _diameter Диаметр
 	* @param _width Шырина
 	* @param _unit Единицы измерения
 	*/
-	CWheel(double _diameter, double _width, EUnits _unit);
+	Wheel(double _diameter, double _width, EUnits _unit);
 	/**
 	* Конструктор копировнаия
 	* @param wheel копируемый объект
 	*/
-	CWheel(const CWheel *wheel);
+	Wheel(const Wheel *wheel);
 
-	bool operator==(const CWheel &wheel);
+	bool operator==(const Wheel &wheel);
 
 	/**
 	* Деструктор
 	*/
-	virtual ~CWheel();
+	virtual ~Wheel();
 	/**
 	* Подсчет объема колеса
 	* @return Объем колеса
@@ -80,11 +73,6 @@ public:
 	* @return ширина
 	*/
 	double GetWidth() const;
-	/**
-	* Конвертирует тип EUnit в String
-	* @return строка описывающая значение объекта EUnit
-	*/
-	static std::string ConvertEUnitToString(const EUnits _unit);
 protected:
 	// Единицы измерения
 	EUnits units;
