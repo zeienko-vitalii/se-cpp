@@ -19,10 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Functors.h" />
     <ClInclude Include="LinkedList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C16C12DD-F87F-4997-8ABA-127D214C8B9F}</ProjectGuid>

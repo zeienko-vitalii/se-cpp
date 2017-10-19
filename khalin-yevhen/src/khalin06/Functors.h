@@ -16,6 +16,24 @@
 namespace functors {
 
 	/**
+	* @brief Checks some state of the passed object
+	*
+	* @author Khalin Yevhen
+	*/
+	template <class T>
+	class Predicate abstract {
+	public:
+
+		/**
+		* @brief An assertion of the object state.
+		*
+		* @param obj a handling object
+		*/
+		virtual bool assert(T *obj) = 0;
+	};
+
+
+	/**
 	* @brief Represents some action over the object.
 	*
 	* @author Khalin Yevhen
