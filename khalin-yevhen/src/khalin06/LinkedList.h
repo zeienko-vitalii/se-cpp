@@ -2,7 +2,7 @@
 * @file LinkedList.h
 * @brief Contains LinkedList class declaration
 * @author Khalin Yevhen
-* @version 0.0.1
+* @version 0.0.2
 * @date 13.10.17
 */
 
@@ -11,6 +11,7 @@
 #include "..\khalin01\Printable.h"
 #include "StorageInterface.h"
 #include "..\khalin03\Utilities.h"
+#include "Functors.h"
 
 #ifdef _DEBUG
 #define _CRTDBG_MAP_ALLOC
@@ -34,11 +35,30 @@ class LinkedList : public Printable, public MStorageInterface {
 public:
 
 #ifdef TEST_MODE
+
+	/**
+	* @brief A class for accessing private fields during testing.
+	*
+	* @author Khalin Yevhen
+	*/
 	template <class T> friend class LinkedListFieldsAccessor;
-#endif 
+#endif
 
 	LinkedList() :
 		head(nullptr), tail(nullptr), elementsAmount(0), elementsWereLoaded(false) { }
+
+	/**
+	* @brief Repeats an action <b>action</b> for each element.
+	*
+	* @param action an action that will be used in each iteration.
+	*/
+	void forEach(functors::Action<E> *action) {
+		auto iter = head;
+		while (iter != nullptr) {
+			action->act(iter->element);
+			iter = iter->next;
+		}
+	}
 
 	virtual std::string toString() {
 		return ""; // TODO implement
