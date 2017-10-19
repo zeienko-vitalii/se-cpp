@@ -7,46 +7,50 @@
 #include "..\khalin03\Utilities.h"
 #include "StorageInterface.h"
 #include "..\khalin03\Utilities.h"
+
 using namespace std;
 
+// for tests
 class Dummy;
-
-inline void loadListFromFile(const char *fileName) {
-	LinkedList<PKeyboardButton> list;
-	CFileStorage *stor = CFileStorage::Create(list, fileName);
-	stor->Load();
-
-	// print loaded buttons
-	for (auto i = 0; i < list.size(); i++) {
-		if (list[i]) {
-			cout << list[i]->toString() << endl;
-		} else {
-			cout << "nullptr" << endl;
-		}
-	}
-}
-
-inline void saveFilledListToFile(const char* fileName) {
-	LinkedList<PKeyboardButton> list;
-	auto btn1 = PKeyboardButton(ButtonForm::RECTANGULAR, 1, "btn1");
-	auto btn2 = PKeyboardButton(ButtonForm::RECTANGULAR, 2, "btn2");
-	auto btn3 = PKeyboardButton(ButtonForm::RECTANGULAR, 3, "btn3");
-	auto btn4 = PKeyboardButton(ButtonForm::RECTANGULAR, 4, "btn4");
-	list.addLast(&btn1);
-	list.addLast(&btn2);
-	list.addLast(&btn3);
-	list.addLast(&btn4);
-
-	CFileStorage *stor = CFileStorage::Create(list, fileName);
-	stor->Store();
-}
 
 int main() {
 	const char* fileName = "test.txt";
 
-	saveFilledListToFile(fileName);
-	loadListFromFile(fileName);
+	// Working with the developed list:
+	{
+		LinkedList<PKeyboardButton> list;
+		CFileStorage *stor;
+		auto btn1 = PKeyboardButton(ButtonForm::RECTANGULAR, 1, "btn1");
+		auto btn2 = PKeyboardButton(ButtonForm::RECTANGULAR, 2, "btn2");
+		auto btn3 = PKeyboardButton(ButtonForm::RECTANGULAR, 3, "btn3");
+		auto btn4 = PKeyboardButton(ButtonForm::RECTANGULAR, 4, "btn4");
+		list.addLast(&btn1);
+		list.addLast(&btn2);
+		list.addLast(&btn3);
+		list.addLast(&btn4);
 
+		// saving to the file.
+		{
+			stor = CFileStorage::Create(list, fileName);
+			stor->Store();
+		}
+
+		// loading from the file.
+		{
+			LinkedList<PKeyboardButton> loadedList;
+			stor = CFileStorage::Create(loadedList, fileName);
+			stor->Load();
+
+			// print loaded data
+			for (auto i = 0; i < loadedList.size(); i++) {
+				if (loadedList[i]) {
+					cout << loadedList[i]->toString() << endl;
+				} else {
+					cout << "nullptr" << endl;
+				}
+			}
+		}
+	}
 	system("pause");
 	return _CrtDumpMemoryLeaks();
 }
