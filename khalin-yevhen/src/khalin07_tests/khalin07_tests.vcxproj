@@ -101,10 +101,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\root\common\khpi\ИПЗ\khalin\libs\fileStore\include;E:\root\common\khpi\ИПЗ\khalin\libs\googleTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\root\common\khpi\ИПЗ\khalin\libs\fileStore\lib;E:\root\common\khpi\ИПЗ\khalin\libs\googleTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtest.lib;FileStore.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -142,6 +145,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ProjectReference Include="..\khalin05\khalin05.vcxproj">
+      <Project>{ba9cad0a-874f-4e21-aee9-c58d8b87da75}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CounterTests.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObjectCounterTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dummy.h" />
+    <ClInclude Include="StubPredicate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
