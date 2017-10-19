@@ -41,7 +41,7 @@ public:
 
 	// inherited method
 	void act(E *obj) {
-		if (predicate->assert(obj)) {
+		if (predicate->test(obj)) {
 			this->operator++();
 		}
 	}

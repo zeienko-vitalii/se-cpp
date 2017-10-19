@@ -29,7 +29,7 @@ namespace functors {
 		*
 		* @param obj a handling object
 		*/
-		virtual bool assert(T *obj) = 0;
+		virtual bool test(T *obj) = 0;
 	};
 
 

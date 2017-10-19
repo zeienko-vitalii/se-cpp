@@ -11,7 +11,7 @@ void main() {
 	// create a predicate
 	class ConditionPredicate : public functors::Predicate<PKeyboardButton> {
 	public:
-		bool assert(PKeyboardButton * obj) {
+		virtual bool test(PKeyboardButton * obj) {
 			return obj->getCondition();
 		}
 	} predicate;
