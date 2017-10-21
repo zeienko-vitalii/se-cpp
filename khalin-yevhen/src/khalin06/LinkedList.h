@@ -45,7 +45,7 @@ public:
 #endif
 
 	LinkedList() :
-		head(nullptr), tail(nullptr), elementsAmount(0), elementsWereLoaded(false) { }
+		head(nullptr), tail(nullptr), elementsAmount(0) { }
 
 	/**
 	* @brief Repeats an action <b>action</b> for each element.
@@ -78,45 +78,32 @@ public:
 	}
 
 	virtual void OnLoad(std::istream& aStream) {
+		clean();
 		while (!aStream.eof()) {
-			auto loadedElem = new E(); // FIXME: clean method won't delete this.
+			auto loadedElem = new E();
+			auto newEntry = new Entry<E>(loadedElem, nullptr, nullptr);
+			newEntry->isUsedHeapMemForElem = true;
 			auto casted = (MStorageInterface*) loadedElem;
 			casted->OnLoad(aStream);
-			addLast(loadedElem);
+			addLast(newEntry);
 		}
 		removeLast(); // TODO: It's always adding nullptr as the last elem
-		elementsWereLoaded = true;
 	}
 
 	/**
 	* @breif Adds <b>e</b> to the end of the list.
 	*/
 	virtual void addLast(E * e) {
-		auto newElement = new Entry<E>(e, nullptr, nullptr);
-		if (head == nullptr) {
-			head = newElement;
-		} else {
-			tail->next = newElement;
-			newElement->prev = tail;
-		}
-		tail = newElement;
-		elementsAmount++;
+		auto newEntry = new Entry<E>(e, nullptr, nullptr);
+		addLast(newEntry);
 	}
 
 	/**
 	* @breif Adds <b>e</b> to the first position of the list.
 	*/
 	virtual void addFirst(E * e) {
-		auto newElement = new Entry<E>(e, nullptr, nullptr);
-		if (head == nullptr) {
-			head = newElement;
-			tail = head;
-		} else {
-			head->prev = newElement;
-			newElement->next = head;
-			head = newElement;
-		}
-		elementsAmount++;
+		auto newEntry = new Entry<E>(e, nullptr, nullptr);
+		addFirst(newEntry);
 	}
 
 	/**
@@ -125,13 +112,13 @@ public:
 	virtual void removeFirst() {
 		if (elementsAmount > 0) {
 			if (elementsAmount == 1) {
-				delete head;
+				releaseMemory(head);
 				head = nullptr;
 				tail = nullptr;
 			} else { // > 1
 				auto afterHead = head->next;
 				afterHead->prev = nullptr;
-				delete head;
+				releaseMemory(head);
 				head = afterHead;
 			}
 			elementsAmount--;
@@ -144,13 +131,13 @@ public:
 	virtual void removeLast() {
 		if (elementsAmount > 0) {
 			if (elementsAmount == 1) {
-				delete head;
+				releaseMemory(head);
 				head = nullptr;
 				tail = nullptr;
 			} else { // > 1
 				auto beforeLast = tail->prev;
 				beforeLast->next = nullptr;
-				delete tail;
+				releaseMemory(tail);
 				tail = beforeLast;
 			}
 			elementsAmount--;
@@ -179,7 +166,7 @@ public:
 					afterRemoving->prev = iter->prev;
 					beforeRemoving->next = afterRemoving;
 
-					delete iter;
+					releaseMemory(iter);
 					elementsAmount--;
 				} else {
 					removeLast();
@@ -222,11 +209,7 @@ public:
 			while (head != nullptr) {
 				iter = head;
 				head = head->next;
-				if (elementsWereLoaded) {
-					// delete iter->element
-					// TODO here are memory leaks
-				}
-				delete iter;
+				releaseMemory(iter);
 			}
 			tail = nullptr;
 			elementsAmount = 0;
@@ -245,12 +228,12 @@ public:
 			if (index == 0) {
 				addFirst(e);
 			} else {
-				auto iter = head;
+				Entry<E> *iter = head;
 				for (auto i = 0; i < index; i++, iter = iter->next) { }
 				auto beforeIter = iter->prev;
-				auto newElement = new Entry<E>(e, iter, beforeIter);
-				beforeIter->next = newElement;
-				iter->prev = newElement;
+				auto newEntry = new Entry<E>(e, iter, beforeIter);
+				beforeIter->next = newEntry;
+				iter->prev = newEntry;
 				elementsAmount++;
 			}
 		}
@@ -289,8 +272,6 @@ public:
 
 private:
 
-	bool elementsWereLoaded;
-
 	/**
 	* @brief An internal data type which represents a list element
 	* @typename T a keeping data type
@@ -302,11 +283,48 @@ private:
 		Entry<T> *next;
 		Entry<T> *prev;
 
+		/*
+		* It switches to 'true' in 'OnLoad' method for each loaded entry.
+		*/
+		bool isUsedHeapMemForElem;
+
 		Entry(T *element, Entry<T> *next, Entry<T> *prev) :
-			element(element), next(next), prev(prev) { }
+			element(element), next(next), prev(prev), isUsedHeapMemForElem(false) { }
 	};
 
 	int elementsAmount;
 	Entry<E> *head; // prev = null
 	Entry<E> *tail; // next = null
+
+	void addFirst(Entry<E> * e) {
+		if (head == nullptr) {
+			head = e;
+			tail = head;
+		} else {
+			head->prev = e;
+			e->next = head;
+			head = e;
+		}
+		elementsAmount++;
+	}
+
+	void addLast(Entry<E> * e) {
+		if (head == nullptr) {
+			head = e;
+		} else {
+			tail->next = e;
+			e->prev = tail;
+		}
+		tail = e;
+		elementsAmount++;
+	}
+
+	void releaseMemory(Entry<E> *e) {
+		if (e->isUsedHeapMemForElem) {
+			delete e->element;
+			//cout << "removed element" << endl;
+		}
+		delete e;
+		//cout << "removed entry" << endl;
+	}
 };
