@@ -1,6 +1,6 @@
 /**
  * @file Room.h
- * Содержит класс для просмотра объектов Room
+ * Contains the declaration of the "Room" object.
  * @author skyba-vv
  * @version 0.0.1
  * @date 2017.09.25
@@ -10,7 +10,7 @@ using namespace std;
 #ifndef ROOM_H_
 #define ROOM_H_
 /**
- * Класс, содержащий реализацию Room
+ * Class containing the implementation of a Room.
  */
 class Room {
 
@@ -22,11 +22,11 @@ public:
 
 public:
 /**
-* Конструктор по умолчанию
+* Default constructor
 */
 	Room();
 /**
- * Конструктор для всех полей
+ * Constructor for all fields.
  * @param length
  * @param width
  * @param height
@@ -35,48 +35,48 @@ public:
 	Room(float length, float widht,	float height);
 
 /**
-* Геттер length
+* Getter length
 * @return length
 */
 	float getLength() const;
 /**
-* Геттер width
+* Getter width
 * @return width
 */
     float getWidht() const;
 /**
-* Геттер height
+* Getter height
 * @return height
 */
 	float getHeight() const;
 
 	/**
-	* Сеттер length
+	* Setter length
 	* @param length
 	*/
 	void setLength(float length);
 
 	/**
-	* Сеттер width
+	* Setter width
 	* @param width
 	*/
 	void setWidht(float widht);
 
 	/**
-	* Сеттер height
+	* Setter height
 	* @param height
 	*/
 	void setHeight(float height);
 
 
 /**
-* Функция рвсчета объема комнаты
+* Result Volume the Room
 * @param
 */
 	float Volume() const;
 
 /**
-* Деструктор
+* Destructor
 */
 	virtual ~Room();
 };

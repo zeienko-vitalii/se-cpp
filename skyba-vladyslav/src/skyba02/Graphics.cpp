@@ -1,3 +1,10 @@
+/**
+ * @file Graphics.cpp
+ * Graphics functions realization.
+ * @author skyba-vv
+ * @version 0.1.1
+ * @date 2017.09.25
+ */
 #include <iostream>
 #include <string>
 

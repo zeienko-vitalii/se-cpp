@@ -1,6 +1,6 @@
 /**
  * @file Screen.h
- * Содержит класс для просмотра объектов Room
+ * Contains class for viewing of Room objects.
  * @author skyba-vv
  * @version 0.0.1
  * @date 2017.09.25
@@ -8,8 +8,8 @@
 #ifndef SCREEN_H_
 #define SCREEN_H_
 /**
- *Класс, который просматривает информацию об объекте Room.
- * room - объект, который должен быть просмотрен
+ *Class which views information of Room object
+ * room - object which must be viewed
  */
 class Screen {
 public:
@@ -18,20 +18,20 @@ Room room;
 
 public:
 /**
-*Конструктор по умолчанию
+*Default constructor
 */
 	Screen();
 /**
-*Конструктор для всех полей Room
-* @param room - room, которое должно быть установлено
+*Constructor for all fields Room
+* @param room - room, which must be set
 */
 	Screen(Room room);
 /**
-*Выводит информацию о 'room` в консоль
+*Outputs information about `window` into console
 */
 	void Output();
 /**
-* Виртуальный деструктор
+* Virtual destructor
 */
 	virtual ~Screen();
 };

@@ -1,3 +1,10 @@
+/**
+ * @file Screen.cpp
+ * Screen functions realization.
+ * @author skyba-vv
+ * @version 0.0.1
+ * @date 2017.09.25
+ */
 #include <iostream>
 #include <string>
 

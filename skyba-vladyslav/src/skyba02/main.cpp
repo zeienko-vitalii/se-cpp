@@ -1,6 +1,6 @@
 /**
- * @file Main.cpp
- * Демонстрация работы программы.
+ * @file main.cpp
+ * Program work demonstration.
  * @author skyba-vv
  * @version 0.0.1
  * @date 2017.09.25
@@ -13,7 +13,7 @@
 
 using namespace std;
 /**
- * Точка входа в программу
+ * Entry point of program
  * @return 0
  */
 int main() {
