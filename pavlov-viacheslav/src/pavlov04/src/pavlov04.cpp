@@ -95,6 +95,6 @@ void timerDemo() {
 	const int Y2_1 = 14;
 	Window win1(WINDOW_ID_1, X1_1, Y1_1, X2_1, Y2_1);
 
-	TimerExecutor timer(GraphScreen::onTimerAction, win1);
+	TimerExecutor<Window> timer(GraphScreen::onTimerAction, win1);
 	timer.start();
 }

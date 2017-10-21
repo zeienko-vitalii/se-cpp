@@ -10,17 +10,16 @@
 #include <windows.h>
 using namespace std;
 
-
-class TimerExecutor {
+template<class T> class TimerExecutor {
 private:
 	HANDLE hTimerExecutor;
 	LARGE_INTEGER liDueTime;
 	int times;
-	void (*task)(Window);
-	Window data;
+	void (*task)(T);
+	T data;
 
 public:
-	TimerExecutor(void (*task)(Window), Window data);
+	TimerExecutor(void (*task)(T), T data);
 	virtual ~TimerExecutor();
 	void count();
 	void start();

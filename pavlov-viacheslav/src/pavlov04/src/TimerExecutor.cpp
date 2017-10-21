@@ -13,18 +13,18 @@
 
 using namespace std;
 
-TimerExecutor::~TimerExecutor() {
+template<class T> TimerExecutor<T>::~TimerExecutor() {
 // TODO Auto-generated destructor stub
 }
 
-TimerExecutor::TimerExecutor(void (*task)(Window), Window data) :
+template<class T> TimerExecutor<T>::TimerExecutor(void (*task)(T), T data) :
 		task(task), data(data) {
 	this->times = 4;
 	this->liDueTime.QuadPart = -10000000LL;
 	this->hTimerExecutor = NULL;
 }
 
-void TimerExecutor::start() {
+template<class T> void TimerExecutor<T>::start() {
 
 	hTimerExecutor = CreateWaitableTimer(NULL, TRUE, "WaitableTimerExecutor");
 	if (NULL == hTimerExecutor) {
@@ -35,7 +35,7 @@ void TimerExecutor::start() {
 
 }
 
-void TimerExecutor::count() {
+template<class T> void TimerExecutor<T>::count() {
 
 // Set a TimerExecutor to wait for 10 seconds.
 	if (!SetWaitableTimer(hTimerExecutor, &liDueTime, 0, NULL, NULL, 0)) {
@@ -49,3 +49,5 @@ void TimerExecutor::count() {
 	else
 		task(data);
 }
+
+template class TimerExecutor<Window> ;
