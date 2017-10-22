@@ -191,5 +191,8 @@
     <ClInclude Include="ScreenCreator.h">
       <Filter>Файлы заголовков\Screen\ScreenCreator</Filter>
     </ClInclude>
+    <ClInclude Include="StaticDelegateVoid.hpp">
+      <Filter>Файлы заголовков\Delegates</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

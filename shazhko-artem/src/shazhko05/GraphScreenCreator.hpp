@@ -1,6 +1,6 @@
 /**
-* @file CreateGraphScreen.hpp
-* @brief Содержит объявление класса CreateGraphScreen
+* @file GraphScreenCreator.hpp
+* @brief Содержит объявление класса GraphScreenCreator
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -14,17 +14,17 @@
 /**
 * Класс реализующий фабричный метод для создания объектов GraphScreen
 */
-class CreateGraphScreen :public ScreenCreator{
+class GraphScreenCreator :public ScreenCreator{
 public:
 	/**
 	* Деструктор
 	*/
-	virtual ~CreateGraphScreen() {}
+	virtual ~GraphScreenCreator() {}
 
 	/**
 	* Конструктор
 	*/
-	CreateGraphScreen(Wheel *wheel){
+	GraphScreenCreator(Wheel *wheel){
 		this->wheel = wheel;
 	}
 	/**

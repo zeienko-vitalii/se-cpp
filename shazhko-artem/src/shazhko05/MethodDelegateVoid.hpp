@@ -9,7 +9,7 @@
 #include "IDelegateVoid.h"
 namespace Delegate {
 	/**
-	* Класс реализующий интерфейс IDelegateVoid
+	* Класс реализующий интерфейс IDelegateVoid, для работы с функциями в классах
 	*/
 	template<class TObject>
 	class MethodDelegateVoid : public IDelegateVoid
@@ -35,6 +35,10 @@ namespace Delegate {
 		* @return true - если равны
 		*/
 		virtual bool Compare(IDelegateVoid* pDelegate);
+		/**
+		* Деструктор
+		*/
+		virtual ~MethodDelegateVoid() {}
 	private:
 		// указатель на объект класса
 		TObject *pObject;

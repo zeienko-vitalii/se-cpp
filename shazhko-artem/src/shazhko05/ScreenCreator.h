@@ -1,5 +1,5 @@
 /**
-* @file ScreenCreator.hpp
+* @file ScreenCreator.h
 * @brief —одержит объ€вление класса  ScreenCreator
 * @author Shazhko Artem
 * @version 0

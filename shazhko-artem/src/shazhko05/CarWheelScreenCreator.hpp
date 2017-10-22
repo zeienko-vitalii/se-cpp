@@ -1,7 +1,7 @@
 #pragma once
 /**
-* @file CreateCarWheelScreen.hpp
-* @brief Содержит объявление класса CreateCarWheelScreen
+* @file CarWheelScreenCreator.hpp
+* @brief Содержит объявление класса CarWheelScreenCreator
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -13,16 +13,16 @@
 /**
 * Класс реализующий фабричный метод для создания объектов CarWheelScreen
 */
-class CreateCarWheelScreen :public ScreenCreator {
+class CarWheelScreenCreator :public ScreenCreator {
 public:
 	/**
 	* Деструктор
 	*/
-	virtual ~CreateCarWheelScreen(){}
+	virtual ~CarWheelScreenCreator(){}
 	/**
 	* Конструктор
 	*/
-	CreateCarWheelScreen(CarWheel *wheel) {
+	CarWheelScreenCreator(CarWheel *wheel) {
 		this->wheel = wheel;
 	}
 	/**

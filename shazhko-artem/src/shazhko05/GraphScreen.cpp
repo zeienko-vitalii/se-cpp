@@ -1,5 +1,5 @@
 ﻿/**
-* @file CBaseScreen.cpp
+* @file GraphScreen.cpp
 * @brief Содержит реализацию класса GraphScreen
 * @author Shazhko Artem
 * @version 0

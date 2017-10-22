@@ -1,6 +1,6 @@
 ﻿/**
-* @file CScreen.h
-* @brief Содержит объявление базового класса  CarWheel
+* @file CarWheel.h
+* @brief Содержит объявление базового класса CarWheel
 * @author Shazhko Artem
 * @version 0
 * @date 03.10.17
@@ -9,6 +9,9 @@
 #include "Wheel.h"
 #include <string.h>
 
+/**
+* Класс описывающий колесо машины
+*/
 class  CarWheel:public Wheel
 {
 public:

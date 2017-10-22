@@ -1,4 +1,11 @@
 #pragma once
+/**
+* @file Units.hpp
+* @brief Содержит объявление перечислений EUnits и функции по работе с ними
+* @author Shazhko Artem
+* @version 0
+* @date 18.09.17
+*/
 #include <string>
 
 /**

@@ -1,7 +1,7 @@
 #pragma once
 /**
-* @file CreateDefaultScreen.hpp
-* @brief Содержит объявление класса CreateDefaultScreen
+* @file DefaultScreenCreator.hpp
+* @brief Содержит объявление класса DefaultScreenCreator
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -13,16 +13,16 @@
 /**
 * Класс реализующий фабричный метод для создания объектов DefaultScreen
 */
-class CreateDefaultScreen :public ScreenCreator {
+class DefaultScreenCreator :public ScreenCreator {
 public:
 	/**
 	* Деструктор
 	*/
-	virtual ~CreateDefaultScreen(){}
+	virtual ~DefaultScreenCreator(){}
 	/**
 	* Конструктор
 	*/
-	CreateDefaultScreen(Wheel *wheel) {
+	DefaultScreenCreator(Wheel *wheel) {
 		this->wheel = wheel;
 	}
 	/**

@@ -1,5 +1,5 @@
 ﻿/**
-* @file CBaseScreen.cpp
+* @file CarWheel.cpp
 * @brief Содержит реализацию класса CarWheel
 * @author Shazhko Artem
 * @version 0
