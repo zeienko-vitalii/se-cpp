@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{3BD8EA4A-DB1C-4FC6-8E22-06FC535A193D}</ProjectGuid>
+    <ProjectGuid>{75D9AE20-DF5A-44D2-B632-6592C5F5B0BD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>shazhko03test</RootNamespace>
+    <RootNamespace>shazhko06</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,9 +72,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <ExecutablePath>D:\GitHub\kit25a\ashazhko-artem\src\shazhko03;D:\GitHub\kit25a\ashazhko-artem\src\x64\Debug;$(ExecutablePath)</ExecutablePath>
-    <SourcePath>$(SourcePath)</SourcePath>
-    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -93,17 +90,11 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\GitHub\kit25a\ashazhko-artem\src\shazhko03;D:\GoogleTest\googletest-master\googletest\include;D:\GitHub\kit25a\ashazhko-artem\src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>googletest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -156,13 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\shazhko03\CBaseScreen.cpp" />
-    <ClCompile Include="..\shazhko03\CCarWheel.cpp" />
-    <ClCompile Include="..\shazhko03\CWheel.cpp" />
-    <ClCompile Include="..\shazhko03\СGraphScreen.cpp" />
-    <ClCompile Include="CGraphScreen-TEST.cpp" />
-    <ClCompile Include="CWheel-TEST.cpp" />
-    <ClCompile Include="CCarWheel-TEST.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
