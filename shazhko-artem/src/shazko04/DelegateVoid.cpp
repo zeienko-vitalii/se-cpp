@@ -1,5 +1,11 @@
 #include "DelegateVoid.h"
-
+/**
+* @file DelegateVoid.cpp
+* @brief Реализация класса DelegateVoid
+* @author Shazhko Artem
+* @version 0
+* @date 09.10.17
+*/
 namespace Delegate {
 	DelegateVoid & DelegateVoid::operator=(IDelegateVoid * pDelegate)
 	{

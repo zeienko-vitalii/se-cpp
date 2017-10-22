@@ -1,6 +1,6 @@
 ﻿/**
-* @file CBaseScreen.cpp
-* @brief Содержит реализацию класса Wheel
+* @file DefaultScreen.cpp
+* @brief Содержит реализацию класса DefaultScreen
 * @author Shazhko Artem
 * @version 0
 * @date 03.10.17

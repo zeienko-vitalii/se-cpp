@@ -1,18 +1,40 @@
 #pragma once
-#include "ScreenCreator.hpp"
+/**
+* @file CarWheelScreenCreator.hpp
+* @brief Содержит объявление класса CarWheelScreenCreator
+* @author Shazhko Artem
+* @version 0
+* @date 18.09.17
+*/
+#include "ScreenCreator.h"
 #include "CarWheelScreen.h"
 #include "NonScreen.h"
 
-class CreateCarWheelScreen : ScreenCreator {
+/**
+* Класс реализующий фабричный метод для создания объектов CarWheelScreen
+*/
+class CarWheelScreenCreator :public ScreenCreator {
 public:
-	CreateCarWheelScreen(CarWheel *wheel) {
+	/**
+	* Деструктор
+	*/
+	virtual ~CarWheelScreenCreator(){}
+	/**
+	* Конструктор
+	*/
+	CarWheelScreenCreator(CarWheel *wheel) {
 		this->wheel = wheel;
 	}
+	/**
+	* Виртуальная функция, создает объект наследующий класс ScreenCreator
+	* @return объект, который реализует интерфейс ScreenCreator, для отображения данных на экран
+	*/
 	BaseScreen* CreateSreen() override {
 		if (wheel)
 			return new CarWheelScreen(wheel);
 		else return new NonScreen();
 	}
 private:
+	// колесо
 	CarWheel *wheel;
 };

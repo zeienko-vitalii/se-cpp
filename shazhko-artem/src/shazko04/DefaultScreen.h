@@ -1,6 +1,6 @@
 ﻿/**
-* @file CScreen.h
-* @brief Содержит объявление класса  CScreen
+* @file DefaultScreen.h
+* @brief Содержит объявление класса  DefaultScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -10,7 +10,7 @@
 #include "BaseScreen.h"
 
 /**
-* Класс описывающий отображение объектов класса CWheel
+* Класс описывающий отображение объектов класса DefaultScreen
 */
 class DefaultScreen : public BaseScreen {
 public:
