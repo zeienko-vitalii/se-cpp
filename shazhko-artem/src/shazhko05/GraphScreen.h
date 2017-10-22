@@ -10,7 +10,7 @@
 #include "BaseScreen.h"
 #include <Windows.h>
 /**
-* Класс описывающий расширенное отображение объектов класса Wheel
+* Класс описывающий расширенное отображение объектов класса GraphScreen
 */
 class GraphScreen :public BaseScreen{
 private:

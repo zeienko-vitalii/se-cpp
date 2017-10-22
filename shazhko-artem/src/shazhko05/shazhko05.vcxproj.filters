@@ -64,12 +64,15 @@
     <Filter Include="Файлы заголовков\Screen\AllScreens">
       <UniqueIdentifier>{3e9b7817-62be-4af6-bf52-7289c4cebaf3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Timer">
+      <UniqueIdentifier>{f6df8c1c-a0b8-457d-91bc-05a49561e8d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Timer">
+      <UniqueIdentifier>{5ccf53f9-e1e9-4d4a-a67d-2af7a008269b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="SimpleTimer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="TEST-SimpleTimer.cpp">
@@ -108,11 +111,11 @@
     <ClCompile Include="StreamHelperArg.cpp">
       <Filter>Исходные файлы\StreamHelper\Base</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleTimer.cpp">
+      <Filter>Исходные файлы\Timer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SimpleTimer.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="IDelegateVoid.h">
       <Filter>Файлы заголовков\Delegates</Filter>
     </ClInclude>
@@ -132,9 +135,6 @@
       <Filter>Файлы заголовков\Screen\ScreenCreator</Filter>
     </ClInclude>
     <ClInclude Include="GraphScreenCreator.hpp">
-      <Filter>Файлы заголовков\Screen\ScreenCreator</Filter>
-    </ClInclude>
-    <ClInclude Include="ScreenCreator.hpp">
       <Filter>Файлы заголовков\Screen\ScreenCreator</Filter>
     </ClInclude>
     <ClInclude Include="CarWheel.h">
@@ -167,9 +167,6 @@
     <ClInclude Include="StreamHelperArg.h">
       <Filter>Файлы заголовков\StreamHelper\Base</Filter>
     </ClInclude>
-    <ClInclude Include="SimpleStreamHelperFactory.hpp">
-      <Filter>Файлы заголовков\StreamHelper\StreamHelperFactory</Filter>
-    </ClInclude>
     <ClInclude Include="BaseScreen.h">
       <Filter>Файлы заголовков\Screen\AllScreens</Filter>
     </ClInclude>
@@ -184,6 +181,15 @@
     </ClInclude>
     <ClInclude Include="CarWheelScreen.h">
       <Filter>Файлы заголовков\Screen\AllScreens</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleStreamHelperFactory.h">
+      <Filter>Файлы заголовков\StreamHelper\StreamHelperFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleTimer.h">
+      <Filter>Файлы заголовков\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenCreator.h">
+      <Filter>Файлы заголовков\Screen\ScreenCreator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

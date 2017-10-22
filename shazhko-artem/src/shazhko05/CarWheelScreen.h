@@ -1,6 +1,6 @@
 ﻿/**
-* @file CScreen.h
-* @brief Содержит объ¤вление класса  CScreen
+* @file CarWheelScreen.h
+* @brief Содержит объ¤вление класса  CarWheelScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -9,7 +9,7 @@
 #include "CarWheel.h"
 #include "BaseScreen.h"
 /**
-*  Класс описывающий отображение объектов класса CWheel
+*  Класс описывающий отображение объектов класса CarWheelScreen
 */
 class CarWheelScreen :public BaseScreen{
 public:
@@ -19,7 +19,7 @@ public:
 	*/
 	CarWheelScreen(CarWheel *_wheel);
 	/**
-	* конструктор
+	* Деструктор
 	*/
 	virtual ~CarWheelScreen();
 	/**

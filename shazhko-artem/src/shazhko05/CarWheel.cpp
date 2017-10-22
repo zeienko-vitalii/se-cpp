@@ -6,7 +6,7 @@
 * @date 03.10.17
 */
 #include "CarWheel.h"
-#include "SimpleStreamHelperFactory.hpp"
+#include "SimpleStreamHelperFactory.h"
 
 
 CarWheel::CarWheel(double _diameter, double _width, EUnits _unit, std::string _tireName, std::string _tireManufacturer): Wheel(_diameter, _width, _unit), tireName(_tireName), tireManufacturer(_tireManufacturer){}

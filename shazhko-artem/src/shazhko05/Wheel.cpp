@@ -9,7 +9,7 @@
 #include "Wheel.h"
 #define _USE_MATH_DEFINES // for C++  
 
-#include "SimpleStreamHelperFactory.hpp"
+#include "SimpleStreamHelperFactory.h"
 #include <sstream>
 
 Wheel::Wheel() : diameter(0), width(0), units(EUNITS_CENTIMETERS) { }

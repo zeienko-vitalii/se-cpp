@@ -1,6 +1,6 @@
 /**
-* @file CScreen.h
-* @brief —одержит объ€вление класса  CScreen
+* @file NonScreen.h
+* @brief —одержит объ€вление класса  NonScreen
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -9,7 +9,7 @@
 #include "BaseScreen.h"
 
 /**
-*  ласс описывающий отображение объектов класса CWheel
+*  ласс который используетс€ в качестве заглушки
 */
 class NonScreen : public BaseScreen {
 public:

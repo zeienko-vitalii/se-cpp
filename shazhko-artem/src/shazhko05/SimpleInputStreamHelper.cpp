@@ -1,3 +1,10 @@
+/**
+* @file SimpleInputStreamHelper.cpp
+* @brief Содержит реализацию класса  SimpleInputStreamHelper
+* @author Shazhko Artem
+* @version 0
+* @date 09.10.17
+*/
 #include "SimpleInputStreamHelper.h"
 #include <regex>
 

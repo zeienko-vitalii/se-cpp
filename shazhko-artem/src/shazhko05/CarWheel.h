@@ -56,6 +56,9 @@ public:
 	*/
 	virtual void OnLoad(std::istream& aStream)override;
 
+	/**
+	* Деструктор
+	*/
 	virtual~CarWheel();
 private:
 	// название шины

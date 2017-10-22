@@ -50,10 +50,10 @@
     <ClInclude Include="MethodDelegateVoid.hpp" />
     <ClInclude Include="NonScreen.h" />
     <ClInclude Include="OutputStreamHelper.h" />
-    <ClInclude Include="ScreenCreator.hpp" />
+    <ClInclude Include="ScreenCreator.h" />
     <ClInclude Include="SimpleInputStreamHelper.h" />
     <ClInclude Include="SimpleOutputStreamHelper.h" />
-    <ClInclude Include="SimpleStreamHelperFactory.hpp" />
+    <ClInclude Include="SimpleStreamHelperFactory.h" />
     <ClInclude Include="SimpleTimer.h" />
     <ClInclude Include="StorageInterface.h" />
     <ClInclude Include="StreamHelperFactory.h" />
@@ -134,6 +134,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,6 +142,9 @@
       <AdditionalDependencies>FileStorage.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

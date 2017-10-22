@@ -1,21 +1,44 @@
 #pragma once
+/**
+* @file MethodDelegateVoid.hpp
+* @brief Объявляение и реализация класса MethodDelegateVoid
+* @author Shazhko Artem
+* @version 0
+* @date 09.10.17
+*/
 #include "IDelegateVoid.h"
 namespace Delegate {
-
+	/**
+	* Класс реализующий интерфейс IDelegateVoid
+	*/
 	template<class TObject>
 	class MethodDelegateVoid : public IDelegateVoid
 	{
 	public:
+		/**
+		* Конструктор
+		* @param _pObject указатель на объект класса
+		* @param _pMethod указатель на функцию класса
+		*/
 		typedef void (TObject::*PMethod)();
 		MethodDelegateVoid(TObject* _pObject, PMethod _pMethod)
 		{
 			pObject = _pObject;
 			pMethod = _pMethod;
 		}
+		/**
+		* Вызов функции
+		*/
 		virtual void Invoke() { (pObject->*pMethod)(); }
+		/**
+		* Сравнение делегатов
+		* @return true - если равны
+		*/
 		virtual bool Compare(IDelegateVoid* pDelegate);
 	private:
+		// указатель на объект класса
 		TObject *pObject;
+		// указатель на функцию класса
 		PMethod pMethod;
 	};
 
