@@ -9,20 +9,21 @@
 - В выводах отметить недостатки класса CFileStorage
 
 ## Структура проекта
-
+| Visual Studio |
+| :-: |
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image01.png)
 
 
 ## Описание разработанных типов данных
 | Classes |
 | :-: |
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image02.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image002.png)
 
 
 ## Диаграмма классов
 | Class diagram |
 | :-: |
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image03.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image003.png)
 
 
 ## Разработанные методы и функции
