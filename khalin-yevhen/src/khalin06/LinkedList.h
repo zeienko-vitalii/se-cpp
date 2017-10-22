@@ -147,30 +147,31 @@ public:
 	/**
 	* @breif Removes an element by index.
 	*/
-	virtual void remove(unsigned int index) {
-		if (index < elementsAmount) {
-			if (index == elementsAmount - 1) {
-				removeLast();
-			} else if (index == 0) {
-				removeFirst();
+	virtual void remove(int index) {
+		bool isCorrectIndex = (index < elementsAmount && index >= 0);
+		_ASSERT_EXPR(isCorrectIndex, L"Wrong index.");
+
+		if (index == elementsAmount - 1) {
+			removeLast();
+		} else if (index == 0) {
+			removeFirst();
+		} else {
+			auto iter = head;
+			while (index-- > 0) { // move to necessary position
+				iter = iter->next;
+			}
+			if (iter->next != nullptr) {
+				auto afterRemoving = iter->next;
+				auto beforeRemoving = iter->prev;
+
+				// link elements after and before corrent position:
+				afterRemoving->prev = iter->prev;
+				beforeRemoving->next = afterRemoving;
+
+				releaseMemory(iter);
+				elementsAmount--;
 			} else {
-				auto iter = head;
-				while (index-- > 0) { // move to necessary position
-					iter = iter->next;
-				}
-				if (iter->next != nullptr) {
-					auto afterRemoving = iter->next;
-					auto beforeRemoving = iter->prev;
-
-					// link elements after and before corrent position:
-					afterRemoving->prev = iter->prev;
-					beforeRemoving->next = afterRemoving;
-
-					releaseMemory(iter);
-					elementsAmount--;
-				} else {
-					removeLast();
-				}
+				removeLast();
 			}
 		}
 	}
@@ -188,9 +189,10 @@ public:
 			index++;
 			if (iter->element == e) {
 				remove(index);
-				break;
+				return;
 			}
 		}
+		_ASSERT_EXPR(false, L"Nonexistent element.");
 	}
 
 	/**
@@ -242,9 +244,9 @@ public:
 	/**
 	* @return A pointer to an element according to <b>index</b>
 	*/
-	virtual E * get(unsigned int index) {
-		if (index >= elementsAmount) {
-			return nullptr;
+	virtual E * get(int index) throw (std::range_error) {
+		if (index >= elementsAmount || index < 0) {
+			throw std::range_error("out of bounds");
 		} else {
 			auto iter = head;
 			for (auto i = 0; i < index; i++, iter = iter->next) { }
@@ -255,7 +257,7 @@ public:
 	/**
 	* @return A pointer to an element according to <b>index</b>
 	*/
-	virtual E * operator[](int index) {
+	virtual E * operator[](int index) throw (std::range_error) {
 		return get(index);
 	}
 
