@@ -39,9 +39,11 @@
 
 ## Текст программы
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image07.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image06.png)
 
 ## Результаты работы
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image07.png)
+
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image08.png)
 
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image09.png)
