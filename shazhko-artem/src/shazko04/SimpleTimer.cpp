@@ -1,5 +1,5 @@
 /**
-* @file SimpleTimer.h
+* @file SimpleTimer.cpp
 * @brief Содержит реализацию класса  SimpleTimer
 * @author Shazhko Artem
 * @version 0

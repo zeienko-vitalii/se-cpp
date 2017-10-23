@@ -1,5 +1,5 @@
 ﻿/**
-* @file CBaseScreen.cpp
+* @file Wheel.cpp
 * @brief Содержит реализацию класса Wheel
 * @author Shazhko Artem
 * @version 0

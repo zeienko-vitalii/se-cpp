@@ -1,5 +1,5 @@
 ﻿/**
-* @file CScreen.h
+* @file CarWheel.h
 * @brief Содержит объявление базового класса  CarWheel
 * @author Shazhko Artem
 * @version 0
@@ -44,6 +44,8 @@ public:
 	* @return производитель
 	*/
 	std::string GetTireManufacturer() const;
+
+	CarWheel& operator=(CarWheel &wheel);
 private:
 	// название шины
 	std::string tireName;

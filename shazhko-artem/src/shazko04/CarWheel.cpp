@@ -1,5 +1,5 @@
 ﻿/**
-* @file CBaseScreen.cpp
+* @file CarWheel.cpp
 * @brief Содержит реализацию класса CarWheel
 * @author Shazhko Artem
 * @version 0
@@ -36,4 +36,11 @@ std::string CarWheel::GetTireName() const
 std::string CarWheel::GetTireManufacturer() const
 {
 	return this->tireManufacturer;
+}
+
+CarWheel & CarWheel::operator=(CarWheel & _wheel)
+{
+	this->tireName = _wheel.tireName;
+	this->tireManufacturer = _wheel.tireManufacturer;
+	return *this;
 }
