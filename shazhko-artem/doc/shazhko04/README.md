@@ -14,19 +14,22 @@
 
 ## Прикладная область
 В соответствии с вариантом #16
-| Прикладная область | Перегружаемые методы Data2 | Перегружаемые операторы |
-| Колесо | setData | == в Data2 для диаметра\n= в Data2 устанавливает производителя и название |
+|![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image09.png)
 
 ## Структура проекта
+| Project name | Visual Studio project structure |
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image01.png)
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ## Описание разработанных типов данных
+| Project name | Classes |
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image02.png)
 
 
 ## Диаграмма классов
+| Project name | Class diagram |
+| :-: | :-: |
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image03.png)
 
 ## Разработанные методы и функции
