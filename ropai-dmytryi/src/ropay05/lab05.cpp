@@ -44,10 +44,9 @@ int main() {
 
 	cout << manip2.toString();
 
-
 	CFileStorage *testStorageMouse = CFileStorage::Create(mouse,
 			"Lab5_Test2.bin");
-	 success = testStorageMouse->Store();
+	success = testStorageMouse->Store();
 	if (!success) {
 		cerr << "Storing returned error: " << testStorageMouse->GetLastError()
 				<< endl;
@@ -62,6 +61,9 @@ int main() {
 	}
 
 	cout << mouse2.toString();
+
+	delete testStorage;
+	delete testStorageMouse;
 
 	return 0;
 }
