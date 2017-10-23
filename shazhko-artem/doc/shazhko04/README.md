@@ -14,36 +14,39 @@
 
 ## Прикладная область
 В соответствии с вариантом #16
+
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image09.png)
 
 ## Структура проекта
-| Project name | Visual Studio project structure |
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image01.png)
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ## Описание разработанных типов данных
-| Project name | Classes |
+
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image02.png)
 
 
 ## Диаграмма классов
-| Project name | Class diagram |
-| :-: | :-: |
+
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image03.png)
 
 ## Разработанные методы и функции
 Был разработан фабричный метод
+
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image04.png)
 
 ## Ссылки на файлы проекта
+
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image05.png)
 
 
 ## Текст программы
+
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image06.png)
 
 ## Результаты работы
+
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image07.png)
 |![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko04/source/Image08.png)
 
