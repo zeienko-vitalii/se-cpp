@@ -7,6 +7,7 @@
 
 
 #include <iostream>
+#include <string>
 #include "Screen.h"
 
 using namespace std;
@@ -16,7 +17,7 @@ Screen::Screen() {
 	cout << "Screen constructor\n";
 }
 ///Конструктор для всіх полей
-Screen::Screen(Capacity capacity) : capacity(capacity) {
+Screen::Screen(Capacity* capacity) : BaseView(capacity) {
 	cout << "Screen constructor with parametrs\n";
 }
 ///Деструктор
@@ -26,26 +27,14 @@ Screen::~Screen() {
 
 ///Функція відображення даних об'єкта класу Capacity
 void Screen::view() {
-	switch (capacity.getUnit()){
-	case ml: cout << "\nОб'єм = " << capacity.v << " мл" << endl;
-		cout << "Площа тари = " << capacity.square(1) * 10000 << " cм^2\n";
-		break;
-	case l: cout << "\nОб'єм = " << capacity.v << " л" << endl; 
-		cout << "Площа тари = " << capacity.square(1) << " м^2\n";
-		break;
-	case cubicMeter: 
-		cout << "\nОб'єм = " << capacity.v << " м^3" << endl;
-		cout << "Площа тари = " << capacity.square(1) << " м^2\n";
-		break;
-	}
-	
+	cout << (*data).toString();	
 }
 
 ///Виводить заголовок відображення
 void Screen::showHeader()
 {
 	cout << "\n================================\n";
-	cout << "\n        Capacity data\n";
+	cout << "\n        Screen output data\n";
 	cout << "\n================================\n";
 }
 ///Виводить головну інформацію про об'єкт

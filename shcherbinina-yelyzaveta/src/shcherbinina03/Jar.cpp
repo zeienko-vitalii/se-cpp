@@ -5,6 +5,9 @@
 * @author shcherbinina
 */
 #include "Jar.h"
+#include <string>
+
+using namespace std;
 
 ///Конструктор без параметрів
 Jar::Jar() : Capacity(), typeOfCap("Накладна"), material("Скло")
@@ -52,4 +55,27 @@ void Jar::setMaterial(string material)
 string Jar::getMaterial()
 {
 	return material;
+}
+///Повертає строку 
+string Jar::toString()
+{
+	string tmp;
+	tmp += "\nОб'єм = " + to_string(v);
+	switch (getUnit()){
+	case l:
+		tmp += " l";
+		break;
+	case ml:
+		tmp += " ml";
+		break;
+	case cubicMeter:
+		tmp += " m3";
+		break;
+	}
+	tmp += "\nПлоща тари = ";
+	tmp += to_string(square(1));
+	tmp += " м^2\n";
+	tmp += "\nТип кришки - " + getTypeOfCap();
+	tmp += "\nМатерiал - " + getMaterial() + "\n";
+	return tmp;
 }

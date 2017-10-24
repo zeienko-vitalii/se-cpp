@@ -18,7 +18,7 @@ BaseView::~BaseView()
 	cout << "BaseView destructor\n";
 }
 ///Конструктор з параметрами
-BaseView::BaseView(Capacity data) : data(data)
+BaseView::BaseView(Capacity* data) : data(data)
 {
 	cout << "BaseView constructor with parametrs\n";
 }

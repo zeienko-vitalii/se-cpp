@@ -58,5 +58,9 @@ public:
 	* @return матеріал
 	*/
 	string getMaterial();
+	/**
+	*
+	*/
+	virtual string toString();
 };
 

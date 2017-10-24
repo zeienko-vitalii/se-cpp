@@ -13,7 +13,7 @@ class BaseView
 {
 protected:
 	///Об'єкт відображення
-	Capacity data;
+	Capacity* data;
 	/**
 	* Виводить заголовок відображення
 	*/
@@ -35,7 +35,7 @@ public:
 	* Конструктор з параметрами
 	* @param встановлюєме значення об'єкта, що виводиметься
 	*/
-	BaseView(Capacity data);
+	BaseView(Capacity* data);
 	/**
 	* Деструктор
 	*/

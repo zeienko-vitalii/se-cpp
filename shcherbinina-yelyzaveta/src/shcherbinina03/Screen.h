@@ -15,9 +15,6 @@
 */
 class Screen : public BaseView {
 public:
-
-	///Об'єкт класу, що має бути відображений
-	Capacity capacity;
 	/**
 	* Конструктор без параметра
 	*/
@@ -26,7 +23,7 @@ public:
 	* Конструктор для всіх полей
 	* @param capacity - встановлюєме значення
 	*/
-	Screen(Capacity capacity);
+	Screen(Capacity* capacity);
 	/**
 	* Деструктор
 	*/

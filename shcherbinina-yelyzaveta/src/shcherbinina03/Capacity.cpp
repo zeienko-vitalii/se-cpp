@@ -7,12 +7,13 @@
 
 #include "Capacity.h"
 #include <iostream>
+#include <string>
 #include <math.h>
 
 using namespace std;
 
 ///Конструктор без параметра
-Capacity::Capacity() : unit(l), v(1){
+Capacity::Capacity() : unit(ml), v(1){
 	cout << "Capacity constructor\n";
 }
 
@@ -56,4 +57,24 @@ ostream& operator <<(ostream& out, Capacity capacity){
 	case cubicMeter: return (out << "Об'єм = " << capacity.v << " м^3" << endl); break;
 	}
 	return out;
+}
+///
+string Capacity::toString(){
+	string tmp;
+	tmp += "\nОб'єм = " + to_string(v);
+	switch (getUnit()){
+	case l:
+		tmp += " l";
+		break;
+	case ml:
+		tmp += " ml";
+		break;
+	case cubicMeter:
+		tmp += " m3";
+		break;
+	}
+	tmp += "\nПлоща тари = ";
+	tmp += to_string(square(1));
+	tmp += " м^2\n";
+	return tmp;
 }

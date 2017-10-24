@@ -24,16 +24,16 @@ int main() {
 	view.printData();*/
 
 	Jar jar1("Закручується", "Скло");
-	JarScreen view1(jar1);
+	JarScreen view1(&jar1);
 	view1.display();
 
 	Jar jar2;
-	Screen view2(jar2);
+	Screen view2(&jar2);
 	view2.display();
 	
 
 	Capacity data(l,1000);
-	Screen view3(data);
+	GraphScreen view3(&data);
 	view3.display();
 	system("pause");
 	return 0;

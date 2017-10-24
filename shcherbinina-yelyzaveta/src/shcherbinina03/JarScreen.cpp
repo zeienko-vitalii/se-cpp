@@ -15,7 +15,7 @@ JarScreen::~JarScreen()
 }
 
 ///Конструктор для всіх полей
-JarScreen::JarScreen(Jar data) : data(data), Screen(data)
+JarScreen::JarScreen(Jar* data) : Screen(data)
 {
 	cout << "JarScreen constructor with parametrs\n";
 }
@@ -23,21 +23,19 @@ JarScreen::JarScreen(Jar data) : data(data), Screen(data)
 ///Функція відображення даних об'єкта класу Jar
 void JarScreen::viewJar()
 {
-	cout << "Тип кришки = " << data.getTypeOfCap() << endl;
-	cout << "Матеріал = " << data.getMaterial() << endl;
+	cout << (*data).toString();
 }
 
 ///Виводить заголовок відображення
 void JarScreen::showHeader()
 {
 	cout << "\n================================\n";
-	cout << "\n        Jar data\n";
+	cout << "\n        JarScreen output\n";
 	cout << "\n================================\n";
 }
 ///Виводить головну інформацію про об'єкт
 void JarScreen::showContent()
 {
-	view();
 	viewJar();
 }
 ///Виводить нижній колонтитул відображення

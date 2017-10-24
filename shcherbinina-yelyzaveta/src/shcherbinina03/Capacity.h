@@ -56,6 +56,10 @@ public:
 	* Функція для знаходження площі циліндричної тари
 	*/
 	const float square(float height);
+	/**
+	*
+	*/
+	virtual string toString();
 	///об'єм
 	float v;
 private:

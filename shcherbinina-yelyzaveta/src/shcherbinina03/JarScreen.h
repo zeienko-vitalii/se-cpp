@@ -14,8 +14,6 @@ class JarScreen :
 	public Screen
 {
 public:
-	///Об'єкт класу, що має бути відображений
-	Jar data;
 	/**
 	* Конструктор без параметра
 	*/
@@ -24,7 +22,7 @@ public:
 	* Конструктор для всіх полей
 	* @param data - встановлюєме значення
 	*/
-	JarScreen(Jar data);
+	JarScreen(Jar* data);
 	/**
 	* Деструктор
 	*/
