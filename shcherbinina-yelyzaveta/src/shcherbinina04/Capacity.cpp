@@ -89,5 +89,5 @@ bool Capacity::operator >= (Capacity data){
 	else if ((this->getUnit() == 2 || this->getUnit() == 0) && data.getUnit() == 1)
 			result = true;
 	else result = false;
-	
+	return result;
 }

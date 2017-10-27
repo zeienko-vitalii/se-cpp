@@ -91,15 +91,15 @@ void Jar::setData(const string& data){
 void Jar::operator = (int data){
 	switch (data){
 	case 1:
-		this->setTypeOfCap = "Закручується";
+		this->setTypeOfCap("Закручується");
 		break;
 	case 2:
-		this->setTypeOfCap = "Закатується";
+		this->setTypeOfCap("Закатується");
 		break;
 	case 3:
-		this->setTypeOfCap = "Звичайна";
+		this->setTypeOfCap("Звичайна");
 		break;
 	default:
-		this->setTypeOfCap = "Вакуумна";
+		this->setTypeOfCap("Вакуумна");
 	}
 }

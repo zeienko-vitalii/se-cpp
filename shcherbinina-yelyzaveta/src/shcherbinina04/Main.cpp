@@ -4,18 +4,21 @@
  * @date 2017.09.10
  * @author shcherbinina
  */
+#include "gtest\gtest.h"
 #include "Screen.h"
 #include "GraphScreen.h"
 #include "Jar.h"
 #include "JarScreen.h"
 #include "BaseView.h"
+#include "Timer.h"
 #include <iostream>
-
+#include <conio.h>
+#include <windows.h>
 
 /**
 * Точка входу в програму
 */
-int main() {
+int main(int argc, char **argv) {
 	setlocale(LC_ALL, "Russian");
 
 	/*Capacity capacity(l, 100);
@@ -35,7 +38,14 @@ int main() {
 	Capacity data(l,1000);
 	GraphScreen view3(&data);
 	view3.display();
-	system("pause");
-	return 0;
+
+	Timer<Capacity> timer(GraphScreen::onTimerAction, data);
+	timer.start();
+
+	::testing::InitGoogleTest(&argc, argv);
+	const int res = RUN_ALL_TESTS();
+	getch();
+	return res;
+	//return 0;
 }
 

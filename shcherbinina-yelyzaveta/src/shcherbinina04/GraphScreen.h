@@ -51,5 +51,6 @@ public:
 	* Виводить нижній колонтитул відображення
 	*/
 	virtual void showFooter() override;
+	static void onTimerAction(Capacity data);
 };
 
