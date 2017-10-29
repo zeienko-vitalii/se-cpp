@@ -4,82 +4,58 @@
 #define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #define new DEBUG_NEW
 
-#include "StorageInterface.h"
-
 #include "CarWheelScreenCreator.hpp"
-#include "DefaultScreenCreator.hpp"
-#include "GraphScreenCreator.hpp"
 #include "CarWheel.h"
 #include <iostream>
-#include "Delegate.hpp"
-#include "SimpleTimer.h"
+
 #include "SimpleList.cpp"
-#include <vector>
-void RunPrintTimer(BaseScreen ** , int);
-void RunCreaterScreen(ScreenCreator **, int );
+void WheelListShow(SimpleList<CarWheel*>::iterator it);
 
 int main() {
-	SimpleList<Wheel*> wheelList;
-	wheelList.Push(new Wheel(1, 10, EUNITS_CENTIMETERS));
-	wheelList.Push(new Wheel(200, 500, EUnits::EUNITS_MILLIMETRES));
-	wheelList.Push(new CarWheel(30, 50, EUnits::EUNITS_INCHES, "", ""));
-	wheelList.Push(new CarWheel(2, 7, EUnits::EUNITS_CENTIMETERS, "", ""));
-	
-	auto forRemove= wheelList[1];
-//	wheelList.Remove(forRemove);
-//	wheelList.RemoveAt(0);
-	forRemove=wheelList.Pop();
-	wheelList.Insirt(1,new CarWheel(2, 7, EUnits::EUNITS_CENTIMETERS, "New", "Cartana"));
+	{
+		SimpleList<CarWheel*> wheelList;
+		wheelList.Push(new CarWheel(30, 50, EUNITS_CENTIMETERS, "UltraGrip Performance G1", "Goodyear"));
+		wheelList.Push(new CarWheel(304.8, 500, EUnits::EUNITS_MILLIMETRES, "MP-16 ", "Matador"));
+		wheelList.Push(new CarWheel(355.6, 185, EUnits::EUNITS_MILLIMETRES, "WinterContact TS 860", "Continental"));
+		wheelList.Push(new CarWheel(508, 275, EUnits::EUNITS_MILLIMETRES, "Hakkapeliitta 9 (шип)", "Nokian"));
 
-	SimpleList<Wheel*>::iterator it= wheelList.CreateIterator();
-	for (it->First(); !it->IsDone(); it->Next()) {
-		std::cout << it->CurrentItem() << "\n";
-	}
-	it->Last();
-	for (it->First(); !it->IsDone(); it->Previous()) {
-		std::cout << it->CurrentItem() << "\n";
-	}
-	Wheel *iWheel1 = new Wheel(6, 10, EUNITS_CENTIMETERS);
-	CarWheel *iWheel2 = new CarWheel(0, 0, EUnits::EUNITS_CENTIMETERS, "", "");
-	CFileStorage *file = CFileStorage::Create(*iWheel2, "Test.txt");
-	file->Load();
-	auto screenCreator = new ScreenCreator*[3]{
-		new CarWheelScreenCreator(iWheel2),
-		new DefaultScreenCreator(iWheel1),
-		new GraphScreenCreator(iWheel1) };
-	RunCreaterScreen(screenCreator,3);
+		auto forRemove = wheelList[1];
+		wheelList.Remove(forRemove);
+		delete forRemove;
+		forRemove = wheelList[0];
+		wheelList.RemoveAt(0);
+		delete forRemove;
+		forRemove = wheelList.Pop();
+		delete forRemove;
+		wheelList.Insirt(1, new CarWheel(514.5, 295, EUnits::EUNITS_CENTIMETERS, "Proxes T1 Sport SUV 295/40", "Toyo"));
+
+		SimpleList<CarWheel*>::iterator it = wheelList.CreateIterator();
+		WheelListShow(it);
+
 #pragma region Очистка памяти
-	for (int i = 0; i < 3; i++) {
-		delete screenCreator[i];
-		screenCreator[i] = NULL;
-	}
-	delete screenCreator;
-	delete file;
-	delete iWheel1;
-	delete iWheel2;
+		for (it->First(); !it->IsDone(); it->Next()) {
+			delete it->CurrentItem();
+		}
+		delete it;
 #pragma endregion
+	}
 	_CrtDumpMemoryLeaks();
 	return 0;
 }
 
-void RunCreaterScreen(ScreenCreator **arrayScreenCreator, int count) {
-	BaseScreen ** arrayScreen = new BaseScreen*[count];
-	for (int i = 0; i < count; i++)
-		arrayScreen[i] = arrayScreenCreator[i]->CreateSreen();
-	RunPrintTimer(arrayScreen, count);
-#pragma region Очистка памяти
-	for (int i = 0; i < count; i++) {
-		delete arrayScreen[i];
-		arrayScreen[i] = NULL;
-	}
-	delete arrayScreen;
-#pragma endregion
+void Show(ScreenCreator *sc) {
+	if (sc == NULL)throw "NullReferenceException";
+	auto screen= sc->CreateSreen();
+	screen->ShowHeader();
+	screen->ShowContent();
+	screen->ShowFooter();
+	delete screen;
 }
 
-void RunPrintTimer(BaseScreen ** arrayScreen, int count) {
-	Timer::SimpleTimer timer(4, 1000);
-	for (int i = 0; i < count; i++)
-		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(arrayScreen[i], &BaseScreen::ShowContent);
-	timer.Start();
-	timer.Wait(INFINITE);
+void WheelListShow(SimpleList<CarWheel*>::iterator it){
+	for (it->First(); !it->IsDone(); it->Next()) {
+		auto sc = new CarWheelScreenCreator(it->CurrentItem());
+		Show(sc);
+		delete sc;
+	}
 }
