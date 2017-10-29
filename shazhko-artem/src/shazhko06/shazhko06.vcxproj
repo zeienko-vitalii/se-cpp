@@ -18,6 +18,52 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseScreen.cpp" />
+    <ClCompile Include="CarWheel.cpp" />
+    <ClCompile Include="CarWheelScreen.cpp" />
+    <ClCompile Include="DefaultScreen.cpp" />
+    <ClCompile Include="DelegateVoid.cpp" />
+    <ClCompile Include="GraphScreen.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SimpleList.cpp" />
+    <ClCompile Include="SimpleInputStreamHelper.cpp" />
+    <ClCompile Include="SimpleOutputStreamHelper.cpp" />
+    <ClCompile Include="SimpleStreamHelperFactory.cpp" />
+    <ClCompile Include="SimpleTimer.cpp" />
+    <ClCompile Include="StreamHelperArg.cpp" />
+    <ClCompile Include="Wheel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseScreen.h" />
+    <ClInclude Include="CarWheel.h" />
+    <ClInclude Include="CarWheelScreen.h" />
+    <ClInclude Include="CarWheelScreenCreator.hpp" />
+    <ClInclude Include="ICollection.h" />
+    <ClInclude Include="DefaultScreen.h" />
+    <ClInclude Include="DefaultScreenCreator.hpp" />
+    <ClInclude Include="Delegate.hpp" />
+    <ClInclude Include="DelegateVoid.h" />
+    <ClInclude Include="GraphScreen.h" />
+    <ClInclude Include="GraphScreenCreator.hpp" />
+    <ClInclude Include="IDelegateVoid.h" />
+    <ClInclude Include="InputStreamHelper.h" />
+    <ClInclude Include="IIterator.h" />
+    <ClInclude Include="MethodDelegateVoid.hpp" />
+    <ClInclude Include="OutputStreamHelper.h" />
+    <ClInclude Include="ScreenCreator.h" />
+    <ClInclude Include="SimpleList.h" />
+    <ClInclude Include="SimpleInputStreamHelper.h" />
+    <ClInclude Include="SimpleOutputStreamHelper.h" />
+    <ClInclude Include="SimpleStreamHelperFactory.h" />
+    <ClInclude Include="SimpleTimer.h" />
+    <ClInclude Include="StaticDelegateVoid.hpp" />
+    <ClInclude Include="StorageInterface.h" />
+    <ClInclude Include="StreamHelperFactory.h" />
+    <ClInclude Include="StreamHelperArg.h" />
+    <ClInclude Include="Units.hpp" />
+    <ClInclude Include="Wheel.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{75D9AE20-DF5A-44D2-B632-6592C5F5B0BD}</ProjectGuid>
@@ -90,11 +136,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>FileStorage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -150,10 +199,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
