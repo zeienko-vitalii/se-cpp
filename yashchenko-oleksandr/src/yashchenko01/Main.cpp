@@ -1,21 +1,22 @@
-/*
- * Main.cpp
- * Created on: 10 ����. 2017 �.
- * @author: yashchenko
- * @description: point of entry
+/**
+ * @file main.cpp
+ * Implementation of main() function
+ * @author Ященко Олександр
+ * @version 0.0.1
+ * @date 2017.09.15
  */
-#include <CScreen.h>
-#include <iostream>
-#include <stdio.h>
-#include <Windows.h>
 
-//point of entry
-int main() {
+#include <Screen.h>
 
-	CWindow cWindow1(1, 200, 100, 100, 200);
-	CScreen view;
-	view.view(cWindow1);
-
+/**
+ * Entry point.
+ * @param argc number of command line parameters
+ * @param argv array of command line parameters
+ * @return exit code
+ */
+int main(int argc, char** argv) {
+	Window window(1, 10, 20, 30, 40);
+	Screen view2(window);
+	view2.showInfo();
+	return 0;
 }
-
-
