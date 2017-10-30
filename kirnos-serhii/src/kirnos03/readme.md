@@ -39,14 +39,14 @@ BaseView::showFooter();
 ### 2.2 Іерархія та структура класів
 Ієрархія класів наведена на рис. 2.1
 
-![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos02/screen/Hierarchy.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos03/screen/Hierarchy.png)
 
 *Рисунок 2.1 – Ієрархія класів*
 
 ### 2.3 Опис програми
 Структура проекту наведена на рис. 2.2.
 
-![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos02/screen/Struct.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos03/screen/Struct.png)
 
 *Рисунок 2.2 – Структура проекту*
 
@@ -55,7 +55,7 @@ BaseView::showFooter();
 * класb Screen та GraphScreen для виведення полів об'єкту типу Room. 
 Призначення спроектованих класів наведено на рис. 2.3.
 
-![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos02/screen/Clas.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos03/screen/Clas.png)
 
 *Рисунок 2.3 – Призначення класів*
 
@@ -103,13 +103,13 @@ const RoomHousing *temp = dynamic_cast<const RoomHousing*>(room);
 ## Результати работи
   Результати роботи показано на рис. 3.1.
   
-![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos02/screen/Result.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos03/screen/Result.png)
 
 *Рисунок 3.1 – Результати роботи*
 
 Результат виконання всіх модульних тестів зображений на рисунку 3.2.
 
-![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos02/screen/GTest.png)
+![Image alt](https://github.com/kit25a/se-cpp/blob/master/kirnos-serhii/doc/kirnos03/screen/GTest.png)
 
 *Рисунок 3.2 – Результати тестування*
 
