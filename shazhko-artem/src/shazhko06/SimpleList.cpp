@@ -1,4 +1,11 @@
 #include "SimpleList.h"
+/**
+* @file SimpleList.cpp
+* @brief Реализация класса SimpleList
+* @author Shazhko Artem
+* @version 0
+* @date 09.10.17
+*/
 
 template<typename item>
 SimpleList<item>::SimpleList() :top(NULL), bottom(NULL), count(0) {}
@@ -213,7 +220,7 @@ void SimpleList<item>::SimpleListIterator::Previous()
 template<typename item>
 bool SimpleList<item>::SimpleListIterator::IsDone() const
 {
-	if (this->begin == NULL || this->currentItem == NULL)return true;
+	if (this->currentItem == NULL)return true;
 	return false;
 }
 
