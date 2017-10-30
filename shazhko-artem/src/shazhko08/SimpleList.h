@@ -121,7 +121,7 @@ public:
 	* @param i индекс элемента, который нужно удалить
 	* @param успех выполнения операции
 	*/
-	virtual bool RemoveAt(const int i);
+	virtual void RemoveAt(const int i);
 	/**
 	* Удаление всех элементов
 	*/

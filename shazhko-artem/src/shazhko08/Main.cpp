@@ -27,13 +27,23 @@ void CallBackFunct(ICollection<CarWheel *>* collection){
 }
 int main() {
 	{
+
 		SimpleList<CarWheel*> wheelList;
 		wheelList.Push(new CarWheel(30, 50, EUNITS_CENTIMETERS, "UltraGrip Performance G1", "Goodyear"));
 		wheelList.Push(new CarWheel(508, 500, EUnits::EUNITS_MILLIMETRES, "MP-16 ", "Nokian"));
 		wheelList.Push(new CarWheel(355.6, 185, EUnits::EUNITS_MILLIMETRES, "WinterContact TS 860", "Continental"));
 		wheelList.Push(new CarWheel(508, 275, EUnits::EUNITS_MILLIMETRES, "Hakkapeliitta 9 (шип)", "Nokian"));
 		wheelList.Insirt(1, new CarWheel(514.5, 295, EUnits::EUNITS_CENTIMETERS, "Proxes T1 Sport SUV 295/40", "Toyo"));
-
+		auto test = wheelList[0];
+		try {
+			auto test = wheelList[10]; // error
+		}
+		catch (std::out_of_range error) {
+			std::cout << error.what();
+		}
+		try {
+			wheelList.RemoveAt(10);// error
+		}catch(...){}
 		CarWheelFilter *filter = new CarWheelFilterByDiameter(508.0, new CarWheelFilterByManufacturer("Nokian", NULL));
 
 		CollectionRequest::Find<CarWheelFilter,CarWheel*>(&wheelList, filter, &CallBackFunct);

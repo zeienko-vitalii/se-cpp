@@ -1,4 +1,5 @@
 #include "SimpleList.h"
+#include <stdexcept>
 /**
 * @file SimpleList.cpp
 * @brief Реализация класса SimpleList
@@ -16,9 +17,9 @@ SimpleList<item>::~SimpleList()
 }
 
 template<typename item>
-item SimpleList<item>::operator[](int index)
+item SimpleList<item>::operator[](int index) throw(std::out_of_range)
 {
-	if (index >= this->count || index<0)throw "The index is outside the list boundary";
+	if (index >= this->count || index<0)throw std::out_of_range("The index is outside the list boundary");
 	Node * walker = NULL;
 	if (index < this->count / 2) {
 		walker = this->top;
@@ -32,9 +33,9 @@ item SimpleList<item>::operator[](int index)
 }
 
 template<typename item>
-void SimpleList<item>::Insirt(const int index, const item &_item)
+void SimpleList<item>::Insirt(const int index, const item &_item)throw(std::out_of_range)
 {
-	if (index >= this->count+1 || index<0)throw "The index is outside the list boundary";
+	if (index >= this->count+1 || index<0)throw std::out_of_range("The index is outside the list boundary");
 
 	Node * walker = NULL;
 	if (index < this->count / 2) {
@@ -76,9 +77,9 @@ void SimpleList<item>::Push(const item & _item)
 }
 
 template<typename item>
-item SimpleList<item>::Pop()
+item SimpleList<item>::Pop()throw (std::runtime_error)
 {
-	if (count==0) throw "don't found data";
+	if (count==0) throw std::runtime_error("don't found data");
 	item result = this->bottom->element;
 	if (count == 1) {
 		delete  this->bottom;
@@ -97,7 +98,6 @@ template<typename item>
 bool SimpleList<item>::Remove(const item & _element)
 {
 	if (this->count < 1)return false;
-
 	Node * walker= this->top;
 	for (int i = this->count; i != 0; i--) {
 		if (walker->element == _element) {
@@ -124,9 +124,10 @@ bool SimpleList<item>::Remove(const item & _element)
 }
 
 template<typename item>
-bool SimpleList<item>::RemoveAt(const int index)
+void SimpleList<item>::RemoveAt(const int index)throw(std::out_of_range)
 {
-	if (index >= this->count || index<0) return false;
+	_ASSERT_EXPR((index < this->count && index>=0), L"The index is outside the list boundary");
+	if (index >= this->count || index<0) throw std::out_of_range("The index is outside the list boundary");
 	Node * walker = NULL;
 	if (index < this->count / 2) {
 		walker = this->top;
@@ -155,7 +156,6 @@ bool SimpleList<item>::RemoveAt(const int index)
 
 	delete walker;
 	//delete walker->element;
-	return true;
 }
 
 template<typename item>
