@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="BaseScreen.cpp" />
     <ClCompile Include="CarWheel.cpp" />
+    <ClCompile Include="CarWheelFilterByDiameter.cpp" />
+    <ClCompile Include="CarWheelFilterByManufacturer.cpp" />
+    <ClCompile Include="CarWheelFilterDecorator.cpp" />
     <ClCompile Include="CarWheelScreen.cpp" />
     <ClCompile Include="DefaultScreen.cpp" />
     <ClCompile Include="DelegateVoid.cpp" />
@@ -37,8 +40,12 @@
   <ItemGroup>
     <ClInclude Include="BaseScreen.h" />
     <ClInclude Include="CarWheel.h" />
+    <ClInclude Include="CarWheelFilterByDiameter.h" />
+    <ClInclude Include="CarWheelFilterByManufacturer.h" />
+    <ClInclude Include="CarWheelFilterDecorator.h" />
     <ClInclude Include="CarWheelScreen.h" />
     <ClInclude Include="CarWheelScreenCreator.hpp" />
+    <ClInclude Include="CollectionRequest.hpp" />
     <ClInclude Include="ICollection.h" />
     <ClInclude Include="DefaultScreen.h" />
     <ClInclude Include="DefaultScreenCreator.hpp" />
@@ -63,6 +70,7 @@
     <ClInclude Include="StreamHelperArg.h" />
     <ClInclude Include="Units.hpp" />
     <ClInclude Include="Wheel.h" />
+    <ClInclude Include="CarWheelFilter.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

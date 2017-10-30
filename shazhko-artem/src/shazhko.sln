@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko05", "shazhko05\shaz
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko06", "shazhko06\shazhko06.vcxproj", "{75D9AE20-DF5A-44D2-B632-6592C5F5B0BD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko07", "shazhko07\shazhko07.vcxproj", "{BE5FDF16-567B-4E0D-A9D8-6774570E7989}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,12 +93,20 @@ Global
 		{75D9AE20-DF5A-44D2-B632-6592C5F5B0BD}.Release|x64.Build.0 = Release|x64
 		{75D9AE20-DF5A-44D2-B632-6592C5F5B0BD}.Release|x86.ActiveCfg = Release|Win32
 		{75D9AE20-DF5A-44D2-B632-6592C5F5B0BD}.Release|x86.Build.0 = Release|Win32
+		{BE5FDF16-567B-4E0D-A9D8-6774570E7989}.Debug|x64.ActiveCfg = Debug|x64
+		{BE5FDF16-567B-4E0D-A9D8-6774570E7989}.Debug|x64.Build.0 = Debug|x64
+		{BE5FDF16-567B-4E0D-A9D8-6774570E7989}.Debug|x86.ActiveCfg = Debug|Win32
+		{BE5FDF16-567B-4E0D-A9D8-6774570E7989}.Debug|x86.Build.0 = Debug|Win32
+		{BE5FDF16-567B-4E0D-A9D8-6774570E7989}.Release|x64.ActiveCfg = Release|x64
+		{BE5FDF16-567B-4E0D-A9D8-6774570E7989}.Release|x64.Build.0 = Release|x64
+		{BE5FDF16-567B-4E0D-A9D8-6774570E7989}.Release|x86.ActiveCfg = Release|Win32
+		{BE5FDF16-567B-4E0D-A9D8-6774570E7989}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {7850629B-CD9C-420D-A884-AEC5F4B20470}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal

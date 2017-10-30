@@ -85,6 +85,24 @@
     <Filter Include="Исходные файлы\Collection\List">
       <UniqueIdentifier>{75c7f149-97f7-4718-a7df-9b690441e249}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\CollectionRequest">
+      <UniqueIdentifier>{4211f925-b398-4a66-94e9-884166d497d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\CollectionRequest">
+      <UniqueIdentifier>{a3335d6f-cb4f-4bb7-acf6-6b3ea0caa01c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\CollectionRequest\WheelList request">
+      <UniqueIdentifier>{db2952cb-ed8b-43a1-aaf5-0f5e9ce47341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter">
+      <UniqueIdentifier>{2be973eb-15f2-4322-b411-e84f77237793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\CollectionRequest\WheelListRequest">
+      <UniqueIdentifier>{9fe6c085-a7a9-41eb-952d-149fdccbc760}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\CollectionRequest\WheelListRequest\CarWheelFilter">
+      <UniqueIdentifier>{a8c188b2-7239-424a-926c-3f6ca14ee61d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -128,6 +146,15 @@
     </ClCompile>
     <ClCompile Include="SimpleList.cpp">
       <Filter>Исходные файлы\Collection\List</Filter>
+    </ClCompile>
+    <ClCompile Include="CarWheelFilterByManufacturer.cpp">
+      <Filter>Исходные файлы\CollectionRequest\WheelListRequest\CarWheelFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="CarWheelFilterByDiameter.cpp">
+      <Filter>Исходные файлы\CollectionRequest\WheelListRequest\CarWheelFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="CarWheelFilterDecorator.cpp">
+      <Filter>Исходные файлы\CollectionRequest\WheelListRequest\CarWheelFilter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +241,21 @@
     </ClInclude>
     <ClInclude Include="SimpleList.h">
       <Filter>Файлы заголовков\Collection\List</Filter>
+    </ClInclude>
+    <ClInclude Include="CarWheelFilterByManufacturer.h">
+      <Filter>Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="CarWheelFilter.h">
+      <Filter>Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="CarWheelFilterByDiameter.h">
+      <Filter>Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="CarWheelFilterDecorator.h">
+      <Filter>Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="CollectionRequest.hpp">
+      <Filter>Файлы заголовков\CollectionRequest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
