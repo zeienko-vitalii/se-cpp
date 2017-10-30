@@ -12,8 +12,7 @@
 
 using namespace std;
 
-Screen::Screen(Window window) {
-	iWindow = window;
+Screen::Screen(Window window) :	iWindow(window){
 }
 
 Screen::~Screen() {
