@@ -91,17 +91,17 @@
     <Filter Include="Файлы заголовков\CollectionRequest">
       <UniqueIdentifier>{a3335d6f-cb4f-4bb7-acf6-6b3ea0caa01c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\CollectionRequest\WheelList request">
-      <UniqueIdentifier>{db2952cb-ed8b-43a1-aaf5-0f5e9ce47341}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter">
-      <UniqueIdentifier>{2be973eb-15f2-4322-b411-e84f77237793}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\CollectionRequest\WheelListRequest">
       <UniqueIdentifier>{9fe6c085-a7a9-41eb-952d-149fdccbc760}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\CollectionRequest\WheelListRequest\CarWheelFilter">
       <UniqueIdentifier>{a8c188b2-7239-424a-926c-3f6ca14ee61d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\CollectionRequest\WheelListRequest">
+      <UniqueIdentifier>{db2952cb-ed8b-43a1-aaf5-0f5e9ce47341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\CollectionRequest\WheelListRequest\CarWheelFilter">
+      <UniqueIdentifier>{2be973eb-15f2-4322-b411-e84f77237793}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -243,16 +243,16 @@
       <Filter>Файлы заголовков\Collection\List</Filter>
     </ClInclude>
     <ClInclude Include="CarWheelFilterByManufacturer.h">
-      <Filter>Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter</Filter>
+      <Filter>Файлы заголовков\CollectionRequest\WheelListRequest\CarWheelFilter</Filter>
     </ClInclude>
     <ClInclude Include="CarWheelFilter.h">
-      <Filter>Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter</Filter>
+      <Filter>Файлы заголовков\CollectionRequest\WheelListRequest\CarWheelFilter</Filter>
     </ClInclude>
     <ClInclude Include="CarWheelFilterByDiameter.h">
-      <Filter>Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter</Filter>
+      <Filter>Файлы заголовков\CollectionRequest\WheelListRequest\CarWheelFilter</Filter>
     </ClInclude>
     <ClInclude Include="CarWheelFilterDecorator.h">
-      <Filter>Файлы заголовков\CollectionRequest\WheelList request\CarWheelFilter</Filter>
+      <Filter>Файлы заголовков\CollectionRequest\WheelListRequest\CarWheelFilter</Filter>
     </ClInclude>
     <ClInclude Include="CollectionRequest.hpp">
       <Filter>Файлы заголовков\CollectionRequest</Filter>

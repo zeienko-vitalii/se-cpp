@@ -42,5 +42,4 @@ public:
 	virtual void RemoveAll();
 	virtual int Count()const;
 	virtual IIterator<item>* CreateIterator()const;
-	typedef IIterator<item>* iterator;
 };
