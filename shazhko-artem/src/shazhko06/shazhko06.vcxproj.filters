@@ -85,9 +85,6 @@
     <Filter Include="Исходные файлы\Collection\List">
       <UniqueIdentifier>{75c7f149-97f7-4718-a7df-9b690441e249}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\WheelList">
-      <UniqueIdentifier>{d49cf096-ed0f-4078-8569-b9b0b259aec4}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

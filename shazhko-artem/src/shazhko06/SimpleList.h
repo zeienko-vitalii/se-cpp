@@ -24,7 +24,7 @@ protected:
 		virtual void Previous();
 		virtual bool IsDone()const;
 		virtual item CurrentItem()const;
-	private:
+	protected:
 		Node *begin;
 		Node *end;
 		Node *currentItem;
@@ -42,5 +42,4 @@ public:
 	virtual void RemoveAll();
 	virtual int Count()const;
 	virtual IIterator<item>* CreateIterator()const;
-	typedef IIterator<item>* iterator;
 };

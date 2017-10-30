@@ -9,7 +9,7 @@
 #include <iostream>
 
 #include "SimpleList.cpp"
-void WheelListShow(SimpleList<CarWheel*>::iterator it);
+void WheelListShow(ICollection<CarWheel*>::iterator it);
 
 int main() {
 	{
@@ -52,7 +52,7 @@ void Show(ScreenCreator *sc) {
 	delete screen;
 }
 
-void WheelListShow(SimpleList<CarWheel*>::iterator it){
+void WheelListShow(ICollection<CarWheel*>::iterator it){
 	for (it->First(); !it->IsDone(); it->Next()) {
 		auto sc = new CarWheelScreenCreator(it->CurrentItem());
 		Show(sc);
