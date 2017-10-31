@@ -75,7 +75,7 @@ void GraphScreen::showFooter()
 	cout << "\n________________________________\n";
 }
 
-static void onTimerAction(Capacity data){
+void GraphScreen::onTimerAction(Capacity data){
 	Screen view((&data));
 	view.view();
 	cout << "\n              |-------------------------------|\n";

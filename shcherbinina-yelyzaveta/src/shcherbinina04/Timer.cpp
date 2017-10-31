@@ -27,9 +27,9 @@ task(task), data(data) {
 
 template<class T> void Timer<T>::start() {
 
-	hTimer = CreateWaitableTimer(NULL, TRUE, L"WaitableTimerExecutor");
+	hTimer = CreateWaitableTimer(NULL, TRUE, L"WaitableTimer");
 	if (NULL == hTimer) {
-		printf("CreateWaitableTimerExecutor failed (%d)\n", GetLastError());
+		printf("CreateWaitableTimer failed (%d)\n", GetLastError());
 	}
 	for (int i = 0; i < Timer::times; i++)
 		count();
@@ -40,7 +40,7 @@ template<class T> void Timer<T>::count() {
 
 	// Set a Timer to wait for 10 seconds.
 	if (!SetWaitableTimer(hTimer, &liDueTime, 0, NULL, NULL, 0)) {
-		printf("SetWaitableTimerExecutor failed (%d)\n", GetLastError());
+		printf("SetWaitableTimer failed (%d)\n", GetLastError());
 
 	}
 
@@ -51,4 +51,4 @@ template<class T> void Timer<T>::count() {
 		task(data);
 }
 
-template class Timer<Capacity>;
+template Timer <Capacity> ;
