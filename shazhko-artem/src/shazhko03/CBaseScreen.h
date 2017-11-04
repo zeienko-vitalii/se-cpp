@@ -1,5 +1,5 @@
 ﻿/**
-* @file CScreen.h
+* @file CBaseScreen.h
 * @brief Содержит объявление базового класса  CBaseScreen
 * @author Shazhko Artem
 * @version 0

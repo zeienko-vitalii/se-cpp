@@ -1,5 +1,5 @@
 ﻿/**
-* @file CBaseScreen.cpp
+* @file CWheel.cpp
 * @brief Содержит реализацию класса CWheel
 * @author Shazhko Artem
 * @version 0

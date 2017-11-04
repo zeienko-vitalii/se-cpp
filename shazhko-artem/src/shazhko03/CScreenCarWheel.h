@@ -1,6 +1,6 @@
 ﻿/**
-* @file CScreen.h
-* @brief Содержит объ¤вление класса  CScreen
+* @file CScreenCarWheel.h
+* @brief Содержит объ¤вление класса  CScreenCarWheel
 * @author Shazhko Artem
 * @version 0
 * @date 18.09.17
@@ -9,7 +9,7 @@
 #include "CCarWheel.h"
 #include "CBaseScreen.h"
 /**
-*  Класс описывающий отображение объектов класса CWheel
+*  Класс описывающий отображение объектов класса CCarWheel
 */
 class CScreenCarWheel :public CBaseScreen{
 public:

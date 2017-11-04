@@ -1,6 +1,6 @@
 ﻿/**
-* @file CBaseScreen.cpp
-* @brief Содержит реализацию класса CWheel
+* @file CScreen.cpp
+* @brief Содержит реализацию класса CScreen
 * @author Shazhko Artem
 * @version 0
 * @date 03.10.17

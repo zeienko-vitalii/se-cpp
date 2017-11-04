@@ -1,5 +1,5 @@
 ﻿/**
-* @file CBaseScreen.cpp
+* @file CCarWheel.cpp
 * @brief Содержит реализацию класса CCarWheel
 * @author Shazhko Artem
 * @version 0

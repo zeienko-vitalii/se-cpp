@@ -1,5 +1,5 @@
 ﻿/**
-* @file CScreen.h
+* @file CCarWheel.h
 * @brief Содержит объявление базового класса  CCarWheel
 * @author Shazhko Artem
 * @version 0
@@ -9,6 +9,9 @@
 #include "CWheel.h"
 #include <string.h>
 
+/**
+* Класс описывающий колесо машины
+*/
 class  CCarWheel:public CWheel
 {
 public:
