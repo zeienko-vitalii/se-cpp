@@ -3,7 +3,6 @@
 ## Цель
 Получить навыки разработки собственных иерархий классов с использованием принципа расширения и виртуальности
 
-
 ## Общее задание
 - Создать класс <Data2>, используя наследование от <Data1> с добавлением новых полей
 - Выделить базовый класс <BaseView> для <View1> и <View2> с функцией BaseView::Display(): void и следующими виртуальными функциями, которые из нее вызываются: showHeader, showContent, showFooter
@@ -21,18 +20,15 @@
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko03/source/Image02.png)
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ## Описание разработанных типов данных
 
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko03/source/Image03.png)
-
 
 
 ## Диаграмма классов
 
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko03/source/Image04.png)
 
-<br><br><br><br><br><br><br><br><br>
 ## Разработанные методы и функции
 См. раздел <b>members</b> на заголовочных страницах соответствующих типов данных
 
@@ -51,7 +47,6 @@
 ## Результаты работы
 
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko03/source/Image07.png)
-
 
 
 ## Выводы
