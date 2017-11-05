@@ -10,7 +10,7 @@ CarWheelFilterByDiameter::CarWheelFilterByDiameter(double _diameter, CarWheelFil
 
 CarWheelFilterByDiameter::~CarWheelFilterByDiameter(){}
 
-bool CarWheelFilterByDiameter::operator()(const CarWheel * carWheel)
+bool CarWheelFilterByDiameter::operator()(const Wheel::CarWheel * carWheel)
 {
 	if(this->carWheelFilter)
 		return (*carWheelFilter)(carWheel) && carWheel->GetDiameter()==this->diameter;

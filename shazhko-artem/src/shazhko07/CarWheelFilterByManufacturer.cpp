@@ -10,7 +10,7 @@ CarWheelFilterByManufacturer::CarWheelFilterByManufacturer(std::string _manufact
 
 CarWheelFilterByManufacturer::~CarWheelFilterByManufacturer(){}
 
-bool CarWheelFilterByManufacturer::operator()(const CarWheel * carWheel)
+bool CarWheelFilterByManufacturer::operator()(const Wheel::CarWheel * carWheel)
 {
 	if (this->carWheelFilter)
 		return (*carWheelFilter)(carWheel) && carWheel->GetTireManufacturer() == this->manufacturer;

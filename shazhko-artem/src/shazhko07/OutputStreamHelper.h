@@ -8,21 +8,25 @@
 
 #pragma once
 #include "StreamHelperArg.h"
+namespace Stream {
+	namespace StreamHelper {
 
-/**
-* Абстрактного класс, который задает интерфейс вывода
-*/
-class OutputStreamHelper abstract {
-public:
-	/**
-	* Деструктор
-	*/
-	virtual ~OutputStreamHelper() {}
+		/**
+		* Абстрактного класс, который задает интерфейс вывода
+		*/
+		class OutputStreamHelper abstract {
+		public:
+			/**
+			* Деструктор
+			*/
+			virtual ~OutputStreamHelper() {}
 
-	/**
-	* Виртуальная функция для записи данных в поток
-	* @param arg параметр, который необходимо записать в поток
-	*/
-	virtual
-	void Write(StreamHelperArg* arg) = 0;
-};
+			/**
+			* Виртуальная функция для записи данных в поток
+			* @param arg параметр, который необходимо записать в поток
+			*/
+			virtual
+				void Write(StreamHelperArg* arg) = 0;
+		};
+	}
+}

@@ -8,132 +8,133 @@
 */
 #include "ICollection.h"
 #include <stdlib.h>
-
-/**
-* Класс коллекции, который реализует интерфейс ICollection<item>
-*/
-template <typename item>
-class SimpleList : public ICollection<item> {
-protected:
+namespace Collection {
 	/**
-	* Структура, благодаря которой связываются элементы между собой и хранят пользовательские данные
+	* Класс коллекции, который реализует интерфейс ICollection<item>
 	*/
-	struct Node {
-		Node(Node *_previous, Node *_next, item _element) :previous(_previous), next(_next), element(_element) {}
-		// указатель на следующий элемент
-		Node * next;
-		// указатель на предыдущий элемент
-		Node * previous;
-		// пользовательские данные
-		item element;
-	}*top, *bottom;
-	// количество элементов в коллекции
-	int count;
+	template <typename item>
+	class SimpleList : public ICollection<item> {
+	protected:
+		/**
+		* Структура, благодаря которой связываются элементы между собой и хранят пользовательские данные
+		*/
+		struct Node {
+			Node(Node *_previous, Node *_next, item _element) :previous(_previous), next(_next), element(_element) {}
+			// указатель на следующий элемент
+			Node * next;
+			// указатель на предыдущий элемент
+			Node * previous;
+			// пользовательские данные
+			item element;
+		}*top, *bottom;
+		// количество элементов в коллекции
+		int count;
 
-	/**
-	* Класс итератор, благодаря которому можно делать обход коллекции
-	*/
-	class SimpleListIterator : public IIterator<item>
-	{
+		/**
+		* Класс итератор, благодаря которому можно делать обход коллекции
+		*/
+		class SimpleListIterator : public Iterator::IIterator<item>
+		{
+		public:
+			/**
+			* Конструктор
+			* @param _begin указатель на первый элемент списка
+			* @param _end указатель на последний элемент списка
+			*/
+			SimpleListIterator(Node *_begin, Node *_end);
+			/**
+			* Деструктор
+			*/
+			virtual ~SimpleListIterator();
+			/**
+			* Смещает указатель на первый элемент
+			*/
+			virtual void First();
+			/**
+			* Смещает указатель на последний элемент
+			*/
+			virtual void Last();
+			/**
+			* Смещает указатель на следующий элемент
+			*/
+			virtual void Next();
+			/**
+			* Смещает указатель на предыдущий элемент
+			*/
+			virtual void Previous();
+			/**
+			* Указывает на завершение обхода
+			*/
+			virtual bool IsDone() const;
+			/**
+			* Получение текущего элемента
+			*/
+			virtual item CurrentItem()const;
+		protected:
+			// указатель на первый элемент
+			Node *begin;
+			// указатель на последний элемент
+			Node *end;
+			// указатель на текущий элемент
+			Node *currentItem;
+		};
+
 	public:
 		/**
 		* Конструктор
-		* @param _begin указатель на первый элемент списка
-		* @param _end указатель на последний элемент списка
 		*/
-		SimpleListIterator(Node *_begin, Node *_end);
+		SimpleList<item>();
 		/**
 		* Деструктор
 		*/
-		virtual ~SimpleListIterator();
+		~SimpleList<item>();
 		/**
-		* Смещает указатель на первый элемент
+		* Оператор индексации
+		* @param i индекс
+		* @return объект, который хранится указанному индексу
 		*/
-		virtual void First();
+		virtual item operator[](int i);
 		/**
-		* Смещает указатель на последний элемент
+		* Вставка элемента в указанную позицию
+		* @param index индекс по которому нужно вставить элемент
+		* @param _element элемент, который нужно добавить
 		*/
-		virtual void Last();
+		virtual void Insirt(const int index, const item&);
 		/**
-		* Смещает указатель на следующий элемент
+		* Добавление в конец коллекции
+		* @param _element элемент, который нужно добавить
 		*/
-		virtual void Next();
+		virtual void Push(const item&);
 		/**
-		* Смещает указатель на предыдущий элемент
+		* Получение элемента из конца коллекции с предварительным удалением из списка
+		* @return элемент из конца колекции
 		*/
-		virtual void Previous();
+		virtual item Pop();
 		/**
-		* Указывает на завершение обхода
+		* Удаление элемента
+		* @param _element эдемент, который нужно удалить
+		* @param успех выполнения операции
 		*/
-		virtual bool IsDone() const;
+		virtual bool Remove(const item&);
 		/**
-		* Получение текущего элемента
+		* Удаление элемента
+		* @param i индекс элемента, который нужно удалить
+		* @param успех выполнения операции
 		*/
-		virtual item CurrentItem()const;
-	protected:
-		// указатель на первый элемент
-		Node *begin;
-		// указатель на последний элемент
-		Node *end;
-		// указатель на текущий элемент
-		Node *currentItem;
+		virtual bool RemoveAt(const int i);
+		/**
+		* Удаление всех элементов
+		*/
+		virtual void RemoveAll();
+		/**
+		* Получение количества элементов в коллекции
+		* @return количество
+		*/
+		virtual int Count()const;
+		/**
+		* Создание итератора для обхода коллекции
+		* @return итератор
+		*/
+		virtual Iterator::IIterator<item>* CreateIterator()const;
 	};
-
-public:
-	/**
-	* Конструктор
-	*/
-	SimpleList<item>();
-	/**
-	* Деструктор
-	*/
-	~SimpleList<item>();
-	/**
-	* Оператор индексации
-	* @param i индекс
-	* @return объект, который хранится указанному индексу
-	*/
-	virtual item operator[](int i);
-	/**
-	* Вставка элемента в указанную позицию
-	* @param index индекс по которому нужно вставить элемент
-	* @param _element элемент, который нужно добавить
-	*/
-	virtual void Insirt(const int index, const item&);
-	/**
-	* Добавление в конец коллекции
-	* @param _element элемент, который нужно добавить
-	*/
-	virtual void Push(const item&);
-	/**
-	* Получение элемента из конца коллекции с предварительным удалением из списка
-	* @return элемент из конца колекции
-	*/
-	virtual item Pop();
-	/**
-	* Удаление элемента
-	* @param _element эдемент, который нужно удалить
-	* @param успех выполнения операции
-	*/
-	virtual bool Remove(const item&);
-	/**
-	* Удаление элемента
-	* @param i индекс элемента, который нужно удалить
-	* @param успех выполнения операции
-	*/
-	virtual bool RemoveAt(const int i);
-	/**
-	* Удаление всех элементов
-	*/
-	virtual void RemoveAll();
-	/**
-	* Получение количества элементов в коллекции
-	* @return количество
-	*/
-	virtual int Count()const;
-	/**
-	* Создание итератора для обхода коллекции
-	* @return итератор
-	*/
-	virtual IIterator<item>* CreateIterator()const;
-};
+}

@@ -27,7 +27,7 @@ public:
 	/**
 	* Оператор круглые скобки
 	*/
-	virtual  bool operator()(const CarWheel *carWheel);
+	virtual  bool operator()(const Wheel::CarWheel *carWheel);
 private:
 	// диаметр
 	double diameter;
