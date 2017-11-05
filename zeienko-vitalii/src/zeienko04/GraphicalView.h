@@ -24,13 +24,13 @@ public:
 	 * @param manipulator will be assigned to  BaseView::iManipulator
 	 * @param os is the type of an output stream 
 	 * */
-	GraphicalView(const Manipulator& manipulator, std::ostream* os);
+	GraphicalView(Manipulator* manipulator, std::ostream* os);
 
 	/**
 	 * Changes a source object.
 	 * @param sManipulator is a source manipulator, which will be used to set BaseView::iManipulator
 	 * */
-	void setDataSource(const Manipulator& sManipulator);
+	void setDataSource(Manipulator* sManipulator);
 
 	/**
 	* Calls the printData which takes a parameter manipulator and outputs it.
@@ -57,7 +57,7 @@ private:
 	* Displays the information about GraphicalView::iManipulator.
 	* @param manipulator will be printed on the screen.
 	* */
-	void printData(const Manipulator& manipulator);
+	void printData(Manipulator* manipulator);
 
 };
 

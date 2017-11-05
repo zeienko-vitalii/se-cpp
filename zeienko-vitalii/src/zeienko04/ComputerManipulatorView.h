@@ -7,7 +7,6 @@
 */
 #include "ComputerManipulator.h"
 #include "ManipulatorView.h"
-#include "Event.h"
 
 #ifndef COMPUTER_MANIPULATOR_VIEW_H_
 #define COMPUTER_MANIPULATOR_VIEW_H_
@@ -16,9 +15,6 @@
 * This class provides output of the CpmputerMnipulator`s information
 */
 class ComputerManipulatorView : public ManipulatorView {
-private:
-	/// ComputerManipulator`s instance which information will be printed on the screen.
-	ComputerManipulator CManipulator;
 public:
 
 	/**
@@ -26,7 +22,7 @@ public:
 	* @param computerManip will set the object ComputerManipulatorView::computerManip
 	* @param os is the type of an output stream 
 	*/
-	ComputerManipulatorView(const ComputerManipulator& computerManip, std::ostream* os);
+	ComputerManipulatorView(ComputerManipulator* computerManip, std::ostream* os);
 	
 	/**
 	* If memory was allocated for an BaseView`s object destructor

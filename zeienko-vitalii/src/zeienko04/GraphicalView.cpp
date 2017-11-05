@@ -9,28 +9,28 @@
 #include "GraphicalView.h"
 #include <ctime>
 
-GraphicalView::GraphicalView(const Manipulator& manipulator, std::ostream* os) : BaseView(manipulator, os) { }
+GraphicalView::GraphicalView(Manipulator* manipulator, std::ostream* os) : BaseView(manipulator, os) { }
 
-void GraphicalView::setDataSource(const Manipulator& sourceManipulator) {
+void GraphicalView::setDataSource(Manipulator* sourceManipulator) {
 	// Changing a Manipualtor`s object which will be printed on the screen
-	(getManipulator()) = sourceManipulator;
+	setManipulator(sourceManipulator);
 }
 
-void GraphicalView::printData(const Manipulator& manipulator) {
-	if (manipulator.isGame()) {
+void GraphicalView::printData(Manipulator* manipulator) {
+	if (manipulator->isGame()) {
 		(*getOutputStream()) << "|=======================| \n"
 			"|\tMANIPULATOR\t| \n"
 			"|=======================| \n"
-			"|Type: Gaming " << manipulator.getType() << "\t| \n"
-			"|Amount Of buttons:" << manipulator.getAmountOfButtons() << "\t| \n"
+			"|Type: Gaming " << manipulator->getType() << "\t| \n"
+			"|Amount Of buttons:" << manipulator->getAmountOfButtons() << "\t| \n"
 			"|=======================| \n";
 	}
 	else {
 		(*getOutputStream()) << "|=======================| \n"
 			"|\tMANIPULATOR\t| \n"
 			"|=======================| \n"
-			"|Type: Simple " << manipulator.getType() << "\t| \n"
-			"|Amount Of buttons:" << manipulator.getAmountOfButtons() << "\t| \n"
+			"|Type: Simple " << manipulator->getType() << "\t| \n"
+			"|Amount Of buttons:" << manipulator->getAmountOfButtons() << "\t| \n"
 			"|=======================| \n";
 	}
 }
@@ -47,15 +47,15 @@ void GraphicalView::showHeader()
 
 void GraphicalView::showContent()
 {
-	if (getManipulator().isGame()) {
+	if (getManipulator()->isGame()) {
 		(*getOutputStream()) << "|==============================|\n"
-			"|Type: Gaming " << getManipulator().getType() << "\t| \n"
-			"|Amount Of buttons:" << getManipulator().getAmountOfButtons() << "\t| \n";
+			"|Type: Gaming " << getManipulator()->getType() << "\t| \n"
+			"|Amount Of buttons:" << getManipulator()->getAmountOfButtons() << "\t| \n";
 	}
 	else {
 		(*getOutputStream()) << "|==============================|\n"
-			"|Type: Simple " << getManipulator().getType() << "\t| \n"
-			"|Amount Of buttons:" << getManipulator().getAmountOfButtons() << "\t| \n";
+			"|Type: Simple " << getManipulator()->getType() << "\t| \n"
+			"|Amount Of buttons:" << getManipulator()->getAmountOfButtons() << "\t| \n";
 	}
 
 }

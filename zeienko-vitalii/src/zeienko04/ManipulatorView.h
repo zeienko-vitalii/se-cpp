@@ -10,16 +10,15 @@
 #define MANIPULATOR_VIEW_H_
 #include "Manipulator.h"
 #include "BaseView.h"
-#include "Event.h"
 /** This class provides an output information about manipulator */
-class ManipulatorView : public BaseView, public Event {
+class ManipulatorView : public BaseView {
 public:
 	/**
 	 * Constructor takes constant Manipulator`s object and assigns if to ManipulatorView::manipulator.
 	 * @param manipulator this object`s information will be printed on the screen.
 	 * @param os is the type of an output stream 
 	 * */
-	ManipulatorView(const Manipulator& manipulator, std::ostream* os);
+	ManipulatorView(Manipulator* manipulator, std::ostream* os);
 	
 	static void OnTimerAction(ManipulatorView* pArgs) {
 		ManipulatorView* p_ManV = static_cast<ManipulatorView*>(pArgs);
@@ -48,6 +47,13 @@ public:
 	 * Destructor. Destroys object and  frees the memory which was allocated.
 	 * */
 	virtual ~ManipulatorView();
+protected:
+	/**
+	* Constructor takes constant Manipulator`s object and assigns if to ManipulatorView::manipulator.
+	* @param manipulator this object`s information will be printed on the screen.
+	* @param os is the type of an output stream
+	* */
+	ManipulatorView(ComputerManipulator* manipulator, std::ostream* os);
 };
 
 #endif /* MANIPULATOR_VIEW_H_ */
