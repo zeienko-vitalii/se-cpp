@@ -5,16 +5,15 @@
  * @version 0.0.3
  * @date 2017.09.09
  */
-
-#include "Serializable.h"
-
+#include "StorageInterface.h"
 #ifndef MANIPULATOR_H_
 #define MANIPULATOR_H_
 
+
  /**
- * Represents abstraction of mouse periphery.
- * */
-class Manipulator : public Serializable {
+  * Represents abstraction of mouse periphery.
+  * */
+class Manipulator : public MStorageInterface {
 private:
 	static const int MIN_NUM_BTNS;  /// The min number of buttons is 2
 	static const int MAX_NUM_BTNS;  /// The max number of buttons is 20
@@ -47,11 +46,6 @@ public:
 	*/
 	char* getType() const;
 
-	/**
-	* Sets the type of the manipulator
-	* @param newType is a new type of manipulator  
-	*/
-	void setType(char* newType);
 
 	/**
 	* Reading member Manipulator::amountOfButtons
@@ -59,6 +53,12 @@ public:
 	* */
 	int getAmountOfButtons() const;
 
+	/**
+	* Setting member Manipulator::amountOfButtons
+	* @param typeOfManipulator is a string value which will be assigned of the Manipulator's type
+	* */
+	void setTypeOfManipulator(char* typeOfManipulator);
+	
 	/**
 	* Setting member Manipulator::amountOfButtons
 	* @param amountOfBtns is the manipulator`s number of buttons
@@ -74,16 +74,27 @@ public:
 	bool operator == (const Manipulator& manipulator) const;
 
 	/**
+	* Returns connection interface of the current object
+	* @return ComputerManipulator::connectionInterface
+	* */
+	virtual char* getConnectionInterface() const;
+	/**
+	* Returns sensor type of the current object
+	* @return ComputerManipulator::sensorType
+	* */
+	virtual char* getSensorType() const;
+
+	/**
 	* It saves current object's data
 	* @param os is an ofstream object that is used to write to the file
 	*/
-	void toSave(std::ofstream& os);
-	
+	void OnStore(std::ostream& aStream);
+
 	/**
 	* It restore current object's data
 	* @param in is an ifstream object that is used to read from the file
 	*/
-	void toLoad(std::ifstream& in);
+	void OnLoad(std::istream& aStream);
 
 	/**
 	 *  Destructor. Destroys object for which memory was allocated.

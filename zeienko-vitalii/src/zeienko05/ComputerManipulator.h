@@ -93,13 +93,13 @@ public:
 	* It saves current object's data
 	* @param os is an ofstream object that is used to write to the file
 	*/
-	void toSave(std::ofstream& os);
-
+	void OnStore(std::ostream& aStream);
+	
 	/**
 	* It restore current object's data
 	* @param in is an ifstream object that is used to read from the file
 	*/
-	void toLoad(std::ifstream& in);
+	void OnLoad(std::istream& aStream);
 
 
 private:

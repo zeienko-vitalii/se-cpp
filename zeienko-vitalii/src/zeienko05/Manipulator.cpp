@@ -7,10 +7,10 @@
  */
 
 #include "Manipulator.h"
-#include <string>
-#include <sstream>
-using std::string;
+
 #include <stdio.h>
+#include <ostream>
+#include <istream>
 
 const int Manipulator::MIN_NUM_BTNS = 2;
 const int Manipulator::MAX_NUM_BTNS = 20;
@@ -70,43 +70,41 @@ bool Manipulator::isGame() const {
 	}
 }
 
-bool Manipulator::operator == (const Manipulator& manipualtor) const{
+bool Manipulator::operator == (const Manipulator& manipualtor) const {
 	return (typeOfManipulator == manipualtor.typeOfManipulator &&
 		getAmountOfButtons() == manipualtor.getAmountOfButtons());
 }
 
-void Manipulator::setType(char* newType) {
-	if (strcmp(newType, "Joystick") == 0) {
-		typeOfManipulator = Joystick;
-	}
-	else if (strcmp(newType, "Mouse") == 0) {
-		typeOfManipulator = Mouse;
-	}
-};
+char* Manipulator::getConnectionInterface() const { return NULL; };
 
+char* Manipulator::getSensorType() const { return NULL; };
 
-void Manipulator::toSave(std::ofstream& os) {
-	os << "Type: " << this->getType() << std::endl;
-	os << "Amount_of_buttons: " << this->getAmountOfButtons() << std::endl;
+void Manipulator::setTypeOfManipulator(char* typeOfManip) {
+	 if (strcmp(typeOfManip, "Joystick") == 0) {
+		this->typeOfManipulator = Joystick;
+	} else if (strcmp(typeOfManip, "Mouse") == 0) {
+		this->typeOfManipulator = Mouse;
+	}
 }
 
-void Manipulator::toLoad(std::ifstream& in) {
-	string line;
-	string label;
-	while (!in.eof()) {
-		getline(in, line);
-		std::stringstream ss(line);
-		ss >> label;
-		if (label.compare("Type:") == 0) {
-			char* restoreType = new char[12];
-			ss >> restoreType;
-			this->setType(restoreType);
-			delete restoreType;
-		}
-		else if (label.compare("Amount_of_buttons:") == 0) {
-			unsigned restoreAmountOfButtons;
-			ss >> restoreAmountOfButtons;
-			this->setAmountOfButtons(restoreAmountOfButtons);
-		}
-	}
+// interfaces
+void Manipulator::OnStore(std::ostream& aStream) {
+	aStream.write((const char*)&amountOfButtons, sizeof(amountOfButtons));
+	int lenOfType = strlen(getType());
+	aStream.write((const char*)&lenOfType, sizeof(lenOfType));
+	aStream.write(getType(), lenOfType);
+}
+
+void Manipulator::OnLoad(std::istream& aStream) {
+	int tempAmountOfButtons = 0;
+	aStream.read((char*)&tempAmountOfButtons, sizeof(tempAmountOfButtons));
+	setAmountOfButtons(tempAmountOfButtons);
+	int lenOfType = 0;
+	aStream.read((char*)&lenOfType, sizeof(lenOfType));
+	char* tempType;
+	tempType = new char[lenOfType + 1];
+	aStream.read(tempType, lenOfType);
+	tempType[lenOfType] = 0;
+	setTypeOfManipulator(tempType);
+	delete[] tempType;
 }
