@@ -11,7 +11,11 @@
 
 BaseView::~BaseView() {}
 
-BaseView::BaseView(const Manipulator& manipulator, std::ostream * os) : iManipulator(manipulator), out(os){}
+BaseView::BaseView(Manipulator* manipulator, std::ostream * os) : iManipulator(manipulator), out(os){}
+
+BaseView::BaseView(ComputerManipulator * manipulator, std::ostream * os) : iComputerManipulator(manipulator) , out(os)
+{
+}
 
 void BaseView::display(){
 	
@@ -20,6 +24,15 @@ void BaseView::display(){
 	showFooter();
 
 }
+
+void BaseView::setManipulator(Manipulator* newManip) {
+	iManipulator = newManip;
+}
+void BaseView::setComputerManipulator(ComputerManipulator * newCompManip)
+{
+	this->iComputerManipulator = newCompManip;
+}
+;
 
 void BaseView::setOutputStream(std::ostream * os)
 {
@@ -31,7 +44,12 @@ std::ostream * BaseView::getOutputStream()
 	return this->out;
 }
 
-Manipulator BaseView::getManipulator()
+Manipulator* BaseView::getManipulator()
 {
 	return this->iManipulator;
+}
+
+ComputerManipulator * BaseView::getComputerManipulator()
+{
+	return iComputerManipulator;
 }

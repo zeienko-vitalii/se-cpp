@@ -9,7 +9,9 @@
 #include "ManipulatorView.h"
 #include <iostream>
 #include <ctime>
-ManipulatorView::ManipulatorView(const Manipulator& manipulator, std::ostream* os) : BaseView(manipulator, os) {}
+ManipulatorView::ManipulatorView(Manipulator* manipulator, std::ostream* os) : BaseView(manipulator, os) {}
+
+ManipulatorView::ManipulatorView(ComputerManipulator * manipulator, std::ostream * os) : BaseView(manipulator, os) {}
 
 void ManipulatorView::show() {
 	showHeader();
@@ -24,10 +26,10 @@ void ManipulatorView::showHeader()
 
 void ManipulatorView::showContent()
 {
-	(*getOutputStream()) << " Manipulator`s type: " << (getManipulator()).getType()
+	(*getOutputStream()) << " Manipulator`s type: " << (getManipulator())->getType()
 		<< std::endl;
 	(*getOutputStream()) << " Manipulator`s amount of buttons: "
-		<< (getManipulator()).getAmountOfButtons() << std::endl;
+		<< (getManipulator())->getAmountOfButtons() << std::endl;
 }
 
 void ManipulatorView::showFooter() {
@@ -36,10 +38,11 @@ void ManipulatorView::showFooter() {
 	time_t rawtime;
 	time(&rawtime);
 	ctime_s(buffer, 64, &rawtime);
-	(*getOutputStream()) << "|Date:" << buffer;// << endl;
+	(*getOutputStream()) << "|Date:" << buffer;
 	(*getOutputStream()) << "|==============================|" << std::endl;
 	delete buffer;
 }
 
 ManipulatorView::~ManipulatorView() {
 }
+

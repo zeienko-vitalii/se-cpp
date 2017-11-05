@@ -10,7 +10,6 @@
 #define MANIPULATOR_VIEW_H_
 #include "Manipulator.h"
 #include "BaseView.h"
-
 /** This class provides an output information about manipulator */
 class ManipulatorView : public BaseView {
 public:
@@ -19,7 +18,8 @@ public:
 	 * @param manipulator this object`s information will be printed on the screen.
 	 * @param os is the type of an output stream 
 	 * */
-	ManipulatorView(const Manipulator& manipulator, std::ostream* os);
+	ManipulatorView(Manipulator* manipulator, std::ostream* os);
+	
 
 	/**
 	 * Outputs ManipulatorView::manipulator object.
@@ -43,6 +43,13 @@ public:
 	 * Destructor. Destroys object and  frees the memory which was allocated.
 	 * */
 	virtual ~ManipulatorView();
+protected:
+	/**
+	* Constructor takes constant Manipulator`s object and assigns if to ManipulatorView::manipulator.
+	* @param manipulator this object`s information will be printed on the screen.
+	* @param os is the type of an output stream
+	* */
+	ManipulatorView(ComputerManipulator* manipulator, std::ostream* os);
 };
 
 #endif /* MANIPULATOR_VIEW_H_ */

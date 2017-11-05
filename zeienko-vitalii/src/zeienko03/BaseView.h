@@ -10,6 +10,7 @@
 #define BASEVIEW_H_
 
 #include "Manipulator.h"
+#include "ComputerManipulator.h"
 #include <iostream>
 
 /**
@@ -24,8 +25,8 @@ public:
 	 * @param manipulator will be assigned to  BaseView::iManipulator
 	 * @param os will be assigned to BaseView::out 
 	 * */
-	BaseView(const Manipulator& manipulator, std::ostream* os);
-
+	BaseView(Manipulator* manipulator, std::ostream* os);
+	BaseView(ComputerManipulator* manipulator, std::ostream* os);
 	/**
 	 * Outputs header, content and the footer.
 	 * */
@@ -47,7 +48,22 @@ public:
 	* Gets BaseView::iManipulator
 	* @return BaseView::iManipulator
 	*/
-	Manipulator getManipulator();
+	Manipulator* getManipulator();
+	ComputerManipulator* getComputerManipulator();
+	
+
+	/**
+	* Sets BaseView::iManipulator
+	* @param newManip is a Manipulator's  instance that will be assigned to iManipulator
+	*/
+	void setManipulator(Manipulator* newManip);
+
+	/**
+	* Sets BaseView::iManipulator
+	* @param newManip is a Manipulator's  instance that will be assigned to iManipulator
+	*/
+	void setComputerManipulator(ComputerManipulator* newCompManip);
+
 
 	/**
 	* If memory was allocated for an BaseView`s object destructor
@@ -68,7 +84,8 @@ protected:
 	 * */
 	virtual void showFooter() = 0;
 private: 
-	Manipulator iManipulator; /// Manipulator`s instance which will be printed on the screen
+	ComputerManipulator* iComputerManipulator;
+	Manipulator* iManipulator; /// Manipulator`s instance which will be printed on the screen
 	std::ostream *out;			/// An ostream`s object 
 };
 
