@@ -4,6 +4,7 @@
 #define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #define new DEBUG_NEW
 
+#include "DefaultScreenCreator.hpp"
 #include "CarWheelScreenCreator.hpp"
 #include "CarWheel.h"
 #include <iostream>
@@ -11,42 +12,51 @@
 #include "IOCollection.cpp"
 #include "SimpleStreamHelperFactory.h"
 // Функция, которая позволяет отобразить элементы коллекции
-void WheelListShow(Collection::ICollection<Wheel::CarWheel*>::iterator it);
-Wheel::CarWheel* StringToObgect(std::string type){
-	//if (type == std::string("Wheel"))return new Wheel::Wheel();
+void CarWheelListShow(Collection::ICollection<Wheel::CarWheel*>::iterator it);
+void WheelListShow(Collection::ICollection<Wheel::Wheel*>::iterator it);
+void DemonstratingDeletion(Collection::ICollection<Wheel::CarWheel*> *wheelList);
+void DemonstratingAddition(Collection::ICollection<Wheel::CarWheel*> *wheelList);
+
+Wheel::CarWheel* StringToObgect1(std::string type) {
+	if (type == std::string("CarWheel"))return new Wheel::CarWheel();
+	else return NULL;
+}
+Wheel::Wheel* StringToObgect2(std::string type) {
+	if (type == std::string("Wheel"))return new Wheel::Wheel();
 	if (type == std::string("CarWheel"))return new Wheel::CarWheel();
 	else return NULL;
 }
 int main() {
 	{
-		Collection::ICollection<Wheel::CarWheel*> *wheelList=NULL; // создаем контейнер в стеке, который будет хранить указатели
-
+		Collection::ICollection<Wheel::CarWheel*> *carWheelList=NULL; //  контейнер, который будет хранить указатели
 		auto sh = new Stream::StreamHelper::SimpleStreamHelperFactory();
-//		Stream::IOCollection<Wheel::CarWheel*>::Save(&wheelList,"wheelList", "wheelList.txt", sh);
-		wheelList=Stream::IOCollection<Wheel::CarWheel*>::Load("wheelList", "wheelList.txt", sh, StringToObgect);
+		carWheelList = Stream::IOCollection<Wheel::CarWheel*>::Load("wheelList", "CarWheelListLoad.txt", sh, StringToObgect1);
+		DemonstratingDeletion(carWheelList);
 
-		delete sh;
-		auto forRemove = (*wheelList)[1]; // получим второй элемент "MP-16 ", "Matador"
-		wheelList->Remove(forRemove); // удалим второй элемент из коллекции
-		delete forRemove; // освободим память
-		forRemove = (*wheelList)[0]; // получим первый элемент "UltraGrip Performance G1", "Goodyear"
-		wheelList->RemoveAt(0); // удалим превый элемент из коллекции
-		delete forRemove; // освободим память
-		forRemove = wheelList->Pop(); // достаним элемент из конца коллекции "Hakkapeliitta 9 (шип)", "Nokian"
-		delete forRemove; // освободим память
-		wheelList->Insirt(0, 
-			new Wheel::CarWheel(514.5, 295,
-				EUnits::EUNITS_CENTIMETERS,
-				"Proxes T1 Sport SUV 295/40","Toyo")); // вставим элемент во вторую позицию
+		auto it1 = carWheelList->CreateIterator(); // получение итератора
+		DemonstratingAddition(carWheelList);
+		Stream::IOCollection<Wheel::CarWheel*>::Save(carWheelList,"wheelList", "CarWheelListSave.txt", sh);
 
-		auto it = wheelList->CreateIterator(); // получение итератора
-		WheelListShow(it); // выводим на экран
+		CarWheelListShow(it1); // выводим на экран
 
+		Collection::ICollection<Wheel::Wheel*> *wheelList = NULL; //  контейнер, который будет хранить указатели
+		wheelList = Stream::IOCollection<Wheel::Wheel*>::Load("wheelList", "CarWheelListSave.txt", sh, StringToObgect2);
+		wheelList->Push(new Wheel::Wheel(42, 60, EUNITS_CENTIMETERS));
+		Stream::IOCollection<Wheel::Wheel*>::Save(wheelList, "wheelList", "WheelListSave.txt", sh);
+
+		auto it2 = wheelList->CreateIterator(); // получение
+		WheelListShow(it2); // выводим на экран
 #pragma region Очистка памяти
-		for (it->First(); !it->IsDone(); it->Next()) {
-			delete it->CurrentItem();
+		for (it1->First(); !it1->IsDone(); it1->Next()) {
+			delete it1->CurrentItem();
 		}
-		delete it;
+		for (it2->First(); !it2->IsDone(); it2->Next()) {
+			delete it2->CurrentItem();
+		}
+		delete sh;
+		delete it1;
+		delete it2;
+		delete carWheelList;
 		delete wheelList;
 #pragma endregion
 	}
@@ -63,10 +73,35 @@ void Show(Screen::ScreenCreator::ScreenCreator *sc) {
 	delete screen;
 }
 
-void WheelListShow(Collection::ICollection<Wheel::CarWheel*>::iterator it){
+void CarWheelListShow(Collection::ICollection<Wheel::CarWheel*>::iterator it) {
 	for (it->First(); !it->IsDone(); it->Next()) {
 		auto sc = new Screen::ScreenCreator::CarWheelScreenCreator(it->CurrentItem());
 		Show(sc);
 		delete sc;
 	}
+}
+void WheelListShow(Collection::ICollection<Wheel::Wheel*>::iterator it) {
+	for (it->First(); !it->IsDone(); it->Next()) {
+		auto sc = new Screen::ScreenCreator::DefaultScreenCreator(it->CurrentItem());
+		Show(sc);
+		delete sc;
+	}
+}
+void DemonstratingDeletion(Collection::ICollection<Wheel::CarWheel*> *wheelList) {
+	auto forRemove = (*wheelList)[1]; // получим второй элемент "MP-16 ", "Matador"
+	wheelList->Remove(forRemove); // удалим второй элемент из коллекции
+	delete forRemove; // освободим память
+	forRemove = (*wheelList)[0]; // получим первый элемент "UltraGrip Performance G1", "Goodyear"
+	wheelList->RemoveAt(0); // удалим превый элемент из коллекции
+	delete forRemove; // освободим память
+	forRemove = wheelList->Pop(); // достаним элемент из конца коллекции "Hakkapeliitta 9 (шип)", "Nokian"
+	delete forRemove; // освободим память
+}
+
+void DemonstratingAddition(Collection::ICollection<Wheel::CarWheel*> *wheelList) {
+	wheelList->Insirt(0, new Wheel::CarWheel(514.5, 295, EUNITS_CENTIMETERS,
+		"Proxes T1 Sport SUV 295/40", "Toyo")); // вставим элемент во вторую позицию
+	wheelList->Push(new Wheel::CarWheel(30, 50, EUNITS_CENTIMETERS, "UltraGrip Performance G1", "Goodyear"));
+	wheelList->Push(new Wheel::CarWheel(508, 500, EUnits::EUNITS_MILLIMETRES, "MP-16 ", "Nokian"));
+	wheelList->Push(new Wheel::CarWheel(508, 275, EUnits::EUNITS_MILLIMETRES, "Hakkapeliitta 9 (шип)", "Nokian"));
 }

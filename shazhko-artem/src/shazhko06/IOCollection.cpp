@@ -64,7 +64,7 @@ namespace Stream {
 		{
 			object = NULL;
 			_iStream >> text;
-			if (text != std::string("{")) {				
+			if (text != std::string("{")) {
 				delete iStream;
 				iStream = NULL;
 				auto it = result->CreateIterator();
@@ -77,8 +77,10 @@ namespace Stream {
 			if (!data)continue;
 			if (std::string("BEGIN") == data->nameVulue) {	//BEGIN==BEGIN
 				object = _getObjectFromString(data->value);
-				object->OnLoad(_iStream);
-				result->Push(object);
+				if (object) {
+					object->OnLoad(_iStream);
+					result->Push(object);
+				}
 				_iStream >> text;
 				if (text != std::string("}") && text != std::string("},")) {
 					delete iStream;

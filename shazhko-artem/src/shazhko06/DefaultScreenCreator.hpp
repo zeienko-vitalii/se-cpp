@@ -39,3 +39,4 @@ namespace Screen {
 			Wheel::Wheel *wheel;
 		};
 	}
+}
