@@ -6,7 +6,10 @@
 * @date 09.10.17
 */
 #include "StreamHelperArg.h"
-
-StreamHelperArg::StreamHelperArg(){}
-StreamHelperArg::StreamHelperArg(std::string _nameVulue, std::string _value) :nameVulue(_nameVulue), value(_value) {}
-StreamHelperArg::~StreamHelperArg(){}
+namespace Stream {
+	namespace StreamHelper {
+		StreamHelperArg::StreamHelperArg() {}
+		StreamHelperArg::StreamHelperArg(std::string _nameVulue, std::string _value) :nameVulue(_nameVulue), value(_value) {}
+		StreamHelperArg::~StreamHelperArg() {}
+	}
+}

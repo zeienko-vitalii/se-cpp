@@ -34,32 +34,8 @@
     <Filter Include="Файлы заголовков\FileStorage">
       <UniqueIdentifier>{2cca5b4f-ef95-43bb-9352-eaa7b40ebfff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\StreamHelper">
-      <UniqueIdentifier>{da34d4a1-8b8d-437c-a94c-2c0ff526be90}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\StreamHelper\Base">
-      <UniqueIdentifier>{c8ceffa6-925f-4270-9c0e-a6160b20ce13}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\StreamHelper\SimpleStreamHelper">
-      <UniqueIdentifier>{997b07d0-b661-4c2b-817d-509512d21fcf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\StreamHelper">
-      <UniqueIdentifier>{b1a37b77-1c21-4c0a-a047-73db66effbc1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\StreamHelper\SimpleStreamHelper">
-      <UniqueIdentifier>{3032ed19-0e4e-4f05-a6af-0cf36232652d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\StreamHelper\Base">
-      <UniqueIdentifier>{1617cb9f-b4b7-4d66-84fd-9ff2e0ea0a9f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\StreamHelper\StreamHelperFactory">
-      <UniqueIdentifier>{1fd56c06-5bfe-4fea-99af-1a0ea66fe99a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Screen\ScreenCreator">
       <UniqueIdentifier>{65514a62-f36f-4e3b-9152-9d347aea581d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\StreamHelper\StreamHelperFactory">
-      <UniqueIdentifier>{698b9a85-72e1-4c95-99fa-ff0c3070228b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Файлы заголовков\Screen\AllScreens">
       <UniqueIdentifier>{3e9b7817-62be-4af6-bf52-7289c4cebaf3}</UniqueIdentifier>
@@ -84,6 +60,48 @@
     </Filter>
     <Filter Include="Исходные файлы\Collection\List">
       <UniqueIdentifier>{75c7f149-97f7-4718-a7df-9b690441e249}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\CarWheelCollectionSave">
+      <UniqueIdentifier>{84e648e2-a73b-4e4d-a502-5b912ebb6db0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\FileStorage">
+      <UniqueIdentifier>{b99f3bde-dc52-4764-bac3-a011821d644b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Stream">
+      <UniqueIdentifier>{35d8e731-75f8-40bd-906e-02cbe35c4806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Stream\StreamHelper">
+      <UniqueIdentifier>{da34d4a1-8b8d-437c-a94c-2c0ff526be90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Stream\StreamHelper\Base">
+      <UniqueIdentifier>{c8ceffa6-925f-4270-9c0e-a6160b20ce13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Stream\StreamHelper\SimpleStreamHelper">
+      <UniqueIdentifier>{997b07d0-b661-4c2b-817d-509512d21fcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Stream\StreamHelper\StreamHelperFactory">
+      <UniqueIdentifier>{1fd56c06-5bfe-4fea-99af-1a0ea66fe99a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Stream\IOCollection">
+      <UniqueIdentifier>{94b01f42-84d6-49ac-bd32-8486219fde39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Stream">
+      <UniqueIdentifier>{b041b2c3-767f-4997-94b1-b188f7eea531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Stream\StreamHelper">
+      <UniqueIdentifier>{b1a37b77-1c21-4c0a-a047-73db66effbc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Stream\StreamHelper\SimpleStreamHelper">
+      <UniqueIdentifier>{3032ed19-0e4e-4f05-a6af-0cf36232652d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Stream\StreamHelper\Base">
+      <UniqueIdentifier>{1617cb9f-b4b7-4d66-84fd-9ff2e0ea0a9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Stream\StreamHelper\StreamHelperFactory">
+      <UniqueIdentifier>{698b9a85-72e1-4c95-99fa-ff0c3070228b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Stream\IOCollection">
+      <UniqueIdentifier>{f98a9bed-d8bc-43b6-8f44-4a4f8b9471c6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -112,22 +130,25 @@
       <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
     <ClCompile Include="SimpleInputStreamHelper.cpp">
-      <Filter>Исходные файлы\StreamHelper\SimpleStreamHelper</Filter>
+      <Filter>Исходные файлы\Stream\StreamHelper\SimpleStreamHelper</Filter>
     </ClCompile>
     <ClCompile Include="SimpleOutputStreamHelper.cpp">
-      <Filter>Исходные файлы\StreamHelper\SimpleStreamHelper</Filter>
+      <Filter>Исходные файлы\Stream\StreamHelper\SimpleStreamHelper</Filter>
     </ClCompile>
     <ClCompile Include="SimpleStreamHelperFactory.cpp">
-      <Filter>Исходные файлы\StreamHelper\StreamHelperFactory</Filter>
+      <Filter>Исходные файлы\Stream\StreamHelper\StreamHelperFactory</Filter>
     </ClCompile>
     <ClCompile Include="StreamHelperArg.cpp">
-      <Filter>Исходные файлы\StreamHelper\Base</Filter>
+      <Filter>Исходные файлы\Stream\StreamHelper\Base</Filter>
     </ClCompile>
     <ClCompile Include="SimpleTimer.cpp">
       <Filter>Исходные файлы\Timer</Filter>
     </ClCompile>
     <ClCompile Include="SimpleList.cpp">
       <Filter>Исходные файлы\Collection\List</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCollection.cpp">
+      <Filter>Исходные файлы\Stream\IOCollection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,29 +179,26 @@
     <ClInclude Include="Units.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="StorageInterface.h">
-      <Filter>Файлы заголовков\FileStorage</Filter>
-    </ClInclude>
     <ClInclude Include="Wheel.h">
       <Filter>Файлы заголовков\Wheel</Filter>
     </ClInclude>
     <ClInclude Include="InputStreamHelper.h">
-      <Filter>Файлы заголовков\StreamHelper\Base</Filter>
+      <Filter>Файлы заголовков\Stream\StreamHelper\Base</Filter>
     </ClInclude>
     <ClInclude Include="OutputStreamHelper.h">
-      <Filter>Файлы заголовков\StreamHelper\Base</Filter>
+      <Filter>Файлы заголовков\Stream\StreamHelper\Base</Filter>
     </ClInclude>
     <ClInclude Include="StreamHelperFactory.h">
-      <Filter>Файлы заголовков\StreamHelper\StreamHelperFactory</Filter>
+      <Filter>Файлы заголовков\Stream\StreamHelper\StreamHelperFactory</Filter>
     </ClInclude>
     <ClInclude Include="SimpleInputStreamHelper.h">
-      <Filter>Файлы заголовков\StreamHelper\SimpleStreamHelper</Filter>
+      <Filter>Файлы заголовков\Stream\StreamHelper\SimpleStreamHelper</Filter>
     </ClInclude>
     <ClInclude Include="SimpleOutputStreamHelper.h">
-      <Filter>Файлы заголовков\StreamHelper\SimpleStreamHelper</Filter>
+      <Filter>Файлы заголовков\Stream\StreamHelper\SimpleStreamHelper</Filter>
     </ClInclude>
     <ClInclude Include="StreamHelperArg.h">
-      <Filter>Файлы заголовков\StreamHelper\Base</Filter>
+      <Filter>Файлы заголовков\Stream\StreamHelper\Base</Filter>
     </ClInclude>
     <ClInclude Include="BaseScreen.h">
       <Filter>Файлы заголовков\Screen\AllScreens</Filter>
@@ -195,7 +213,7 @@
       <Filter>Файлы заголовков\Screen\AllScreens</Filter>
     </ClInclude>
     <ClInclude Include="SimpleStreamHelperFactory.h">
-      <Filter>Файлы заголовков\StreamHelper\StreamHelperFactory</Filter>
+      <Filter>Файлы заголовков\Stream\StreamHelper\StreamHelperFactory</Filter>
     </ClInclude>
     <ClInclude Include="SimpleTimer.h">
       <Filter>Файлы заголовков\Timer</Filter>
@@ -214,6 +232,12 @@
     </ClInclude>
     <ClInclude Include="SimpleList.h">
       <Filter>Файлы заголовков\Collection\List</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageInterface.h">
+      <Filter>Файлы заголовков\FileStorage</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCollection.h">
+      <Filter>Файлы заголовков\Stream\IOCollection</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

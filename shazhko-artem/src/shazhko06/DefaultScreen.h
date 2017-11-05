@@ -9,26 +9,28 @@
 #include "Wheel.h"
 #include "BaseScreen.h"
 
-/**
-* Класс описывающий отображение объектов класса DefaultScreen
-*/
-class DefaultScreen : public BaseScreen {
-public:
+namespace Screen {
+	/**
+	* Класс описывающий отображение объектов класса DefaultScreen
+	*/
+	class DefaultScreen : public BaseScreen {
+	public:
 
-	/**
-	* Конструктор с одним параметром
-	* @param _wheel колесо
-	*/
-	DefaultScreen(Wheel *_wheel);
-	/**
-	* Деструктор
-	*/
-	virtual ~DefaultScreen();
-	/**
-	* Outputs main information about window.
-	*/
-	virtual void ShowContent() override;
-private:
-	// колесо
-	Wheel *wheel;
-};
+		/**
+		* Конструктор с одним параметром
+		* @param _wheel колесо
+		*/
+		DefaultScreen(Wheel::Wheel *_wheel);
+		/**
+		* Деструктор
+		*/
+		virtual ~DefaultScreen();
+		/**
+		* Outputs main information about window.
+		*/
+		virtual void ShowContent() override;
+	private:
+		// колесо
+		Wheel::Wheel *wheel;
+	};
+}
