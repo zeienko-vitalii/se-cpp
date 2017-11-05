@@ -1,44 +1,75 @@
-/**
-* @file FileStorage.h
-* Declaration of the FileStorage class.
+ /**
+* @file ComputerManipulator.h
+* Declaration of CFileStore.
 * @author Vitalii Zeienko
-* @version 0.0.1
-* @date 2017.10.22
+* @version 0.0.4
+* @date 2017.10.01
 */
 
-#include <fstream>
-#include "Serializable.h"
-#pragma once
+#ifndef FILE_STORE_H
+#define FILE_STORE_H
 
-using std::ofstream;
-using std::ifstream;
+class MStorageInterface;
 
-/**
-* This class represent file storage.
-* It saves and restore objects which implements Serializable interface.
-*/
-class FileStorage {
-private:
-	const char* fileName; /// It`s the name of the file
-	Serializable* serObject; /// Serializable object which will be stored or restored
+class CFileStorage {
 public:
 	/**
-	* Initialize fields of the FileStorage with appropriate parameters.
-	* @param ser is a object which will handled for saving or loading to/from file
-	* @param fName is a file name
-	**/
-	FileStorage(Serializable* ser, const char* fName);
+	 * Creates instance of class
+	 * @param aInterface Interface owner
+	 * @param aFileName File name for operationss
+	 * @return A pointer to constructed object
+	 */
+	static CFileStorage* Create(MStorageInterface& aInterface,
+			const char* aFileName);
 
 	/**
-	* Saves serObject to file fileName
-	* @return true in case if the file will be open
-	**/
-	bool Save();
+	 * Destructor
+	 */
+	~CFileStorage();
 
 	/**
-	* Restore serObject from file fileName
-	* @return true in case if the file will be open
-	**/
+	 * Stores data by calling MStorageInterface::OnStore() callback
+	 * @return true if operation was successful, otherwise false
+	 * @note Use GetLastError() to receive type of error
+	 */
+	bool Store();
+
+	/**
+	 * Loads data by calling MStorageInterface::OnLoad() callback
+	 * @return true if operation was successful, otherwise false
+	 * @note Use GetLastError() to receive type of error
+	 */
 	bool Load();
 
+	/**
+	 * Retrieves result of the last operation
+	 * @return Returns last error code according to the last operation
+	 */
+	int GetLastError() const;
+
+public:
+	enum TErrors {
+		ENoError = 0, EFileOpen = 1,
+		ELastError
+	};
+
+protected:
+	/**
+	 * First stage constructor
+	 * @param aInterface Interface owner
+	 */
+	CFileStorage(MStorageInterface& aInterface);
+
+	/**
+	 * Second stage constructor
+	 * @param aFileName Name of file for operations
+	 */
+	void Construct(const char* aFileName);
+
+private:
+	MStorageInterface& iInterface;
+	char* iFileName;
+	int iLastError;
 };
+
+#endif // FILE_STORE_H
