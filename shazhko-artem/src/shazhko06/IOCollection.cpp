@@ -4,14 +4,17 @@
 #include <fstream>
 
 namespace Stream {
-	IOCollection::~IOCollection() {}
-	Collection::ICollection<MStorageInterface*>* IOCollection::Load(std::istream& _iStream, std::string _nameCollection, StreamHelper::StreamHelperFactory *streamHelper,
-		MStorageInterface* (*_getObjectFromString)(std::string))
+	template<typename Item>
+	IOCollection<Item>::~IOCollection()
 	{
-		Collection::SimpleList<MStorageInterface*> * result = new Collection::SimpleList<MStorageInterface*>();
+	}
+	template<typename Item>
+	Collection::ICollection<Item>* IOCollection<Item>::Load(std::istream & _iStream, std::string _nameCollection, StreamHelper::StreamHelperFactory * streamHelper, Item(*_getObjectFromString)(std::string))
+	{
+		Collection::SimpleList<Item> * result = new Collection::SimpleList<Item>();
 		using namespace Stream;
 		StreamHelper::InputStreamHelper *iStream = streamHelper->CreateInputStreamHelper(_iStream);
-		StreamHelper::StreamHelperArg *data = new StreamHelper::StreamHelperArg();
+		StreamHelper::StreamHelperArg *data =NULL;
 		bool isFoudEnd = false;
 		int size = 0;
 		bool isFound = false;
@@ -21,12 +24,17 @@ namespace Stream {
 			if (!data)continue;
 			if (_nameCollection == data->nameVulue) { // wheelList==wheelList
 				isFound = true;
-				break;
 			}
-			if (data)
+			if (data) {
 				delete data;
+				data = NULL;
+			}
+			if (isFound)break;
 		}
-		if (!isFound)return result; // wheelList!=wheelList
+		if (!isFound) {
+			delete iStream;
+			return result; // wheelList!=wheelList
+		}
 		isFound = false;
 		std::stringstream ss;
 
@@ -39,37 +47,74 @@ namespace Stream {
 			}
 			if (std::string("collection") == data->nameVulue) {	//collection==collection
 				isFound = true;
-				break;
 			}
-			if (data)
+			if (data) {
 				delete data;
+				data = NULL;
+			}
+			if (isFound)break;
 		}
-		if (!isFound)return result; // collection!=collection
-
+		if (!isFound) {
+			delete iStream;
+			return result; // collection!=collection
+		}
 		std::string text = "";
-		MStorageInterface * object = NULL;
+		Item object = NULL;
 		for (int i = 0; i < size; i++)
 		{
 			object = NULL;
 			_iStream >> text;
-			if(text!=std::string("{")) throw "Expected symbol \"{\""; data = iStream->Read();
+			if (text != std::string("{")) {				
+				delete iStream;
+				iStream = NULL;
+				auto it = result->CreateIterator();
+				for (it->First(); !it->IsDone(); it->Next())delete it->CurrentItem();
+				delete it;
+				delete result;
+				throw "Expected symbol \"{\"";
+			}
 			data = iStream->Read();
 			if (!data)continue;
 			if (std::string("BEGIN") == data->nameVulue) {	//BEGIN==BEGIN
 				object = _getObjectFromString(data->value);
 				object->OnLoad(_iStream);
-				_iStream >> text;
-				if (text != std::string("}") && text != std::string("},")) throw "Expected symbol \"}\"";
 				result->Push(object);
+				_iStream >> text;
+				if (text != std::string("}") && text != std::string("},")) {
+					delete iStream;
+					iStream = NULL;
+					auto it = result->CreateIterator();
+					for (it->First(); !it->IsDone(); it->Next())delete it->CurrentItem();
+					delete it;
+					delete result;
+					delete data;
+					data = NULL;
+					throw "Expected symbol \"}\"";
+				}
+			}
+			if (data) {
+				delete data;
+				data = NULL;
 			}
 		}
 		_iStream >> text;
-		if (text != std::string("]}")) throw "Expected symbol \"]}\"";
+		if (text != std::string("]}")) {
+			delete iStream;
+			iStream = NULL;
+			auto it = result->CreateIterator();
+			for (it->First(); !it->IsDone(); it->Next())delete it->CurrentItem();
+			delete it;
+			delete result;
+			throw "Expected symbol \"]}\"";
+		}
+		delete iStream;
 		return result;
 	}
-	Collection::ICollection<MStorageInterface*>* IOCollection::Load(std::string _nameCollection, std::string _path,
+
+	template<typename Item>
+	Collection::ICollection<Item>* IOCollection<Item>::Load(std::string _nameCollection, std::string _path,
 		StreamHelper::StreamHelperFactory *streamHelper,
-		MStorageInterface* (*_getObjectFromString)(std::string))
+		Item (*_getObjectFromString)(std::string))
 	{
 		std::ifstream fileStream;
 		fileStream.open(_path, std::ios_base::in | std::ios_base::binary);
@@ -81,7 +126,8 @@ namespace Stream {
 		return Load(fileStream,_nameCollection, streamHelper, _getObjectFromString);
 	}
 
-	void IOCollection::Save(Collection::ICollection<MStorageInterface*>* _collection,
+	template<typename Item>
+	void IOCollection<Item>::Save(Collection::ICollection<Item>* _collection,
 		std::string _nameCollection, std::ostream & aStream, StreamHelper::StreamHelperFactory *streamHelper)
 	{
 		if (!_collection) return;
@@ -121,7 +167,9 @@ namespace Stream {
 		delete oStream;
 		delete data;
 	}
-	void IOCollection::Save(Collection::ICollection<MStorageInterface*> *_collection,
+	
+	template<typename Item>
+	void IOCollection<Item>::Save(Collection::ICollection<Item> *_collection,
 		std::string _nameCollection, std::string _path, StreamHelper::StreamHelperFactory *streamHelper)
 	{
 		std::ofstream fileStream;

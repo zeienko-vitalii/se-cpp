@@ -38,7 +38,9 @@ namespace Stream {
 			std::string result;
 			std::cmatch regex_result;
 			std::string str;
-			iStream->getline(buffer, bufferSize);
+			do {
+				iStream->getline(buffer, bufferSize);
+			} while (strcmp(buffer,"")==0 && !iStream->eof());
 			if (std::regex_search(buffer, regex_result, std::regex{ "^([a-zA-Z0-9_]+) : (.*)$" })) {
 				return new StreamHelperArg(regex_result[1].str(), regex_result[2].str());
 			}

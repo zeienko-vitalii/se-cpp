@@ -61,8 +61,8 @@
     <ClInclude Include="SimpleTimer.h" />
     <ClInclude Include="StaticDelegateVoid.hpp" />
     <ClInclude Include="StorageInterface.h" />
-    <ClInclude Include="StreamHelperFactory.h" />
     <ClInclude Include="StreamHelperArg.h" />
+    <ClInclude Include="StreamHelperFactory.h" />
     <ClInclude Include="Units.hpp" />
     <ClInclude Include="Wheel.h" />
   </ItemGroup>

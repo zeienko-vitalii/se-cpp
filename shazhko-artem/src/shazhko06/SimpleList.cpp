@@ -37,7 +37,12 @@ namespace Collection {
 	void SimpleList<item>::Insirt(const int index, const item &_item)
 	{
 		if (index >= this->count + 1 || index < 0)throw "The index is outside the list boundary";
-
+		if (!this->top) {
+			top = bottom = new Node(NULL, NULL, _item);
+			top->element = _item;
+			this->count++;
+			return;
+		}
 		Node * walker = NULL;
 		if (index < this->count / 2) {
 			walker = this->top;
@@ -68,7 +73,6 @@ namespace Collection {
 	{
 		if (!top) {
 			top = bottom = new Node(NULL, NULL, _item);
-			top->element = _item;
 		}
 		else {
 			bottom->next = new Node(bottom, NULL, _item);

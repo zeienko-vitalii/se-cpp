@@ -1,3 +1,4 @@
+#pragma once
 /**
 * @file SimpleStreamHelperFactory.h
 * @brief —одержит объ€вление класса SimpleStreamHelperFactory
@@ -6,7 +7,6 @@
 * @date 09.10.17
 */
 
-#pragma once
 #include "StreamHelperFactory.h"
 
 namespace Stream {

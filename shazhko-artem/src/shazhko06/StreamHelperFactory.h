@@ -1,3 +1,4 @@
+#pragma once
 /**
 * @file StreamHelperFactory.h
 * @brief —одержит объ€вление абстрактного класса StreamHelperFactory
