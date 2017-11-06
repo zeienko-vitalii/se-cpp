@@ -35,10 +35,10 @@
 
 ## Результаты работы
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image06.png)
-<div align="center">Рисунок 1 - Результат подсчета нажатых кнопок</b></div><br>
+<div align="center">Рисунок 1 - Результат поиска</b></div><br>
 
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image07.png)
-<div align="center">Рисунок 2 - Результат выполнения модульных тестов</b></div><br>
+<div align="center">Рисунок 2 - Результат очистки памяти</b></div><br>
 
 
 ## Выводы
