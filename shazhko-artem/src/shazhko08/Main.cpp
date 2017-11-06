@@ -36,7 +36,7 @@ int main() {
 		
 		Collection::ICollection<Wheel::CarWheel*> *wheelList = NULL;
 		auto sh = new Stream::StreamHelper::SimpleStreamHelperFactory();
-		wheelList = Stream::IOCollection<Wheel::CarWheel*>::Load("wheelList", "CarWheelListSave.txt", sh, StringToObgect1);
+		wheelList = Stream::IOCollection::Load<Wheel::CarWheel*>("wheelList", "CarWheelListSave.txt", sh, StringToObgect1);
 
 		auto test = (*wheelList)[0];
 		try {
