@@ -97,9 +97,6 @@
     <Filter Include="Файлы заголовков\Stream\StreamHelper\StreamHelperFactory">
       <UniqueIdentifier>{1fd56c06-5bfe-4fea-99af-1a0ea66fe99a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Stream\IOCollection">
-      <UniqueIdentifier>{763b1808-0706-41c2-b8d5-5e6e9723b85c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Stream">
       <UniqueIdentifier>{1058e211-cb86-4cad-98de-39b5d2eb8844}</UniqueIdentifier>
     </Filter>
@@ -274,9 +271,6 @@
     </ClInclude>
     <ClInclude Include="CollectionRequest.hpp">
       <Filter>Файлы заголовков\CollectionRequest</Filter>
-    </ClInclude>
-    <ClInclude Include="IOCollection.h">
-      <Filter>Файлы заголовков\Stream\IOCollection</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

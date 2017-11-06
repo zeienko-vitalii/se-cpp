@@ -34,7 +34,7 @@ int main() {
 	{
 		Collection::ICollection<Wheel::CarWheel*> *carWheelList =NULL;
 		auto sh = new Stream::StreamHelper::SimpleStreamHelperFactory();
-		carWheelList = Stream::IOCollection<Wheel::CarWheel*>::Load("wheelList", "CarWheelListSave.txt", sh, StringToObgect1);
+		carWheelList = Stream::IOCollection::Load<Wheel::CarWheel*>("wheelList", "CarWheelListSave.txt", sh, StringToObgect1);
 
 		CarWheelFilter *filter = new CarWheelFilterByDiameter(508.0, new CarWheelFilterByManufacturer("Nokian", NULL));
 

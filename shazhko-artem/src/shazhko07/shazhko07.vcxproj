@@ -57,7 +57,6 @@
     <ClInclude Include="IDelegateVoid.h" />
     <ClInclude Include="InputStreamHelper.h" />
     <ClInclude Include="IIterator.h" />
-    <ClInclude Include="IOCollection.h" />
     <ClInclude Include="MethodDelegateVoid.hpp" />
     <ClInclude Include="OutputStreamHelper.h" />
     <ClInclude Include="ScreenCreator.h" />
