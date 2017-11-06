@@ -1,0 +1,49 @@
+wheelList : {
+size : 5
+collection : [
+{
+BEGIN : CarWheel
+tireManufacturer : Continental
+tireName : WinterContact TS 860
+BEGIN : Wheel
+diameter : 355.6
+units : 1
+width : 185
+},
+{
+BEGIN : CarWheel
+tireManufacturer : Toyo
+tireName : Proxes T1 Sport SUV 295/40
+BEGIN : Wheel
+diameter : 514.5
+units : 0
+width : 295
+},
+{
+BEGIN : CarWheel
+tireManufacturer : Goodyear
+tireName : UltraGrip Performance G1
+BEGIN : Wheel
+diameter : 30
+units : 0
+width : 50
+},
+{
+BEGIN : CarWheel
+tireManufacturer : Nokian
+tireName : MP-16 
+BEGIN : Wheel
+diameter : 508
+units : 1
+width : 500
+},
+{
+BEGIN : CarWheel
+tireManufacturer : Nokian
+tireName : Hakkapeliitta 9
+BEGIN : Wheel
+diameter : 508
+units : 1
+width : 275
+}
+]}

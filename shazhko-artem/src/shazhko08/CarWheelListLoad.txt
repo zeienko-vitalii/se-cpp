@@ -1,0 +1,40 @@
+wheelList : {
+size : 4
+collection : [
+{
+BEGIN : CarWheel
+tireManufacturer : Nokian
+tireName : UltraGrip Performance G1
+BEGIN : Wheel
+diameter : 508
+units : 0
+width : 50
+},
+{
+BEGIN : CarWheel
+tireManufacturer : Matador
+tireName : MP-16 
+BEGIN : Wheel
+diameter : 304.8
+units : 1
+width : 500
+},
+{
+BEGIN : CarWheel
+tireManufacturer : Continental
+tireName : WinterContact TS 860
+BEGIN : Wheel
+diameter : 355.6
+units : 1
+width : 185
+},
+{
+BEGIN : CarWheel
+tireManufacturer : Nokian
+tireName : Hakkapeliitta 9
+BEGIN : Wheel
+diameter : 508
+units : 1
+width : 275
+}
+]}
