@@ -1,7 +1,7 @@
 /**
  * @file BaseView.cpp
  * Implementation of class BaseView
- * @author Zhmaiev Anatolii
+ * @author Ященко Олександр
  * @version 0.0.1
  * @date Sep 23, 2015
  */
