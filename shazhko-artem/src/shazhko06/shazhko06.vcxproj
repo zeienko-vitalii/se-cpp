@@ -40,7 +40,6 @@
     <ClInclude Include="CarWheel.h" />
     <ClInclude Include="CarWheelScreen.h" />
     <ClInclude Include="CarWheelScreenCreator.hpp" />
-    <ClInclude Include="IOCollection.h" />
     <ClInclude Include="ICollection.h" />
     <ClInclude Include="DefaultScreen.h" />
     <ClInclude Include="DefaultScreenCreator.hpp" />

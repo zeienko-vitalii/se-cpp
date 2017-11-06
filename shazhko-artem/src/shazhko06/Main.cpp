@@ -30,20 +30,19 @@ int main() {
 	{
 		Collection::ICollection<Wheel::CarWheel*> *carWheelList=NULL; //  контейнер, который будет хранить указатели
 		auto sh = new Stream::StreamHelper::SimpleStreamHelperFactory();
-		carWheelList = Stream::IOCollection<Wheel::CarWheel*>::Load("wheelList", "CarWheelListLoad.txt", sh, StringToObgect1);
+		carWheelList = Stream::IOCollection::Load<Wheel::CarWheel*>("wheelList",
+			"CarWheelListLoad.txt", sh, StringToObgect1); // загружаем данные из файла
 		DemonstratingDeletion(carWheelList);
-
 		auto it1 = carWheelList->CreateIterator(); // получение итератора
-		DemonstratingAddition(carWheelList);
-		Stream::IOCollection<Wheel::CarWheel*>::Save(carWheelList,"wheelList", "CarWheelListSave.txt", sh);
-
 		CarWheelListShow(it1); // выводим на экран
 
+		DemonstratingAddition(carWheelList);
+		Stream::IOCollection::Save<Wheel::CarWheel*>(carWheelList,"wheelList", "CarWheelListSave.txt", sh);
+		CarWheelListShow(it1); // выводим на экран
 		Collection::ICollection<Wheel::Wheel*> *wheelList = NULL; //  контейнер, который будет хранить указатели
-		wheelList = Stream::IOCollection<Wheel::Wheel*>::Load("wheelList", "CarWheelListSave.txt", sh, StringToObgect2);
-		wheelList->Push(new Wheel::Wheel(42, 60, EUNITS_CENTIMETERS));
-		Stream::IOCollection<Wheel::Wheel*>::Save(wheelList, "wheelList", "WheelListSave.txt", sh);
-
+		wheelList = Stream::IOCollection::Load<Wheel::Wheel*>("wheelList", "CarWheelListSave.txt", sh, StringToObgect2);
+		wheelList->Push(new Wheel::Wheel(42, 60, EUNITS_CENTIMETERS)); // добавим еще один элемент
+		Stream::IOCollection::Save<Wheel::Wheel*>(wheelList, "wheelList", "WheelListSave.txt", sh); // сохраняем
 		auto it2 = wheelList->CreateIterator(); // получение
 		WheelListShow(it2); // выводим на экран
 #pragma region Очистка памяти
@@ -97,7 +96,6 @@ void DemonstratingDeletion(Collection::ICollection<Wheel::CarWheel*> *wheelList)
 	forRemove = wheelList->Pop(); // достаним элемент из конца коллекции "Hakkapeliitta 9 (шип)", "Nokian"
 	delete forRemove; // освободим память
 }
-
 void DemonstratingAddition(Collection::ICollection<Wheel::CarWheel*> *wheelList) {
 	wheelList->Insirt(0, new Wheel::CarWheel(514.5, 295, EUNITS_CENTIMETERS,
 		"Proxes T1 Sport SUV 295/40", "Toyo")); // вставим элемент во вторую позицию

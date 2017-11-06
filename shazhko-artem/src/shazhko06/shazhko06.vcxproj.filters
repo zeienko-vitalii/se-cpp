@@ -73,9 +73,6 @@
     <Filter Include="Файлы заголовков\Stream\StreamHelper\SimpleStreamHelper">
       <UniqueIdentifier>{997b07d0-b661-4c2b-817d-509512d21fcf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Stream\IOCollection">
-      <UniqueIdentifier>{94b01f42-84d6-49ac-bd32-8486219fde39}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Stream">
       <UniqueIdentifier>{b041b2c3-767f-4997-94b1-b188f7eea531}</UniqueIdentifier>
     </Filter>
@@ -223,9 +220,6 @@
     </ClInclude>
     <ClInclude Include="StorageInterface.h">
       <Filter>Файлы заголовков\FileStorage</Filter>
-    </ClInclude>
-    <ClInclude Include="IOCollection.h">
-      <Filter>Файлы заголовков\Stream\IOCollection</Filter>
     </ClInclude>
     <ClInclude Include="SimpleStreamHelperFactory.h">
       <Filter>Файлы заголовков\Stream\StreamHelper\StreamHelperFactory</Filter>
