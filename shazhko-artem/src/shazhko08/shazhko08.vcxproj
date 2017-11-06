@@ -28,6 +28,7 @@
     <ClCompile Include="DefaultScreen.cpp" />
     <ClCompile Include="DelegateVoid.cpp" />
     <ClCompile Include="GraphScreen.cpp" />
+    <ClCompile Include="IOCollection.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SimpleList.cpp" />
     <ClCompile Include="SimpleInputStreamHelper.cpp" />
@@ -56,6 +57,7 @@
     <ClInclude Include="IDelegateVoid.h" />
     <ClInclude Include="InputStreamHelper.h" />
     <ClInclude Include="IIterator.h" />
+    <ClInclude Include="IOCollection.h" />
     <ClInclude Include="MethodDelegateVoid.hpp" />
     <ClInclude Include="OutputStreamHelper.h" />
     <ClInclude Include="ScreenCreator.h" />

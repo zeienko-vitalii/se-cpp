@@ -19,5 +19,5 @@ public:
 	/**
 	* Оператор круглые скобки
 	*/
-	virtual  bool operator()(const CarWheel *carWheel)=0;
+	virtual  bool operator()(const Wheel::CarWheel *carWheel)=0;
 };

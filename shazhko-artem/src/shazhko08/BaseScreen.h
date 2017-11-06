@@ -7,27 +7,29 @@
 */
 #pragma once
 
-/**
-* Класс описывающий базовое отображение объектов
-*/
-class BaseScreen abstract{
-public:
+namespace Screen {
 	/**
-	* Деструктор
+	* Класс описывающий базовое отображение объектов
 	*/
-	virtual ~BaseScreen() {}
+	class BaseScreen abstract {
+	public:
+		/**
+		* Деструктор
+		*/
+		virtual ~BaseScreen() {}
 
-	/**
-	* Outputs header of information.
-	*/
-	virtual void ShowHeader();
-	/**
-	* Outputs main information about window.
-	*/
-	virtual void ShowContent();
+		/**
+		* Outputs header of information.
+		*/
+		virtual void ShowHeader();
+		/**
+		* Outputs main information about window.
+		*/
+		virtual void ShowContent();
 
-	/**
-	* Outputs footer of information.
-	*/
-	virtual void ShowFooter();
-};
+		/**
+		* Outputs footer of information.
+		*/
+		virtual void ShowFooter();
+	};
+}

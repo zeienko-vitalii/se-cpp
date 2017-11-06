@@ -11,10 +11,12 @@
 #include "CarWheelScreenCreator.hpp"
 #include "CarWheel.h"
 #include <iostream>
-
+#include "IOCollection.cpp"
+#include "SimpleStreamHelperFactory.h"
 #include "SimpleList.cpp"
-void WheelListShow(ICollection<CarWheel*>::iterator it);
-void CallBackFunct(ICollection<CarWheel *>* collection){
+
+void WheelListShow(Collection::ICollection<Wheel::CarWheel*>::iterator it);
+void CallBackFunct(Collection::ICollection<Wheel::CarWheel *>* collection){
 	std::cout << "\n****** CallBackFunct *****\n";
 	if (collection) {
 		auto it = collection->CreateIterator();
@@ -25,42 +27,46 @@ void CallBackFunct(ICollection<CarWheel *>* collection){
 		std::cout << "Don't found\n";
 	std::cout << "============================\n";
 }
+Wheel::CarWheel* StringToObgect1(std::string type) {
+	if (type == std::string("CarWheel"))return new Wheel::CarWheel();
+	else return NULL;
+}
 int main() {
 	{
+		
+		Collection::ICollection<Wheel::CarWheel*> *wheelList = NULL;
+		auto sh = new Stream::StreamHelper::SimpleStreamHelperFactory();
+		wheelList = Stream::IOCollection<Wheel::CarWheel*>::Load("wheelList", "CarWheelListSave.txt", sh, StringToObgect1);
 
-		SimpleList<CarWheel*> wheelList;
-		wheelList.Push(new CarWheel(30, 50, EUNITS_CENTIMETERS, "UltraGrip Performance G1", "Goodyear"));
-		wheelList.Push(new CarWheel(508, 500, EUnits::EUNITS_MILLIMETRES, "MP-16 ", "Nokian"));
-		wheelList.Push(new CarWheel(355.6, 185, EUnits::EUNITS_MILLIMETRES, "WinterContact TS 860", "Continental"));
-		wheelList.Push(new CarWheel(508, 275, EUnits::EUNITS_MILLIMETRES, "Hakkapeliitta 9 (шип)", "Nokian"));
-		wheelList.Insirt(1, new CarWheel(514.5, 295, EUnits::EUNITS_CENTIMETERS, "Proxes T1 Sport SUV 295/40", "Toyo"));
-		auto test = wheelList[0];
+		auto test = (*wheelList)[0];
 		try {
-			auto test = wheelList[10]; // error
+			auto test = (*wheelList)[10]; // error
 		}
 		catch (std::out_of_range error) {
 			std::cout << error.what();
 		}
 		try {
-			wheelList.RemoveAt(10);// error
+			wheelList->RemoveAt(10);// error
 		}catch(...){}
 		CarWheelFilter *filter = new CarWheelFilterByDiameter(508.0, new CarWheelFilterByManufacturer("Nokian", NULL));
 
-		CollectionRequest::Find<CarWheelFilter,CarWheel*>(&wheelList, filter, &CallBackFunct);
+		CollectionRequest::Find<CarWheelFilter,Wheel::CarWheel*>(wheelList, filter, &CallBackFunct);
 #pragma region Очистка памяти
-		SimpleList<CarWheel*>::iterator it = wheelList.CreateIterator();
+		Collection::ICollection<Wheel::CarWheel*>::iterator it = wheelList->CreateIterator();
 		for (it->First(); !it->IsDone(); it->Next()) {
 			delete it->CurrentItem();
 		}
 		delete it;
+		delete wheelList;
 		delete filter;
+		delete sh;
 #pragma endregion
 	}
 	_CrtDumpMemoryLeaks();
 	return 0;
 }
 
-void Show(ScreenCreator *sc) {
+void Show(Screen::ScreenCreator::CarWheelScreenCreator *sc) {
 	if (sc == NULL)throw "NullReferenceException";
 	auto screen= sc->CreateSreen();
 	screen->ShowHeader();
@@ -69,9 +75,9 @@ void Show(ScreenCreator *sc) {
 	delete screen;
 }
 
-void WheelListShow(ICollection<CarWheel*>::iterator it){
+void WheelListShow(Collection::ICollection<Wheel::CarWheel*>::iterator it){
 	for (it->First(); !it->IsDone(); it->Next()) {
-		auto sc = new CarWheelScreenCreator(it->CurrentItem());
+		auto sc = new Screen::ScreenCreator::CarWheelScreenCreator(it->CurrentItem());
 		Show(sc);
 		delete sc;
 	}

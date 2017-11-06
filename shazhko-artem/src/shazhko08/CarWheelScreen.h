@@ -8,25 +8,27 @@
 #pragma once
 #include "CarWheel.h"
 #include "BaseScreen.h"
-/**
-*  Класс описывающий отображение объектов класса CarWheelScreen
-*/
-class CarWheelScreen :public BaseScreen{
-public:
+namespace Screen {
 	/**
-	* конструктор с одним параметром
-	* @param _wheel колесо
+	*  Класс описывающий отображение объектов класса CarWheelScreen
 	*/
-	CarWheelScreen(CarWheel *_wheel);
-	/**
-	* Деструктор
-	*/
-	virtual ~CarWheelScreen();
-	/**
-	* Outputs header of information.
-	*/	
-	virtual void ShowContent() override;
-private:
-	// колесо
-	CarWheel *wheel;
-};
+	class CarWheelScreen :public BaseScreen {
+	public:
+		/**
+		* конструктор с одним параметром
+		* @param _wheel колесо
+		*/
+		CarWheelScreen(Wheel::CarWheel *_wheel);
+		/**
+		* Деструктор
+		*/
+		virtual ~CarWheelScreen();
+		/**
+		* Outputs header of information.
+		*/
+		virtual void ShowContent() override;
+	private:
+		// колесо
+		Wheel::CarWheel *wheel;
+	};
+}

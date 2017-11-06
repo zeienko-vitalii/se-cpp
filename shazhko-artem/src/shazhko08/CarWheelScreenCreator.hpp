@@ -9,31 +9,35 @@
 #include "ScreenCreator.h"
 #include "CarWheelScreen.h"
 
-/**
-* Класс реализующий фабричный метод для создания объектов CarWheelScreen
-*/
-class CarWheelScreenCreator :public ScreenCreator {
-public:
-	/**
-	* Деструктор
-	*/
-	virtual ~CarWheelScreenCreator(){}
-	/**
-	* Конструктор
-	*/
-	CarWheelScreenCreator(CarWheel *wheel) {
-		this->wheel = wheel;
+namespace Screen {
+	namespace ScreenCreator {
+		/**
+		* Класс реализующий фабричный метод для создания объектов CarWheelScreen
+		*/
+		class CarWheelScreenCreator :public ScreenCreator{
+		public:
+			/**
+			* Деструктор
+			*/
+			virtual ~CarWheelScreenCreator() {}
+			/**
+			* Конструктор
+			*/
+			CarWheelScreenCreator(Wheel::CarWheel *wheel) {
+				this->wheel = wheel;
+			}
+			/**
+			* Виртуальная функция, создает объект наследующий класс ScreenCreator
+			* @return объект, который реализует интерфейс ScreenCreator, для отображения данных на экран
+			*/
+			BaseScreen* CreateSreen() override {
+				if (wheel)
+					return new CarWheelScreen(wheel);
+				else throw "NullReferenceException";
+			}
+		private:
+			// колесо
+			Wheel::CarWheel *wheel;
+		};
 	}
-	/**
-	* Виртуальная функция, создает объект наследующий класс ScreenCreator
-	* @return объект, который реализует интерфейс ScreenCreator, для отображения данных на экран
-	*/
-	BaseScreen* CreateSreen() override {
-		if (wheel)
-			return new CarWheelScreen(wheel);
-		else throw "NullReferenceException";
-	}
-private:
-	// колесо
-	CarWheel *wheel;
-};
+}

@@ -23,10 +23,10 @@ public:
 	* @param PMethod указатель на функцию, в которую будет передан результат поиска
 	*/
 	template<typename T, typename item>
-	static void Find(ICollection<item> * collection, T *functor, void(*PMethod)(ICollection<item>*)) {
+	static void Find(Collection::ICollection<item> * collection, T *functor, void(*PMethod)(Collection::ICollection<item>*)) {
 		if (!functor) throw "Functor can't be NULL";
 		if (!PMethod) throw "Pointer to function cannot be NULL";
-		SimpleList<item> *result = new SimpleList<item>();
+		Collection::SimpleList<item> *result = new Collection::SimpleList<item>();
 		if (!collection) {
 			PMethod(result);
 			return;

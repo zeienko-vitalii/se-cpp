@@ -28,7 +28,7 @@ public:
 	/**
 	* Оператор круглые скобки
 	*/
-	virtual  bool operator()(const CarWheel *carWheel);
+	virtual  bool operator()(const Wheel::CarWheel *carWheel);
 private:
 	// производитель
 	std::string manufacturer;
