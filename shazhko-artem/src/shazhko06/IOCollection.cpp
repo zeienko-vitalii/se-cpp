@@ -1,3 +1,10 @@
+/**
+* @file IOCollection.cpp
+* @brief Содержит реализацию абстрактного класса IOCollection
+* @author Shazhko Artem
+* @version 0
+* @date 09.10.17
+*/
 #include "IOCollection.h"
 #include "SimpleList.h"
 #include <sstream>
