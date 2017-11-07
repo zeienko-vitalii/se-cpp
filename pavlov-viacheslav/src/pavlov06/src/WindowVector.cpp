@@ -1,10 +1,12 @@
-/*
- * WindowVector.cpp
- *
- *  Created on: 21 окт. 2017 г.
- *      Author: JR_Rider
+/**
+ * @file WindowVector.cpp
+ * WindowVector functions realization.
+ * @author pavlov-vs
+ * @version 0.0.1
+ * @date 2017.09.09
  */
 #include<iostream>
+#include<fstream>
 #include<string>
 #include "WindowVector.h"
 using namespace std;
@@ -62,4 +64,30 @@ void WindowVector::clean() {
 	this->vSize = 0;
 	delete[] this->vector;
 	this->vector = new Window[vCapacity];
+}
+
+void WindowVector::save(string filename) {
+	ofstream fileStream;
+	fileStream.open(filename,
+			ios_base::out | ios_base::binary | ios_base::trunc);
+
+	for (int i = 0; i < this->vSize; i++) {
+		this->get(i)->OnStore(fileStream);
+		fileStream << " ";
+	}
+	fileStream.close();
+
+}
+
+void WindowVector::load(string filename) {
+	ifstream fileStream;
+	fileStream.open(filename,
+			ios_base::out | ios_base::binary | ios_base::trunc);
+
+	while (fileStream.get()) {
+		Window tmp;
+		tmp.OnLoad(fileStream);
+		this->push(tmp);
+	}
+	fileStream.close();
 }

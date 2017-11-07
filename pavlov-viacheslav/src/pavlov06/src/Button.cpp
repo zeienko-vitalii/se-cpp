@@ -1,4 +1,4 @@
-/*
+/**
  * @file Button.cpp
  * Button functions realization.
  * @author pavlov-vs

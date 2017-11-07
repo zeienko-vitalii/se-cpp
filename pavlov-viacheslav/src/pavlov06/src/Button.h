@@ -1,4 +1,4 @@
-/*
+/**
  * @file Button.h
  * Contains the declaration of the "Button" object.
  * @author pavlov-vs

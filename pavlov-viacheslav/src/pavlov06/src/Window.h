@@ -1,6 +1,6 @@
 /**
  * @file Window.h
- * Contains the declaration of the "Window" object.
+ * Contains the declaration of the "Window" class.
  * @author pavlov-vs
  * @version 0.0.1
  * @date 2017.09.09

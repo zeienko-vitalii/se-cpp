@@ -1,11 +1,10 @@
-//============================================================================
-// Name        : pavlov06.cpp
-// Author      : pavlov-viacheslav
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
+/**
+ * @file pavlov06.cpp
+ * Program work demonstration.
+ * @author pavlov-vs
+ * @version 0.0.1
+ * @date 2017.09.09
+ */
 #include <iostream>
 #include "Window.h"
 #include "WindowVector.h"
