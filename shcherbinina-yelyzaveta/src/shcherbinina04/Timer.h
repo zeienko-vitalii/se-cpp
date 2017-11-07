@@ -21,9 +21,36 @@ private:
 	T data;
 
 public:
-	Timer(void(*task)(T), T data);
-	virtual ~Timer();
-	void count();
-	void start();
+	Timer(void(*task)(T), T data) :
+		task(task), data(data) {
+		this->times = 4;
+		this->liDueTime.QuadPart = -10000000LL;
+		this->hTimer = NULL;
+	}
+	virtual ~Timer(){}
+	void count(){
+
+		// Set a Timer to wait for 10 seconds.
+		if (!SetWaitableTimer(hTimer, &liDueTime, 0, NULL, NULL, 0)) {
+			printf("SetWaitableTimer failed (%d)\n", GetLastError());
+
+		}
+
+		// Wait for the Timer.
+		if (WaitForSingleObject(hTimer, INFINITE) != WAIT_OBJECT_0)
+			printf("WaitForSingleObject failed (%d)\n", GetLastError());
+		else
+			task(data);
+	}
+	void start(){
+
+		hTimer = CreateWaitableTimer(NULL, TRUE, L"WaitableTimer");
+		if (NULL == hTimer) {
+			printf("CreateWaitableTimer failed (%d)\n", GetLastError());
+		}
+		for (int i = 0; i < Timer::times; i++)
+			count();
+
+	}
 };
 
