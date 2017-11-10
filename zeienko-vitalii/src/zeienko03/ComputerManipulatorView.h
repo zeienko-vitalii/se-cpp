@@ -22,7 +22,7 @@ public:
 	* @param computerManip will set the object ComputerManipulatorView::computerManip
 	* @param os is the type of an output stream 
 	*/
-	ComputerManipulatorView(ComputerManipulator* computerManip, std::ostream* os);
+	ComputerManipulatorView(Manipulator* computerManip, std::ostream* os);
 	
 	/**
 	* If memory was allocated for an BaseView`s object destructor

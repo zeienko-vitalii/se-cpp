@@ -57,7 +57,6 @@ public:
 	* */
 	void setAmountOfButtons(int amountOfBtns);
 
-
 	/**
 	 *  Destructor. Destroys object for which memory was allocated.
 	 */

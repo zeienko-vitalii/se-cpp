@@ -14,7 +14,7 @@
 #include <crtdbg.h>
 #define new new (_NORMAL_BLOCK, __FILE__, __LINE__)
 
-ComputerManipulatorView::ComputerManipulatorView(ComputerManipulator* computerManipulator, std::ostream* os) : 
+ComputerManipulatorView::ComputerManipulatorView(Manipulator* computerManipulator, std::ostream* os) : 
 	ManipulatorView(computerManipulator, os ){ }
 
 void ComputerManipulatorView::showHeader() {
@@ -22,19 +22,21 @@ void ComputerManipulatorView::showHeader() {
 }
 
 void ComputerManipulatorView::showContent() {
-	if ((getComputerManipulator())->isGame()) {
+	ComputerManipulator* coomputerManipulator;
+	coomputerManipulator = dynamic_cast<ComputerManipulator*>(getManipulator());
+	if (coomputerManipulator->isGame()) {
 		(*getOutputStream()) << "|==============================|\n";
-		(*getOutputStream()) << "|" << "Type: game " << (getComputerManipulator())->getType() << "\n";
-		(*getOutputStream()) << "|" << "Amount of buttons: " << (getComputerManipulator())->getAmountOfButtons() << "\n";
-		(*getOutputStream()) << "|" << "Connection interface: " << (getComputerManipulator())->getConnectionInterface() << "\n";
-		(*getOutputStream()) << "|" << "Sensor type: " << (getComputerManipulator())->getSensorType() << "\n";
+		(*getOutputStream()) << "|" << "Type: game " << coomputerManipulator->getType() << "\n";
+		(*getOutputStream()) << "|" << "Amount of buttons: " << coomputerManipulator->getAmountOfButtons() << "\n";
+		(*getOutputStream()) << "|" << "Connection interface: " << coomputerManipulator->getConnectionInterface() << "\n";
+		(*getOutputStream()) << "|" << "Sensor type: " << coomputerManipulator->getSensorType() << "\n";
 	}
-	else if ((getComputerManipulator())->isSimple()) {
+	else if (coomputerManipulator->isSimple()) {
 		(*getOutputStream()) << "|==============================|" << "\n";
-		(*getOutputStream()) << "|" << "Type: simple " << (getComputerManipulator())->getType() << "\n";
-		(*getOutputStream()) << "|" << "Amount of buttons: " << (getComputerManipulator())->getAmountOfButtons() << "\n";
-		(*getOutputStream()) << "|" << "Connection interface: " << (getComputerManipulator())->getConnectionInterface() << "\n";
-		(*getOutputStream()) << "|" << "Sensor type: " << (getComputerManipulator())->getSensorType() << "\n";
+		(*getOutputStream()) << "|" << "Type: simple " << coomputerManipulator->getType() << "\n";
+		(*getOutputStream()) << "|" << "Amount of buttons: " << coomputerManipulator->getAmountOfButtons() << "\n";
+		(*getOutputStream()) << "|" << "Connection interface: " << coomputerManipulator->getConnectionInterface() << "\n";
+		(*getOutputStream()) << "|" << "Sensor type: " << coomputerManipulator->getSensorType() << "\n";
 	}
 }
 
