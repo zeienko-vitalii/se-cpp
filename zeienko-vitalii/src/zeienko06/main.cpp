@@ -23,7 +23,7 @@ using namespace std;
 
 
 void operationsWithMouseList() {
-		ComputerManipulator* cManip1 = new ComputerManipulator(13, Manipulator::Joystick, "USB/PCP", ComputerManipulator::Laser);
+	ComputerManipulator* cManip1 = new ComputerManipulator(13, Manipulator::Joystick, "USB/PCP", ComputerManipulator::Laser);
 	ComputerManipulator* cManip2 = new ComputerManipulator(14, Manipulator::Mouse, "Bluetooth", ComputerManipulator::Optical);
 	ComputerManipulator* cManip3 = new ComputerManipulator(15, Manipulator::Joystick, "GIGI", ComputerManipulator::Balling);
 
@@ -37,29 +37,32 @@ void operationsWithMouseList() {
 		cerr << "Storing returned error: " << storage1->GetLastError() << endl;
 	}
 	cout << "Saving ComputerManipualtors with such parameters: " << endl;
-	
 	for (int i = 0; i < q->getSize(); i++) {
 		cout << "AmountOfBtns: " << q->getDataByIndex(i)->getAmountOfButtons() << endl;
-		cout << q->getDataByIndex(i)->getType() << endl;
-		cout << q->getDataByIndex(i)->getConnectionInterface() << endl;
-		cout << q->getDataByIndex(i)->getSensorType() << endl;
+		cout << "Type: " << q->getDataByIndex(i)->getType() << endl;
+		cout << "ConnectionInterface: " << q->getDataByIndex(i)->getConnectionInterface() << endl;
+		cout << "Sensor: " << q->getDataByIndex(i)->getSensorType() << endl;
+		cout << "================================================ " << endl;
 	}
 
 	success = storage1->Load();
 	if (!success) {
 		cerr << "Loading returned error: " << storage1->GetLastError() << endl;
 	}
+	cout << "Restoring with such parameters: " << endl;
 	for (int i = 0; i < q->getSize(); i++) {
-		cout << q->getDataByIndex(i)->getAmountOfButtons() << endl;
-		cout << q->getDataByIndex(i)->getType() << endl;
-		cout << q->getDataByIndex(i)->getConnectionInterface() << endl;
-		cout << q->getDataByIndex(i)->getSensorType() << endl;
+		cout << "AmountOfBtns: " << q->getDataByIndex(i)->getAmountOfButtons() << endl;
+		cout << "Type: " << q->getDataByIndex(i)->getType() << endl;
+		cout << "ConnectionInterface: " << q->getDataByIndex(i)->getConnectionInterface() << endl;
+		cout << "Sensor: " << q->getDataByIndex(i)->getSensorType() << endl;
+		cout << "================================================ " << endl;
 	}
+	delete q;
 	delete storage1;
 	delete cManip1;
 	delete cManip2;
 	delete cManip3;
-	delete q;
+	
 }
 
 

@@ -75,13 +75,7 @@ bool Manipulator::operator == (const Manipulator& manipualtor) const {
 		getAmountOfButtons() == manipualtor.getAmountOfButtons());
 }
 
-char* Manipulator::getConnectionInterface() const { return NULL; };
-
-char* Manipulator::getSensorType() const { return NULL; };
-
 void Manipulator::setTypeOfManipulator(char* typeOfManip) {
-	//std::cout << "setTypeOfManipulator()::typeOfManipulator = " << typeOfManip;
-	//char* temp = typeOfManip;
 	 if (strcmp(typeOfManip, "Joystick") == 0) {
 		this->typeOfManipulator = Joystick;
 	} else if (strcmp(typeOfManip, "Mouse") == 0) {
@@ -91,7 +85,6 @@ void Manipulator::setTypeOfManipulator(char* typeOfManip) {
 
 // interfaces
 void Manipulator::OnStore(std::ostream& aStream) {
-	//aStream << amountOfButtons << " " << getType() << "\n";
 	aStream.write((const char*)&amountOfButtons, sizeof(amountOfButtons));
 	int lenOfType = strlen(getType());
 	aStream.write((const char*)&lenOfType, sizeof(lenOfType));
@@ -99,16 +92,6 @@ void Manipulator::OnStore(std::ostream& aStream) {
 }
 
 void Manipulator::OnLoad(std::istream& aStream) {
-
-	/*char buf[256], buf2[256];
-	aStream.getline(buf, 256);
-	std::cout << "Buffer #1 "<< buf << std::endl;
-	//setAmountOfButtons() = (int)buf;
-
-	aStream.getline(buf2, 256);
-	std::cout << "Buffer #2 " << buf2 << std::endl;
-	setTypeOfManipulator(buf2);*/
-	//aStream >> amountOfButtons >> 
 	int tempAmountOfButtons = 0;
 	aStream.read((char*)&tempAmountOfButtons, sizeof(tempAmountOfButtons));
 	setAmountOfButtons(tempAmountOfButtons);
@@ -119,5 +102,5 @@ void Manipulator::OnLoad(std::istream& aStream) {
 	aStream.read(tempType, lenOfType);
 	tempType[lenOfType] = 0;
 	setTypeOfManipulator(tempType);
-	//delete[] tempType;
+	delete[] tempType;
 }

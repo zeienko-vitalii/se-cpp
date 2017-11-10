@@ -74,17 +74,6 @@ public:
 	bool operator == (const Manipulator& manipulator) const;
 
 	/**
-	* Returns connection interface of the current object
-	* @return ComputerManipulator::connectionInterface
-	* */
-	virtual char* getConnectionInterface() const;
-	/**
-	* Returns sensor type of the current object
-	* @return ComputerManipulator::sensorType
-	* */
-	virtual char* getSensorType() const;
-
-	/**
 	* It saves current object's data
 	* @param os is an ofstream object that is used to write to the file
 	*/

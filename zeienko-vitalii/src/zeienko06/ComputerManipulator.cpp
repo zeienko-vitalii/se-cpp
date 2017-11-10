@@ -123,7 +123,7 @@ void ComputerManipulator::OnLoad(std::istream& aStream) {
 	
 	tempConnectionInterface[lenOfConnection] = 0;
 	setConnectionInterface(tempConnectionInterface);
-	//delete[] tempConnectionInterface;
+	delete[] tempConnectionInterface;
 
 	int lenOfSensorType = 0;
 	aStream.read((char*)&lenOfSensorType, sizeof(lenOfSensorType));
@@ -132,5 +132,5 @@ void ComputerManipulator::OnLoad(std::istream& aStream) {
 	aStream.read(tempSensorType, lenOfSensorType);
 	tempSensorType[lenOfSensorType] = 0;
 	setSensorType(tempSensorType);
-	//delete[] tempSensorType;
+	delete[] tempSensorType;
 }
