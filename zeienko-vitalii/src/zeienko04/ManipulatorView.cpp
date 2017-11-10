@@ -11,8 +11,6 @@
 #include <ctime>
 ManipulatorView::ManipulatorView(Manipulator* manipulator, std::ostream* os) : BaseView(manipulator, os) {}
 
-ManipulatorView::ManipulatorView(ComputerManipulator * manipulator, std::ostream * os) : BaseView(manipulator, os) {}
-
 void ManipulatorView::show() {
 	showHeader();
 	showContent();

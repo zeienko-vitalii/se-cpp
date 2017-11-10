@@ -20,10 +20,6 @@ public:
 	 * */
 	ManipulatorView(Manipulator* manipulator, std::ostream* os);
 	
-	static void OnTimerAction(ManipulatorView* pArgs) {
-		ManipulatorView* p_ManV = static_cast<ManipulatorView*>(pArgs);
-		p_ManV->display();
-	}
 
 	/**
 	 * Outputs ManipulatorView::manipulator object.
@@ -47,13 +43,6 @@ public:
 	 * Destructor. Destroys object and  frees the memory which was allocated.
 	 * */
 	virtual ~ManipulatorView();
-protected:
-	/**
-	* Constructor takes constant Manipulator`s object and assigns if to ManipulatorView::manipulator.
-	* @param manipulator this object`s information will be printed on the screen.
-	* @param os is the type of an output stream
-	* */
-	ManipulatorView(ComputerManipulator* manipulator, std::ostream* os);
 };
 
 #endif /* MANIPULATOR_VIEW_H_ */
