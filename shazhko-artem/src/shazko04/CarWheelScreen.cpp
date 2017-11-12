@@ -15,6 +15,11 @@ CarWheelScreen::~CarWheelScreen()
 	if (this->wheel)delete this->wheel;
 }
 
+void CarWheelScreen::ShowHeader()
+{
+	std::cout << "----------CarWheel-----------\n";
+}
+
 void CarWheelScreen::ShowContent()
 {
 	std::cout << "\tDiameter: " << wheel->GetDiameter() << "\n" <<
@@ -22,6 +27,11 @@ void CarWheelScreen::ShowContent()
 		"\tUnits: " << ConvertEUnitToString(wheel->GetUnits()) << "\n" <<
 		"\tVolume: " << wheel->Volume() << "\n" <<
 		"\tTire Manufacturer: " << wheel->GetTireManufacturer() << "\n" <<
-		"\tTire Name: " << wheel->GetTireName() << "\n";
+		"\tTire Name: " << wheel->GetTireName()<<"\n";
+}
+
+void CarWheelScreen::ShowFooter()
+{
+	std::cout << "-----------------------------\n";
 }
 

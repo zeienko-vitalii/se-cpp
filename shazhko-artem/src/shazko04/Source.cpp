@@ -27,9 +27,9 @@ int main() {
 	{
 		Timer::SimpleTimer timer(4, 1000);
 
-		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(screenD, &BaseScreen::ShowContent);
-		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(screenG, &BaseScreen::ShowContent);
-		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(screenC, &BaseScreen::ShowContent);
+		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(screenD, &BaseScreen::Show);
+		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(screenG, &BaseScreen::Show);
+		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(screenC, &BaseScreen::Show);
 
 		timer.Start();
 		timer.Wait(INFINITE);

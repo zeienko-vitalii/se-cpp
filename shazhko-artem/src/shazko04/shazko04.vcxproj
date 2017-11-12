@@ -167,7 +167,6 @@
     <ClInclude Include="ScreenCreator.h" />
     <ClInclude Include="StaticDelegateVoid.hpp" />
     <ClInclude Include="Wheel.h" />
-    <ClInclude Include="NonScreen.h" />
     <ClInclude Include="SimpleTimer.h" />
     <ClInclude Include="Units.hpp" />
   </ItemGroup>
@@ -179,7 +178,6 @@
     <ClCompile Include="CarWheelScreen.cpp" />
     <ClCompile Include="Wheel.cpp" />
     <ClCompile Include="IDelegateVoid.h" />
-    <ClCompile Include="TEST-SimpleTimer.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SimpleTimer.cpp" />
     <ClCompile Include="GraphScreen.cpp" />

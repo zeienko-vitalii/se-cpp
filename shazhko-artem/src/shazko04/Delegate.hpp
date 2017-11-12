@@ -20,7 +20,7 @@ namespace Delegate {
 	{
 		return new StaticDelegateVoid(_pFunction);
 	}
-
+ 
 	/**
 	* Создает делегат на функцию в классе
 	* @param _pObject указатель на объект

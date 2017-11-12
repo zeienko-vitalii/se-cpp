@@ -8,7 +8,6 @@
 */
 #include "ScreenCreator.h"
 #include "CarWheelScreen.h"
-#include "NonScreen.h"
 
 /**
 * Класс реализующий фабричный метод для создания объектов CarWheelScreen
@@ -32,7 +31,7 @@ public:
 	BaseScreen* CreateSreen() override {
 		if (wheel)
 			return new CarWheelScreen(wheel);
-		else return new NonScreen();
+		else throw "NullReferenceException";
 	}
 private:
 	// колесо

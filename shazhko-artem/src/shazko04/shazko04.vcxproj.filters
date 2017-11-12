@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="UniteTest">
-      <UniqueIdentifier>{b939eaa6-2f68-46c3-a3ab-3fd94bd809b5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Delegates">
       <UniqueIdentifier>{edd59965-dfc3-4942-a70f-e89edf4c0e79}</UniqueIdentifier>
     </Filter>
@@ -44,9 +41,6 @@
     </ClInclude>
     <ClInclude Include="Delegate.hpp">
       <Filter>Файлы заголовков\Delegates</Filter>
-    </ClInclude>
-    <ClInclude Include="NonScreen.h">
-      <Filter>Файлы заголовков\Screen</Filter>
     </ClInclude>
     <ClInclude Include="DefaultScreen.h">
       <Filter>Файлы заголовков\Screen</Filter>
@@ -97,9 +91,6 @@
     </ClCompile>
     <ClCompile Include="SimpleTimer.cpp">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="TEST-SimpleTimer.cpp">
-      <Filter>UniteTest</Filter>
     </ClCompile>
     <ClCompile Include="IDelegateVoid.h">
       <Filter>Файлы заголовков\Delegates</Filter>
