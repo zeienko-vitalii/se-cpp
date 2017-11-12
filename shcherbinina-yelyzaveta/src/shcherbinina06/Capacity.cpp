@@ -1,0 +1,113 @@
+/*
+* @file Capacity.cpp
+* Містить реалізацію класа Capacity
+* @date 2017.09.17
+* @author shcherbinina
+*/
+#include <bitset>
+#include "Capacity.h"
+#include <iostream>
+#include <string>
+#include <math.h>
+
+using namespace std;
+
+///Конструктор без параметра
+Capacity::Capacity() : unit(ml), v(1){
+	cout << "Capacity constructor\n";
+}
+
+///Конструктор копіювання
+Capacity::Capacity(const Capacity& capacity) : unit(capacity.unit), v(capacity.v){
+	cout << "Capacity copy constructor\n";
+}
+///Конструктор із параметрами
+Capacity::Capacity(units _unit, float _v) : unit(_unit), v(_v){
+	cout << "Capacity constructor with parametrs\n";
+}
+
+///Деструктор
+Capacity::~Capacity() {
+	cout << "Capacity destructor\n";
+}
+///Встановлює значення одиниці вимірювання
+void Capacity::setUnit(units unit) {
+	this->unit = unit;
+}
+///Повертає значення одиниці вимірювання
+units Capacity::getUnit(){
+	return this->unit;
+}
+///Функція для знаходження площі циліндричної тари
+const float Capacity::square(float height){
+	double r = 0;
+	r = sqrt(v/(3.14*height));
+	switch (unit){
+	case ml: r = r/1000000; break;
+	case l: r = r/1000; break;
+	case cubicMeter: break;
+	}
+		return ( 6.18*r*height);
+}
+///Перевантаження оператора виводу для коректного відображення об'єкта класу
+ostream& operator <<(ostream& out, Capacity capacity){
+	switch (capacity.unit){
+	case ml: return (out << "Об'єм = " << capacity.v << " мл" << endl); break;
+	case l: return (out << "Об'єм = " << capacity.v << " л" << endl); break;
+	case cubicMeter: return (out << "Об'єм = " << capacity.v << " м^3" << endl); break;
+	}
+	return out;
+}
+///
+string Capacity::toString(){
+	string tmp;
+	tmp += "\nОб'єм = " + to_string(v);
+	switch (getUnit()){
+	case l:
+		tmp += " l";
+		break;
+	case ml:
+		tmp += " ml";
+		break;
+	case cubicMeter:
+		tmp += " m3";
+		break;
+	}
+	tmp += "\nПлоща тари = ";
+	tmp += to_string(square(1));
+	tmp += " м^2\n";
+	return tmp;
+}
+///
+bool Capacity::operator >= (Capacity data){
+	bool result;
+	if (this->getUnit() == data.getUnit() || (this->getUnit() == 0 && data.getUnit() == 2) || (this->getUnit() == 2 && data.getUnit() == 1)){
+		if (this->v >= data.getUnit())
+			result = true;
+		else result = false;
+	}
+	else if ((this->getUnit() == 2 || this->getUnit() == 0) && data.getUnit() == 1)
+			result = true;
+	else result = false;
+	return result;
+}
+
+void Capacity::OnStore(ostream& aStream){
+	aStream << toBitsetString();
+}
+
+void Capacity::OnLoad(istream& aStream){
+	bitset<32> input;
+	aStream >> input;
+	this->unit = (units)input.to_ulong();
+	aStream >> input;
+	this->v = (float)input.to_ulong();
+}
+
+string Capacity::toBitsetString() {
+	string res;
+
+	res += bitset<32>(this->getUnit()).to_string();
+	res += bitset<32>(this->v).to_string();
+	return res;
+}
