@@ -21,15 +21,18 @@ namespace Screen {
 		/**
 		* Outputs header of information.
 		*/
-		virtual void ShowHeader();
+		virtual void ShowHeader()=0;
 		/**
 		* Outputs main information about window.
 		*/
-		virtual void ShowContent();
+		virtual void ShowContent()=0;
 
 		/**
 		* Outputs footer of information.
 		*/
-		virtual void ShowFooter();
+		virtual void ShowFooter()=0;
+
+		virtual void Show();
+
 	};
 }
