@@ -1,0 +1,141 @@
+/*
+* @file Jar.cpp
+* Містить реалізацію класа Jar
+* @date 2017.10.01
+* @author shcherbinina
+*/
+#include "Jar.h"
+#include <string>
+#include <bitset>
+using namespace std;
+
+///Конструктор без параметрів
+Jar::Jar() : Capacity(), typeOfCap("Накладна"), material("Скло")
+{
+	cout << "Jar constructor\n";
+}
+
+///Деструктор
+Jar::~Jar()
+{
+	cout << "Jar destructor\n";
+}
+
+///Конструктор копіювання
+Jar::Jar(const Jar& jar) : typeOfCap(jar.typeOfCap), material(jar.material)
+{
+	cout << "\nJar copy constructor\n";
+}
+///Конструктор з параметрами для власних полів
+Jar::Jar(string typeOfCap, string material) : typeOfCap(typeOfCap), material(material)
+{
+	cout << "Jar constructor with parametrs\n";
+}
+///Конструктор з параметрами для власних полів і тих, що унаслідовались 
+Jar::Jar(units unit, float v, string typeOfCap, string material) :	Capacity(unit, v), typeOfCap(typeOfCap), material(material)
+{
+	cout << "Jar and Capacity constructor with parametrs\n";
+}
+///Сеттер для типу кришки
+void Jar::setTypeOfCap(string typeOfCap)
+{
+	this->typeOfCap = typeOfCap;
+}
+///Геттер для типу кришки
+string Jar::getTypeOfCap()
+{
+	return typeOfCap;
+}
+///Сеттер для поля матеріалу
+void Jar::setMaterial(string material)
+{
+	this->material = material;
+}
+///Геттер для поля матеріалу
+string Jar::getMaterial()
+{
+	return material;
+}
+///Повертає строку 
+string Jar::toString()
+{
+	string tmp;
+	tmp += "\nОб'єм = " + to_string(v);
+	switch (getUnit()){
+	case l:
+		tmp += " l";
+		break;
+	case ml:
+		tmp += " ml";
+		break;
+	case cubicMeter:
+		tmp += " m3";
+		break;
+	}
+	tmp += "\nПлоща тари = ";
+	tmp += to_string(square(1));
+	tmp += " м^2\n";
+	tmp += "\nТип кришки - " + getTypeOfCap();
+	tmp += "\nМатерiал - " + getMaterial() + "\n";
+	return tmp;
+}
+///
+void Jar::setData(string data){
+	this->setTypeOfCap(data);
+}
+///
+void Jar::setData(const string& data){
+	this->setMaterial(data);
+}
+///
+void Jar::operator = (int data){
+	switch (data){
+	case 1:
+		this->setTypeOfCap("Закручується");
+		break;
+	case 2:
+		this->setTypeOfCap("Закатується");
+		break;
+	case 3:
+		this->setTypeOfCap("Звичайна");
+		break;
+	default:
+		this->setTypeOfCap("Вакуумна");
+	}
+}
+
+void Jar::OnStore(ostream& aStream){
+	aStream << toBitsetString();
+}
+
+void Jar::OnLoad(istream& aStream){
+	Capacity::OnLoad(aStream);
+	string tmpStr;
+	bitset<8> input;
+
+	while (aStream.get() != ' ') {
+		aStream >> input;
+		tmpStr += (char)input.to_ulong();
+	}
+	this->setMaterial(tmpStr);
+	tmpStr.clear();
+
+	while (aStream.get() != ' ') {
+		aStream >> input;
+		tmpStr += (char)input.to_ulong();
+	}
+	this->setTypeOfCap(tmpStr);
+}
+
+string Jar::toBitsetString(){
+	string res = Capacity::toBitsetString();
+	for (unsigned int i = 0; i < this->getMaterial().length(); i++) {
+		res += bitset<9>(this->getMaterial().at(i)).to_string();
+	}
+	res += " ";
+	for (unsigned int i = 0; i < this->getTypeOfCap().length(); i++) {
+		res += bitset<9>(this->getTypeOfCap().at(i)).to_string();
+	}
+	res += " ";
+	return res;
+}
