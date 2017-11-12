@@ -25,9 +25,18 @@ public:
 	*/
 	virtual ~DefaultScreen();
 	/**
+	* Outputs header of information.
+	*/
+	virtual void ShowHeader() override;
+	/**
 	* Outputs main information about window.
 	*/
-	virtual void ShowContent() override;
+	virtual void ShowContent()override;
+
+	/**
+	* Outputs footer of information.
+	*/
+	virtual void ShowFooter()override;
 private:
 	// колесо
 	Wheel *wheel;

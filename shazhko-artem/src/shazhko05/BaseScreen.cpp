@@ -1,3 +1,4 @@
+#include "BaseScreen.h"
 /**
 * @file BaseScreen.cpp
 * @brief Содержит реализацию класса BaseScreen
@@ -8,17 +9,9 @@
 #include "BaseScreen.h"
 #include <iostream>
 
-void BaseScreen::ShowHeader()
+void BaseScreen::Show()
 {
-	std::cout << "----------------------------" << std::endl;
-}
-
-void BaseScreen::ShowContent()
-{
-	std::cout << "Data not available" << std::endl;
-}
-
-void BaseScreen::ShowFooter()
-{
-	std::cout << "----------------------------" << std::endl;
+	ShowHeader();
+	ShowContent();
+	ShowFooter();
 }

@@ -31,7 +31,6 @@
     <ClCompile Include="SimpleStreamHelperFactory.cpp" />
     <ClCompile Include="SimpleTimer.cpp" />
     <ClCompile Include="StreamHelperArg.cpp" />
-    <ClCompile Include="TEST-SimpleTimer.cpp" />
     <ClCompile Include="Wheel.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -48,7 +47,6 @@
     <ClInclude Include="IDelegateVoid.h" />
     <ClInclude Include="InputStreamHelper.h" />
     <ClInclude Include="MethodDelegateVoid.hpp" />
-    <ClInclude Include="NonScreen.h" />
     <ClInclude Include="OutputStreamHelper.h" />
     <ClInclude Include="ScreenCreator.h" />
     <ClInclude Include="SimpleInputStreamHelper.h" />

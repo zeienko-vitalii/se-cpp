@@ -9,7 +9,6 @@
 #pragma once
 #include "ScreenCreator.h"
 #include "GraphScreen.h"
-#include "NonScreen.h"
 
 /**
 * Класс реализующий фабричный метод для создания объектов GraphScreen
@@ -34,7 +33,7 @@ public:
 	BaseScreen* CreateSreen() override{
 		if (wheel)
 			return new GraphScreen(wheel);
-		else return new NonScreen();
+		else throw "NullReferenceException";
 	}
 private:
 	// колесо

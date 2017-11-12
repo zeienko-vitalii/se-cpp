@@ -7,7 +7,6 @@
 * @date 18.09.17
 */
 #include "ScreenCreator.h"
-#include "NonScreen.h"
 #include "DefaultScreen.h"
 
 /**
@@ -32,7 +31,7 @@ public:
 	BaseScreen* CreateSreen() override {
 		if (wheel)
 			return new DefaultScreen(wheel);
-		else return new NonScreen();
+		else throw "NullReferenceException";
 	}
 private:
 	// колесо

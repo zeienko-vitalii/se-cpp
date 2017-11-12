@@ -75,9 +75,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="TEST-SimpleTimer.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="DelegateVoid.cpp">
       <Filter>Исходные файлы\Delegates</Filter>
     </ClCompile>
@@ -174,9 +171,6 @@
       <Filter>Файлы заголовков\Screen\AllScreens</Filter>
     </ClInclude>
     <ClInclude Include="GraphScreen.h">
-      <Filter>Файлы заголовков\Screen\AllScreens</Filter>
-    </ClInclude>
-    <ClInclude Include="NonScreen.h">
       <Filter>Файлы заголовков\Screen\AllScreens</Filter>
     </ClInclude>
     <ClInclude Include="CarWheelScreen.h">

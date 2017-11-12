@@ -58,7 +58,7 @@ void RunCreaterScreen(ScreenCreator **arrayScreenCreator, int count) {
 void RunPrintTimer(BaseScreen ** arrayScreen, int count) {
 	Timer::SimpleTimer timer(4, 1000);
 	for (int i = 0; i < count; i++)
-		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(arrayScreen[i], &BaseScreen::ShowContent);
+		timer.OnTimerTact += Delegate::CreateDelegate<BaseScreen>(arrayScreen[i], &BaseScreen::Show);
 	timer.Start();
 	timer.Wait(INFINITE);
 }

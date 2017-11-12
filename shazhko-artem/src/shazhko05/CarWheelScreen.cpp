@@ -14,6 +14,10 @@ CarWheelScreen::~CarWheelScreen()
 {
 	if (this->wheel)delete this->wheel;
 }
+void CarWheelScreen::ShowHeader()
+{
+	std::cout << "----------CarWheel-----------\n";
+}
 
 void CarWheelScreen::ShowContent()
 {
@@ -24,4 +28,10 @@ void CarWheelScreen::ShowContent()
 		"\tTire Manufacturer: " << wheel->GetTireManufacturer() << "\n" <<
 		"\tTire Name: " << wheel->GetTireName() << "\n";
 }
+
+void CarWheelScreen::ShowFooter()
+{
+	std::cout << "-----------------------------\n";
+}
+
 

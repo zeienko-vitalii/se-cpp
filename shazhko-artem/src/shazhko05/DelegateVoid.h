@@ -51,7 +51,6 @@ namespace Delegate {
 		* Переопределение функтора
 		*/
 		void operator()();
-
 	private:
 		/**
 		* Добавление
