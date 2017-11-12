@@ -15,6 +15,11 @@ namespace Screen {
 		if (this->wheel)delete this->wheel;
 	}
 
+	void CarWheelScreen::ShowHeader()
+	{
+		std::cout << "----------CarWheel-----------\n";
+	}
+
 	void CarWheelScreen::ShowContent()
 	{
 		std::cout << "\tDiameter: " << wheel->GetDiameter() << "\n" <<
@@ -24,5 +29,13 @@ namespace Screen {
 			"\tTire Manufacturer: " << wheel->GetTireManufacturer() << "\n" <<
 			"\tTire Name: " << wheel->GetTireName() << "\n";
 	}
+
+	void CarWheelScreen::ShowFooter()
+	{
+		std::cout << "-----------------------------\n";
+	}
+
+
+
 }
 

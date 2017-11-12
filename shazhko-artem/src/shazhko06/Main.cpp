@@ -35,7 +35,6 @@ int main() {
 		DemonstratingDeletion(carWheelList);
 		auto it1 = carWheelList->CreateIterator(); // получение итератора
 		CarWheelListShow(it1); // выводим на экран
-
 		DemonstratingAddition(carWheelList);
 		Stream::IOCollection::Save<Wheel::CarWheel*>(carWheelList,"wheelList", "CarWheelListSave.txt", sh);
 		CarWheelListShow(it1); // выводим на экран

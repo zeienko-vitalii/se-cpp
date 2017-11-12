@@ -8,18 +8,10 @@
 #include "BaseScreen.h"
 #include <iostream>
 namespace Screen {
-	void BaseScreen::ShowHeader()
+	void BaseScreen::Show()
 	{
-		std::cout << "----------------------------" << std::endl;
-	}
-
-	void BaseScreen::ShowContent()
-	{
-		std::cout << "Data not available" << std::endl;
-	}
-
-	void BaseScreen::ShowFooter()
-	{
-		std::cout << "----------------------------" << std::endl;
+		ShowHeader();
+		ShowContent();
+		ShowFooter();
 	}
 }
