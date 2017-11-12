@@ -48,16 +48,16 @@ public:
 	/**
 	* Outputs header of information.
 	*/
-	virtual void ShowHeader();
+	virtual void ShowHeader() override;
 	/**
 	* Outputs main information about window.
 	*/
-	virtual void ShowContent();
+	virtual void ShowContent()override;
 
 	/**
 	* Outputs footer of information.
 	*/
-	virtual void ShowFooter();
+	virtual void ShowFooter()override;
 private:
 	// колесо
 	CWheel *wheel;

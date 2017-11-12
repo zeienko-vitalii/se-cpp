@@ -15,7 +15,7 @@ CScreen::~CScreen() {
 }
 void CScreen::ShowHeader()
 {
-	std::cout << "---------------------------------\n";
+	std::cout << "---------------WHEEL-------------\n";
 }
 void CScreen::ShowContent()
 {

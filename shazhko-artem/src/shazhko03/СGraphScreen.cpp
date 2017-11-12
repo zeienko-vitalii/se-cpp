@@ -44,7 +44,6 @@ void CGraphScreen::ShowContent()
 	SHORT diameter = (SHORT)originDiameter;
 	SHORT radius = ((SHORT)diameter) >> 1;
 	CONSOLE_SCREEN_BUFFER_INFO cursorinfo;
-	ShowHeader();
 	if (!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorinfo)) { std::cout << "\nERROR\n"; return; }
 	cursorinfo.dwCursorPosition.X = radius;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { cursorinfo.dwCursorPosition.X,cursorinfo.dwCursorPosition.Y });
@@ -67,8 +66,6 @@ void CGraphScreen::ShowContent()
 	for (SHORT i = 0; i <= radius; i++)std::cout << "*";
 	this->PrintWidth(originWidth, { diameter << 1, cursorinfo.dwCursorPosition.Y });
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (SHORT)0,cursorinfo.dwCursorPosition.Y + 1 });
-
-	ShowFooter();
 }
 
 void CGraphScreen::ShowFooter()

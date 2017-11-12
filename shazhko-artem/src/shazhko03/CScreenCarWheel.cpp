@@ -17,7 +17,7 @@ CScreenCarWheel::~CScreenCarWheel()
 
 void CScreenCarWheel::ShowHeader()
 {
-	CBaseScreen::ShowHeader();
+	std::cout << "----------CarWheel-----------\n";
 }
 
 void CScreenCarWheel::ShowContent()
@@ -32,5 +32,5 @@ void CScreenCarWheel::ShowContent()
 
 void CScreenCarWheel::ShowFooter()
 {
-	CBaseScreen::ShowFooter();
+	std::cout << "-----------------------------\n";
 }

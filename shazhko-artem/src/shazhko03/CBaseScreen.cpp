@@ -9,25 +9,15 @@
 #include <stdlib.h>
 #include <iostream>
 
+
 CBaseScreen::CBaseScreen(){}
 CBaseScreen::~CBaseScreen(){
 }
 
-void CBaseScreen::ShowHeader()
+void CBaseScreen::Show()
 {
-	std::cout << "-----------------------------\n";
+	ShowHeader();
+	ShowContent();
+	ShowFooter();
 }
 
-void CBaseScreen::ShowContent()
-{
-	std::cout << "\tContent\n";
-	/*std::cout << "\tDiameter: " << wheel->GetDiameter() << "\n" <<
-		"\tWidth: " << wheel->GetWidth() << "\n" <<
-		"\tUnits: " << wheel->ConvertEUnitToString(wheel->GetUnits()) << "\n" <<
-		"Volume: " << wheel->Volume() << "\n";*/
-}
-
-void CBaseScreen::ShowFooter()
-{
-	std::cout << "-----------------------------\n";
-}
