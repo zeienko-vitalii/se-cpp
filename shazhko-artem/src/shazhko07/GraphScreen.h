@@ -52,7 +52,7 @@ namespace Screen {
 		/**
 		* Outputs footer of information.
 		*/
-		void ShowFooter() override;
+		virtual void ShowFooter() override;
 	private:
 		// колесо
 		Wheel::Wheel *wheel;

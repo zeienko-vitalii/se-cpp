@@ -57,9 +57,7 @@ int main() {
 void Show(Screen::ScreenCreator::ScreenCreator *sc) {
 	if (sc == NULL)throw "NullReferenceException";
 	auto screen = sc->CreateSreen();
-	screen->ShowHeader();
-	screen->ShowContent();
-	screen->ShowFooter();
+	screen->Show();
 	delete screen;
 }
 
