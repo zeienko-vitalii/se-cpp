@@ -23,6 +23,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko07", "shazhko07\shaz
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko08", "shazhko08\shazhko08.vcxproj", "{1CD1145F-0C30-4701-90F8-F53E7AFA4F38}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko08-test", "shazhko08-test\shazhko08-test.vcxproj", "{1AE1E318-56C7-4903-B630-B8F707F327DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shazhko07-test", "shazhko07-test\shazhko07-test.vcxproj", "{33A62EEC-07E5-42B8-A5C0-56F839DCB809}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,12 +115,28 @@ Global
 		{1CD1145F-0C30-4701-90F8-F53E7AFA4F38}.Release|x64.Build.0 = Release|x64
 		{1CD1145F-0C30-4701-90F8-F53E7AFA4F38}.Release|x86.ActiveCfg = Release|Win32
 		{1CD1145F-0C30-4701-90F8-F53E7AFA4F38}.Release|x86.Build.0 = Release|Win32
+		{1AE1E318-56C7-4903-B630-B8F707F327DF}.Debug|x64.ActiveCfg = Debug|x64
+		{1AE1E318-56C7-4903-B630-B8F707F327DF}.Debug|x64.Build.0 = Debug|x64
+		{1AE1E318-56C7-4903-B630-B8F707F327DF}.Debug|x86.ActiveCfg = Debug|Win32
+		{1AE1E318-56C7-4903-B630-B8F707F327DF}.Debug|x86.Build.0 = Debug|Win32
+		{1AE1E318-56C7-4903-B630-B8F707F327DF}.Release|x64.ActiveCfg = Release|x64
+		{1AE1E318-56C7-4903-B630-B8F707F327DF}.Release|x64.Build.0 = Release|x64
+		{1AE1E318-56C7-4903-B630-B8F707F327DF}.Release|x86.ActiveCfg = Release|Win32
+		{1AE1E318-56C7-4903-B630-B8F707F327DF}.Release|x86.Build.0 = Release|Win32
+		{33A62EEC-07E5-42B8-A5C0-56F839DCB809}.Debug|x64.ActiveCfg = Debug|x64
+		{33A62EEC-07E5-42B8-A5C0-56F839DCB809}.Debug|x64.Build.0 = Debug|x64
+		{33A62EEC-07E5-42B8-A5C0-56F839DCB809}.Debug|x86.ActiveCfg = Debug|Win32
+		{33A62EEC-07E5-42B8-A5C0-56F839DCB809}.Debug|x86.Build.0 = Debug|Win32
+		{33A62EEC-07E5-42B8-A5C0-56F839DCB809}.Release|x64.ActiveCfg = Release|x64
+		{33A62EEC-07E5-42B8-A5C0-56F839DCB809}.Release|x64.Build.0 = Release|x64
+		{33A62EEC-07E5-42B8-A5C0-56F839DCB809}.Release|x86.ActiveCfg = Release|Win32
+		{33A62EEC-07E5-42B8-A5C0-56F839DCB809}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7850629B-CD9C-420D-A884-AEC5F4B20470}
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {7850629B-CD9C-420D-A884-AEC5F4B20470}
 	EndGlobalSection
 EndGlobal
