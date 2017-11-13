@@ -142,8 +142,13 @@ namespace Stream {
 			if (!fileStream) {
 				throw "Could not open file.";
 			}
-
-			return Load(fileStream, _nameCollection, streamHelper, _getObjectFromString);
+			Collection::ICollection<Item>* result=NULL;
+			try {
+				return Load(fileStream, _nameCollection, streamHelper, _getObjectFromString);
+			}
+			catch (...) {}
+			fileStream.close();
+			return result;
 		}
 
 		/**
@@ -212,7 +217,11 @@ namespace Stream {
 			if (!fileStream) {
 				throw "Could not open file.";
 			}
-			Save(_collection, _nameCollection, fileStream, streamHelper);
+			try {
+				Save(_collection, _nameCollection, fileStream, streamHelper);
+			}
+			catch (...) {}
+			fileStream.close();
 		}
 	}
 }

@@ -96,7 +96,7 @@ void DemonstratingDeletion(Collection::ICollection<Wheel::CarWheel*> *wheelList)
 	delete forRemove; // освободим память
 }
 void DemonstratingAddition(Collection::ICollection<Wheel::CarWheel*> *wheelList) {
-	wheelList->Insirt(0, new Wheel::CarWheel(514.5, 295, EUNITS_CENTIMETERS,
+	wheelList->Insert(0, new Wheel::CarWheel(514.5, 295, EUNITS_CENTIMETERS,
 		"Proxes T1 Sport SUV 295/40", "Toyo")); // вставим элемент во вторую позицию
 	wheelList->Push(new Wheel::CarWheel(30, 50, EUNITS_CENTIMETERS, "UltraGrip Performance G1", "Goodyear"));
 	wheelList->Push(new Wheel::CarWheel(508, 500, EUnits::EUNITS_MILLIMETRES, "MP-16 ", "Nokian"));
