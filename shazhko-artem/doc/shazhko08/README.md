@@ -11,7 +11,7 @@
 - Использовать макросы, присущие компилятору Microsoft
 
 ## Структура проекта
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image01.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko08/source/Image01.png)
 
 ## Описание разработанных типов данных
 Разработка типов данных не производилась. Добавлялся новый функционал в классы SimpleList лабораторной работы #7.
@@ -24,20 +24,20 @@
 См. предыдущий пункт.
 
 ## Ссылки на файлы проекта
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image02.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko08/source/Image02.png)
 
 
 ## Текст программы
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image03.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko08/source/Image03.png)
 
 ## Результаты работы
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image04.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko08/source/Image04.png)
 <div align="center">Рисунок 1 - Результат выполнения с ошибками</b></div><br>
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image05.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko08/source/Image05.png)
 <div align="center">Рисунок 2 - Результат очистки памяти</b></div><br>
 
-![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image06.png)
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko08/source/Image06.png)
 <div align="center">Рисунок 2 - Результат выполнения тестов</b></div><br>
 
 ## Выводы
