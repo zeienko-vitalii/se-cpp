@@ -46,6 +46,9 @@ public:
 	std::string GetTireManufacturer() const;
 
 	CarWheel& operator=(CarWheel &wheel);
+
+	virtual bool operator==(CarWheel const &arg);
+
 private:
 	// название шины
 	std::string tireName;

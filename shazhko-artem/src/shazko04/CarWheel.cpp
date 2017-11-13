@@ -44,3 +44,11 @@ CarWheel & CarWheel::operator=(CarWheel & _wheel)
 	this->tireManufacturer = _wheel.tireManufacturer;
 	return *this;
 }
+
+bool CarWheel::operator==(CarWheel const & arg)
+{
+	if (!Wheel::operator==(arg)) return false;
+	if (this->tireManufacturer != arg.tireManufacturer) return false;
+	if (this->tireName != arg.tireName) return false;
+	return true;
+}

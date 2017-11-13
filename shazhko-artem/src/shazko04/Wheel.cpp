@@ -6,7 +6,6 @@
 * @date 03.10.17
 */
 
-#include "Wheel.h"
 #define _USE_MATH_DEFINES // for C++  
 #include <cmath>  
 #include "Wheel.h"
@@ -23,14 +22,6 @@ Wheel::Wheel(const Wheel *_wheel) {
 	this->diameter = _wheel->diameter;
 	this->units = _wheel->units;
 	this->width = _wheel->width;
-}
-bool Wheel::operator==(const Wheel &_wheel)
-{
-	if (_wheel.diameter == this->diameter) 
-		if (_wheel.units == this->units)
-			if (_wheel.width == this->width) 
-				return true;
-	return false;
 }
 
 Wheel::~Wheel() {}
@@ -62,4 +53,12 @@ double Wheel::GetDiameter() const
 double Wheel::GetWidth() const
 {
 	return this->width;
+}
+
+bool Wheel::operator==(Wheel const & arg)
+{
+	if (this->diameter != arg.diameter)return false;
+	if (this->units != arg.units)return false;
+	if (this->width != arg.width)return false;
+	return true;
 }
