@@ -67,6 +67,8 @@ namespace Wheel {
 		* Деструктор
 		*/
 		virtual~CarWheel();
+
+		virtual bool operator==(CarWheel const &arg);
 	private:
 		// название шины
 		std::string tireName;
