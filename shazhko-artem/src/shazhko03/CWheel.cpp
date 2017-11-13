@@ -24,14 +24,6 @@ CWheel::CWheel(const CWheel *_wheel) {
 	this->units = _wheel->units;
 	this->width = _wheel->width;
 }
-bool CWheel::operator==(const CWheel &_wheel)
-{
-	if (_wheel.diameter == this->diameter) 
-		if (_wheel.units == this->units)
-			if (_wheel.width == this->width) 
-				return true;
-	return false;
-}
 
 CWheel::~CWheel() {}
 
@@ -79,4 +71,12 @@ std::string CWheel::ConvertEUnitToString(const EUnits _units) {
 	default:
 		return NULL;
 	}
+}
+
+bool CWheel::operator==(CWheel const & arg)
+{
+	if (this->diameter != arg.diameter)return false;
+	if (this->units != arg.units)return false;
+	if(this->width!=arg.width)return false;
+	return true;
 }

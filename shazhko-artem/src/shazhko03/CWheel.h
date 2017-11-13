@@ -37,8 +37,6 @@ public:
 	*/
 	CWheel(const CWheel *wheel);
 
-	bool operator==(const CWheel &wheel);
-
 	/**
 	* Деструктор
 	*/
@@ -85,6 +83,8 @@ public:
 	* @return строка описывающая значение объекта EUnit
 	*/
 	static std::string ConvertEUnitToString(const EUnits _unit);
+
+	virtual bool operator==(CWheel const &arg);
 protected:
 	// Единицы измерения
 	EUnits units;

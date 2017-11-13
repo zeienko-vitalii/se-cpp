@@ -37,3 +37,11 @@ std::string CCarWheel::GetTireManufacturer() const
 {
 	return this->tireManufacturer;
 }
+
+bool CCarWheel::operator==(CCarWheel const& arg)
+{
+	if (!CWheel::operator==(arg)) return false;
+	if(this->tireManufacturer!=arg.tireManufacturer) return false;
+	if(this->tireName!=arg.tireName) return false;
+	return true;
+}

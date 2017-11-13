@@ -47,6 +47,7 @@ public:
 	* @return производитель
 	*/
 	std::string GetTireManufacturer() const;
+	virtual bool operator==(CCarWheel const &arg);
 private:
 	// название шины
 	std::string tireName;
