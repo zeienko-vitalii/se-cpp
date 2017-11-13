@@ -64,5 +64,9 @@
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko06/source/Image11.png)
 <div align="center">Рисунок 5 - Утечки памяти нет</b></div><br>
 
+
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko06/source/Image12.png)
+<div align="center">Рисунок 5 - Выполнение тестов</b></div><br>
+
 ## Выводы
 В ходе лабораторной работы были получены практические навыки создания собственных контейнеров для объектов хранения ранее разработанных классов
