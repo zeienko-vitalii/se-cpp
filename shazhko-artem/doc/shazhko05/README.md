@@ -49,6 +49,8 @@
 
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image09.png)
 
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko05/source/Image10.png)
+
 
 ## Выводы
 В ходе лабораторной работы были получены практические навыки работы с библиотекой CFileStorage
