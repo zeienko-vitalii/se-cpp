@@ -1,0 +1,5 @@
+diameter : 30
+units : 0
+width : 50
+tireManufacturer : Goodyear
+tireName : UltraGrip Performance G1
