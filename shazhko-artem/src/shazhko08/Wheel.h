@@ -34,9 +34,6 @@ namespace Wheel {
 		*/
 		Wheel(const Wheel *wheel);
 
-		bool operator==(const Wheel &wheel);
-
-
 		/**
 		* Зберігає дані в потік
 		* @param aStream Відкритий потік для збереження даних
@@ -90,6 +87,7 @@ namespace Wheel {
 		* @return ширина
 		*/
 		double GetWidth() const;
+		virtual bool operator==(Wheel const &arg);
 	protected:
 		// Единицы измерения
 		EUnits units;
