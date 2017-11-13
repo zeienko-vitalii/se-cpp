@@ -29,13 +29,14 @@ namespace Collection {
 		}
 		else {
 			walker = this->bottom;
-			for (int i = index; i != 0; i--) walker = walker->previous;
+			for (int i = this->count - index - 1; i != 0; i--)
+				walker = walker->previous;
 		}
 		return walker->element;
 	}
 
 	template<typename item>
-	void SimpleList<item>::Insirt(const int index, const item &_item)throw(std::out_of_range)
+	void SimpleList<item>::Insert(const int index, const item &_item)throw(std::out_of_range)
 	{
 		if (index >= this->count + 1 || index < 0)throw std::out_of_range("The index is outside the list boundary");
 		if (!this->top) {
