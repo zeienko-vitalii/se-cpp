@@ -35,7 +35,7 @@ namespace Collection {
 		* @param index индекс по которому нужно вставить элемент
 		* @param _element элемент, который нужно добавить
 		*/
-		virtual void Insirt(const int index, const item& _element) = 0;
+		virtual void Insert(const int index, const item& _element) = 0;
 		/**
 		* Получение элемента из конца коллекции с предварительным удалением из списка
 		* @return элемент из конца колекции

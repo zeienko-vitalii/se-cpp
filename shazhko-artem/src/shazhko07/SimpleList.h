@@ -99,7 +99,7 @@ namespace Collection {
 		* @param index индекс по которому нужно вставить элемент
 		* @param _element элемент, который нужно добавить
 		*/
-		virtual void Insirt(const int index, const item&);
+		virtual void Insert(const int index, const item&);
 		/**
 		* Добавление в конец коллекции
 		* @param _element элемент, который нужно добавить
