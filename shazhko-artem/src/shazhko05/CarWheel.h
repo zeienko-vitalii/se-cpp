@@ -15,6 +15,7 @@
 class  CarWheel:public Wheel
 {
 public:
+	CarWheel() {}
 	/**
 	* Конструктор с тремя параметром
 	* @param _diameter Диаметр
@@ -63,6 +64,9 @@ public:
 	* Деструктор
 	*/
 	virtual~CarWheel();
+
+	virtual bool operator==(CarWheel const &arg);
+
 private:
 	// название шины
 	std::string tireName;

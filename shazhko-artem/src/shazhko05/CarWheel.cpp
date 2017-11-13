@@ -20,6 +20,13 @@ CarWheel::CarWheel(const CarWheel * carWheel)
 	this->tireName = carWheel->tireName;
 }
 
+bool CarWheel::operator==(CarWheel const& arg)
+{
+	if (!Wheel::operator==(arg)) return false;
+	if (this->tireManufacturer != arg.tireManufacturer) return false;
+	if (this->tireName != arg.tireName) return false;
+	return true;
+}
 void CarWheel::SetTireName(const std::string _tireName)
 {
 	this->tireName = _tireName;

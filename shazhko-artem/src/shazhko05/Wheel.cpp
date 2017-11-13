@@ -25,13 +25,12 @@ Wheel::Wheel(const Wheel *_wheel) {
 	this->units = _wheel->units;
 	this->width = _wheel->width;
 }
-bool Wheel::operator==(const Wheel &_wheel)
+bool Wheel::operator==(Wheel const &arg)
 {
-	if (_wheel.diameter == this->diameter) 
-		if (_wheel.units == this->units)
-			if (_wheel.width == this->width) 
-				return true;
-	return false;
+	if (this->diameter != arg.diameter)return false;
+	if (this->units != arg.units)return false;
+	if (this->width != arg.width)return false;
+	return true;
 }
 
 void Wheel::OnStore(std::ostream & aStream)
