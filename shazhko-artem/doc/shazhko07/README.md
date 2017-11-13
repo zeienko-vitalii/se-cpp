@@ -40,6 +40,8 @@
 ![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image07.png)
 <div align="center">Рисунок 2 - Результат очистки памяти</b></div><br>
 
+![Image alt](https://raw.githubusercontent.com/kit25a/se-cpp/master/shazhko-artem/doc/shazhko07/source/Image08.png)
+<div align="center">Рисунок 2 - Результат выполнения тестов</b></div><br>
 
 ## Выводы
 В ходе лабораторной работы были получены практические навыки использования шаблонов функций и классов на базе собственного кода.
