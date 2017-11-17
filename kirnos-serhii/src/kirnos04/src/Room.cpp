@@ -8,9 +8,9 @@
 #include "Room.h"
 
 /*Room::Room() :
-		height(0), width(0), length(0) {
-	//cout << "Room()" << endl;
-}*/
+ height(0), width(0), length(0) {
+ //cout << "Room()" << endl;
+ }*/
 
 Room::Room(int H, int W, int L) :
 		height(H), width(W), length(L) {
@@ -26,18 +26,18 @@ Room::~Room() {
 	//cout << "~Room()" << endl;
 }
 /*
-void Room::setHeight(int H) {
-	height = H;
-}
+ void Room::setHeight(int H) {
+ height = H;
+ }
 
-void Room::setWidth(int W) {
-	width = W;
-}
+ void Room::setWidth(int W) {
+ width = W;
+ }
 
-void Room::setLength(int L) {
-	length = L;
-}
-*/
+ void Room::setLength(int L) {
+ length = L;
+ }
+ */
 int Room::getHeight() const {
 	return height;
 }
@@ -52,4 +52,10 @@ int Room::getLength() const {
 
 int Room::Volume() const {
 	return (height * width * length);
+}
+
+bool Room::operator <(const Room& r) {
+	if (this->Volume() < r.Volume())
+		return true;
+	return false;
 }

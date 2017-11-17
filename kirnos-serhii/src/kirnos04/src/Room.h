@@ -22,7 +22,6 @@ public:
 	 * Конструктор без параметров.
 	 */
 	//Room();
-
 	/**
 	 * Конструктор с параметрами.
 	 * @param H висота
@@ -47,19 +46,16 @@ public:
 	 * @param H копируется в height
 	 */
 	//void setHeight(int H);
-
 	/**
 	 * Установка поля Room::width
 	 * @param W копируется в width
 	 */
 	//void setWidth(int W);
-
 	/**
 	 * Установка поля Room::length
 	 * @param L копируется в length
 	 */
 	//void setLength(int L);
-
 	/**
 	 * Возвращает значение поля Room::height
 	 * @return значение поля height
@@ -83,5 +79,12 @@ public:
 	 * @return объем комнаты
 	 */
 	int Volume() const;
+
+	/**
+	 * Перегрузка опреатора < для сравнения объемов комнат
+	 * @param r правый операнд
+	 * @return истину в том случае если объем первой комнаты меньший объема второй
+	 */
+	bool operator <(const Room& r);
 };
 

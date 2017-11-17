@@ -14,7 +14,7 @@ RoomHousing::RoomHousing(int H, int W, int L, const char *NAME, int NS,
 	name = new char[strlen(NAME) + 1];
 	strcpy(name, NAME);
 	//cout << "RoomHousing(int H, int W, int L, char *NAME, int NS, AppointmentRoom A)"
-			//<< endl;
+	//<< endl;
 }
 
 RoomHousing::RoomHousing(const RoomHousing& RH) :
@@ -40,6 +40,22 @@ int RoomHousing::getNumberOfSeats() const {
 
 AppointmentRoom RoomHousing::getAppointment() const {
 	return appointment;
+}
+
+void RoomHousing::SetData(int NS) {
+	numberOfSeats = NS;
+}
+
+void RoomHousing::SetData(AppointmentRoom A) {
+	appointment = A;
+}
+
+const char* RoomHousing::operator =(const char* newNmae){
+	if (name != nullptr)
+		delete[] name;
+	name = new char[strlen(newNmae) + 1];
+		strcpy(name, newNmae);
+	return newNmae;
 }
 
 /*void setNmae(char *NAME) {

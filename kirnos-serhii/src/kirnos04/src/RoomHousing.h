@@ -34,4 +34,22 @@ public:
 	int getNumberOfSeats() const ;
 
 	AppointmentRoom getAppointment() const ;
+
+	/**
+	 * Изменяет поле количество комнат
+	 * @param NS новое количество комнат
+	 */
+	void SetData(int NS);
+	/**
+	 * Изменяет предназначение комнаты
+	 * @param A новое предназначение комнаты
+	 */
+	void SetData(AppointmentRoom A);
+
+	/**
+	 * Перегрузка ператора = для присваивания имени комнаты
+	 * @param newNmae указатель на новое имя комнаты
+	 * @return имя комнаты
+	 */
+	const char* operator =(const char*);
 };

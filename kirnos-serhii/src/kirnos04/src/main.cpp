@@ -18,39 +18,32 @@
 using namespace std;
 
 int main() {
-	Room r(4, 8, 8);
-	TimerEx TE(4, 2000, r);
+	// Демонстрация перегрузки методов
+	RoomHousing r(4,8,8,"k 202", 28, PRACTICAL);
+	BaseView *bw = new View3(r);
+	cout << "->before" << endl;
+	bw->Display();
+
+	r.SetData(29);
+	r.SetData(LECTURES);
+	cout << "->after" << endl;
+	bw->Display();
+	delete bw;
+	// Демонстрация перегрузки операторов
+	Room r2_1(4,10,10);
+	Room r2_2(4,12,10);
+	if(r2_1 < r2_2)
+		cout << "Volume r2_1(" << r2_1.Volume() << ") < Volume r2_2(" << r2_2.Volume() << ");" << endl;
+	else
+		cout << "Volume r2_1(" << r2_1.Volume() << ") >= Volume r2_2(" << r2_2.Volume() << ");" << endl;
+	RoomHousing r3(4,8,8,"k 202", 28, PRACTICAL);
+	cout << "Name room before " << r3.getNmae() << endl;
+	char *newName = (char*)"abc";
+	r3 = newName;
+	cout << "Name room after " << r3.getNmae() << endl;
+	// Демонстрация работы таймера
+	Room r4(4, 8, 8);
+	TimerEx TE(4, 2000, r4);
 	TE.go();
-	/*
-	 Room **r = new Room*[4];
-	 r[0] = new RoomHousing(4,8,8,"k 202", 28, PRACTICAL);
-	 r[1] = new RoomHousing(4,12,10,"k 313", 25, LABORATORY);
-	 r[2] = new Room(4,10,10);
-	 r[3] = new Room(4,8,10);
-
-	 BaseView **bw = new BaseView*[4];
-	 bw[0] = new GraphScreen(*r[0]);
-	 bw[1] = new Screen(*r[1]);
-	 bw[2] = new GraphScreen(*r[2]);
-	 bw[3] = new Screen(*r[3]);
-
-	 for(int i = 0; i < 4; i++)
-	 bw[i]->Display();
-
-	 for(int i = 0; i < 4; i++){
-	 delete r[i];
-	 delete bw[i];
-	 }
-	 delete []r;
-	 delete []bw;
-
-	 cout << "Проверка View3" << endl;
-	 RoomHousing *r2 = new RoomHousing(4,8,8,"k 202", 28, PRACTICAL);
-	 BaseView *bw2 = new View3(*r2);
-	 bw2->Display();
-	 delete r2;
-	 delete bw2;*/
-
-	//getchar();
 	return 0;
 }
