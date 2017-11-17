@@ -1,33 +1,14 @@
-/**
- * @file Screen.cpp
- * @brief Хранит реализацию класса Screen
- * @author Kirnos Serhii
- * @version 0
- * @date 22.10.17
- */
+#include "View3.h"
 
-#include "Screen.h"
-
-Screen::Screen() :
-		BaseView() {
-	//cout << "Screen()" << endl;
-}
-
-Screen::Screen(const Room& R) :
+View3::View3(const RoomHousing& R) :
 		BaseView(R) {
-	//cout << "Screen(Room)" << endl;
 }
 
-Screen::Screen(const Screen& s) :
-		BaseView(*s.room) {
-	//cout << "Screen(const Screen&)" << endl;
-}
-
-void Screen::ShowHeader() {
+void View3::ShowHeader() {
 	//cout << "ShowContent()" << endl;
 }
 
-void Screen::ShowContent() {
+void View3::ShowContent() {
 	cout << "height = " << room->getHeight() << endl;
 	cout << "length = " << room->getLength() << endl;
 	cout << "width = " << room->getWidth() << endl;
@@ -57,9 +38,9 @@ void Screen::ShowContent() {
 	}
 }
 
-void Screen::ShowFooter() {
+void View3::ShowFooter() {
 }
 
-Screen::~Screen() {
-	//cout << "~Screen()" << endl;
+View3::~View3() {
+	//cout << "~View3()" << endl;
 }

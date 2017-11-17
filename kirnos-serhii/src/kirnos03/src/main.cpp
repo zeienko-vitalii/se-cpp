@@ -12,6 +12,7 @@
 #include <iostream>
 #include <windows.h>
 #include "debug_new.h"
+#include "View3.h"
 
 using namespace std;
 
@@ -37,6 +38,13 @@ int main() {
 	}
 	delete []r;
 	delete []bw;
+
+	cout << "Проверка View3" << endl;
+	RoomHousing *r2 = new RoomHousing(4,8,8,"k 202", 28, PRACTICAL);
+	BaseView *bw2 = new View3(*r2);
+	bw2->Display();
+	delete r2;
+	delete bw2;
 
 	getchar();
 	return 0;
